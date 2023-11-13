@@ -1,0 +1,133 @@
+baseURL: https://virtualmin.com/
+# baseURL: https://virtualmin.dev/
+languageCode: en-us
+title: Virtualmin — Open Source Web Hosting Control Panel
+theme: PaperMod
+
+canonifyURLs: true
+
+menu:
+  main:
+    - identifier: download
+      name: Download
+      url: /download/
+      weight: 10
+    - identifier: wiki
+      name: 'Documentation'
+      url: /docs/
+      weight: 30
+    - identifier: support
+      name: 'Support'
+      url: /support/
+      weight: 40
+    - identifier: shop
+      name: 'Shop'
+      url: /shop/
+      weight: 50
+    - identifier: forum
+      name: 'Forum'
+      url: https://forum.virtualmin.com/
+      weight: 60
+    - identifier: search
+      name: ' '
+      url: /search/
+      weight: 70
+    - identifier: hmenu
+      name: ' '
+      url: /hmenu/
+      weight: 80
+
+minify:
+  minifyOutput: true
+
+enableRobotsTXT: true
+#robotsNoIndex: true
+
+params:
+  version: 
+    virtualmin: '7.8.2'
+
+  env: production
+
+  analytics:
+     google:
+       trackingCode:
+         production: 'UA-503706-1'
+         devel: 'G-LT56QHK5DW'
+
+  title: Virtualmin, Inc.
+  description: "Powerful and flexible web hosting control panel for Linux and BSD systems"
+  keywords: [webmin, usermin, virtualmin, cloudmin, linux, system administration]
+  author: Jamie Cameron, Joe Cooper, Ilia Ross
+
+  # hide default footer
+  hideFooter: true
+
+  # allow disabling for some
+  # pages with custom option
+  hideEditPost: false
+  # edit posts
+  editPost:
+    URL: "https://github.com/virtualmin/virtualmin.com/tree/master/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+  # home-info mode
+  homeInfoParams:
+    Title: "What is Virtualmin?"
+    content: >
+        Virtualmin is a powerful and flexible web hosting control panel for Linux and BSD systems. Available in an open-source community-supported version, and a more feature-filled version with premium support, Virtualmin is the cost-effective and comprehensive solution to virtual web hosting management. And, Virtualmin is the most popular and most comprehensive open-source control panel with hundreds of thousands installations worldwide.
+  
+  # we always need the container
+  socialIcons:
+    - name: github
+      url: "https://github.com/virtualmin/virtualmin-gpl"
+
+  # we need to respect user OS preferences in terms of chosen color palette
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  ShowReadingTime: true
+  
+  ShowShareButtons: false
+  ShowPostNavLinks: false
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  # Embed Webmin logo nicely
+  label:
+    text: " "
+    iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" height="11.4mm" version="1.0" viewBox="0 0 734 132"> <g transform="translate(-4.563 -40.022)"> <g> <path d="m27.194 128.87c-7.5919-0.0315-22.642-19.675-22.631-22.217 0.00689-1.5795 15.101 9.8227 22.685 9.8541 7.6099 0.0316 22.903-11.247 22.896-9.665-0.01112 2.5393-15.348 22.059-22.95 22.027z" fill="#0f0"/> <g fill="#fff"> <g> <path d="m116.66 83.958c7.5919 0.03146 22.642 19.675 22.631 22.217-7e-3 1.5795-15.101-9.8226-22.685-9.8541-7.6099-0.03155-22.903 11.247-22.896 9.6651 0.01111-2.5394 15.348-22.059 22.95-22.027z"/> <path d="m106.28 70.013c7.1448-2.567 28.006 10.745 28.865 13.136 0.53378 1.4865-17.55-4.0654-24.687-1.5011-7.1618 2.573-17.675 18.402-18.21 16.913-0.85806-2.39 6.8781-25.978 14.032-28.549z"/> <path d="m37.573 142.82c-7.1449 2.567-28.006-10.745-28.865-13.136-0.53375-1.4866 17.55 4.0654 24.687 1.501 7.1618-2.5731 17.675-18.402 18.21-16.913 0.85806 2.39-6.8781 25.978-14.032 28.549z"/> <path d="m91.756 60.459c5.836-4.8559 29.992 0.51794 31.617 2.4719 1.0101 1.2144-17.882 2.1823-23.712 7.0331-5.8498 4.8674-10.316 23.337-11.327 22.121-1.6237-1.9524-2.4218-26.764 3.422-31.626z"/> <path d="m52.095 152.37c-5.8359 4.8559-29.992-0.51799-31.617-2.4718-1.01-1.2145 17.882-2.1823 23.712-7.0331 5.8498-4.8674 10.316-23.337 11.327-22.121 1.6237 1.9524 2.4217 26.764-3.422 31.626z"/> <path d="m74.842 56.448c3.8232-6.5591 28.36-9.7712 30.556-8.4909 1.3644 0.79572-16.057 8.1667-19.876 14.719-3.8323 6.5746-1.7118 25.458-3.078 24.661-2.1936-1.2793-11.429-24.322-7.6012-30.889z"/> <path d="m69.009 156.38c-3.8231 6.5591-28.36 9.7712-30.556 8.4909-1.3644-0.79559 16.057-8.1666 19.876-14.719 3.8323-6.5745 1.7118-25.458 3.078-24.661 2.1936 1.2793 11.43 24.322 7.6011 30.889z"/> <path d="m57.577 58.464c1.3493-7.4711 23.308-18.882 25.809-18.429 1.5543 0.28106-12.296 13.166-13.644 20.629-1.3525 7.4888 7.0986 24.508 5.5423 24.227-2.4988-0.45191-19.059-18.946-17.708-26.427z"/> <path d="m86.274 154.37c-1.3493 7.4711-23.308 18.882-25.809 18.43-1.5543-0.281 12.296-13.166 13.644-20.629 1.3525-7.4888-7.0986-24.508-5.5423-24.227 2.4988 0.45189 19.059 18.946 17.708 26.427z"/> <path d="m42.042 66.263c-1.2873-7.482 15.445-25.715 17.949-26.145 1.5567-0.26751-7.0512 16.577-5.7652 24.052 1.2904 7.4997 15.053 20.602 13.494 20.87-2.5027 0.42998-24.389-11.285-25.678-18.777z"/> <path d="m101.81 146.57c1.2873 7.4819-15.444 25.715-17.949 26.145-1.5567 0.26768 7.0511-16.577 5.7652-24.052-1.2904-7.4998-15.053-20.602-13.494-20.87 2.5027-0.43002 24.389 11.285 25.678 18.777z"/> <path d="m30.111 78.906c-3.7687-6.5905 5.7181-29.446 7.9245-30.707 1.3713-0.78378-0.9561 17.989 2.8087 24.573 3.7776 6.6061 21.191 14.211 19.818 14.996-2.2047 1.2601-26.778-2.2626-30.552-8.8619z"/> <path d="m113.74 133.93c3.7687 6.5905-5.7181 29.446-7.9245 30.707-1.3713 0.78387 0.9561-17.989-2.8087-24.573-3.7776-6.6061-21.191-14.211-19.818-14.996 2.2047-1.26 26.778 2.2626 30.552 8.8619z"/> <path d="m23.224 94.866c-5.7955-4.9041-4.6979-29.626-3.0559-31.566 1.0205-1.2056 5.2543 17.231 11.044 22.13 5.8092 4.9157 24.774 6.1065 23.752 7.3136-1.6408 1.9381-25.937 7.0325-31.74 2.1218z"/> <path d="m120.63 117.96c5.7955 4.9041 4.698 29.626 3.0559 31.566-1.0205 1.2056-5.2543-17.231-11.044-22.13-5.8092-4.9157-24.774-6.1065-23.752-7.3136 1.6407-1.9381 25.937-7.0324 31.74-2.1218z"/> <path d="m22.211 112.22c-7.1233-2.6262-14.547-26.233-13.668-28.617 0.5467-1.4819 10.831 14.395 17.947 17.019 7.1401 2.6324 25.369-2.7349 24.821-1.2512-0.87893 2.3824-21.967 15.479-29.1 12.85z"/> <path d="m121.64 100.61c7.1233 2.6261 14.547 26.233 13.668 28.617-0.54664 1.4819-10.831-14.395-17.947-17.019-7.1402-2.6324-25.368 2.7349-24.821 1.2512 0.87895-2.3824 21.967-15.479 29.1-12.85z"/> </g> <path d="m189.08 136.06h8.6604l36.807-59.533h-9.6226l-31.394 52.122-31.274-52.122h-9.7429l36.566 59.533m54.312 0h8.9009v-44.066h-8.9009v44.066m0-49.383h8.9009c0-3.3835 1.4835-8.4587 0-10.15-1.4835-1.6917-7.4174-1.6917-8.9009 0-1.4835 1.6918 0 6.767 0 10.15m24.071 49.383h8.901v-25.698c0-8.2171 9.422-11.8 21.811-12.605l0.89768-5.6373c-9.5023 0.32223-19.221 1.3251-22.709 6.1586l-0.14015-5.7231-9.0405 4.2126 0.27965 39.293m44.165 0h8.9009v-38.669h14.795v-5.3974h-14.795v-16.675l-9.0261 3.8959 0.12519 12.779-12.687 0.10576-0.76623 5.6565 13.453-0.36482v38.669m90.633-44.066h-8.901v22.637c0 5.3975-1.2028 8.781-3.9693 11.52-3.7288 3.4641-9.6226 5.478-16.479 5.478-7.3373 0-13.592-2.014-16.599-5.5586-2.0448-2.2557-3.1274-5.8002-3.1274-10.312v-23.765h-8.9009v23.765c0 6.5254 1.684 11.117 5.1722 14.34 4.9316 4.592 12.87 7.0087 22.733 7.0087 10.224 0 16.719-2.4168 21.17-7.8948v6.8476h8.901v-44.066m82.257 0h-8.901v7.8142c-6.4952-6.1225-14.554-8.8615-25.981-8.8615-19.726 0-34.641 9.9894-34.641 23.201 0 13.131 15.035 22.96 35.243 22.96 11.186 0 18.403-2.4974 25.38-8.781v7.7337h8.901v-44.066m-34.641 4.4307c14.434 0 25.741 7.5726 25.741 17.401 0 9.9894-11.066 17.804-25.259 17.804-14.915 0-26.342-7.8143-26.342-17.884 0-9.5866 11.547-17.32 25.861-17.32m49.843 39.635h8.9009v-59.533h-8.9009v59.533m24.071 0h8.9009v-25.698c0-8.7811 6.6155-13.937 17.682-13.937 5.4127 0 10.465 1.4501 13.712 4.028 2.8868 2.2557 4.0897 5.3169 4.0897 9.9089v25.698h8.9009v-25.537c0-4.2697 0.96226-7.0087 3.1273-9.1032 3.1274-3.2224 8.6604-5.0752 14.915-5.0752 5.7736 0 10.825 1.5306 13.833 4.1891 2.4056 2.2557 3.6085 5.5586 3.6085 9.9894v25.537h8.9009v-26.182c0-5.8003-1.5637-9.5866-5.2924-12.728-4.5708-4.028-12.028-6.2836-20.568-6.2836-10.224 0-17.321 2.6584-22.854 8.5393-5.1722-5.8808-11.667-8.4588-21.531-8.4588-8.2995 0-13.472 1.6918-18.524 6.1225v-5.0752h-8.9009v44.066m112.93 0h8.9009v-44.066h-8.9009v44.066m0-49.383h8.9009c0-3.3835 1.4835-8.4587 0-10.15-1.4835-1.6917-7.4174-1.6917-8.9009 0-1.4834 1.6918 0 6.767 0 10.15m24.071 49.383h8.901v-24.248c0-4.9142 0.96227-7.4921 3.4882-9.9894 3.4882-3.3835 9.6226-5.3976 16.599-5.3976 6.4952 0 12.389 1.7723 15.998 4.753 3.1274 2.739 4.3302 5.9614 4.3302 11.762v23.121h8.9009v-23.121c0-7.4115-1.5636-11.359-5.7735-15.145-5.1722-4.3502-13.111-6.8476-22.373-6.8476-8.6604 0-15.637 2.2557-21.17 6.767v-5.7196h-8.901v44.066"/> </g> <text x="722.5603" y="87.341904" fill="#ffffff" font-size="12px" stroke-width="1pt" style="line-height:0%" xml:space="preserve"><tspan x="722.5603" y="87.341904" fill="#ffffff" font-size="12px" style="line-height:125%">TM</tspan></text> </g> </g> </svg>'
+    iconHeight: 35
+
+  markup:
+    highlight:
+      anchorLineNos: true
+      codeFences: true
+      guessSyntax: true
+      lineNos: true
+      noClasses: false
+      style: monokai
+  
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
