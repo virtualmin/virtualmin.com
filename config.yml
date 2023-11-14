@@ -36,6 +36,10 @@ menu:
       name: ' '
       url: /hmenu/
       weight: 80
+    - identifier: signin
+      name: ' '
+      url: /account/signin/
+      weight: 90
 
 minify:
   minifyOutput: true
