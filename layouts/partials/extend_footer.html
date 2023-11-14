@@ -1,1 +1,6 @@
-../../../webmin.com/layouts/partials/extend_footer.html
+{{- $footer := resources.Get "js/extended/footer.js" | resources.ExecuteAsTemplate "js/extended/footer.js" . | resources.Minify }}
+<script defer crossorigin="anonymous" src="{{ $footer.RelPermalink }}?{{ now.Unix }}"></script>
+<footer class="footer">
+    <span>&copy; 2005 - {{ now.Year }} <a href="/about/#developers">{{ site.Params.title }}</a></span>
+</footer>
+
