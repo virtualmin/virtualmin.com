@@ -36,6 +36,9 @@ body.dark .logo>a>svg>g>g>path {
     fill: #92eb4e;
 }
 
+.header {
+    min-width: 377px;
+}
 
 .header .logo>a {
     line-height: inherit;
