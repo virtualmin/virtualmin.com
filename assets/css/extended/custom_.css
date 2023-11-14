@@ -1,5 +1,4 @@
-
-#menu>li:nth-last-child(2) {
+#menu>li:nth-last-child(3) {
     display: none;
 }
 
@@ -53,18 +52,37 @@ body.dark .logo>a>svg>g>g>path {
     vertical-align: -30%;
 }
 
-@media screen and (max-width: 645px) {
-    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(2) {
+/* Forum link */
+@media screen and (max-width: 1095px) {
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child {
+        display: initial;
+    }
+    
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(6) {
         display: initial;
     }
 
-    #menu>li:nth-child(2) {
+    #menu>li:nth-child(5) {
         display: none;
     }
+
 }
 
-@media screen and (max-width: 775px) {
-    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(3) {
+/* Shop link */
+@media screen and (max-width: 1010px) {
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(5) {
+        display: initial;
+    }
+
+    #menu>li:nth-child(4) {
+        display: none;
+    }
+
+}
+
+/* Support link */
+@media screen and (max-width: 935px) {
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(4) {
         display: initial;
     }
 
@@ -73,3 +91,90 @@ body.dark .logo>a>svg>g>g>path {
     }
 }
 
+/* Documentation link */
+@media screen and (max-width: 845px) {
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(3) {
+        display: initial;
+    }
+
+    #menu>li:nth-child(2) {
+        display: none;
+    }
+}
+
+/* Download link */
+@media screen and (max-width: 650px) {
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(2) {
+        display: initial;
+    }
+
+    #menu>li:nth-child(1) {
+        display: none;
+    }
+}
+
+/* Sign in link */
+@media screen and (max-width: 530px) {
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) {
+        display: contents;
+    }
+    .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) a {
+        margin-bottom: .466em;
+        color:var(--theme);
+    }
+    .dark .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) a {
+        color: var(--primary);
+    }
+    #menu>li:nth-child(7) {
+        padding-right: .466em;
+    }
+    #menu>li:nth-child(8) {
+        display: none;
+    }
+}
+
+/* Signin button */
+#menu>li>a[href*="/account/signin/"] {
+    margin-top: -1.5px;
+    padding-left: 1.022em;
+    padding-right: 1.022em;
+}
+@media screen and (max-width: 768.98px) {
+    #menu>li>a[href*="/account/signin/"] {
+        padding-right: 0.911em;
+    }   
+}
+.hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) > a,
+#menu>li>a[href*="/account/signin/"]>span {
+    filter: hue-rotate(30deg) brightness(1.13) saturate(0.9);
+    padding-top: 0.133em;
+    padding-bottom: 0.211em;
+}
+.dark .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) > a,
+.dark #menu>li>a[href*="/account/signin/"]>span {
+    filter: hue-rotate(30deg) brightness(1.03) saturate(0.85);
+}
+
+#menu>li>a[href*="/account/signin/"]>span>span:first-child {
+    padding-left: 0;
+    padding-top: 0.099em;
+    padding-bottom: 0.099em;
+}
+
+#menu>li>a[href*="/account/signin/"]>span>span:last-child {
+    padding-right: 0.066em;
+    padding-top: 0.066em;
+    padding-bottom: 0.066em;
+}
+
+#menu>li>a[href*="/account/signin/"]>span>span+span {
+    margin-left: -0.66em;
+}
+
+#menu>li:nth-last-child(2) {
+    min-width: 52.75px
+}
+
+#menu>li:nth-last-child(1) > a {
+    min-width: 127px;
+}
