@@ -1,0 +1,4 @@
+{{- $currentPage := . }}
+<li class="menu-item--singin"><a href="/account/signin/"><span class="btn btn-danger"><span class="wm wm-md wm-user-circle"></span><span class="font-default">Sign in</span></span></a></li>
+<li class="menu-item--search"><a href="/search/"><span class="wm wm-search{{ with $currentPage.File }}{{ if eq $currentPage.File.LogicalName "search.md" }} active{{ end }}{{ end }}"></span></a></li>
+<li class="menu-item--dropdown-menu"><a href="javascript:;" class="dropdown-menu"><span class="wm wm-md wm-menu"></span></a></li>

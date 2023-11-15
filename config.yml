@@ -12,34 +12,18 @@ menu:
       name: Download
       url: /download/
       weight: 10
-    - identifier: wiki
-      name: 'Documentation'
-      url: /docs/
-      weight: 30
-    - identifier: support
-      name: 'Support'
-      url: /support/
-      weight: 40
     - identifier: shop
       name: 'Shop'
       url: /shop/
-      weight: 50
+      weight: 30
+    - identifier: wiki
+      name: 'Documentation'
+      url: /docs/
+      weight: 40
     - identifier: forum
       name: 'Forum'
       url: https://forum.virtualmin.com/
-      weight: 60
-    - identifier: search
-      name: ' '
-      url: /search/
-      weight: 70
-    - identifier: hmenu
-      name: ' '
-      url: /hmenu/
-      weight: 80
-    - identifier: signin
-      name: ' '
-      url: /account/signin/
-      weight: 90
+      weight: 50
 
 minify:
   minifyOutput: true
