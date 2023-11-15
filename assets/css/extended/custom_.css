@@ -107,7 +107,7 @@ body.dark .logo>a>svg>g>g>path {
 
 /* Sign in link */
 @media screen and (max-width: 600px) {
-    [data-product="virtualmin"]+nav>#menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) {
+    [data-product="virtualmin"]+nav>#menu .menu-item--singin:not(.hidden)~.menu-item--dropdown-menu > .dropdown-menu > .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1) {
         display: contents;
     }
 
@@ -152,6 +152,9 @@ body.dark .logo>a>svg>g>g>path {
 
 #menu .menu-item--search {
     padding-left: 0;
+}
+#menu .menu-item--singin.hidden+.menu-item--search {
+    padding-left: 0.511em;
 }
 
 /* Signin button */
@@ -200,4 +203,20 @@ body.dark .logo>a>svg>g>g>path {
 
 #menu>li>a[href*="/account/signin/"]>span>span+span {
     margin-left: -0.66em;
+}
+
+/* User icon */
+.header:not(.no-overflow) {
+    overflow: visible;
+}
+#menu .menu-item--user > a.icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0.216em;
+}
+#menu .menu-item--user > a.icon > img {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
 }
