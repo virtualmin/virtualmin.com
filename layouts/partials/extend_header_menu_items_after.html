@@ -1,5 +1,5 @@
 {{- $currentPage := . }}
-<li class="menu-item--singin hidden"><a href="/account/signin/"><span class="btn btn-danger"><span class="wm wm-md wm-user-circle"></span><span class="font-default">Sign in</span></span></a></li>
+<li class="menu-item--singin hidden"><a href="/account/signin/"><span class="btn btn-danger"><span class="wm wm-md wm-user-circle"></span><span class="font-default">Sign In</span></span></a></li>
 <li class="menu-item--search"><a href="/search/"><span class="wm wm-search{{ with $currentPage.File }}{{ if eq $currentPage.File.LogicalName "search.md" }} active{{ end }}{{ end }}"></span></a></li>
 <li class="menu-item--dropdown-menu"><a href="javascript:;" class="dropdown-menu"><span class="wm wm-md wm-menu"></span></a></li>
-<li class="menu-item--user"><a href="/account/" class="icon btn-flat"><img aria-label="Signed in user profile avatar" src="https://cdn.forum.virtualmin.com/user_avatar/forum.virtualmin.com/ilia/144/10185_2.png"></a></li>
+<li class="menu-item--user hidden"><a href="/account/" class="icon btn-flat"><img aria-label="Signed in user profile avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li>

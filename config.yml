@@ -8,22 +8,10 @@ canonifyURLs: true
 
 menu:
   main:
-    - identifier: download
-      name: Download
-      url: /download/
-      weight: 10
-    - identifier: shop
-      name: 'Shop'
-      url: /shop/
-      weight: 30
-    - identifier: wiki
-      name: 'Documentation'
-      url: /docs/
-      weight: 40
     - identifier: forum
       name: 'Forum'
       url: https://forum.virtualmin.com/
-      weight: 50
+      weight: 0
 
 minify:
   minifyOutput: true

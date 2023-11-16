@@ -1,0 +1,22 @@
+<script>
+    (function () {
+        const menu = document.querySelector('#menu'),
+            supportItem = document.querySelector('.menu-item--support'),
+            signInItem = document.querySelector('.menu-item--singin'),
+            userItem = document.querySelector('.menu-item--user'),
+            avatar_url = localStorage.getItem("virtualmin-menu-item--user--url");
+        if (avatar_url && avatar_url.toString().startsWith('http')) {
+            const userAvatar = userItem.querySelector('a > img');
+            userAvatar.src = avatar_url;
+            userItem.classList.remove('hidden');
+            menu.classList.add('menu-authenticated');
+        } else {
+            signInItem.classList.remove('hidden');
+            menu.classList.add('menu-unauthenticated');
+        }
+        // https://cdn.forum.virtualmin.com/user_avatar/forum.virtualmin.com/ilia/144/10185_2.png
+        if (signInItem && signInItem.classList.contains('hidden')) {
+            supportItem.classList.remove('hidden');
+        }
+    })();
+</script>
