@@ -400,12 +400,6 @@ body.dark .logo>a>svg>g>g>path {
     margin-left: -0.66em;
 }
 
-/* #menu .hmenu-link--signin a span:before,
-#menu .hmenu-link--user a span:before,
-#menu .hmenu-link--signin a,
-#menu .hmenu-link--user a {
-    font-weight: 700;
-} */
 /* User icon */
 #menu .menu-item--user>a.icon {
     height: 100%;
@@ -423,5 +417,60 @@ body.dark .logo>a>svg>g>g>path {
 @media screen and (max-width: 768px) {
     #menu>li.menu-item--user>a {
         padding-right: var(--gap);
+    }
+}
+
+.main {
+    padding-bottom: calc(24px * 6);
+}
+
+body>footer.footer {
+    max-width: initial;
+    height: 60px;
+    width: 100%;
+    position: relative;
+}
+
+body>footer.footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 132px;
+    top: -175px;
+    background-image: url("/footer-elements-stars.svg");
+    background-repeat: repeat-x;
+    background-position: right;
+    background-size: contain;
+    background-size: 1100px;
+    filter: invert(1) brightness(1.05);
+}
+
+body.dark>footer.footer::before {
+    filter: invert(0);
+}
+
+body>footer.footer::after {
+    content: '';
+    position: absolute;
+    height: 115px;
+    width: 100%;
+    top: -120px;
+    right: 0;
+    background-image: url('/footer-elements-alien.svg');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 175px) 100%;
+    background-size: contain;
+}
+
+body.dark>footer.footer::after {
+    background-image: url('/footer-elements-alien-dark.svg');
+}
+
+
+@media screen and (max-width: 480px) {
+    body>footer.footer::after {
+        background-position: 50% 100%;
     }
 }
