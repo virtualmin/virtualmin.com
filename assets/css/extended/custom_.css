@@ -426,7 +426,7 @@ body.dark .logo>a>svg>g>g>path {
 
 body>footer.footer {
     max-width: initial;
-    height: 60px;
+    height: var(--footer-height);
     width: 100%;
     position: relative;
 }
@@ -469,8 +469,94 @@ body.dark>footer.footer::after {
 }
 
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     body>footer.footer::after {
         background-position: 50% 100%;
+    }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--main-max-width);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+}
+
+.footer-content .footer-left-section {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-content .footer-copyright {
+    margin-right: var(--gap);
+}
+
+.footer-content .footer-links {
+    justify-content: center;
+}
+
+.footer-content .footer-links a {
+    margin-left: 15px;
+    color: var(--primary);
+}
+
+.footer-content .footer-socials a+a {
+    margin-left: calc(var(--gap) / 2);
+}
+
+.footer-content .footer-socials a {
+    opacity: 0.5;
+}
+
+.footer-content .footer-socials a:hover {
+    border-bottom: none;
+    opacity: 1;
+}
+
+.footer-content .footer-socials a:hover i.wm-youtube {
+    color: crimson;
+}
+
+.footer-content .footer-socials a:hover i.wm-telegram {
+    color: #147eff;
+}
+
+.footer-content .footer-searchable {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content .footer-left-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-content .footer-copyright {
+        margin: auto;
+    }
+
+    .footer-content .footer-links {
+        order: 1;
+    }
+
+    .footer-content .footer-socials {
+        margin-top: 0.333em;
+        margin-bottom: 1.333em;
     }
 }
