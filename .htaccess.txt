@@ -1,0 +1,9 @@
+
+RewriteRule ^os-support                                                                     /docs/os-support/ [R=301]
+RewriteRule ^professional                                                                   /docs/professional/ [R=301]
+RewriteRule ^license-faq                                                                    /docs/license/ [R=301]
+RewriteRule ^payments-faq                                                                   /docs/license#how-do-i-update-payment-information-or-find-my-invoices [R=301,NE]
+RewriteRule ^professional                                                                   /docs/professional-features [R=301]
+RewriteRule ^documentation/installation/automated                                           /docs/installation/automated [R=301]
+RewriteRule ^documentation/installation/manual                                              /docs/installation/manual [R=301]
+RewriteRule ^documentation/installation$                                                    /docs/installation/guides [R=301]
