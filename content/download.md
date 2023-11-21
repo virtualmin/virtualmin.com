@@ -20,12 +20,12 @@ Start with a *freshly installed*, [Grade A supported Operating System](/os-suppo
 
 If you have already purchased a [Virtualmin Professional](/professional) license, you can find it in [My Account → Software Licenses](/account/software-licenses/). If not, you can purchase a license or download Virtualmin GPL.
 
-[Try Virtualmin Professional](/shop/) or [Download Virtualmin GPL](https://software.virtualmin.com/gpl/scripts/install.sh)
+{{< link "success|medium|outline|rounded" heart "/shop/" "Try Virtualmin Professional" >}}&nbsp;&nbsp;or&nbsp;&nbsp;{{< link "dark|medium|outline|rounded" download "https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh" "&nbsp;&nbsp;Download Virtualmin GPL" >}}
 
 The easiest way to get the install script onto your server, is to login to your server and use `wget` or `curl`. For example:
 
-```shell
-/usr/bin/wget https://software.virtualmin.com/gpl/scripts/install.sh
+```
+wget https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh
 ```
 
 Note: For Virtualmin Professional, use the command suggested on [My Account → Software Licenses](/account/software-licenses/) page.
@@ -34,11 +34,11 @@ Note: For Virtualmin Professional, use the command suggested on [My Account → 
 
 Execute the downloaded install script using a command like the following:
 
-```shell
-/usr/bin/sudo /bin/sh install.sh
+```
+sudo /bin/sh virtualmin-install.sh
 ```
 
-There are some available options to install different configurations (including installing nginx instead of Apache, and leaving out some of the mail processing stack for small memory systems). Run the install script with the `--help` flag for a list of available options, and consult the documentation, especially about the available [installation bundles](/documentation/installation/automated#toc-lamp-vs-lemp-7YxCS8LI) and the [minimal installation mode](/documentation/installation/automated#toc-full-install-vs-minimal-install-oBwnbmEV), if choosing a non-default installation type.
+There are some available options to install different configurations (including installing Nginx instead of Apache, and leaving out some of the mail processing stack for small memory systems). Run the install script with the `--help` flag for a list of available options, and consult the documentation, especially about the available [installation bundles](/documentation/installation/automated#toc-lamp-vs-lemp-7YxCS8LI) and the [minimal installation mode](/documentation/installation/automated#toc-full-install-vs-minimal-install-oBwnbmEV), if choosing a non-default installation type.
 
 The install script may ask you some questions. If your system does not have a fully qualified hostname, the script will ask you to provide one.
 
