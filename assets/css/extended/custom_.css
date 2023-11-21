@@ -20,7 +20,7 @@ body .logo>a>svg path {
     stroke: none;
 }
 
-body .logo>a>svg>g>g>path {
+body .logo>a>svg>g>path {
     fill: #0f0;
 }
 
@@ -30,14 +30,13 @@ body.dark .logo>a>svg path {
 }
 
 body.dark .logo .logo-switches svg path,
-body.dark .logo>a>svg>g>g>text>tspan,
-body.dark .logo>a>svg>g>g>g>g>path,
-body.dark .logo>a>svg>g>g>g>path {
+body.dark .logo>a>svg text>tspan,
+body.dark .logo>a>svg path {
     fill: #005ebd !important;
 }
 
-body.dark .logo>a>svg>g>g>path {
-    fill: #92eb4e;
+body.dark .logo>a>svg>g>path {
+    fill: #92eb4e !important;
 }
 
 .header {
@@ -50,11 +49,19 @@ body.dark .logo>a>svg>g>g>path {
 }
 
 .header .logo>a>svg {
-    vertical-align: -29%;
+    vertical-align: -31%;
+}
+
+.logo .logo-switches svg {
+    vertical-align: -5%;
 }
 
 .dark .header .logo>a>svg {
-    vertical-align: -30%;
+    vertical-align: -32%;
+}
+
+.dark .logo .logo-switches svg {
+    vertical-align: -5%;
 }
 
 /*
@@ -345,7 +352,7 @@ body.dark .logo>a>svg>g>g>path {
 
 /* Signin button */
 #menu>li>a[href*="/account/signin/"] {
-    margin-top: -1.5px;
+    margin-top: -1px;
     padding-left: 1.022em;
     padding-right: 1.022em;
     margin-right: 0.633em;
@@ -412,6 +419,7 @@ body.dark .logo>a>svg>g>g>path {
     width: 36px;
     height: 36px;
     border-radius: 100%;
+    margin-top: 2px;
 }
 
 @media screen and (max-width: 768px) {
@@ -510,6 +518,7 @@ body.dark>footer.footer::after {
 
 .footer-content .footer-socials a {
     opacity: 0.5;
+    font-size: 13px;
 }
 
 .footer-content .footer-socials a:hover {
@@ -536,6 +545,18 @@ body.dark>footer.footer::after {
     border: 0;
 }
 
+@media screen and (max-width: 680px) {
+    .footer-content .footer-links a {
+        margin-left: 7.5px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .footer-content .footer-links a {
+        margin-left: 3.5px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .footer-content {
         flex-direction: column;
@@ -558,5 +579,9 @@ body.dark>footer.footer::after {
     .footer-content .footer-socials {
         margin-top: 0.333em;
         margin-bottom: 1.333em;
+    }
+
+    .footer-content .footer-links a {
+        margin-left: 20px;
     }
 }
