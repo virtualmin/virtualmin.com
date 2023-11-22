@@ -9,7 +9,7 @@ Virtualmin runs on top of Webmin. Webmin is compatible with nearly every UNIX-ba
 
 If you're just starting out with Virtualmin, and want to have an easy installation process and smoothly running system, we strongly recommend you choose from the following Grade A supported systems. If in doubt about which of these systems to choose, we recommend the most recent supported version of the one you are most familiar with.
 
-### Grade A Supported Systems
+### Grade A supported systems
 
 Grade A systems have an automated installation script, a well-maintained software repository for updates, and are expected to work out of the box if you run the install script on a freshly installed system running one of these OS. We strongly recommend the current stable release of one of these systems for most users. We never support beta or pre-release versions of any OS.
 
@@ -18,7 +18,7 @@ Grade A systems have an automated installation script, a well-maintained softwar
 - Rocky, Alma, and RHEL 8 and 9 on x86_64
 - CentOS and RHEL 7 on x86_64 (no longer recommended)
 
-### Grade B Supported Systems
+### Grade B supported systems
 
 The following operating systems are _not_ recommended for new or intermediate users. You will need to have experience with your OS and with Virtualmin to successfully use any of these operating systems. Don't bother asking for help installing on any of these systems in the forum, you should only be attempting it if you already know what you're doing. Otherwise choose a grade A supported OS.
 
