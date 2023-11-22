@@ -27,7 +27,7 @@ Download the file from the **Software Licenses** section of your [Account](/acco
 
 With the `virtualmin-install.sh` script on your server, run this command as root:
 
-```
+```text
 sh virtualmin-install.sh
 ```
 

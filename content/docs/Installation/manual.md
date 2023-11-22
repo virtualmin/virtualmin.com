@@ -80,7 +80,7 @@ Postfix should be installed, and configured for virtual hosting. The best way to
 #### Procmail
 Procmail is necessary if you plan to make use of the spam and anti-virus filtering capabilities in Virtualmin. A reasonable starting `procmailrc` might be:
 
-```bash
+```text
 LOGFILE=/var/log/procmail.log
 TRAP=/etc/webmin/virtual-server/procmail-logger.pl
 :0wi
@@ -106,7 +106,7 @@ $DEFAULT
 
 The `procmail-wrapper` program is necessary for for mail to work properly, and in particular, spam and virus processing. First, put the following code into a file named `procmail-wrapper.c`:
 
-```
+```text
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -143,14 +143,14 @@ return 0;
 
 Then, run the following commands to compile the code, install it into `/usr/bin`, and give it the proper permissions:
 
-```
+```text
 gcc -o /usr/bin/procmail-wrapper procmail-wrapper.c
 chmod 6755 /usr/bin/procmail-wrapper
 ```
 
 Lastly, edit `/etc/postfix/main.cf`, and set `mailbox_command` to the following:
 
-```
+```text
 mailbox_command = /usr/bin/procmail-wrapper -o -a $DOMAIN -d $LOGNAME
 ```
 

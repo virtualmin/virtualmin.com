@@ -15,13 +15,13 @@ If your package manager is configured to use non-OS package repositories, or if 
 ### Package manager errors
 Sometimes package manager metadata can end up in a broken state. Try cleaning the metadata to see if it resolves the problem. On RHEL systems (Alma/Rocky/CentOS):
 
-```
+```text
 dnf clean all
 ```
 
 On Debian/Ubuntu systems:
 
-```
+```text
 apt-get clean ; apt-get update
 ```
 
@@ -49,7 +49,7 @@ We don't know why this happens. ClamAV has become very fragile in recent years. 
 
 Before starting a scan, it's important to update the virus database by running:
 
-```
+```text
 freshclam
 ```
 
@@ -57,13 +57,13 @@ Afterwards, try manually starting `clamd` service from the command line.
 
 On RHEL systems:
 
-```
+```text
 systemctl start clamd@scan
 ```
 
 On Debian/Ubuntu systems:
 
-```
+```text
 systemctl start clamav-daemon
 ```
 
