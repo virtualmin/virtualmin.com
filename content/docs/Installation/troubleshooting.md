@@ -31,13 +31,13 @@ Then try the installation again.
 
 If you have run any so-called "hardening scripts" on your system before running `virtualmin-install.sh`, your `/tmp` directory may be mounted `noexec`. It is always best to run the install script on a freshly installed supported operating system, though this particular issue can be resolved. The install script cannot complete if this is the case, and `/tmp` will need to be remounted to allow executables. To do that:
 
-```
+```text
 mount -o remount,exec /tmp
 ```
 
 If you wish to switch back to your original settings after installation, you can use this command to reset the **noexec** option:
 
-```
+```text
 mount -o remount,noexec /tmp
 ```
 
