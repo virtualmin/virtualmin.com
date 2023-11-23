@@ -6,4 +6,7 @@ RewriteRule ^payments-faq                                                       
 RewriteRule ^professional                                                                   /docs/professional-features [R=301]
 RewriteRule ^documentation/installation/automated                                           /docs/installation/automated [R=301]
 RewriteRule ^documentation/installation/manual                                              /docs/installation/manual [R=301]
+RewriteRule ^documentation/installation/troubleshooting                                     /docs/installation/troubleshooting [R=301]
+RewriteRule ^documentation/installation/uninstalling                                        /docs/installation/uninstall [R=301]
 RewriteRule ^documentation/installation$                                                    /docs/installation/guides [R=301]
+RewriteRule ^documentation/install-scripts                                                  /docs/professional-features/#install-scripts [R=301,NE]
