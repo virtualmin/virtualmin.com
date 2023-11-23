@@ -42,7 +42,7 @@ mount -o remount,noexec /tmp
 ```
 
 ### ClamAV outdated errors
-ClamAV is updated frequently by the upstream developers. Your OS repository may not have the latest version, which causes ClamAV to issue very scary warnings. These warnings are *non-fatal*, and can generally be safely ignored. If you are using CentOS, the ClamAV packages come from our repositories, and are updated every few weeks, as time and testing schedules allow. So, if you see this error, it will go away with the next update. If you are using Debian, you may consider enabling the "volatile" apt-get repository, as it includes newer versions of ClamAV and SpamAssassin, which are both rapidly moving targets and worth running recent versions of.
+ClamAV is updated frequently by the upstream developers. Your OS repository may not have the latest version, which causes ClamAV to issue very scary warnings. These warnings are *non-fatal*, and can generally be safely ignored.
 
 ### ClamAV lookup error
 We don't know why this happens. ClamAV has become very fragile in recent years. Usually, you can work around it though.
