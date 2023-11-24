@@ -1,5 +1,5 @@
 ---
-title: "How to log in to Virtualmin"
+title: "How to Log In to Virtualmin"
 subSection: "Getting Started"
 date: 2023-11-24
 author: "Ilia Ross"

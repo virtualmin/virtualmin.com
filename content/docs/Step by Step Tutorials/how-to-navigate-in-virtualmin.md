@@ -1,5 +1,5 @@
 ---
-title: "How to navigate in Virtualmin"
+title: "How to Navigate in Virtualmin"
 date: 2023-11-24
 author: "Ilia Ross"
 weight: 2510
