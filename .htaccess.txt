@@ -16,4 +16,11 @@ RewriteRule ^documentation/installation/faq                                     
 
 RewriteRule ^documentation/tutorial/how-to-log-in                                           /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
 RewriteRule ^documentation/tutorial/how-to-navigate-virtualmin                              /docs/step-by-step-tutorials/how-to-navigate-in-virtualmin [R=301]
+RewriteRule ^documentation/tutorial/how-to-create-a-sub-server                              /docs/step-by-step-tutorials/virtual-server-fundamentals/#understanding-sub-servers [R=301,NE]
+RewriteRule ^documentation/tutorial/how-to-create-virtual-server-alias                      /docs/step-by-step-tutorials/virtual-server-fundamentals/#understanding-virtual-server-aliases [R=301,NE]
+RewriteRule ^documentation/tutorial/account-basics                                          /docs/step-by-step-tutorials/virtual-server-fundamentals/#overview-of-account-types-in-virtualmin [R=301,NE]
+RewriteRule ^documentation/tutorial/virtual-server-basics                                   /docs/step-by-step-tutorials/virtual-server-fundamentals/#introduction-to-virtual-server-types [R=301,NE]
+
+
+
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
