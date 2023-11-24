@@ -37,7 +37,7 @@ apt-get install perl webmin webmin-virtual-server usermin -y
 ```
 
 > #### Virtualmin and all related packages are outdated, and no updates are available. Why?
-This problem typically arises from outdated repositories. You can update the Virtualmin repositories, applicable to all [supported operating systems](/docs/os-support/) and both Virtualmin GPL and Pro versions, with the following command:
+This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
 
 
 ```
@@ -45,7 +45,7 @@ sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-
 
 ```
 
-If `curl` command is not available on your system, you can use `wget` instead:
+Should `curl` not be present on your system, `wget` can be used as an alternative:
 
 ```
 sudo sh -c "$(wget -nv -O - https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
