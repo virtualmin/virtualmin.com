@@ -4,8 +4,39 @@ date: 2023-11-24
 author: "Ilia Ross"
 weight: 4000
 ---
+> #### How to upgrade Virtualmin license?
+When upgrading Virtualmin Professional licenses, it is never necessary to re-install Virtualmin! If you have purchased a new, upgraded, license, use the `virtualmin change-license` command to update to the new serial number and license key found on your [My Account → Software Licenses](/account/software-licenses/) page.
 
-> #### Virtualmin and all related packages are outdated. Why?
+> #### How to update Virtualmin and all related packages?
+When a new version is available, you will see a message on the **Dashboard** page stating that there are Virtualmin related package updates available. Other packages may be listed too, depending on what is available to be updated. To install these updates, just click the **Install All Updates Now** button and follow onscreen instructions.
+
+Upgrading from the command line is also possible, using the `dnf` or `apt-get` commands, depending on your OS.
+
+For example, on RHEL and derivatives, you can run the following command to update all system packages, including Virtualmin related ones:
+
+```text
+dnf update -y
+```
+
+On Debian and derivatives, you can run the following command:
+
+```text
+apt-get update && apt-get upgrade -y
+```
+
+Alternately, you can install specific packages, e.g.:
+
+```text
+dnf update perl webmin wbm-virtual-server usermin -y
+```
+
+or
+
+```text
+apt-get install perl webmin webmin-virtual-server usermin -y
+```
+
+> #### Virtualmin and all related packages are outdated, and no updates are available. Why?
 This problem typically arises from outdated repositories. You can update the Virtualmin repositories, applicable to all [supported operating systems](/docs/os-support/) and both Virtualmin GPL and Pro versions, with the following command:
 
 

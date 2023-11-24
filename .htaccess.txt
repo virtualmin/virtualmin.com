@@ -10,3 +10,4 @@ RewriteRule ^documentation/installation/troubleshooting                         
 RewriteRule ^documentation/installation/uninstalling                                        /docs/installation/uninstall [R=301]
 RewriteRule ^documentation/installation$                                                    /docs/installation/guides [R=301]
 RewriteRule ^documentation/install-scripts                                                  /docs/professional-features/#install-scripts [R=301,NE]
+RewriteRule ^documentation/upgrading                                                        /docs/faq/#how-to-update-virtualmin-and-all-related-packages [R=301,NE]
