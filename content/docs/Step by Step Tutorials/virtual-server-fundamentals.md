@@ -45,7 +45,7 @@ An **alias** allows a domain to act exactly like another, sharing the same websi
 1. Log into Virtualmin.
 2. Select the domain you wish to create an alias for.
 3. Click **Create Virtual Server**, then select **Alias of example.com**.
-4. Enter the domain name and description for the alias.
+4. Enter the domain name and description for the alias:
     [![](/images/docs/screenshots/tutorials/step-by-step/light/create-alias.png "Create Virtual Server Alias Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-alias.png)
 
 5. Click **Create Server**.
