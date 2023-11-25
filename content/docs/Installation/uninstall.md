@@ -10,8 +10,7 @@ There are many levels of uninstalling Virtualmin. The most extreme is using the 
 ```text
 sh virtualmin-install.sh --uninstall
 ```
-
-**Warning:** This is a rather haphazard uninstall routine, that will remove pretty much everything Virtualmin installed, including its core dependencies. This should never be done on a system that is in production. It is very destructive. It is primarily for use when you tried an installation option (for example using Nginx instead of Apache) and have decided to change after trying it out.</small>
+{{< note "This is a rather haphazard uninstall routine, that will remove pretty much everything Virtualmin installed, including its core dependencies. This should never be done on a system that is in production. It is very destructive. It is primarily for use when you tried an installation option (for example using Nginx instead of Apache) and have decided to change after trying it out." "Warning:" "exclamation" "danger" >}}
 
 ### Downgrading Virtualmin Professional to GPL
 
@@ -20,5 +19,5 @@ If you no longer need the features of Virtualmin Professional, but wish to conti
 ```text
 virtualmin downgrade-license --perform
 ```
+{{< note "It will completely replace Virtualmin Pro package with GPL variant, making it impossible to use Pro features anymore. It will also disable all reseller accounts. By downgrading to GPL, you will no longer support the product development." "Note:" "notification" >}}
 
-**Note:** It will completely replace Virtualmin Pro package with GPL variant, making it impossible to use Pro features anymore. It will also disable all reseller accounts. By downgrading to GPL, you will no longer support the product development.</small>

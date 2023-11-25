@@ -21,8 +21,7 @@ or
 ```bash
 sudo sh -c "$(wget -nv -O - https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
-
-**Note:** Script will automatically setup correct repositories depending on your installation type and version. Virtualmin Professional users do not need to take any extra steps.
+{{< note "Script will automatically setup correct repositories depending on your installation type and version. Virtualmin Professional users do not need to take any extra steps." "Note:" "notification" >}}
 
 ### How to fix Virtualmin repositories using Virtualmin CLI?
 Virtualmin versions 7.5 and above have a new CLI command to fix repositories. It is called `setup-repos` and can be used as follows:

@@ -31,8 +31,7 @@ or
 ```
 sudo sh -c "$(wget -nv -O - https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)"
 ```
-
-##### Note: For Virtualmin Professional, use the command suggested on [My Account → Software Licenses](/account/software-licenses/) page.
+{{< note "For Virtualmin Professional, use the command suggested on [My Account → Software Licenses](/account/software-licenses/) page." "Note:" "exclamation" "danger" >}}
 
 ### Install script options
 
