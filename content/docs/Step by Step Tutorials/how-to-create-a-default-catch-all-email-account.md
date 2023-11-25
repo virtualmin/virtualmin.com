@@ -1,0 +1,28 @@
+---
+title: "How to Configure a Catch-All Email Account"
+date: 2023-11-25
+author: "Ilia Ross"
+weight: 2610
+---
+Learn how to configure a catch-all email account in Virtualmin, designed to receive all emails sent to your domain that do not match any existing account or alias. This simple tutorial guides you through the process of selecting a domain, choosing an email account, and modifying its settings to become the default email destination.
+
+### Create catch-all email account
+
+A catch-all email account is an essential feature for managing emails in your domain, ensuring that you receive all emails sent to your domain, even if the specific address doesn't exist. Here's how to set it up in Virtualmin:
+
+1. **Select the domain**: After logging into Virtualmin, choose the domain for which you want to set up a catch-all email address. This is done by selecting the domain name from the drop-down box in the top-left corner of the left menu.
+
+2. **Navigate to user management**: Click on **Edit Users** in the domain section of the menu. This will take you to the section where you can manage email accounts for that domain.
+
+3. **Choose an email account**: Select the email account you wish to designate as the catch-all account. This is done by clicking on the name of the desired email account in the user list.
+
+4. **Access email settings**: Within the user's settings, click on **Email Settings** to modify its properties.
+
+5. **Configure catch-all**: In the **Additional email addresses** field, enter `@yourdomain.com`, replacing `yourdomain.com` with your actual domain name:
+    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-user-catch-all.png "Create Catch-All User Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-user-catch-all.png)
+
+This setting directs all emails sent to your domain, which don't match other accounts, to this specified account.
+
+6. **Save the settings**: Click **Save** to apply the changes. This email account is now set as the default (catch-all) for your domain, receiving all undirected emails sent to it.
+
+By following these steps, you can easily set up a catch-all email account in Virtualmin, ensuring that no emails sent to your domain are bounced due to non-existent accounts.
