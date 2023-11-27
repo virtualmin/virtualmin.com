@@ -21,6 +21,9 @@ RewriteRule ^documentation/tutorial/how-to-create-virtual-server-alias          
 RewriteRule ^documentation/tutorial/account-basics                                          /docs/step-by-step-tutorials/understanding-virtual-server-and-account-types/#overview-of-account-types-in-virtualmin [R=301,NE]
 RewriteRule ^documentation/tutorial/virtual-server-basics                                   /docs/step-by-step-tutorials/understanding-virtual-server-and-account-types/#introduction-to-virtual-server-types [R=301,NE]
 
-
+RewriteRule ^documentation/tutorial/how-to-create-email-account                             /docs/step-by-step-tutorials/how-to-create-an-email-account [R=301]
+RewriteRule ^documentation/tutorial/how-to-create-a-catch-all-email-account                 /docs/step-by-step-tutorials/how-to-create-a-default-catch-all-email-account [R=301]
+RewriteRule ^documentation/tutorial/how-to-create-email-auto-responder                      /docs/step-by-step-tutorials/how-to-create-an-auto-responder [R=301]
+RewriteRule ^documentation/tutorial/how-to-setup-email-forwarding                           /docs/step-by-step-tutorials/how-to-setup-email-forwarding [R=301]
 
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
