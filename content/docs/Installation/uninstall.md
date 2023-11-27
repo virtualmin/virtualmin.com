@@ -19,5 +19,5 @@ If you no longer need the features of Virtualmin Professional, but wish to conti
 ```text
 virtualmin downgrade-license --perform
 ```
-{{< note "It will completely replace Virtualmin Pro package with GPL variant, making it impossible to use Pro features anymore. It will also disable all reseller accounts. By downgrading to GPL, you will no longer support the product development." "Note:" "notification" >}}
+{{< note "It will completely replace Virtualmin Pro package with GPL variant, making it impossible to use Pro features anymore. It will also disable all reseller accounts. By downgrading to GPL, you will no longer support the product development." "Note:" "notification" "primary" >}}
 
