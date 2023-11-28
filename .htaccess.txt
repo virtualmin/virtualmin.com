@@ -34,5 +34,6 @@ RewriteRule ^documentation/tutorial/how-to-add-multidomain-ssl-certificate      
 RewriteRule ^documentation/tutorial/ssl-le                                                  /docs/step-by-step-tutorials/how-to-add-an-ssl-certificate [R=301]
 
 RewriteRule ^documentation/tutorial/how-to-create-ftp-account                               /docs/step-by-step-tutorials/how-to-create-ftp-account [R=301]
+RewriteRule ^documentation/tutorial/how-to-enable-shared-ftp-directories                    /docs/step-by-step-tutorials/how-to-create-ftp-account [R=301]
 
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
