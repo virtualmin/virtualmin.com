@@ -443,15 +443,15 @@ body>footer.footer::before {
     content: "";
     position: absolute;
     left: 0;
-    right: 0;
+    right: 124px;
     bottom: 0;
-    height: 132px;
-    top: -175px;
+    height: 266px;
+    top: -266px;
     background-image: url("/footer-elements-stars.svg");
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
-    background-size: 1100px;
+    background-size: 266px;
     filter: invert(1) brightness(1.05);
 }
 
@@ -468,7 +468,7 @@ body>footer.footer::after {
     right: 0;
     background-image: url('/footer-elements-alien.svg');
     background-repeat: no-repeat;
-    background-position: calc(100% - 175px) 100%;
+    background-position: calc(100% - 208px) 100%;
     background-size: contain;
 }
 
