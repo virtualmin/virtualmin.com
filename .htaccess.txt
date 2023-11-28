@@ -26,4 +26,11 @@ RewriteRule ^documentation/tutorial/how-to-create-a-catch-all-email-account     
 RewriteRule ^documentation/tutorial/how-to-create-email-auto-responder                      /docs/step-by-step-tutorials/how-to-create-an-auto-responder [R=301]
 RewriteRule ^documentation/tutorial/how-to-setup-email-forwarding                           /docs/step-by-step-tutorials/how-to-setup-email-forwarding [R=301]
 
+RewriteRule ^documentation/tutorial/how-to-password-protect-directory                       /docs/step-by-step-tutorials/how-to-password-protect-directory [R=301]
+RewriteRule ^documentation/tutorial/how-to-manage-url-redirects                             /docs/step-by-step-tutorials/how-to-manage-url-redirects [R=301]
+RewriteRule ^documentation/tutorial/how-to-view-website-logs                                /docs/step-by-step-tutorials/how-to-view-website-logs [R=301]
+RewriteRule ^documentation/tutorial/how-to-add-an-ssl-certificate                           /docs/step-by-step-tutorials/how-to-add-an-ssl-certificate [R=301]
+RewriteRule ^documentation/tutorial/how-to-add-multidomain-ssl-certificate                  /docs/step-by-step-tutorials/how-to-add-an-ssl-certificate [R=301]
+RewriteRule ^documentation/tutorial/ssl-le                                                  /docs/step-by-step-tutorials/how-to-add-an-ssl-certificate [R=301]
+
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
