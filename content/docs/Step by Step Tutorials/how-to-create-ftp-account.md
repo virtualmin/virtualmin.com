@@ -6,8 +6,6 @@ weight: 2670
 ---
 This guide offers a straightforward approach to creating an FTP account for a virtual server in Virtualmin.
 
----
-
 ### How to create an FTP account
 
 Creating an FTP account in Virtualmin is a simple task that allows users to manage files on a server. Here’s how to set one up:
@@ -16,7 +14,7 @@ Creating an FTP account in Virtualmin is a simple task that allows users to mana
 
 2. **Navigate to user management**: Click on **Edit Users**. This option is for managing and adding users to your domain.
 
-3. **Add an FTP user**: Click on **Add a FTP access user** button which will open a new page containing the form for creating a new FTP account.
+3. **Add an FTP user**: Click on **Add FTP user** button which will open a new page containing the form for creating a new FTP account.
 
 4. **Enter account details**:
    - **Username**: Enter the username for the FTP account. This username must be unique within the domain.
