@@ -36,4 +36,7 @@ RewriteRule ^documentation/tutorial/ssl-le                                      
 RewriteRule ^documentation/tutorial/how-to-create-ftp-account                               /docs/step-by-step-tutorials/how-to-create-ftp-account [R=301]
 RewriteRule ^documentation/tutorial/how-to-enable-shared-ftp-directories                    /docs/step-by-step-tutorials/how-to-create-ftp-account [R=301]
 
+RewriteRule ^/documentation/tutorial/how-to-create-database                                 /docs/step-by-step-tutorials/how-to-create-database [R=301]
+RewriteRule ^/documentation/tutorial/how-to-manage-databases                                /docs/step-by-step-tutorials/managing-mysql-databases [R=301]
+
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
