@@ -42,5 +42,6 @@ RewriteRule ^/documentation/tutorial/how-to-manage-databases                    
 RewriteRule ^/documentation/tutorial/how-to-change-a-mailbox-users-password                 /docs/step-by-step-tutorials/how-to-change-virtual-server-users-password [R=301]
 RewriteRule ^/documentation/tutorial/how-to-change-a-virtual-server-owners-password         /docs/step-by-step-tutorials/how-to-change-virtual-server-owner-password [R=301]
 RewriteRule ^/documentation/tutorial/how-to-setup-a-cron-job                                /docs/step-by-step-tutorials/how-to-setup-cron-jobs/#how-to-create-a-cron-job [R=301]
+RewriteRule ^/documentation/tutorial/how-to-backup-a-virtual-server                         /docs/step-by-step-tutorials/how-to-backup-virtual-servers [R=301]
 
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
