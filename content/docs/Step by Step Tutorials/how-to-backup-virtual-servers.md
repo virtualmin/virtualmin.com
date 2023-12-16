@@ -6,7 +6,7 @@ weight: 2730
 
 This tutorial provides detailed steps for creating a backup of a virtual server in Virtualmin.
 
-**How to backup a virtual server**
+### How to backup a virtual server
 
 Regular backups are essential for safeguarding your data. Follow this procedure to backup a Virtual Server within Virtualmin:
 
