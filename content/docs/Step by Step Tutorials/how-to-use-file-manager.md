@@ -62,7 +62,7 @@ In the file manager, alongside standard point-and-click operations, you can use 
 - **Creating new items**: Use `⇧ + F4` to create a new file and `⇧ + F7` for search functionality.
 - **Compress/decompress**: Use `⌥ + F5` to compress and `⌥ + F6` to decompress files.
 - **Data management**: Use `⌘ + S` to calculate selected size and `F9/F10` for downloading/uploading to the current directory.
-- **Tab management**: Open a new tab with `⌘ + spacebar`, close it with `⌘ + ⇧ + spacebar`, switch tabs with `⌃ + ⏴` or `⌃ + ⏵`, and jump to a tab using `⌘ + 1..9`.
+- **Tab management**: Open a new tab with `⌘ + spacebar`, close it with `⌘ + ⇧ + spacebar`, switch tabs with `⌘ + ⏴` or `⌘ + ⏵`, and jump to a tab using `⌘ + 1..9`.
 - **Clipboard operations**: Use `⌘ + ⌥ + C` to copy the file path, and `⌘ + C`, `⌘ + X`, and `⌘ + V` for copy, cut, and paste operations.
 - **Refresh**: Refresh the current directory with `F5` or `⌘ + R`.
 
