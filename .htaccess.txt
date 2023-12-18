@@ -45,5 +45,6 @@ RewriteRule ^/documentation/tutorial/how-to-setup-a-cron-job                    
 RewriteRule ^/documentation/tutorial/how-to-backup-a-virtual-server                         /docs/step-by-step-tutorials/how-to-backup-virtual-servers [R=301]
 RewriteRule ^/documentation/tutorial/how-to-backup-all-virtual-servers                      /docs/step-by-step-tutorials/how-to-backup-all-virtual-servers-on-schedule [R=301]
 RewriteRule ^/documentation/tutorial/how-to-use-the-file-manager                            /docs/step-by-step-tutorials/how-to-use-file-manager [R=301]
+RewriteRule ^/documentation/tutorial/how-to-use-upload-and-download-module                  /docs/step-by-step-tutorials/how-to-use-upload-and-download-module [R=301]
 
 RewriteRule ^documentation/tutorial                                                         /docs/step-by-step-tutorials/how-to-log-in-to-virtualmin [R=301]
