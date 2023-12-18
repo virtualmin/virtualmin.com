@@ -49,7 +49,7 @@ The file manager interface allows you to perform a variety of file operations. H
 
 In the file manager, alongside standard point-and-click operations, you can use the following keyboard shortcuts for quick actions.
 
-{{< note "**⌘ (Command)** on Windows and Linux, use the **`Super`** key, **⌥ (Option)** on Windows and Linux, use the **`Alt`** key, **⌃ (Control)** on Windows and Linux, use the **`Ctrl`** key and **⇧ (Shift)** is the same across Windows, Linux, and Mac systems." "NOTE Keyboard Symbols:" "notification" >}}
+{{< note "On Windows and Linux for **⌘ (Command)** use the **`Ctrl`** key, for **⌥ (Option)** use the **`Alt`** key and **⇧ (Shift)** key is the same across all systems." "NOTE Keyboard Symbols:" "notification" >}}
 
 - **Quick search**: Start typing to search for files immediately.
 - **Cursor navigation**: Use the `up/down` arrows, `pgup/pgdn`, `home`, and `end` to move the cursor.
