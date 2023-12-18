@@ -49,21 +49,20 @@ The file manager interface allows you to perform a variety of file operations. H
 
 In the file manager, alongside standard point-and-click operations, you can use the following keyboard shortcuts for quick actions.
 
-{{< note "On Windows and Linux for **⌘ (Command)** use the **`Ctrl`** key, for **⌥ (Option)** use the **`Alt`** key and **⇧ (Shift)** key is the same across all systems." "NOTE Keyboard Symbols:" "notification" >}}
-
 - **Quick search**: Start typing to search for files immediately.
 - **Cursor navigation**: Use the `up/down` arrows, `pgup/pgdn`, `home`, and `end` to move the cursor.
 - **Directory navigation**: Press `enter` to open a directory and `backspace` to go back to the previous directory.
-- **Context menu**: Right-click or use `⌥ + right-click` to open the context menu for more options.
-- **Select/Deselect files**: Use `⌘ + A` to select all, `⌘ + ⇧ + A` to deselect all, or `*` to invert selection.
+- **Context menu**: Right-click or use `{{< hotkey "⌥" "Alt" >}} + right-click` to open the context menu for more options.
+- **Select/Deselect files**: Use `{{< hotkey "⌘" "Ctrl" >}} + A` to select all, `{{< hotkey "⌘" "Ctrl" >}} + {{< hotkey "⇧" "Shift" >}} + A` to deselect all, or `*` to invert selection.
 - **File operations**: Press `F2` to change permissions, `F3` to view, `F4` to edit, `F6` to rename, `F7` to create a new directory, and `F8` to delete.
-- **File properties**: Press `⌘ + I` or `⌥ + Enter` to show file properties.
-- **Manual path entry**: Use `⌘ + L` to enter a path manually.
-- **Creating new items**: Use `⇧ + F4` to create a new file and `⇧ + F7` for search functionality.
-- **Compress/decompress**: Use `⌥ + F5` to compress and `⌥ + F6` to decompress files.
-- **Data management**: Use `⌘ + S` to calculate selected size and `F9/F10` for downloading/uploading to the current directory.
-- **Tab management**: Open a new tab with `⌘ + spacebar`, close it with `⌘ + ⇧ + spacebar`, switch tabs with `⌘ + ⏴` or `⌘ + ⏵`, and jump to a tab using `⌘ + 1..9`.
-- **Clipboard operations**: Use `⌘ + ⌥ + C` to copy the file path, and `⌘ + C`, `⌘ + X`, and `⌘ + V` for copy, cut, and paste operations.
-- **Refresh**: Refresh the current directory with `F5` or `⌘ + R`.
+- **File properties**: Press `{{< hotkey "⌘" "Ctrl" >}} + I` or `{{< hotkey "⌥" "Alt" >}} + Enter` to show file properties.
+- **Manual path entry**: Use `{{< hotkey "⌘" "Ctrl" >}} + L` to enter a path manually.
+- **Creating new items**: Use `{{< hotkey "⇧" "Shift" >}} + F4` to create a new file and `{{< hotkey "⇧" "Shift" >}} + F7` for search functionality.
+- **Compress/decompress**: Use `{{< hotkey "⌥" "Alt" >}} + F5` to compress and `{{< hotkey "⌥" "Alt" >}} + F6` to decompress files.
+- **Data management**: Use `{{< hotkey "⌘" "Ctrl" >}} + S` to calculate selected size and `F9/F10` for downloading/uploading to the current directory.
+- **Tab management**: Open a new tab with `{{< hotkey "⌘" "Ctrl" >}} + spacebar`, close it with `{{< hotkey "⌘" "Ctrl" >}} + {{< hotkey "⇧" "Shift" >}} + spacebar`, switch tabs with `{{< hotkey "⌘" "Ctrl" >}} + ⏴` or `{{< hotkey "⌘" "Ctrl" >}} + ⏵`, and jump to a tab using `{{< hotkey "⌘" "Ctrl" >}} + 1..9`.
+- **Clipboard operations**: Use `{{< hotkey "⌘" "Ctrl" >}} + {{< hotkey "⌥" "Alt" >}} + C` to copy the file path, and `{{< hotkey "⌘" "Ctrl" >}} + C`, `{{< hotkey "⌘" "Ctrl" >}} + X`, and `{{< hotkey "⌘" "Ctrl" >}} + V` for copy, cut, and paste operations.
+- **Refresh**: Refresh the current directory with `F5` or `{{< hotkey "⌘" "Ctrl" >}} + R`.
 
 By familiarizing yourself with these features, you can effectively manage your server's files directly from your web browser.
+
