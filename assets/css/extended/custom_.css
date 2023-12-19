@@ -439,21 +439,21 @@ body>footer.footer {
     position: relative;
 }
 
-body>footer.footer::before {
+/* body>footer.footer::before {
     content: "";
     position: absolute;
     left: 0;
-    right: 124px;
+    right: 33px;
     bottom: 0;
-    height: 266px;
-    top: -266px;
+    height: 133px;
+    top: -166px;
     background-image: url("/footer-elements-stars.svg");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
-    background-size: 266px;
+    background-size: 1245px;
     filter: invert(1) brightness(1.05);
-}
+} */
 
 body.dark>footer.footer::before {
     filter: invert(0);
