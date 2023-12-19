@@ -1,7 +1,7 @@
 ---
 title: "How to Change Theme"
 author: "Ilia Ross"
-weight: 2195
+weight: 2195000
 ---
 
 This guide will take you through the steps to change the interface theme in Virtualmin.

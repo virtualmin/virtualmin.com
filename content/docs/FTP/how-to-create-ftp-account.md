@@ -1,7 +1,7 @@
 ---
 title: "How to Create an FTP Account"
 author: "Ilia Ross"
-weight: 2400
+weight: 2400000
 ---
 This guide offers a straightforward approach to creating an FTP account for a virtual server in Virtualmin.
 

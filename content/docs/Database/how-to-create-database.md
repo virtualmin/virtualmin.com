@@ -1,7 +1,7 @@
 ---
 title: "How to Create a New Database"
 author: "Ilia Ross"
-weight: 2500
+weight: 2500000
 ---
 
 This guide provides a straightforward approach to creating a new MySQL/MariaDB or PostgreSQL database in Virtualmin. 

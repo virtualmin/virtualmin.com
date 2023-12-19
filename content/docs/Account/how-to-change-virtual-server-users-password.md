@@ -1,7 +1,7 @@
 ---
 title: "How to Change User Password"
 author: "Ilia Ross"
-weight: 2155
+weight: 2155000
 ---
 
 This tutorial provides a straightforward method for changing the password of a SSH, FTP, mailbox, database or webserver user for the given virtual server in Virtualmin.

@@ -2,7 +2,7 @@
 title: "How to Navigate in Virtualmin"
 date: 2023-11-24
 author: "Ilia Ross"
-weight: 2110
+weight: 2110000
 ---
 
 This tutorial covers the basics of navigating Virtualmin, designed for a range of user roles from administrators to domain owners and resellers. Upon logging in, you'll find a user-friendly, dual-pane interface that facilitates easy navigation.

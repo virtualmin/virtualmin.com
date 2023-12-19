@@ -2,7 +2,7 @@
 title: "How to Password Protect a Directory"
 date: 2023-11-27
 author: "Ilia Ross"
-weight: 2300
+weight: 2300000
 ---
 This guide explains how to password-protect a directory within your website using Virtualmin, adding an extra layer of security and ensuring that only authorized users can access sensitive content.
 

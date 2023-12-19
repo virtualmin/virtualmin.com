@@ -1,7 +1,7 @@
 ---
 title: "How to Use System Statistics"
 author: "Ilia Ross"
-weight: 2167
+weight: 2167000
 ---
 
 This tutorial provides guidance on utilizing the System Statistics feature in Virtualmin Pro, which offers graphical insights into your server's performance and operations.

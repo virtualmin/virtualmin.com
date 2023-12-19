@@ -2,7 +2,7 @@
 title: "Professional Features"
 date: 2023-11-23
 author: "Ilia Ross"
-weight: 910
+weight: 910000
 ---
 
 Virtualmin GPL is already an extremely powerful and flexible virtual hosting control panel, so we're frequently asked about the differences between Virtualmin GPL and Virtualmin Professional. So, if you were wondering whether you should upgrade, you've come to the right place.

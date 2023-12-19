@@ -1,7 +1,7 @@
 ---
 title: "Installation Troubleshooting"
 date: 2023-11-22
-weight: 2020
+weight: 2020000
 ---
 
 Most installation problems are related to having third party repositories enabled, attempting to run the install script on an unsupported operating system, and sometimes network connectivity.

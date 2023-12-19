@@ -2,7 +2,7 @@
 title: "OS Support"
 date: 2023-11-21
 draft: false
-weight: 900
+weight: 900000
 ---
 
 Virtualmin runs on top of Webmin. Webmin is compatible with nearly every UNIX-based OS on the planet, and so Virtualmin can, with a little work, run on just about all of those same systems. However, we offer an automated [installation script](https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh), as well as a well-maintained software updates system, for a few very popular operating systems.

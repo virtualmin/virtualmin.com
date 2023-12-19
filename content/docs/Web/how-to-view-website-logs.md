@@ -1,7 +1,7 @@
 ---
 title: "How to View Website Access and Error Logs"
 author: "Ilia Ross"
-weight: 2320
+weight: 2320000
 ---
 
 This guide simplifies the process of viewing website access and error logs in Virtualmin.

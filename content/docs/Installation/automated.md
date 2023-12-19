@@ -2,7 +2,7 @@
 title: "Automated Installation"
 date: 2023-11-21
 draft: false
-weight: 2010
+weight: 2010000
 ---
 
 ### Recommended system specifications

@@ -1,7 +1,7 @@
 ---
 title: "How to Manage URL Redirects"
 author: "Ilia Ross"
-weight: 2310
+weight: 2310000
 ---
 This guide provides a comprehensive overview of setting up URL redirects in Virtualmin. Perfect for website administrators looking to redirect traffic from one URL to another.
 

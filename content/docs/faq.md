@@ -2,7 +2,7 @@
 title: "FAQ"
 date: 2023-11-24
 author: "Ilia Ross"
-weight: 4000
+weight: 4000000
 ---
 > #### How to upgrade Virtualmin license?
 When upgrading Virtualmin Professional licenses, it is never necessary to re-install Virtualmin! If you have purchased a new, upgraded, license, use the `virtualmin change-license` command to update to the new serial number and license key found on your [My Account → Software Licenses](/account/software-licenses/) page.

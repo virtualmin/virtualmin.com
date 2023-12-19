@@ -1,7 +1,7 @@
 ---
 title: "Managing Databases"
 author: "Ilia Ross"
-weight: 2510
+weight: 2510000
 ---
 
 This tutorial outlines the process for managing databases within Virtualmin.

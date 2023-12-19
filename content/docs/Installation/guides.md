@@ -2,7 +2,7 @@
 title: "Installation Guides"
 date: 2023-11-21
 draft: false
-weight: 2000
+weight: 2000000
 ---
 Virtualmin can be installed in a number of ways, including an automated install script, which uses the standard package management features of your OS, and software repositories containing our software in native package formats. We strongly recommend that you use the automated install script to install Virtualmin, if at all possible.
 

@@ -2,7 +2,7 @@
 title: "Licensing"
 date: 2023-11-21
 draft: false
-weight: 905
+weight: 905000
 ---
 ### How do I upgrade from GPL to Pro
 

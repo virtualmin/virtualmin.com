@@ -1,7 +1,7 @@
 ---
 title: "How to Configure LDAP"
 author: "Ilia Ross"
-weight: 2900
+weight: 2900000
 ---
 
 This documentation explains how Virtualmin can be setup to store users and mail aliases in an LDAP database, rather than using files in `/etc` as it does by default. It is particularly useful when you want to spread the load of virtual hosting across multiple systems, and need to them to all stay in sync.

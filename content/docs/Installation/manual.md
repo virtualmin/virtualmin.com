@@ -1,7 +1,7 @@
 ---
 title: "Manual Installation"
 date: 2023-11-22
-weight: 2015
+weight: 2015000
 ---
 
 Unlike the [Automated Virtualmin installation](/docs/installation/automated/), to make use of this installation type, your OS does not need to be freshly installed, nor does it need to be a [supported operating system](/docs/os-support/). This method, however, requires significantly more knowledge on the part of the person doing the installation, and a much larger time investment to insure that all necessary configuration is performed and all Virtualmin managed services are working correctly. If you are not extremely comfortable with your operating system, the services used in a hosting system, and performing various configuration tasks from the command line, you are advised to use the automatic installation on a Grade A supported operating system.

@@ -2,7 +2,7 @@
 title: "How to Create Virtual Servers"
 date: 2023-11-24
 author: "Ilia Ross"
-weight: 2120
+weight: 2120000
 ---
 
 This quick guide details the process of creating new virtual servers.
