@@ -21,7 +21,7 @@ Changing a user's password is a necessary task for maintaining security and user
 
 4. **Password reset**  
    Next to the **Password** field, select the **Set to** radio button to enable password editing:
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/edit-user-change-password.png "Edit User Change Password Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/edit-user-change-password.png)
+   [![](/images/docs/screenshots/light/edit-user-change-password.png "Edit User Change Password Screenshot")](/images/docs/screenshots/light/edit-user-change-password.png)
 
 5. **Enter new password**  
    In the textbox adjacent to **Set to**, type in the new password.

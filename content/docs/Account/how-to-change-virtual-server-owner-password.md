@@ -18,7 +18,7 @@ A virtual server owner's password is crucial for virtual server administration a
 
 3. **Configurable Settings**  
    Go to **Configurable Settings** to find password options:
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/edit-virtual-server-change-password.png "Edit Virtual Server Change Password Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/edit-virtual-server-change-password.png)
+   [![](/images/docs/screenshots/light/edit-virtual-server-change-password.png "Edit Virtual Server Change Password Screenshot")](/images/docs/screenshots/light/edit-virtual-server-change-password.png)
 
 4. **Password reset**  
    Locate the **Administration password** and select the **Set to** radio button to enable editing a new password.

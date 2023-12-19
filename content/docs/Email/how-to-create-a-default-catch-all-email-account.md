@@ -19,7 +19,7 @@ A catch-all email account is an essential feature for managing emails in your do
 4. **Access email settings**: Within the user's settings, click on **Email Settings** to modify its properties.
 
 5. **Configure catch-all**: In the **Additional email addresses** field, enter `@yourdomain.com`, replacing `yourdomain.com` with your actual domain name:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-user-catch-all.png "Create Catch-All User Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-user-catch-all.png)
+    [![](/images/docs/screenshots/light/create-user-catch-all.png "Create Catch-All User Screenshot")](/images/docs/screenshots/light/create-user-catch-all.png)
 
 This setting directs all emails sent to your domain, which don't match other accounts, to this specified account.
 

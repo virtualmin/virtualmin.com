@@ -14,7 +14,7 @@ Creating an email account in Virtualmin is a simple process, allowing you to qui
 2. **Access user management**: In the domain's left menu, click on **Edit Users**. This will take you to the user management section where you can manage existing accounts and add new ones.
 
 3. **Add a new user**: Click on **Add a user to this server**. This opens a form where you can define the new email account:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-user.png "Create User Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-user.png)
+    [![](/images/docs/screenshots/light/create-user.png "Create User Screenshot")](/images/docs/screenshots/light/create-user.png)
    
 4. **Enter account details**: In the form, specify the desired email address and a secure password. These details are essential for creating a unique and secure email account.
 

@@ -19,7 +19,7 @@ Creating a database is a common requirement for website development and applicat
 3. **Create a new database**  
    Click on **Create a new database**. This will open a form to set up your new database:
 
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/create-database.png "Add Database Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-database.png)
+   [![](/images/docs/screenshots/light/create-database.png "Add Database Screenshot")](/images/docs/screenshots/light/create-database.png)
 
 4. **Configure database settings**  
    - **Database name**: Choose a name for your database and enter it in the **Database name** field. This name should be unique and descriptive.

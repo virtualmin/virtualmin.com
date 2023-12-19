@@ -17,7 +17,7 @@ Email forwarding in Virtualmin allows you to automatically send copies of incomi
 3. **Choose an email account**: Select the email account you want to set up forwarding for by clicking on the user’s name.
 
 4. **Access mail forwarding settings**: In the user’s settings, find and click on **Mail forwarding settings**. Here, you will find options to configure email forwarding:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-user-email-forwarding.png "Create Email Forwarding Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-user-email-forwarding.png)
+    [![](/images/docs/screenshots/light/create-user-email-forwarding.png "Create Email Forwarding Screenshot")](/images/docs/screenshots/light/create-user-email-forwarding.png)
 
 5. **Enable forwarding**: Check the box next to **Forward to other addresses**. This activates the email forwarding feature.
 

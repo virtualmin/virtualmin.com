@@ -21,7 +21,7 @@ After logging into Virtualmin, follow these steps to install a script:
 
 4. **Installation options**  
    Scroll to the bottom and click **Show Install Options**. This section allows you to configure installation details:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/install-script-wordpress.png "Install WordPress Script Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/install-script-wordpress.png)
+    [![](/images/docs/screenshots/light/install-script-wordpress.png "Install WordPress Script Screenshot")](/images/docs/screenshots/light/install-script-wordpress.png)
    
     Usually, the default options are suitable for most installations.
 

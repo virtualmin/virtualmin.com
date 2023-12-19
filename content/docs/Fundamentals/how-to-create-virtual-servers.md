@@ -14,7 +14,7 @@ This quick guide details the process of creating new virtual servers.
 1. Log into Virtualmin.
 2. Select **Create Virtual Server** from the main menu.
 3. Enter the domain name and other relevant details:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-top-level-virtual-server.png "Create Top-Level Virtual Server Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-top-level-virtual-server.png)
+    [![](/images/docs/screenshots/light/create-top-level-virtual-server.png "Create Top-Level Virtual Server Screenshot")](/images/docs/screenshots/light/create-top-level-virtual-server.png)
 4. Click **Create Server**.
 
 #### How to create a sub-server
@@ -23,7 +23,7 @@ This quick guide details the process of creating new virtual servers.
 2. Choose the parent domain from the drop-down box.
 3. Click **Create Virtual Server**, then select **Sub-server**.
 4. Enter the domain name and description for the Sub-server:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-sub-server.png "Create Sub-Server Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-sub-server.png)
+    [![](/images/docs/screenshots/light/create-sub-server.png "Create Sub-Server Screenshot")](/images/docs/screenshots/light/create-sub-server.png)
 
 #### How to create virtual server alias
 
@@ -31,6 +31,6 @@ This quick guide details the process of creating new virtual servers.
 2. Select the domain you wish to create an alias for.
 3. Click **Create Virtual Server**, then select **Alias of example.com**.
 4. Enter the domain name and description for the alias:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-alias.png "Create Virtual Server Alias Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-alias.png)
+    [![](/images/docs/screenshots/light/create-alias.png "Create Virtual Server Alias Screenshot")](/images/docs/screenshots/light/create-alias.png)
 
 5. Click **Create Server**.

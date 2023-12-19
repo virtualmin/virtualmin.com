@@ -30,7 +30,7 @@ Logging into Virtualmin is a simple process that allows you to access a wide ran
 
 4. **Login Screen**
    - Once the Virtualmin login page loads, you will see fields to enter your username and password:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/login.png "Login Screen Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/login.png)
+    [![](/images/docs/screenshots/light/login.png "Login Screen Screenshot")](/images/docs/screenshots/light/login.png)
 
 5. **Enter Credentials**
    - Type in your Virtualmin username and password. These credentials may differ from your server's root or admin password.

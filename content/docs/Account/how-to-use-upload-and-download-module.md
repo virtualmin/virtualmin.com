@@ -14,7 +14,7 @@ Before proceeding, make sure you've logged into Virtualmin. Click on **Webmin** 
 
 The Upload and Download module provides a straightforward way to download files from the internet directly to your server:
 
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/upload-and-download-download-from-web.png "Download from Web Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/upload-and-download-download-from-web.png)
+   [![](/images/docs/screenshots/light/upload-and-download-download-from-web.png "Download from Web Screenshot")](/images/docs/screenshots/light/upload-and-download-download-from-web.png)
 
 1. **URLs to download**  
    In the **Download from web** tab, you'll find a text area labeled **URLs to download**. Enter the full URL of the file you wish to download here, such as `https://example.com/downloads/myfile.tar.gz`.
@@ -32,7 +32,7 @@ The Upload and Download module provides a straightforward way to download files 
 
 Uploading files is just as easy with the module's user-friendly interface:
 
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/upload-and-download-upload.png "Upload to Server Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/upload-and-download-upload.png)
+   [![](/images/docs/screenshots/light/upload-and-download-upload.png "Upload to Server Screenshot")](/images/docs/screenshots/light/upload-and-download-upload.png)
 
 1. **Upload to server tab**  
    Switch to the **Upload to server** tab. Here you can drag and drop files or click to select files through the file browser.
@@ -52,7 +52,7 @@ Uploading files is just as easy with the module's user-friendly interface:
 ### Additional options
 
 - **Download from server**: Use this feature to download files from your server to your computer. Enter the file path on the server, and click **Download**.
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/upload-and-download-download-from-server.png "Download from Server Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/upload-and-download-download-from-server.png)
+   [![](/images/docs/screenshots/light/upload-and-download-download-from-server.png "Download from Server Screenshot")](/images/docs/screenshots/light/upload-and-download-download-from-server.png)
 
 - **Email notifications**: Optionally, you can set the module to send you an email notification when the download or upload completes. Simply select the appropriate option and provide an email address.
 

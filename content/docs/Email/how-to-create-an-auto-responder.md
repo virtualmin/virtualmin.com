@@ -19,7 +19,7 @@ An email auto-responder is a convenient feature in Virtualmin that sends automat
 3. **Choose an email account**: From the list of users, click on the name of the account for which you want to set up the auto-responder.
 
 4. **Access mail forwarding settings**: In the user’s settings, click on **Mail forwarding settings**. Here, you will find the options for configuring the auto-responder:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-user-auto-responder.png "Create Email Auto-Responder Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-user-auto-responder.png)
+    [![](/images/docs/screenshots/light/create-user-auto-responder.png "Create Email Auto-Responder Screenshot")](/images/docs/screenshots/light/create-user-auto-responder.png)
 
 5. **Enable auto-responder**: Check the box next to **Send automatic reply**. This activates the auto-responder feature for the selected email account.
 

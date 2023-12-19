@@ -16,7 +16,7 @@ URL redirects are a crucial tool for guiding traffic to the right place on your 
 3. **Navigate to website redirects**: Select **Website Redirects**. This option is specifically for managing how URLs are redirected within your domain.
 
 4. **Add a new redirect**: Click on **Add a new website redirect**. This will open a form where you can specify the details of the URL redirect:
-    [![](/images/docs/screenshots/tutorials/step-by-step/light/create-website-redirect.png "Allow User Access for Password Protect a Directory Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/create-website-redirect.png)
+    [![](/images/docs/screenshots/light/create-website-redirect.png "Allow User Access for Password Protect a Directory Screenshot")](/images/docs/screenshots/light/create-website-redirect.png)
 
 5. **Configure source URL**: In the **Source URL path** field, enter the path of the URL you want to redirect. This could be a root directory (`/`) or a specific path (e.g., `/foo/bar`).
 

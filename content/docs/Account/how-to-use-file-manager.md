@@ -16,7 +16,7 @@ The file manager in Virtualmin is a powerful interface for administrators and us
 2. **Open File Manager**  
    Find and click the **File Manager** link to view the files within the document root directory of the virtual server:
 
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/using-file-manager.png "File Manager Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/using-file-manager.png)
+   [![](/images/docs/screenshots/light/using-file-manager.png "File Manager Screenshot")](/images/docs/screenshots/light/using-file-manager.png)
 
 ### File manager features
 

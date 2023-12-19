@@ -21,7 +21,7 @@ Managing databases is essential for website and application management. Virtualm
 
 Opened page will provide the following database operations:
 
-   [![](/images/docs/screenshots/tutorials/step-by-step/light/edit-database.png "Edit Database Screenshot")](/images/docs/screenshots/tutorials/step-by-step/light/edit-database.png)
+   [![](/images/docs/screenshots/light/edit-database.png "Edit Database Screenshot")](/images/docs/screenshots/light/edit-database.png)
 
 - **Create a new table**  
   Begin defining a new table by specifying the number of fields and clicking **Create a new table**.
