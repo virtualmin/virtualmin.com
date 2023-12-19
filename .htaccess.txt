@@ -14,6 +14,8 @@ RewriteRule ^documentation/install-scripts                                      
 RewriteRule ^documentation/upgrading                                                        /docs/faq/#how-to-update-virtualmin-and-all-related-packages [R=301,NE]
 RewriteRule ^documentation/installation/faq                                                 /docs/installation/guides/#installation-faq [R=301,NE]
 
+RewriteRule ^documentation/installation/ldap                                                /docs/advanced-tutorials/how-to-configure-ldap [R=301]
+
 RewriteRule ^documentation/tutorial/how-to-log-in                                           /docs/fundamentals/how-to-log-in-to-virtualmin [R=301]
 RewriteRule ^documentation/tutorial/how-to-navigate-virtualmin                              /docs/fundamentals/how-to-navigate-in-virtualmin [R=301]
 RewriteRule ^documentation/tutorial/how-to-create-a-sub-server                              /docs/fundamentals/how-to-create-virtual-servers [R=301]

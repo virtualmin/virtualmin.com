@@ -6,9 +6,11 @@ weight: 2900000
 
 This documentation explains how Virtualmin can be setup to store users and mail aliases in an LDAP database, rather than using files in `/etc` as it does by default. It is particularly useful when you want to spread the load of virtual hosting across multiple systems, and need to them to all stay in sync.
 
+{{< alert warning exclamation "" "The information presented on this documentation page may no longer reflect the most current developments or practices. For accuracy and the benefit of all users, this content should be reviewed and updated. Contributions are welcome; if you have the updated information, please consider submitting it through a pull request (PR) to our GitHub repository to help us keep our documentation current." >}}
+
 ## Introduction to LDAP
 
- LDAP (Lightweight Directory Access Protocol) is a way for clients to query and update a flexibly structured heirachial database. In the Unix world, it is most commonly used to distribute user and group information from a central server to many client systems, so that users can login to any client. Typically it is combined with NFS, which makes user home directories available on all clients too.
+ LDAP (Lightweight Directory Access Protocol) is a way for clients to query and update a flexibly structured hierarchial database. In the Unix world, it is most commonly used to distribute user and group information from a central server to many client systems, so that users can login to any client. Typically it is combined with NFS, which makes user home directories available on all clients too.
 
 Each object in the database has a DN (distinguished name), which is formatted like:
 
@@ -23,7 +25,6 @@ Each object in an LDAP database has one or more object classes. These determine 
 Each object has a list of attributes, each of which has a name and value. Typical attributes for Unix users are `uid` for the username, `homeDirectory`, `loginShell` and `userPassword`. The attributes allowed for each object differ depending on the object's classes.
 
 
-
 ## LDAP Access Control
 
  When a client connects to an LDAP server, it can either authenticate itself with a DN and password, or connect anonymously. The server's configuration determines which are allowed, and which objects and attributes a client is allowed to read or write based on this DN.
@@ -36,23 +37,23 @@ The popular OpenLDAP server has a special *root* DN which has read/write access 
 
  An LDAP server is responsible for managing the data files that make up an LDAP database, and providing access to that data to clients via the network. The most popular free LDAP server is OpenLDAP ([http://www.openldap.org/](http://www.openldap.org/ "http://www.openldap.org/")), which is available for pretty much all Unix-like operating systems.
 
-If you are running a CentOS, Fedora or Redhat Enterprise system, OpenLDAP can be installed with the command :
+If you are running EL system, such as Alma, Rocky, Fedora, Oracle or Red Hat, OpenLDAP can be installed with the command :
 
 ```
-yum install openldap openldap-servers openldap-devel openldap-clients perl-LDAP
+dnf install openldap openldap-servers openldap-devel openldap-clients perl-LDAP
 ```
 
-On CentOS, Fedora and Redhat Enterprise systems, the built-in LDAP server configuration will be used by default, which is not optimal for high-performance environments. To use a better configuration, run these commands :
+To start and enable the server, run the following command :
+
 
 ```
-cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-/etc/init.d/ldap start
+systemctl enable --now slapd
 ```
 
 On an Ubuntu or Debian system, the command to use is :
 
 ```
-apt-get install slapd php-net-ldap
+apt-get install slapd libnet-ldap-perl
 ```
 
 On other operating systems, you will probably have to download, compile and install OpenLDAP manually. You should also install the `Net::LDAP` Perl module, which Webmin and Virtualmin need to talk to the server.
@@ -113,10 +114,10 @@ You should then repeat the same steps to create a sub-tree for LDAP groups :
 
  On Linux, NSS (Name Service Switch) is the library that determines where user and group information comes from. On a typical system only the `/etc/passwd` and `/etc/group` files were used, but because NSS is extensible it is possible to add support for any type of data source. Another that is often used is NIS, which has a similar client-server architecture to LDAP, but is losing popularity in favour of LDAP.
 
-Before your system can fetch users from an LDAP database, the NSS module for it must be installed. On a CentOS, Fedora or Redhat system the command to do this is :
+Before your system can fetch users from an LDAP database, the NSS module for it must be installed. On a Alma, Rocky, Fedora, Oracle or Red Hat system the command to do this is :
 
 ```
-yum install nss_ldap  nss-pam-ldapd openldap-clients
+dnf install nss_ldap  nss-pam-ldapd openldap-clients
 ```
 
 While on Debian or Ubuntu Linux, the command to use is :
@@ -148,9 +149,7 @@ mv /etc/pam_ldap.conf /etc/pam_ldap.conf.old
 ln -s /etc/libnss-ldap.conf /etc/pam_ldap.conf
 ```
 
-On CentOS, Fedora or Redhat systems the needed PAM libraries are part of the `nss_ldap` or `nss-pam-ldapd` package that you should have already installed in the previous step.
-
-
+On Alma, Rocky, Fedora, Oracle or Red Hat systems the needed PAM libraries are part of the `nss_ldap` or `nss-pam-ldapd` package that you should have already installed in the previous step.
 
 ### Setting Up an LDAP Client System
 
@@ -215,7 +214,7 @@ This can be setup in Webmin's **PAM Authentication** module, found under the **S
 
 
 
-#### PAM Setup on CentOS, Fedora and Redhat
+#### PAM Setup on Alma, Rocky, Fedora, Oracle or Red Hat
 
  Redhat-based systems have a single common PAM service that is called by all others. LDAP support can be added to it as follows :
 
@@ -224,10 +223,6 @@ This can be setup in Webmin's **PAM Authentication** module, found under the **S
 3. Change the **Failure level** to **Sufficient**, then click **Create**.
 4. Use the up arrow to move the new `pam_ldap.so` step above the existing `pam_unix.so` entry.
 5. Repeat 1,2 and 3 in the **Account verification**, **Session setup** and **Password change** steps on the same page.
-
-Further documentation on how to create the LDAP client PAM configuration file manually can be found at [http://www.server-world.info/en/note?os=CentOS_6&p=ldap&f=2](http://www.server-world.info/en/note?os=CentOS_6&p=ldap&f=2) . Also, on recent CentOS releases you can use the /usr/sbin/authconfig-tui command to perform most of this setup process.
-
-
 
 ### Setting Up Webmin's LDAP Users and Groups Module
 
@@ -246,8 +241,8 @@ If you get an error like `no strucutural object class provided` when adding a us
 sn: ${REAL}
 ```
 
-1. Click **Save**.
-2. Re-try creating a user.
+3. Click **Save**.
+4. Re-try creating a user.
 
 
 
@@ -304,21 +299,21 @@ To configure the schema fully, do the following :
 2. Check the box next to the `misc` schema (if it isn't already), and click **Save**.
 3. Go back to the schema page, and click the **Edit** link next to the `misc` schema.
 4. Find the definition for the `inetLocalMailRecipient` class, which should be like : 
+
 ```
-  
-  objectclass ( 2.16.840.1.113730.3.2.147
-  	NAME 'inetLocalMailRecipient'
-  	DESC 'Internet local mail recipient'
-  	SUP top AUXILIARY
-  	MAY	( mailLocalAddress $ mailHost $ mailRoutingAddress ) )
-  ```
+objectclass ( 2.16.840.1.113730.3.2.147
+	NAME 'inetLocalMailRecipient'
+	DESC 'Internet local mail recipient'
+	SUP top AUXILIARY
+	MAY	( mailLocalAddress $ mailHost $ mailRoutingAddress ) )
+```
+
 5. Change the `AUXILIARY` to `STRUCTURAL`, and click **Save**.
 6. Go back to the module's main page, and click **Apply Configuration**.
-```
 
 ### Creating LDAP Trees for Postfix
 
- Each Postfix map should have a separate sub-tree in the LDAP database. With Virtualmin, you will need at least trees for the `alias` and `virtual` maps, which can be created as follows :
+Each Postfix map should have a separate sub-tree in the LDAP database. With Virtualmin, you will need at least trees for the `alias` and `virtual` maps, which can be created as follows :
 
 1. Click on **Create Tree**.
 2. Select **Distinguished name**, and in the adjacent field enter something like *dc=Aliases,dc=foo,dc=com*.
