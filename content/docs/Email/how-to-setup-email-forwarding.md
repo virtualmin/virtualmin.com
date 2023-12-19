@@ -2,7 +2,7 @@
 title: "How to Setup Email Forwarding"
 date: 2023-11-27
 author: "Ilia Ross"
-weight: 2630
+weight: 2230
 ---
 This guide outlines the process of setting up email forwarding in Virtualmin, enabling you to redirect emails from one account to other email addresses. Ideal for managing communications and ensuring important messages are received in multiple inboxes.
 

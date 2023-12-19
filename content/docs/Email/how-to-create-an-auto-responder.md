@@ -2,7 +2,7 @@
 title: "How to Create an Auto-Responder"
 date: 2023-11-25
 author: "Ilia Ross"
-weight: 2620
+weight: 2220
 ---
 This tutorial demonstrates how to set up an email auto-responder in Virtualmin, a useful tool for automatically sending a pre-defined reply to incoming emails. Ideal for notifying senders when you're unavailable or providing immediate automated responses, this guide will walk you through selecting a domain, choosing a user, and configuring the auto-responder settings. 
 

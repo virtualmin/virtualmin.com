@@ -1,7 +1,7 @@
 ---
 title: "How to Use File Manager"
 author: "Ilia Ross"
-weight: 2750
+weight: 2175
 ---
 
 This tutorial guides you through the use of the web-based HTML file manager within Virtualmin, which is a versatile tool for file management on your server.

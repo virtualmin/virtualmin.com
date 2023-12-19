@@ -1,7 +1,7 @@
 ---
 title: "How to Use Upload and Download Module"
 author: "Ilia Ross"
-weight: 2760
+weight: 2180
 ---
 
 This tutorial walks you through using the Upload and Download module, which is a convenient tool for transferring files to and from your server.

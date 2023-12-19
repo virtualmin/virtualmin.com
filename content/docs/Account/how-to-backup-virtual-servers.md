@@ -1,7 +1,7 @@
 ---
 title: "How to Backup Virtual Servers"
 author: "Ilia Ross"
-weight: 2730
+weight: 2160
 ---
 
 This tutorial provides detailed steps for creating a backup of a virtual server in Virtualmin.

@@ -2,7 +2,7 @@
 title: "How to Configure a Catch-All Email Account"
 date: 2023-11-25
 author: "Ilia Ross"
-weight: 2610
+weight: 2210
 ---
 Learn how to configure a catch-all email account in Virtualmin, designed to receive all emails sent to your domain that do not match any existing account or alias. This simple tutorial guides you through the process of selecting a domain, choosing an email account, and modifying its settings to become the default email destination.
 

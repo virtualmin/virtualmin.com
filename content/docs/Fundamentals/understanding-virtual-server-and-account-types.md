@@ -2,7 +2,7 @@
 title: "Understanding Virtual Server and Account Types"
 date: 2023-11-24
 author: "Ilia Ross"
-weight: 2520
+weight: 2130
 ---
 
 Understanding the different virtual server and account types in Virtualmin is essential for effective web hosting and domain management. Virtualmin provides a flexible platform, allowing various configurations to suit different hosting needs.

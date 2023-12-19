@@ -1,9 +1,8 @@
 ---
 title: "How to Log In to Virtualmin"
-subSection: "Getting Started"
 date: 2023-11-24
 author: "Ilia Ross"
-weight: 2500
+weight: 2100
 ---
 
 This guide provides step-by-step instructions on how to log into the Virtualmin control panel. Virtualmin is a powerful web hosting and website management tool that allows you to manage multiple virtual hosts from a single interface.

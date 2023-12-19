@@ -1,7 +1,7 @@
 ---
 title: "How to Install Scripts"
 author: "Ilia Ross"
-weight: 2790
+weight: 2166
 ---
 
 This tutorial guides you through the process of using Virtualmin's script installer to add web applications to your domain.

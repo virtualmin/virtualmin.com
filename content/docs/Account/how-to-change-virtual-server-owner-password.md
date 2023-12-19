@@ -1,7 +1,7 @@
 ---
 title: "How to Change Virtual Server Owner’s Password"
 author: "Ilia Ross"
-weight: 2710
+weight: 2150
 ---
 
 This tutorial provides a concise guide on changing the password of a virtual server owner in Virtualmin.

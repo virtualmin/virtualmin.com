@@ -1,7 +1,7 @@
 ---
 title: "How to Add an SSL Certificate"
 author: "Ilia Ross"
-weight: 2660
+weight: 2330
 ---
 This guide consolidates the steps for adding both a Let's Encrypt SSL certificate and a commercial SSL certificate to your Virtualmin hosted domains.
 

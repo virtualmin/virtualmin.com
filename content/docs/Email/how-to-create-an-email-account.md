@@ -1,9 +1,8 @@
 ---
 title: "How to Create an Email Account"
-subSection: "Email"
 date: 2023-11-25
 author: "Ilia Ross"
-weight: 2600
+weight: 2200
 ---
 This tutorial provides a straightforward guide on creating an email account in Virtualmin, which can be accessed via POP, IMAP, or webmail. Following a few simple steps, you'll learn how to select the appropriate domain, navigate to user management, and set up a new email account with a custom address and secure password.
 

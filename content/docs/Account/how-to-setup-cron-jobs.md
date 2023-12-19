@@ -1,7 +1,7 @@
 ---
 title: "How to Setup Cron Jobs"
 author: "Ilia Ross"
-weight: 2720
+weight: 2170
 ---
 
 
