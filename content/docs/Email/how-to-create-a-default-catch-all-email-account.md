@@ -7,8 +7,7 @@ weight: 2210000
 Learn how to configure a catch-all email account in Virtualmin, designed to receive all emails sent to your domain that do not match any existing account or alias. This simple tutorial guides you through the process of selecting a domain, choosing an email account, and modifying its settings to become the default email destination.
 
 ### Create catch-all email account
-
-A catch-all email account is an essential feature for managing emails in your domain, ensuring that you receive all emails sent to your domain, even if the specific address doesn't exist. Here's how to set it up in Virtualmin:
+A catch-all email account serves as a useful tool for domain email management by capturing all messages sent to your domain, including those addressed to non-existent email addresses. This setup ensures that no email sent to your domain is missed. Here's how to set it up in Virtualmin:
 
 1. **Select the domain**: After logging into Virtualmin, choose the domain for which you want to set up a catch-all email address. This is done by selecting the domain name from the drop-down box in the top-left corner of the left menu.
 
