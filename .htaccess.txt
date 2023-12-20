@@ -55,3 +55,4 @@ RewriteRule ^/documentation/tutorial/how-to-manage-databases                    
 RewriteRule ^documentation/tutorial                                                         /docs/fundamentals/how-to-log-in-to-virtualmin [R=301,L]
 
 RewriteRule ^documentation/email/pop-and-imap                                               /docs/email/pop-and-imap [R=301]
+RewriteRule ^documentation/email/spam-av                                                    /docs/email/spam-and-virus-scanning [R=301]
