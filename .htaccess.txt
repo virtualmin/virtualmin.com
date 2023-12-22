@@ -57,3 +57,4 @@ RewriteRule ^documentation/tutorial                                             
 RewriteRule ^documentation/email/pop-and-imap                                               /docs/email/pop-and-imap [R=301]
 RewriteRule ^documentation/email/spam-av                                                    /docs/email/spam-and-virus-scanning [R=301]
 RewriteRule ^documentation/email/faq                                                        /docs/email/troubleshooting-emails [R=301]
+RewriteRule ^documentation/email/troubleshooting                                            /docs/email/troubleshooting-emails [R=301]
