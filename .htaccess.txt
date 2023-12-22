@@ -35,7 +35,7 @@ RewriteRule ^/documentation/tutorial/how-to-use-upload-and-download-module      
 RewriteRule ^/documentation/tutorial/how-to-change-theme                                    /docs/account/how-to-change-theme [R=301]
 
 RewriteRule ^documentation/tutorial/how-to-create-email-account                             /docs/email/how-to-create-an-email-account [R=301]
-RewriteRule ^documentation/tutorial/how-to-create-a-catch-all-email-account                 /docs/email/how-to-create-a-default-catch-all-email-account [R=301]
+RewriteRule ^documentation/tutorial/how-to-create-a-catch-all-email-account                 /docs/email/how-to-configure-a-catch-all-email-account [R=301]
 RewriteRule ^documentation/tutorial/how-to-create-email-auto-responder                      /docs/email/how-to-create-an-auto-responder [R=301]
 RewriteRule ^documentation/tutorial/how-to-setup-email-forwarding                           /docs/email/how-to-setup-email-forwarding [R=301]
 
@@ -56,3 +56,4 @@ RewriteRule ^documentation/tutorial                                             
 
 RewriteRule ^documentation/email/pop-and-imap                                               /docs/email/pop-and-imap [R=301]
 RewriteRule ^documentation/email/spam-av                                                    /docs/email/spam-and-virus-scanning [R=301]
+RewriteRule ^documentation/email/faq                                                        /docs/email/troubleshooting-emails [R=301]
