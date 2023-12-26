@@ -60,3 +60,5 @@ RewriteRule ^documentation/email/faq                                            
 RewriteRule ^documentation/email/troubleshooting                                            /docs/email/troubleshooting-emails [R=301]
 RewriteRule ^documentation/email/dkim                                                       /docs/email/dkim [R=301]
 RewriteRule ^documentation/email/dependent                                                  /docs/email/sender-dependent-outgoing-ip-address [R=301]
+RewriteRule ^documentation/email/smtps                                                      /docs/email/troubleshooting-emails [R=301]
+RewriteRule ^documentation/email/hold-and-forward                                           /docs/email/hold-and-forward-backup-mail-server [R=301]
