@@ -59,3 +59,4 @@ RewriteRule ^documentation/email/spam-av                                        
 RewriteRule ^documentation/email/faq                                                        /docs/email/troubleshooting-emails [R=301]
 RewriteRule ^documentation/email/troubleshooting                                            /docs/email/troubleshooting-emails [R=301]
 RewriteRule ^documentation/email/dkim                                                       /docs/email/dkim [R=301]
+RewriteRule ^documentation/email/dependent                                                  /docs/email/sender-dependent-outgoing-ip-address [R=301]
