@@ -1,5 +1,5 @@
 ---
-title: "Setting Up Roundcube As Default Webmail"
+title: "Setting Up Roundcube as Default Webmail"
 date: 2023-12-28
 author: "Ilia Ross"
 weight: 2332000
