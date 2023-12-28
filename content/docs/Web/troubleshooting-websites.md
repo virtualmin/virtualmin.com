@@ -35,15 +35,15 @@ If visiting a domain on your server shows incorrect content, it could be due to 
 
 Review Virtualmin settings to ensure new records are correctly created:
 
-1. **Network Settings**
-   - **System Settings ⇾ Virtualmin Configuration ⇾ Network Settings**: Can be opened from the navigation menu.
-   - **Network Interface for Virtual Addresses**: Should typically be the primary IP address of your server (commonly `enp0s5`).
-   - **Default Virtual Server IP Address**: Recommended to leave as **From Network Interface**.
-   - **Default IP Address for DNS Records**: Set to **Automatically detect external address** if behind a NAT router.
+1. **Network settings**
+   - **System Settings ⇾ Virtualmin Configuration ⇾ Network settings**: Can be opened from the navigation menu.
+   - **Network interface for virtual addresses**: Should typically be the primary IP address of your server (commonly `enp0s5` or `eth0`).
+   - **Default virtual server IPv4/IPv6 address**: Recommended to leave as **From Network Interface**.
+   - **Default IP address for DNS records**: Set to **Automatically detect external address** if behind a NAT router.
 
-2. **Defaults for New Domains**
-   - **System Settings ⇾ Virtualmin Configuration ⇾ Defaults for New Domains**: Can be opened from the navigation menu.
-   - **Address Format for Apache Virtual Hosts**: Use __Always use *__ for dynamic IPs, otherwise **Always use IP**. Default is set to **Decide automatically**.
+2. **Defaults for new domains**
+   - **System Settings ⇾ Virtualmin Configuration ⇾ Defaults for new domains**: Can be opened from the navigation menu.
+   - **Address format for Apache virtual hosts**: Use __Always use *__ for dynamic IPs, otherwise **Always use IP**. Default is set to **Decide automatically**.
 
 ### Internal server error
 
