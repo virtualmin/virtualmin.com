@@ -63,3 +63,5 @@ RewriteRule ^documentation/email/dependent                                      
 RewriteRule ^documentation/email/smtps                                                      /docs/email/troubleshooting-emails [R=301]
 RewriteRule ^documentation/email/hold-and-forward                                           /docs/email/hold-and-forward-backup-mail-server [R=301]
 RewriteRule ^documentation/web/content                                                      /docs/web/uploading-and-editing-website-data [R=301]
+RewriteRule ^documentation/web/faq                                                          /docs/web/troubleshooting-websites [R=301]
+RewriteRule ^documentation/web/troubleshooting                                              /docs/web/troubleshooting-websites [R=301]
