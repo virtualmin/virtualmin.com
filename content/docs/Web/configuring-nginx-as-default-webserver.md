@@ -1,5 +1,5 @@
 ---
-title: "Nginx Webserver"
+title: "Configuring Nginx as Default Webserver"
 date: 2023-12-29
 author: "Ilia Ross"
 weight: 2332100
@@ -16,7 +16,6 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
 - **Virtual server creation**: When creating a new virtual server, select **Nginx website enabled** under **Enabled features**, instead of **Apache website enabled**.
 - **CLI API**: Use `--virtualmin-nginx` flag instead of `--web` for non-SSL websites and `--virtualmin-nginx-ssl` instead of `--ssl` for SSL-enabled sites.
 - **Remote API**: Use the `virtualmin-nginx=` parameter instead of `web=`.
-
 
 ### Configuring Nginx support in Virtualmin
 

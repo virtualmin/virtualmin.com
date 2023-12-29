@@ -67,4 +67,4 @@ RewriteRule ^documentation/web/faq                                              
 RewriteRule ^documentation/web/troubleshooting                                              /docs/web/troubleshooting-websites [R=301]
 RewriteRule ^documentation/web/svn                                                          https://archive.virtualmin.com/documentation/web/svn [R=301]
 RewriteRule ^documentation/web/git                                                          https://archive.virtualmin.com/documentation/web/git [R=301]
-RewriteRule ^documentation/web/nginx                                                        /docs/web/nginx-webserver [R=301]
+RewriteRule ^documentation/web/nginx                                                        /docs/web/configuring-nginx-as-default-webserver [R=301]
