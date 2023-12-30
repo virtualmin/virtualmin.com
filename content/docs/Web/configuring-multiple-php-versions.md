@@ -48,7 +48,7 @@ Virtualmin allows the selection of different PHP versions and execution modes fo
    - Replace `php8.1` with the specific version, e.g., `php8.3`.
    - Check available PHP versions and extensions on the [Ondrej PPA website](https://launchpad.net/~ondrej/+archive/ubuntu/php) or via `apt-cache search --names-only ^php`.
 
-### Configuring PHP version in Virtualmin
+### Configuring default PHP version
 
 After installing another PHP version:
 
