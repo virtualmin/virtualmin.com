@@ -5,7 +5,7 @@ author: "Ilia Ross"
 weight: 2197510
 ---
 
-This guide addresses a common issue and questions in Virtualmin related to DNS configuration.
+This guide addresses a common questions and issues in Virtualmin related to DNS configuration.
 
 ### How do I setup nameservers for my server
 
@@ -38,3 +38,60 @@ After registering your nameservers:
 
 - **DNS propagation**: After making changes to your DNS settings or nameserver configuration, allow some time for these changes to propagate across the internet. This process can take anywhere from a few hours to up to 48 hours.
 - **Consistency and accuracy**: Ensure that the nameserver names and IP addresses are consistent and accurately entered both in your registrar's settings and in Virtualmin. Errors in this setup can lead to DNS resolution issues for your domains.
+
+### Resolving DNS issues
+
+DNS issues are commonly encountered in virtual hosting systems due to the multiple systems that need to cooperate. Correct DNS settings are crucial for the smooth operation of various services on a hosting system.
+
+#### Glue records
+
+Glue records are essential for DNS functionality and need to be correct at your domain registrar:
+
+- Use the `whois` command to check glue records:
+  ```text
+  whois example.com
+  ```
+- Look for the "name server" records. These should list your DNS servers.
+- Remember, Virtualmin cannot modify your registrar's records. Any necessary changes must be made using your registrar's tools.
+
+#### NS records
+
+NS (Name Server) records on your Virtualmin server should align with your glue records:
+
+- Verify NS records using:
+  ```text
+  host -t NS example.com
+  ```
+- Mismatches between NS records and glue records can cause intermittent DNS resolution issues.
+
+#### A records
+
+A (Address) records map domain names to IP addresses:
+
+- Check A records with:
+  ```text
+  host example.com
+  ```
+- To specify a nameserver for the query:
+  ```text
+  host example.com ns1.example.com
+  ```
+- Or use an IP if the nameserver's IP address is uncertain:
+  ```text
+  host example.com 192.168.1.1
+  ```
+
+#### MX records
+
+MX (Mail Exchanger) records direct how emails should be routed:
+
+- Use the following command to inspect MX records:
+  ```text
+  host -t MX example.com
+  ```
+
+#### Further resources
+
+- For more detailed troubleshooting, refer to the [BIND Troubleshooting Tools](https://webmin.com/docs/modules/bind-dns-server/#bind-troubleshooting-tools) in the Webmin documentation.
+
+Remember, DNS issues often stem from misconfigurations across different systems, including your domain registrar and your Virtualmin server. Ensuring consistency and correctness in these configurations is key to resolving DNS-related problems.
