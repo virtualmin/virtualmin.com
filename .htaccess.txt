@@ -71,3 +71,4 @@ RewriteRule ^documentation/web/multiplephp                                      
 RewriteRule ^documentation/website-default-page                                             /docs/web/website-default-page [R=301]
 
 RewriteRule ^documentation/dns/slave-configuration                                          /docs/dns/how-to-configure-secondary-dns [R=301]
+RewriteRule ^documentation/dns/faq                                                          /docs/dns/troubleshooting-dns [R=301]
