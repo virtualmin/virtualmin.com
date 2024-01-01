@@ -31,7 +31,7 @@ params:
          production: 'UA-503706-1'
          devel: 'G-LT56QHK5DW'
 
-  title: Virtualmin, Inc.
+  title: Virtualmin
   description: "Powerful and flexible web hosting control panel for Linux and BSD systems"
   keywords: [webmin, usermin, virtualmin, cloudmin, linux, system administration]
   author: Jamie Cameron, Joe Cooper, Ilia Ross
