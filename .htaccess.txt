@@ -69,3 +69,5 @@ RewriteRule ^documentation/web/git                                              
 RewriteRule ^documentation/web/nginx                                                        /docs/web/configuring-nginx-as-default-webserver [R=301]
 RewriteRule ^documentation/web/multiplephp                                                  /docs/web/configuring-multiple-php-versions [R=301]
 RewriteRule ^documentation/website-default-page                                             /docs/web/website-default-page [R=301]
+
+RewriteRule ^documentation/dns/slave-configuration                                          /docs/dns/how-to-configure-secondary-dns [R=301]
