@@ -2,7 +2,7 @@
 title: "Troubleshooting DNS"
 date: 2024-01-01
 author: "Ilia Ross"
-weight: 2197510
+weight: 2198000
 ---
 
 This guide addresses a common questions and issues in Virtualmin related to DNS configuration.
