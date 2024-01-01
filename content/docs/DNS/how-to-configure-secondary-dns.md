@@ -50,7 +50,7 @@ To configure automatic management of secondary zones:
 4. For a custom NS record name, ensure it correctly points to your secondary server.
 5. Click **Add Now** button to add the secondary server to the cluster.
 
-### Setting the Primary IP address
+### Setting the primary IP address
 
 Ensure the primary server uses the correct IP for zone transfers:
 
