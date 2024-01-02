@@ -2,7 +2,7 @@
 title: "Domain Registration"
 date: 2024-01-01
 author: "Ilia Ross"
-weight: 2197510
+weight: 2197910
 ---
 
 Virtualmin provides a plugin to automate domain registration, streamlining the process of setting up a new virtual server with an immediately accessible website and domain.
