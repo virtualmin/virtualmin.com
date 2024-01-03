@@ -75,3 +75,5 @@ RewriteRule ^documentation/dns/faq                                              
 RewriteRule ^documentation/dns/troubleshooting                                              /docs/dns/troubleshooting-dns [R=301]
 RewriteRule ^documentation/dns/registrar                                                    /docs/dns/domain-registration [R=301]
 RewriteRule ^documentation/developer/cli/databases/faq                                      /docs/database/troubleshooting-databases [R=301]
+RewriteRule ^documentation/cloudmin/devel/remote                                            /docs/database/running-database-on-a-remote-system [R=301]
+RewriteRule ^documentation/database/remote                                                  /docs/database/running-database-on-a-remote-system [R=301]
