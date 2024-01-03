@@ -56,28 +56,3 @@ After installing another PHP version:
 2. **Set default PHP version**: Configure the default version for new virtual servers in **System Settings ⇾ Server Templates ⇾ PHP Options** page. For specific virtual server, set the PHP version in **Web Configuration ⇾ PHP Options** page.
 
     [![](/images/docs/screenshots/light/php-options.png "PHP Options Screenshot")](/images/docs/screenshots/light/php-options.png)
-
-### Precautions regarding `mod_php`
-
-When managing multiple PHP versions in Virtualmin, it's crucial to understand the implications of installing `mod_php`:
-
-- **Avoid `mod_php`**: This Apache module embeds PHP directly into the server. It poses significant security risks, especially in shared environments. `mod_php` doesn't isolate scripts between different sites, potentially allowing one site to affect others on the same server.
-  
-- **Identifying `mod_php` installation**
-  - In Debian and derivatives, `mod_php` is typically part of packages like `libapache2-mod-php` (or other version numbers like `libapache2-mod-php8.3`).
-  - In RHEL and derivatives, look for packages named `php`, `php83-php` or similar, depending on the PHP version.
-
-#### Uninstalling `mod_php`
-To remove `mod_php` and avoid numerous issues, you can uninstall it using your package manager.
-  - For Debian and derivatives
-    ```text
-    apt-get remove libapache2-mod-php*
-    ```
-  - For RHEL and derivatives
-    ```text
-    dnf remove $(dnf list installed | awk -F. '{print $1}' | grep -E '^php$|^php[0-9]+-php$')
-    ```
-After uninstallation, restart Apache to apply the changes.
-
-### Recommended PHP execution mode
-PHP-FPM (FastCGI Process Manager) is recommended for executing PHP scripts due to its improved isolation, which provides separate process pools for each website, enhancing security in shared hosting environments. It offers superior performance and scalability, efficiently handling high loads and dynamically adjusting resources to match website demands. PHP-FPM's advanced features include adaptive process spawning and emergency restarts, alongside flexible configuration options for resource limits and PHP settings on a per-website basis. It is compatible with both Apache and Nginx webservers, adding to its versatility, and its ease of use is augmented by Virtualmin, which simplifies its setup and management.

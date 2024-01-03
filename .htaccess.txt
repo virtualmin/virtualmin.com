@@ -67,6 +67,7 @@ RewriteRule ^documentation/web/troubleshooting                                  
 RewriteRule ^documentation/web/svn                                                          https://archive.virtualmin.com/documentation/web/svn [R=301]
 RewriteRule ^documentation/web/git                                                          https://archive.virtualmin.com/documentation/web/git [R=301]
 RewriteRule ^documentation/web/nginx                                                        /docs/web/configuring-nginx-as-default-webserver [R=301]
+RewriteRule ^documentation/web/webdev/php                                                   /docs/web/php-execution-modes [R=301]
 RewriteRule ^documentation/web/multiplephp                                                  /docs/web/configuring-multiple-php-versions [R=301]
 RewriteRule ^documentation/website-default-page                                             /docs/web/website-default-page [R=301]
 
