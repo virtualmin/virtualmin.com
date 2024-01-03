@@ -1,6 +1,7 @@
 ---
 title: "Troubleshooting Databases"
 author: "Ilia Ross"
+date: 2024-01-03
 weight: 2510200
 ---
 
