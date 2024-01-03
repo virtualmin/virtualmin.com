@@ -49,7 +49,7 @@ RewriteRule ^documentation/tutorial/how-to-create-ftp-account                   
 RewriteRule ^documentation/tutorial/how-to-enable-shared-ftp-directories                    /docs/ftp/how-to-create-ftp-account [R=301]
 
 RewriteRule ^/documentation/tutorial/how-to-create-database                                 /docs/database/how-to-create-database [R=301]
-RewriteRule ^/documentation/tutorial/how-to-manage-databases                                /docs/database/managing-mysql-databases [R=301]
+RewriteRule ^/documentation/tutorial/how-to-manage-databases                                /docs/database/managing-databases [R=301]
 
 RewriteRule ^documentation/tutorial                                                         /docs/fundamentals/how-to-log-in-to-virtualmin [R=301,L]
 
@@ -74,3 +74,4 @@ RewriteRule ^documentation/dns/slave-configuration                              
 RewriteRule ^documentation/dns/faq                                                          /docs/dns/troubleshooting-dns [R=301]
 RewriteRule ^documentation/dns/troubleshooting                                              /docs/dns/troubleshooting-dns [R=301]
 RewriteRule ^documentation/dns/registrar                                                    /docs/dns/domain-registration [R=301]
+RewriteRule ^documentation/developer/cli/databases/faq                                      /docs/database/troubleshooting-databases [R=301]
