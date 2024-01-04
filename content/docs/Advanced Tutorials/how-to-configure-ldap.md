@@ -1,6 +1,6 @@
 ---
 title: "How to Configure LDAP"
-author: "Ilia Ross"
+author: "Joe Cooper"
 weight: 2900000
 ---
 
