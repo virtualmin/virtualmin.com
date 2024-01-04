@@ -78,3 +78,8 @@ RewriteRule ^documentation/dns/registrar                                        
 RewriteRule ^documentation/developer/cli/databases/faq                                      /docs/database/troubleshooting-databases [R=301]
 RewriteRule ^documentation/cloudmin/devel/remote                                            /docs/database/running-database-on-a-remote-system [R=301]
 RewriteRule ^documentation/database/remote                                                  /docs/database/running-database-on-a-remote-system [R=301]
+
+RewriteRule ^documentation/users/server-owner                                               /docs/web/uploading-and-editing-website-data [R=301]
+RewriteRule ^documentation/users/mail-and-ftp                                               /docs/fundamentals/understanding-virtual-server-and-account-types/#mailftp-users [R=301, NC]
+RewriteRule ^documentation/users/reseller                                                   /docs/fundamentals/understanding-virtual-server-and-account-types/#reseller [R=301, NC]
+
