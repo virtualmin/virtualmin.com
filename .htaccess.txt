@@ -83,3 +83,6 @@ RewriteRule ^documentation/users/server-owner                                   
 RewriteRule ^documentation/users/mail-and-ftp                                               /docs/fundamentals/understanding-virtual-server-and-account-types/#mailftp-users [R=301, NC]
 RewriteRule ^documentation/users/reseller                                                   /docs/fundamentals/understanding-virtual-server-and-account-types/#reseller [R=301, NC]
 
+RewriteRule ^documentation/security/fail2ban                                                /docs/installation/automated [R=301]
+RewriteRule ^documentation/security/pci                                                     /docs/security/pci-compliance [R=301]
+
