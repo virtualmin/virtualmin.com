@@ -24,8 +24,8 @@ RewriteRule ^documentation/tutorial/account-basics                              
 RewriteRule ^documentation/tutorial/virtual-server-basics                                   /docs/fundamentals/understanding-virtual-server-and-account-types/#introduction-to-virtual-server-types [R=301,NE]
 RewriteRule ^/documentation/tutorial/how-to-change-a-mailbox-users-password                 /docs/fundamentals/how-to-change-virtual-server-users-password [R=301]
 RewriteRule ^/documentation/tutorial/how-to-change-a-virtual-server-owners-password         /docs/fundamentals/how-to-change-virtual-server-owner-password [R=301]
-RewriteRule ^/documentation/tutorial/how-to-backup-a-virtual-server                         /docs/fundamentals/how-to-backup-virtual-servers [R=301]
-RewriteRule ^/documentation/tutorial/how-to-backup-all-virtual-servers                      /docs/fundamentals/how-to-backup-all-virtual-servers-on-schedule [R=301]
+RewriteRule ^/documentation/tutorial/how-to-backup-a-virtual-server                         /docs/storage/how-to-backup-virtual-servers [R=301]
+RewriteRule ^/documentation/tutorial/how-to-backup-all-virtual-servers                      /docs/storage/how-to-backup-virtual-servers [R=301]
 RewriteRule ^/documentation/tutorial/how-to-install-scripts                                 /docs/fundamentals/how-to-install-scripts [R=301]
 RewriteRule ^/documentation/tutorial/using-system-stats                                     /docs/fundamentals/how-to-use-system-statistics [R=301]
 RewriteRule ^/documentation/tutorial/how-to-setup-a-cron-job                                /docs/fundamentals/how-to-setup-cron-jobs/#how-to-create-a-cron-job [R=301]
@@ -86,3 +86,4 @@ RewriteRule ^documentation/users/reseller                                       
 RewriteRule ^documentation/security/fail2ban                                                /docs/installation/automated [R=301]
 RewriteRule ^documentation/security/pci                                                     /docs/security/pci-compliance [R=301]
 
+RewriteRule ^/documentation/system/backup-and-restore                                       /docs/storage/how-to-backup-virtual-servers [R=301]
