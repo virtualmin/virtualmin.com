@@ -15,40 +15,32 @@ Upgrading from the command line is also possible, using the `dnf` or `apt-get` c
 For example, on RHEL and derivatives, you can run the following command to update all system packages, including Virtualmin related ones:
 
 ```text
-dnf update -y
+sudo dnf update -y
 ```
 
 On Debian and derivatives, you can run the following command:
 
 ```text
-apt-get update && apt-get upgrade -y
+sudo apt-get update && apt-get upgrade -y
 ```
 
 Alternately, you can install specific packages, e.g.:
 
 ```text
-dnf update perl webmin wbm-virtual-server usermin -y
+sudo dnf update perl webmin wbm-virtual-server usermin -y
 ```
 
 or
 
 ```text
-apt-get install perl webmin webmin-virtual-server usermin -y
+sudo apt-get install perl webmin webmin-virtual-server usermin -y
 ```
 
 > #### Virtualmin and all related packages are outdated, and no updates are available. Why?
 This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
 
-
 ```
 sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
-
-```
-
-Should `curl` not be present on your system, `wget` can be used as an alternative:
-
-```
-sudo sh -c "$(wget -nv -O - https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
 
 > #### What modules are included in the 'Un-used Modules' section in Webmin? 
