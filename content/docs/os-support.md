@@ -13,8 +13,8 @@ If you're just starting out with Virtualmin, and want to have an easy installati
 
 Grade A systems have an automated installation script, a well-maintained software repository for updates, and are expected to work out of the box if you run the install script on a freshly installed system running one of these OS. We strongly recommend the current stable release of one of these systems for most users. We never support beta or pre-release versions of any OS.
 
-- Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64 
 - Debian 11 and 12 on i386 and amd64
+- Ubuntu 20.04 LTS and 22.04 LTS on i386 and amd64 
 - Rocky, Alma, and RHEL 8 and 9 on x86_64
 - CentOS and RHEL 7 on x86_64 (no longer recommended)
 
@@ -24,21 +24,23 @@ The following operating systems are _not_ recommended for new or intermediate us
 
 Most Grade B systems do not fully support automatic installation but are expected to work well, if you are capable of performing all of the necessary configuration and installation steps to get the other necessary components working together. There have been Virtualmin installations on all of these systems, but they are only recommended for experts. We will try to support Virtualmin and Webmin on these platforms within the bounds of our knowledge, but they have received little-to-no direct testing by us.
 
-- Fedora Server 36 on x86_64 (using `--unstable` param)
-- CentOS Stream 8 and 9 on x86_64 (using `--unstable` param)
-- Oracle Linux 8 and 9 on x86_64 (using `--unstable` param)
-- Mac OS X
+#### Grade B systems with automatic installation support
+
+For enabling automatic installation support, use the `--unstable` param when running the `virtualmin-install.sh` script.
+
+- Fedora Server 39 and up on x86_64
+- CentOS Stream 8 and 9 on x86_64
+- Oracle Linux 8 and 9 on x86_64
+- Amazon Linux 2023 and above on x86_64
+- CloudLinux Linux 8 and 9 on x86_64
+- Kali Linux Rolling 2023 and above on x86_64
+
+#### Grade B systems without automatic installation support
 - Raspbian Linux
-- Mandriva Linux
-- SuSE and OpenSuSE Linux
-- Gentoo Linux
-- Amazon Linux
+- openSUSE Linux
 - FreeBSD
 - OpenBSD
 - NetBSD
-- DragonflyBSD
-- Solaris and OpenSolaris and derivatives
-- Any Grade A system in versions or architectures not listed above
 
 ### Others
 

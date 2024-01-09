@@ -41,7 +41,7 @@ Usage:  virtualmin-install.sh [options]
   --help|-h                display this help and exit
   --bundle|-b <LAMP|LEMP>  choose bundle to install (defaults to LAMP)
   --minimal|-m             install a smaller subset of packages for low-memory/low-resource systems
-  --unstable|-e            enable support for Grade B systems (Fedora, CentOS Stream, Oracle)
+  --unstable|-e            enable support for Grade B systems (not recommended, see documentation)
   --no-package-updates|-x  skip installing system package updates
   --setup|-s               setup Virtualmin software repositories and exit
   --hostname|-n            set fully qualified hostname
