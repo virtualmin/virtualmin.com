@@ -1,7 +1,7 @@
 ---
 title: "Uninstalling Virtualmin"
 date: 2023-11-22
-weight: 2025000
+weight: 2020000
 ---
 
 ### Uninstalling

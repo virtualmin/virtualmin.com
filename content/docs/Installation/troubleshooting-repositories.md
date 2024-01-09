@@ -1,7 +1,7 @@
 ---
-title: "Repositories Troubleshooting"
+title: "Troubleshooting Repositories"
 date: 2023-11-24
-weight: 2025000
+weight: 2021000
 ---
 It is important to have Virtualmin repositories configured correctly to make sure the latest packages are installed.
 
