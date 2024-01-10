@@ -22,7 +22,7 @@ Before you can backup anything, you need to decide where your backups are going 
 
 A better alternative is to backup to another system, perhaps owned by you or maybe provided by your colocation company. The backup files can be transferred either via FTP or SSH, depending on which protocol the destination system supports. Almost all Unix systems will allow SSH logins, but some network attached storage devices will only support FTP.
 
-Another option is to use one of the [supported](/docs/storage/cloud-storage-providers) cloud storage providers. This is probably the safest option.
+Another option is to use one of the supported [cloud storage](/docs/storage/cloud-storage-providers) providers. This is probably the safest option.
 
 ### Scheduling backups
 
