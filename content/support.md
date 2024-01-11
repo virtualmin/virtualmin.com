@@ -1,28 +1,33 @@
 ---
-title: "Support"
-date: 2023-11-13
+title: "Getting Support"
+date: 2024-01-11
 showtoc: false
 hideMeta: true
 ---
 
-### Don\'t worry - we\'re here to help
+We understand that managing servers can be complex, but you're not alone. Our team is dedicated to helping you utilize our products to their fullest potential. Whether you’re troubleshooting, need quick solutions, or require in-depth assistance, the creators of Webmin, Usermin, Virtualmin, Cloudmin, and the Authentic Theme are here at your service.
 
-Make the most of your Virtualmin and Cloudmin deployments, find quick solutions to common problems, and get direct assistance from the developers of Webmin, Virtualmin, Cloudmin, and Usermin. Usually, the quickest way to get answers is as follows:
+{{< alert primary exclamation "Quick Self-Help" "For quick self-help, begin by searching our [forum](https://forum.virtualmin.com). A wealth of collective knowledge is available there, as many questions have already been asked and answered. By searching for your issue first, you might find the solution you need in just a few minutes." >}}
 
-### Step 1: Search for similar questions
+### Premium Support
 
-If your question has been asked before, you might be able to find an answer in minutes and get your problem knocked out before we even know it exists. If a search does not provide good answers, proceed to step 2.
+Experience dedicated support as a paid customer. For quick and reliable assistance, feel free to contact our team via private message; your tickets are always free. With your Professional subscription, you're assured of priority handling for all your support tickets. While we guarantee a response time within 24 hours, we often respond much faster.
 
-### Step 2a: Open a ticket in our support tracker (Pro customers)
+{{< link "primary|outline|rounded" support "https://forum.virtualmin.com/new-message?groupname=staff&body=|++SYSTEM+INFORMATION||%0A|------------------------------|-------------------------------|%0A|++OS+type+and+version++|+++++REQUIRED+++++|%0A|++Webmin+version+++++++++|+++++REQUIRED+++++|%0A|++Virtualmin+version+++++|+++++REQUIRED+++++|%0A|++Related+packages++++++|+++SUGGESTED+++|%0A%0A%0A%0A" "Create Premium Support Ticket" >}}
 
-If you need fast and reliable support, open a premium ticket by sending us a [private message](https://forum.virtualmin.com/new-message?groupname=staff&amp;body=|++SYSTEM+INFORMATION||%0A|------------------------------|-------------------------------|%0A|++OS+type+and+version++|+++++REQUIRED+++++|%0A|++Webmin+version+++++++++|+++++REQUIRED+++++|%0A|++Virtualmin+version+++++|+++++REQUIRED+++++|%0A|++Related+packages++++++|+++SUGGESTED+++|%0A%0A%0A%0A) on the forums. If you have any active Professional product, your tickets are always free.
+### Community Support
+For GPL users or those who prefer a community-based help, we encourage you to join and engage with our forum, where our staff and community members are always eager to help. Feel free to post your questions there if you're comfortable with a brief wait. Our community, along with the staff, actively participate and are keen to assist. While we prioritize direct support for paid customers, we value each user and strive to contribute to forum discussions as often as possible.
 
-### Step 2b: Ask the community (GPL users)
+However, before engaging, we encourage you to familiarize yourself with our [guidelines](https://forum.virtualmin.com/guidelines) to ensure a positive and productive experience.
 
-If you can wait for answers from our community and don\'t want to spend any money, ask your question in the forums. Every member of the Virtualmin staff also monitors the forums, and tries to help out whenever we can. We generally prioritize paid support queries (we\'ve got bills to pay, after all), but our forums are very active and our community is knowledgeable.
+{{< link "success|chat|rounded" forum "https://forum.virtualmin.com/" "Join the Forum" >}}
 
-[Go to the Forums](https://forum.virtualmin.com/)
+### Report a Bug
 
-### Step 3: Found a bug?
+Help improve our products for everyone:
 
-If you\'ve found a bug in Virtualmin or Cloudmin, GPL or Professional, please file a bug in the relevant [GitHub issue tracker](https://github.com/virtualmin/) for the project you\'re reporting on, or [post to the forum](https://forum.virtualmin.com), or report to the appropriate `security@` email address if reporting security issues. It benefits everyone when you let us know about bugs you find in our software.
+- Spotted a bug? Whether you're a GPL or Pro user, we encourage you to report it. Use the appropriate [GitHub issue tracker](https://github.com/virtualmin/) to report non-security related bugs.
+- For sensitive reports, especially security vulnerabilities, please use the designated `security@` email address to ensure responsible handling of the issue.
+- Our forum is also a place to discuss potential bugs; sometimes what seems like a bug might be a configuration issue that the community or our staff can quickly resolve.
+
+Remember, your feedback and reports are invaluable. They not only help us improve our software but also enhance the experience for the entire user base. Let's work together to keep it running smoothly.
