@@ -1,5 +1,6 @@
 ---
 title: "How to Configure Secondary DNS"
+subSection: "DNS"
 author: "Ilia Ross"
 weight: 2197500
 ---

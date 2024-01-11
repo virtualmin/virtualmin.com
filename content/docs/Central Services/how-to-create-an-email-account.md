@@ -1,5 +1,6 @@
 ---
 title: "How to Create an Email Account"
+subSection: "Email"
 date: 2023-11-25
 author: "Ilia Ross"
 weight: 2200000

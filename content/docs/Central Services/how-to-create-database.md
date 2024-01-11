@@ -1,5 +1,6 @@
 ---
 title: "How to Create a New Database"
+subSection: "Database"
 author: "Ilia Ross"
 weight: 2500000
 ---

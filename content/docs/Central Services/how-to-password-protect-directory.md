@@ -1,5 +1,6 @@
 ---
 title: "How to Password Protect a Directory"
+subSection: "Web"
 date: 2023-11-27
 author: "Ilia Ross"
 weight: 2300000

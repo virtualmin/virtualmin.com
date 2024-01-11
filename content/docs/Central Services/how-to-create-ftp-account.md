@@ -1,5 +1,6 @@
 ---
 title: "How to Create an FTP Account"
+subSection: "FTP"
 author: "Ilia Ross"
 weight: 2400000
 ---
