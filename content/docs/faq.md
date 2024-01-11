@@ -74,6 +74,13 @@ This problem typically arises from outdated repositories. To resolve the issue, 
 ```
 sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
+### System upgrade
+
+> **How do I upgrade my system from one major version to another?**
+
+Upgrading major versions of your Linux distribution, such as from Ubuntu 20.04 to 22.04, AlmaLinux 8 to 9, or Debian 11 to 12, is a significant process and is not something we can assist with. It's important to note that distro upgrades can sometimes lead to complications. Some users might experience issues that require manual intervention to resolve, while others may find the upgrade process smooth and without major problems. We strongly recommend that such questions be directed to the respective forums or support communities. They are better equipped to provide detailed, distribution-specific advice and guidelines for the upgrade process.
+
+Remember, it's always a good idea to backup your data before attempting any major system upgrade.
 
 ### User interface
 > **What modules are included in the 'Un-used Modules' section in Webmin?**
