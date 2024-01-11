@@ -86,4 +86,4 @@ RewriteRule ^documentation/users/reseller                                       
 RewriteRule ^documentation/security/fail2ban                                                /docs/installation/automated [R=301]
 RewriteRule ^documentation/security/pci                                                     /docs/security/pci-compliance [R=301]
 
-RewriteRule ^/documentation/system/backup-and-restore                                       /docs/storage/how-to-backup-virtual-servers [R=301]
+RewriteRule ^/documentation/system/migrate                                                  /docs/data-operations/how-to-migrate-to-a-new-server [R=301]
