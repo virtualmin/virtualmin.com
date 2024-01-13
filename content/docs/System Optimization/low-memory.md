@@ -18,7 +18,7 @@ To disable preloading of Webmin libraries in Virtualmin, do the following:
 3. In the **Server settings** section, set **Preload Virtualmin libraries at startup?** to **No**.
 4. Save changes and re-check the Virtualmin configuration.
 
-Optimizing this setting will decrease the memory consumption of Virtualmin. It controls the preloading of Webmin libraries at startup. While preloading these libraries can enhance Virtualmin's speed, especially in scenarios with sufficient memory and multiple concurrent users, it's crucial to prioritize efficient memory usage on systems with limited resources. In such environments, minimizing swapping is key to maintaining the overall performance of all components, making it more beneficial to limit library preloading.
+Optimizing this setting will decrease the memory consumption of Virtualmin. It controls the preloading of Webmin libraries at startup. While preloading these libraries can enhance Virtualmin's speed, especially in scenarios with sufficient memory and multiple concurrent users, it's crucial to prioritize efficient memory usage on systems with limited resources.
 
 ### Reduce SpamAssassin and ClamAV memory usage
 Basic mail services are lightweight in terms of memory usage, but incorporating spam and antivirus filtering, like SpamAssassin and ClamAV, significantly ramps up resource demands. For systems constrained by limited memory, a viable solution is to delegate spam and antivirus filtering tasks to an external server or to a fully offsite email service.
