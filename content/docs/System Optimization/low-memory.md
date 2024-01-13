@@ -21,7 +21,7 @@ To disable preloading of Webmin libraries in Virtualmin, do the following:
 Optimizing this setting will decrease the memory consumption of Virtualmin. It controls the preloading of Webmin libraries at startup. While preloading these libraries can enhance Virtualmin's speed, especially in scenarios with sufficient memory and multiple concurrent users, it's crucial to prioritize efficient memory usage on systems with limited resources.
 
 ### Reduce SpamAssassin and ClamAV memory usage
-Basic mail services are lightweight in terms of memory usage, but incorporating spam and antivirus filtering, like SpamAssassin and ClamAV, significantly ramps up resource demands. For systems constrained by limited memory, a viable solution is to delegate spam and antivirus filtering tasks to an external server or to a fully offsite email service.
+Basic mail services are lightweight in terms of memory usage, but incorporating spam and antivirus filtering, like SpamAssassin and ClamAV, significantly ramps up resource demands. For systems constrained by limited memory, a viable solution is to delegate spam and antivirus filtering tasks to an external server or to fully offsite email service.
 
 Virtualmin offers a solution for remote management of ClamAV and SpamAssassin, allowing several servers to share a centralized scanning server, which efficiently allocates resources as described in the [Spam and Virus Scanning](/docs/server-components/spam-and-virus-scanning) documentation.
 
