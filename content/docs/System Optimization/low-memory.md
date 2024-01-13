@@ -5,20 +5,9 @@ author: "Ilia Ross"
 weight: 2510600
 ---
 
-A default installation of Virtualmin is optimized for performance rather than minimal memory usage. This configuration can lead to issues on systems with 1GB or less RAM, especially on VPS without swap space. Addressing memory usage is crucial, as running out of memory severely impacts performance. Note that Virtualmin, typically using around 20MB, is relatively modest in its memory demands compared to other services. For instance, Apache can easily consume 300MB, BIND can exceed 100MB, and MySQL or MariaDB can require over 500MB, depending on configurations. Postfix remains small, however associated spam and anti-virus tools can be memory and CPU hogs.
+A default installation of Virtualmin is optimized for performance rather than minimal memory usage. This configuration can lead to issues on systems with 1GB or less RAM, especially on VPS without swap space. 
 
-Nginx uses less RAM than Apache, making it a better option for systems with limited memory. That's why the [Virtualmin LEMP bundle](/docs/installation/automated/#lamp-apache-vs-lemp-nginx) is often recommended for setups where keeping memory use low is important.
-
-### Virtualmin library pre-loading
-
-To disable preloading of Webmin libraries in Virtualmin, do the following:
-
-1. Log in as the master administrator.
-2. In the left menu, go to **System Settings ⇾ Virtualmin Configuration**.
-3. In the **Server settings** section, set **Preload Virtualmin libraries at startup?** to **No**.
-4. Save changes and re-check the Virtualmin configuration.
-
-Optimizing this setting will decrease the memory consumption of Virtualmin. It controls the preloading of Webmin libraries at startup. While preloading these libraries can enhance Virtualmin's speed, especially in scenarios with sufficient memory and multiple concurrent users, it's crucial to prioritize efficient memory usage on systems with limited resources.
+Efficient memory management is essential for optimal performance. In terms of RAM usage, SpamAssassin can easily consume 1GB, while ClamAV often requires at least 2GB. MySQL or MariaDB usually require upwards of 400MB of memory, dependent on configuration settings. Apache can consume around 250MB, and BIND's memory usage can surpass 100MB, influenced by the number of hosted zones and its role as a recursive DNS server. PHP's memory consumption typically exceeds 100MB and also varies significantly based on its configuration settings. At the lower end, Virtualmin uses about 30MB and Postfix remains around 5MB.
 
 ### Reduce SpamAssassin and ClamAV memory usage
 Basic mail services are lightweight in terms of memory usage, but incorporating spam and antivirus filtering, like SpamAssassin and ClamAV, significantly ramps up resource demands. For systems constrained by limited memory, a viable solution is to delegate spam and antivirus filtering tasks to an external server or to fully offsite email service.
@@ -43,8 +32,52 @@ Furthermore, you should disable spam and antivirus features in Virtualmin by fol
 
 By disabling both SpamAssassin and ClamAV, you can free up significant memory and processing resources, ensuring the efficiency and stability of your low-memory system.
 
+### Reduce MySQL/MariaDB memory usage
+
+Optimizing MySQL or MariaDB for a low-memory or resource-constrained system involves making careful adjustments to your database configuration. These adjustments are aimed at reducing memory usage while maintaining acceptable performance.
+
+Finding the main configuration file for MySQL or MariaDB is essential for customizing database settings, so at first, locate the main configuration file for MySQL or MariaDB where the `[mysqld]` section is located. The exact location and naming of the configuration file can vary depending on the operating system and the specific installation package used.
+
+- **Search for the `[mysqld]` section**  
+Run the following command to find files containing the `[mysqld]` section in the `/etc` directory:
+    ```text
+    grep -Rsi '\[mysqld\]' /etc
+    ```
+    This section indicates MySQL/MariaDB configuration. Be careful not to confuse it with the `[mysql]` section (for client settings) or similar-looking sections in other services like Fail2ban or Logrotate.
+
+- **Review the search results**: Look for files typically located at `/etc/mysql`, `/etc/my.cnf.d` or within `/etc/mysql/mariadb.conf.d`.
+
+- **Proceed with caution**: Always back up the configuration file before making any changes. After editing, restart the MySQL/MariaDB service to apply your changes.
+
+- **Add or change the following directives to the `[mysqld]` section**
+
+    ```text
+    innodb_buffer_pool_size         = 32M
+    innodb_log_buffer_size          = 4M
+    innodb_flush_log_at_trx_commit  = 2
+    query_cache_type                = 0
+    query_cache_size                = 0
+    max_connections                 = 50
+    max_user_connections            = 50
+    key_buffer_size                 = 4M
+    max_allowed_packet              = 2M
+    table_open_cache                = 16
+    sort_buffer_size                = 64K
+    read_buffer_size                = 32K
+    read_rnd_buffer_size            = 128K
+    net_buffer_length               = 2K
+    thread_stack                    = 256K
+    ```
+
+These directives are designed to reduce memory usage while maintaining acceptable performance. The values can be adjusted further based on your specific server's performance and the nature of the traffic it handles.
+
 ### Reduce Apache memory usage
-Managing memory usage in Apache is also important for optimizing performance and stability on low-memory systems. Apache's memory usage is directly related to the number of processes and modules loaded.
+
+Managing memory usage in Apache is also important for optimizing performance and stability on low-memory systems.
+
+{{< alert primary exclamation "" "Note that Nginx consumes less RAM compared to Apache, making it a more suitable choice for systems with limited memory. That's why the [Virtualmin LEMP bundle](/docs/installation/automated/#lamp-apache-vs-lemp-nginx) is often recommended for setups where keeping memory use low is important." >}}
+
+Apache's memory usage is directly related to the number of processes and modules loaded.
 
 #### Reduce persistent connections
 Persistent connections are connections that remain open after a request is completed. This can reduce the number of processes required to handle requests, thereby reducing memory usage. The `KeepAlive` and `KeepAliveTimeout` directives can be adjusted to optimize memory usage. These directives are used to manage persistent connections. The `KeepAlive` directive enables persistent connections, while the `KeepAliveTimeout` directive sets the time in seconds that Apache waits for a new request from a client before closing the connection. The default value for `KeepAliveTimeout` is 5 seconds. Reducing this value can reduce the number of processes required to handle requests, thereby reducing memory usage.
@@ -129,77 +162,63 @@ This configuration aims to balance the need for responsiveness with the limitati
 
 To further reduce memory usage, consider disabling unused Apache modules. This can have a significant impact on memory consumption, but identifying which modules are not in use can be challenging. We recommend disabling modules one at a time and monitoring the server's performance to determine which modules are safe to disable.
 
+### Reduce PHP memory usage
 
-### Reduce MySQL/MariaDB memory usage
+To optimize PHP memory usage, you can make the following adjustments:
 
-Optimizing MySQL or MariaDB for a low-memory or resource-constrained system involves making careful adjustments to your database configuration. These adjustments are aimed at reducing memory usage while maintaining acceptable performance.
+- Lower the maximum memory allocation option in the PHP configuration. This can be done in the **Web Configuration ⇾ PHP-FPM Configuration: Resource Limits** page. Be aware that modifying this setting will impact the memory usage of all PHP scripts running on the server.
 
-Finding the main configuration file for MySQL or MariaDB is essential for customizing database settings, so at first, locate the main configuration file for MySQL or MariaDB where the `[mysqld]` section is located. The exact location and naming of the configuration file can vary depending on the operating system and the specific installation package used.
+- Switch to PHP-FPM execution mode, which is often more efficient in terms of memory usage and performance. You can do this in the **Web Configuration ⇾ PHP Options** page. Additionally, choose the appropriate process manager mode based on your needs:
 
-- **Search for the `[mysqld]` section**  
-Run the following command to find files containing the `[mysqld]` section in the `/etc` directory:
-    ```text
-    grep -Rsi '\[mysqld\]' /etc
-    ```
-    This section indicates MySQL/MariaDB configuration. Be careful not to confuse it with the `[mysql]` section (for client settings) or similar-looking sections in other services like Fail2ban or Logrotate.
+    - _dynamic_: This mode spawns child processes based on demand, providing a good balance between performance and memory usage.
+    
+    - _static_: This mode keeps a fixed number of child processes, which can be memory efficient if you set a low number of processes.
+    
+    - _ondemand_: This mode starts processes only when needed, saving memory when your site has low traffic. However, there might be a performance hit on initial requests as processes are spawned.
 
-- **Review the search results**: Look for files typically located at `/etc/mysql`, `/etc/my.cnf.d` or within `/etc/mysql/mariadb.conf.d`.
+- Limit the number of sub-processes. The default recommendation is usually a good starting point, but you can adjust this number based on your actual traffic and workload.
 
-- **Proceed with caution**: Always back up the configuration file before making any changes. After editing, restart the MySQL/MariaDB service to apply your changes.
+### Virtualmin library pre-loading
+On systems with limited memory, it may be helpful to disable the Webmin libraries' preloading feature to reduce memory consumption. Although preloading can enhance Virtualmin's responsiveness, especially with multiple users, the trade-off in memory efficiency may not justify the speed benefit on systems with limited memory, where preventing swapping is crucial for maintaining overall performance.
 
-- **Add or change the following directives to the `[mysqld]` section**
+To disable preloading of Webmin libraries in Virtualmin, do the following:
 
-    ```text
-    innodb_buffer_pool_size         = 32M
-    innodb_log_buffer_size          = 4M
-    innodb_flush_log_at_trx_commit  = 2
-    query_cache_type                = 0
-    query_cache_size                = 0
-    max_connections                 = 50
-    max_user_connections            = 50
-    key_buffer_size                 = 4M
-    max_allowed_packet              = 2M
-    table_open_cache                = 16
-    sort_buffer_size                = 64K
-    read_buffer_size                = 32K
-    read_rnd_buffer_size            = 128K
-    net_buffer_length               = 2K
-    thread_stack                    = 256K
-    ```
-
-These directives are designed to reduce memory usage while maintaining acceptable performance. The values can be adjusted further based on your specific server's performance and the nature of the traffic it handles.
+1. Log in as the master administrator.
+2. In the left menu, go to **System Settings ⇾ Virtualmin Configuration**.
+3. In the **Server settings** section, set **Preload Virtualmin libraries at startup?** to **No**.
+4. Save changes and re-check the Virtualmin configuration.
 
 ### Enable swap
 
 To optimize memory usage, it is important to have a configured swap file or partition, especially on systems with limited RAM. If you don't have a swap partition or swap file, you can create one as follows:
 
 #### Creating swap
-1. **Create a swap file**:
-   - Use the `fallocate` command to create a swap file. For example, to create a 4 GB swap file:
+1. **Create a swap file**  
+   Use the `fallocate` command to create a swap file. For example, to create a 4 GB swap file:
      ```text
      fallocate -l 4G /swapfile
      ```
 
-2. **Set correct permissions**:
+2. **Set correct permissions**
      ```text
      chmod 600 /swapfile
      ```
     {{< note "Only the _root_ user should have read and write permissions to the swap file for security reasons." "Note:" "notification" >}}
 
-3. **Make the file a swap file**:
-   - Convert the file into a swap space:
+3. **Make the file a swap file**  
+   Convert the file into a swap space:
      ```text
      mkswap /swapfile
      ```
 
-4. **Enable the swap file**:
-   - Activate the swap file:
+4. **Enable the swap file**  
+   Activate the swap file:
      ```text
      swapon /swapfile
      ```
 
-5. **Make the swap file permanent**:
-   - Edit `/etc/fstab` to add the swap file:
+5. **Make the swap file permanent**  
+   Edit `/etc/fstab` to add the swap file:
      ```text
      echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
      ```
@@ -208,40 +227,60 @@ To optimize memory usage, it is important to have a configured swap file or part
 
 If you already have a swap file and need to enlarge it:
 
-1. **Turn off existing swap**:
-   - Disable the current swap file:
+1. **Turn off existing swap**  
+   Disable the current swap file:
      ```text
      swapoff -v /swapfile
      ```
      {{< note "Actual swap file name may vary. To find the swap file name, run `cat /proc/swaps` command." "Note:" "notification" >}}
 
-2. **Resize the swap file**:
-   - If you want to increase the swap size to 8 GB, for example:
+2. **Resize the swap file**  
+   If you want to increase the swap size to 8 GB, for example:
      ```text
      fallocate -l 8G /swapfile
      ```
 
-3. **Make the file a swap file**:
+3. **Make the file a swap file**
    ```text
    mkswap /swapfile
    ```
 
-4. **Turn on swap**:
+4. **Turn on swap**
    ```text
    swapon /swapfile
    ```
 
-5. **Update `/etc/fstab` if needed**:
-   - If the swap file path or name changes, update `/etc/fstab` accordingly.
+5. **Update `/etc/fstab` if needed**  
+   If the swap file path or name changes, update `/etc/fstab` accordingly.
 
 #### Considerations
 
 - Ensure your system has enough free space to accommodate the swap file.
 - The performance of swap space on a disk drive is typically much slower than physical RAM.
 - For resizing a swap partition, it's more complex and may involve resizing disk partitions, which is riskier and should be done with caution and backups.
+- Disable unused services to free up memory before trying to increase swap space. This can be accomplished in Virtualmin under **System Settings ⇾ Features and Plugins**, and in Webmin through **System ⇾ Bootup and Shutdown**. Services such as the Postgres database or Mailman should be disabled if they are not in use. If SSH/SFTP is available, it's recommended to disable ProFTPd. Furthermore, if your DNS is hosted externally, consider disabling the BIND DNS server.
 
 Always back up important data before performing such operations, as mistakes can lead to data loss. Additionally, consider the impact on your system's performance and storage when adjusting swap space. For a better performance, it's recommended to add more RAM instead of increasing swap space.
 
-### Disable unnecessary services
+### Debugging memory usage
+To debug killed processes in Linux and determine the reason why they were terminated, you can follow these steps:
 
-Disable unused services in Virtualmin's **System Settings ⇾ Features and Plugins** and in **Webmin ⇾ System ⇾ Bootup and Shutdown**. Services like the Postgres database or Mailman can be disabled if not in use. If you have the option to utilize SSH/SFTP instead of FTP, it's advisable to disable ProFTPd.
+- The `journalctl` command is used to query and display messages from the _systemd_ journal, which is a centralized log management system. To specifically check for out-of-memory issues, use the following command:
+
+   ```text
+   journalctl -k | grep -i 'Out of memory'
+   ```
+
+   This command filters kernel messages for entries related to out-of-memory conditions. It’s a primary tool for investigating if the Out-Of-Memory (OOM) killer has been activated and which processes were affected.
+
+- If `journalctl` does not provide the needed information, or if you are working on a system where _systemd_ is not present, use the `dmesg` command. This command displays messages from the kernel ring buffer, which includes messages about processes being killed:
+
+   ```text
+   dmesg -T | grep -i 'killed process'
+   ```
+
+   The `-T` option in `dmesg` displays human-readable timestamps, making it easier to correlate events with system issues. This command is particularly useful for identifying processes terminated by the kernel, including those affected by the OOM killer.
+
+- Don't forget to correlate the findings from system logs with application-specific logs. If a particular application was killed, its own logs might contain valuable information preceding the termination.
+
+- While focusing on logs, it's also a good idea to use system monitoring tools like `top`, `htop`, or custom monitoring solutions to understand the overall resource utilization trends over time.
