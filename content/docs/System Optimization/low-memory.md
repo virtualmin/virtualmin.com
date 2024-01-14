@@ -263,7 +263,9 @@ If you already have a swap file and need to enlarge it:
 Always back up important data before performing such operations, as mistakes can lead to data loss. Additionally, consider the impact on your system's performance and storage when adjusting swap space. For a better performance, it's recommended to add more RAM instead of increasing swap space.
 
 ### Debugging memory usage
-To debug killed processes in Linux and determine the reason why they were terminated, you can follow these steps:
+The Out-Of-Memory (OOM) Killer in Linux-based systems is a mechanism that is invoked when the system is critically low on memory. The process that the OOM Killer terminates first depends on several factors, primarily the calculated OOM score of the processes running on the system.
+
+If you suspect that the OOM Killer is terminating processes on your system, you can use the following steps to investigate the issue:
 
 - The `journalctl` command is used to query and display messages from the _systemd_ journal, which is a centralized log management system. To specifically check for out-of-memory issues, use the following command:
 
@@ -271,7 +273,7 @@ To debug killed processes in Linux and determine the reason why they were termin
    journalctl -k | grep -i 'Out of memory'
    ```
 
-   This command filters kernel messages for entries related to out-of-memory conditions. It’s a primary tool for investigating if the Out-Of-Memory (OOM) killer has been activated and which processes were affected.
+   This command filters kernel messages for entries related to out-of-memory conditions. It’s a primary tool for investigating if the Out-Of-Memory (OOM) Killer has been activated and which processes were affected.
 
 - If `journalctl` does not provide the needed information, or if you are working on a system where _systemd_ is not present, use the `dmesg` command. This command displays messages from the kernel ring buffer, which includes messages about processes being killed:
 
@@ -279,7 +281,7 @@ To debug killed processes in Linux and determine the reason why they were termin
    dmesg -T | grep -i 'killed process'
    ```
 
-   The `-T` option in `dmesg` displays human-readable timestamps, making it easier to correlate events with system issues. This command is particularly useful for identifying processes terminated by the kernel, including those affected by the OOM killer.
+   The `-T` option in `dmesg` displays human-readable timestamps, making it easier to correlate events with system issues. This command is particularly useful for identifying processes terminated by the kernel, including those affected by the OOM Killer.
 
 - Don't forget to correlate the findings from system logs with application-specific logs. If a particular application was killed, its own logs might contain valuable information preceding the termination.
 
