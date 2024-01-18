@@ -33,6 +33,71 @@ I have the following error after install: "The `suexec` command your system is c
 
 The Apache `suexec` command on your system is misconfigured for use in a virtual hosting environment, and needs to be recompiled or configured (on systems that provide a configurable `suexec` command) with the docroot set to `/home`. On Debian/Ubuntu systems, you can install the `apache2-suexec-custom` package, and modify `/etc/apache2/suexec/www-data` to include `/home`. On other systems, you will need to recompile the Apache package or the `suexec` binary, which we strongly not recommend doing.
 
+> ##### What if I need to install it on a server that is already setup and running?
+It's highly recommended to install Virtualmin on a new, [Grade A](/docs/os-support/#grade-a-supported-systems) supported operating system. If installation on an active server is necessary, make sure to back up all data beforehand.
+
+The final results will depend on how invasive the changes to the running system were. Anything that conflicts with what the Virtualmin install script does would be a source of trouble. What kind of trouble is difficult to predict. The biggest risk would be causing some packages you use to be uninstalled (to satisfy dependencies of Virtualmin).
+
+The safer way to do it would be to do the following, instead of using the full `virtualmin-install.sh` installer:
+
+Setup Virtualmin repos:
+
+```text
+./virtualmin-install.sh --setup
+```
+
+Install dependencies but carefully. Look at the list of what will be installed, and more importantly, what will be removed:
+
+```text
+apt install virtualmin-lamp-stack
+```
+
+or
+
+```text
+dnf group install --setopt=group_package_types=mandatory,default "Virtualmin LAMP Stack"
+```
+
+Or, if you want to keep it as small as possible to start, to reduce the surface area for problems (or if you're not hosting mail):
+
+```
+apt install virtualmin-lamp-stack-minimal
+```
+
+or
+
+```text
+dnf group install --setopt=group_package_types=mandatory,default "Virtualmin LAMP Stack Minimal"
+```
+
+Assuming default configuration of `apt` or `dnf`, it'll ask before doing any removals. Don't type "y" until you know the changes being made won't break something you depend on.
+
+Then install Virtualmin itself:
+
+```
+apt install virtualmin-core
+```
+
+or
+
+```text
+dnf group install --setopt=group_package_types=mandatory,default "Virtualmin Core"
+```
+
+Then, assuming everything seems to be fine, run the appropriate configuration bundle (this step also has some risks, and you won't be given any warning about what it's doing, it assumes that if you tell it to do something you mean it):
+
+```text
+virtualmin-config-system --bundle LAMP
+```
+
+Or use the `MiniLAMP` bundle if you did the minimal dependency install above.
+
+Assuming everything goes right, you'd then have roughly the same system the Virtualmin install script would produce, but it would give you a couple of opportunities to bail if something disastrous is about to happen.
+
+It's also possible to selectively run the config step. Or selectively install dependencies, but I'll leave that as an exercise for the reader. The things `virtualmin-config-system` does can be found in [Virtualmin config](https://github.com/virtualmin/Virtualmin-Config/tree/master/lib/Virtualmin/Config) GitHub repo.
+
+If you wanted to handroll an installation that's exactly the things you need and nothing you don't. But, that's a lot more work. If you don't have any mail setup and if you don't have much in the Apache configuration, yet, then running the automated stages of the install manually if probably safe-ish.
+
 ### License
 
 > ##### How do I upgrade from GPL to Pro
@@ -62,6 +127,10 @@ As with cancellations, you can make changes to your licenses in the **My Account
 > ##### Where are my expired licenses?
 
 Expired licenses don't have any intrinsic value and are removed from the **Software Licenses** page one month after their expiration date.
+
+> ##### Why do I see license error message?
+
+If you receive a warning about your Virtualmin license, it indicates the license, meant for only one server, is in use on multiple servers. This is temporarily acceptable during server migration, and the warning will automatically disappear within a few days after deactivating the old server. If you're using the license on multiple servers for other reasons, you'll need to buy an extra license.
 
 > ##### How do I update payment information or find my invoices?
 
