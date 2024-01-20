@@ -80,8 +80,8 @@ RewriteRule ^documentation/cloudmin/devel/remote                                
 RewriteRule ^documentation/database/remote                                                  /docs/server-components/running-database-on-a-remote-system [R=301]
 
 RewriteRule ^documentation/users/server-owner                                               /docs/server-components/uploading-and-editing-website-data [R=301]
-RewriteRule ^documentation/users/mail-and-ftp                                               /docs/getting-started/understanding-virtual-server-and-account-types/#mailftp-users [R=301, NC]
-RewriteRule ^documentation/users/reseller                                                   /docs/getting-started/understanding-virtual-server-and-account-types/#reseller [R=301, NC]
+RewriteRule ^documentation/users/mail-and-ftp                                               /docs/getting-started/understanding-virtual-server-and-account-types/#mailftp-users [R=301,NE]
+RewriteRule ^documentation/users/reseller                                                   /docs/getting-started/understanding-virtual-server-and-account-types/#reseller [R=301,NE]
 
 RewriteRule ^documentation/security/fail2ban                                                /docs/installation/automated [R=301]
 RewriteRule ^documentation/security/pci                                                     /docs/security/pci-compliance [R=301]
@@ -91,3 +91,5 @@ RewriteRule ^/documentation/system/migrate                                      
 RewriteRule ^/documentation/system/low-memory                                               /docs/system-optimization/low-memory [R=301]
 RewriteRule ^/documentation/system/mobile                                                   /docs [R=301]
 RewriteRule ^/documentation/system/support                                                  /docs/support-module [R=301]
+RewriteRule ^/documentation/system/faq                                                      /docs/faq/#how-can-i-make-sure-my-web-applications-are-up-to-date-without-having-to-wait-for-the-next-virtualmin-release [R=301,NE]
+RewriteRule ^/documentation/system/ipv6                                                     /docs [R=301]

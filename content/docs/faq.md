@@ -136,7 +136,7 @@ If you receive a warning about your Virtualmin license, it indicates the license
 
 If your billing information has expired, we will not be able to renew your licenses automatically. To add a new default payment method, browse to **My Account ⇾ Payment methods**, and then click the **Add payment method** button.
 
-### Package upgrades
+### Packages and webapps upgrades
 > ##### How to update Virtualmin and all related packages?
 
 When a new version is available, you will see a message on the **Dashboard** page stating that there are Virtualmin related package updates available. Other packages may be listed too, depending on what is available to be updated. To install these updates, just click the **Install All Updates Now** button and follow onscreen instructions.
@@ -174,6 +174,11 @@ This problem typically arises from outdated repositories. To resolve the issue, 
 ```
 sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
+
+> ##### How can I make sure my web applications are up-to-date without having to wait for the next Virtualmin release?
+
+In Virtualmin, go to **System Settings ⇾ Script Installers / Installer Updates**, and ensure **Download script updates** is set to **Yes** to automatically receive the latest install script updates.
+
 ### System upgrade
 
 > ##### How do I upgrade my system from one major version to another?
