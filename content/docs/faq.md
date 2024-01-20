@@ -137,6 +137,15 @@ If you receive a warning about your Virtualmin license, it indicates the license
 If your billing information has expired, we will not be able to renew your licenses automatically. To add a new default payment method, browse to **My Account ⇾ Payment methods**, and then click the **Add payment method** button.
 
 ### Packages and webapps upgrades
+
+> ##### Virtualmin and all related packages are outdated, and no updates are available. Why?
+
+This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
+
+```
+sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
+```
+
 > ##### How to update Virtualmin and all related packages?
 
 When a new version is available, you will see a message on the **Dashboard** page stating that there are Virtualmin related package updates available. Other packages may be listed too, depending on what is available to be updated. To install these updates, just click the **Install All Updates Now** button and follow onscreen instructions.
@@ -165,14 +174,6 @@ or
 
 ```text
 sudo apt-get install perl webmin webmin-virtual-server usermin -y
-```
-
-> ##### Virtualmin and all related packages are outdated, and no updates are available. Why?
-
-This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
-
-```
-sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
 
 > ##### How can I make sure my web applications are up-to-date without having to wait for the next Virtualmin release?
