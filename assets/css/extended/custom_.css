@@ -187,6 +187,13 @@ body.dark .logo>a>svg>g>path {
     }
 }
 
+[data-auth="0"].page-support .post-content #premium-support ~ p > a:not([href$="/signin"]) {
+    display: none;
+}
+
+[data-auth="0"].page-support .post-content #premium-support ~ p > a[href$="/signin"].btn-outline-danger {
+    filter: hue-rotate(30deg)brightness(1.07)saturate(.9);
+}
 
 /*
     UNAUTHENTICATED RULES. END.
@@ -338,6 +345,10 @@ body.dark .logo>a>svg>g>path {
     }
 }
 
+[data-auth="1"].page-support .post-content #premium-support ~ p > a[href$="/signin"] {
+    display: none;
+}
+
 /*
     AUTHENTICATED RULES. END.
  */
@@ -377,7 +388,7 @@ body.dark .logo>a>svg>g>path {
 #menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li:nth-child(1)>div>a,
 #menu>li>a[href*="/account/signin/"]>span {
     filter: hue-rotate(30deg) brightness(1.17) saturate(0.95);
-    padding-top: 0.133em;
+    padding-top: 0.211em;
     padding-bottom: 0.211em;
 }
 

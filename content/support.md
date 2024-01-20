@@ -14,6 +14,8 @@ We understand that managing servers can be complex, but you're not alone. Our te
 Experience dedicated support as a paid customer. For quick and reliable assistance, feel free to contact our team via private message; your tickets are always free. With your Professional subscription, you're assured of priority handling for all your support tickets. While we guarantee a response time within 24 hours, we often respond much faster.
 
 {{< link "primary|outline|rounded" support "https://forum.virtualmin.com/new-message?groupname=staff&body=|++SYSTEM+INFORMATION||%0A|------------------------------|-------------------------------|%0A|++OS+type+and+version++|+++++REQUIRED+++++|%0A|++Webmin+version+++++++++|+++++REQUIRED+++++|%0A|++Virtualmin+version+++++|+++++REQUIRED+++++|%0A|++Related+packages++++++|+++SUGGESTED+++|%0A%0A%0A%0A" "Create Premium Support Ticket" >}}
+{{< link "secondary|outline|rounded" "download wm-xs" "/docs/support-module" "Install Support Module" >}}
+{{< link "danger|outline|rounded" "user-circle" "/account/signin" "Sign In For Premium Support" >}}
 
 ### Community Support
 For GPL users or those who prefer a community-based help, we encourage you to join and engage with our forum, where our staff and community members are always eager to help. Feel free to post your questions there if you're comfortable with a brief wait. Our community, along with the staff, actively participate and are keen to assist. While we prioritize direct support for paid customers, we value each user and strive to contribute to forum discussions as often as possible.

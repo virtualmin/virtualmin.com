@@ -10,9 +10,11 @@
             userAvatar.src = avatar_url;
             userItem.classList.remove('hidden');
             menu.classList.add('menu-authenticated');
+            document.documentElement.setAttribute('data-auth', 1);
         } else {
             signInItem.classList.remove('hidden');
             menu.classList.add('menu-unauthenticated');
+            document.documentElement.setAttribute('data-auth', 0);
         }
         // https://cdn.forum.virtualmin.com/user_avatar/forum.virtualmin.com/ilia/144/10185_2.png
         if (signInItem && signInItem.classList.contains('hidden')) {
