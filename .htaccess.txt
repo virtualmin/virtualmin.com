@@ -89,3 +89,5 @@ RewriteRule ^documentation/security/pci                                         
 RewriteRule ^/documentation/system/backup-and-restore                                       /docs/data-operations/how-to-backup-virtual-servers [R=301]
 RewriteRule ^/documentation/system/migrate                                                  /docs/data-operations/how-to-migrate-to-a-new-server [R=301]
 RewriteRule ^/documentation/system/low-memory                                               /docs/system-optimization/low-memory [R=301]
+RewriteRule ^/documentation/system/mobile                                                   /docs [R=301]
+RewriteRule ^/documentation/system/support                                                  /docs/support-module [R=301]
