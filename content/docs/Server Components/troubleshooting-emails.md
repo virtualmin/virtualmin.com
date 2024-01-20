@@ -7,6 +7,19 @@ weight: 2235200
 
 Email functionality in Virtualmin involves various components, making it a complex system. Key elements include a Postfix mail transfer agent, a Procmail mail delivery agent, Dovecot IMAP/POP3 retrieval, ClamAV anti-virus, SpamAssassin anti-spam, and mail log analysis tools. If any of these components fail, it can disrupt mail services for certain tasks or entirely.
 
+### Verifying email server connectivity
+Port _25_ is essential for mail servers inter-communication. It enables email transfers between servers, and if it's blocked, this key inter-server communication will be disrupted.
+
+To check if port _25_ is blocked on your network, use the `telnet` command like this:
+
+```text
+telnet smtp.gmail.com 25
+```
+
+A successful connection shows a "Connected to smtp.gmail.com" message, while a failure displays "Unable to connect to remote host: Connection refused" or gives no response.
+
+ISPs often block this port to curb spam, but they might unblock it if requested. It's advisable to check with your ISP regarding the possibility of unblocking it.
+
 ### Checking logs for email issues
 With modern systems employing _systemd_, the approach to log inspection has evolved. Traditional log files like `/var/log/maillog` or `/var/log/mail.log` are no longer the primary resources for troubleshooting. Instead, `journalctl` provides a centralized and more efficient method to access logs from all _systemd_ services.
 
@@ -18,7 +31,7 @@ For SMTP issues, use:
 journalctl -u postfix
 ```
 
-This command shows logs related to Postfix, which is commonly used for SMTP. 
+This command shows logs related to Postfix, which is commonly used for SMTP.
 
 #### Checking IMAP/POP3 logs with Dovecot
 
