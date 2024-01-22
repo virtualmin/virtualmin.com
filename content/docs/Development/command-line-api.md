@@ -132,7 +132,7 @@ virtualmin generate-letsencrypt-cert --domain example.com --renew
 virtualmin migrate-domain --type cpanel --source /path/to/backup.tar.gz
 ```
 
-#### Restore just the Virtualmin config file for a domain
+#### Restore Virtualmin domain config file
 ```sh
 #!/bin/sh
 virtualmin restore-domain --source /path/to/example.com.tar.gz --domain example.com --feature virtualmin --fix
