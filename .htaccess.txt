@@ -96,3 +96,6 @@ RewriteRule ^/documentation/system/ipv6                                         
 RewriteRule ^/documentation/system/replication                                              /docs/system-optimization/replication-and-shared-storage [R=301]
 RewriteRule ^/documentation/system/varnish                                                  /docs [R=301]
 RewriteRule ^/documentation/virtualmin_for_cpanel_users                                     /docs/faq/#understanding-terminology-differences-from-cpanel-to-virtualmin [R=301,NE]
+
+RewriteRule ^/documentation/developer/cli                                                   /docs/development/command-line-api [R=301]
+RewriteRule ^/documentation/developer/cli_examples                                          /docs/development/command-line-api/#example-usage [R=301,NE]
