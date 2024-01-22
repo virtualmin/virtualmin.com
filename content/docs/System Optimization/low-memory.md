@@ -1,6 +1,6 @@
 ---
 title: "Low Memory"
-date: "2021-01-13"
+date: "2023-01-13"
 author: "Ilia Ross"
 weight: 2510600
 ---
