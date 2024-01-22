@@ -94,3 +94,5 @@ RewriteRule ^/documentation/system/support                                      
 RewriteRule ^/documentation/system/faq                                                      /docs/faq/#how-can-i-make-sure-my-web-applications-are-up-to-date-without-having-to-wait-for-the-next-virtualmin-release [R=301,NE]
 RewriteRule ^/documentation/system/ipv6                                                     /docs [R=301]
 RewriteRule ^/documentation/system/replication                                              /docs/system-optimization/replication-and-shared-storage [R=301]
+RewriteRule ^/documentation/system/varnish                                                  /docs [R=301]
+RewriteRule ^/documentation/virtualmin_for_cpanel_users                                     /docs/faq/#understanding-terminology-differences-from-cpanel-to-virtualmin [R=301,NE]

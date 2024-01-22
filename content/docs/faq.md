@@ -189,7 +189,11 @@ Upgrading major versions of your Linux distribution, such as from Ubuntu 20.04 t
 Remember, it's always a good idea to backup your data before attempting any major system upgrade.
 
 ### User interface
+
+> ##### What are the key terminology differences between cPanel and Virtualmin
+
+Virtualmin and cPanel have key differences in terminology --- in Virtualmin, what cPanel refers to as "domain" is called "virtual server", a "sub-domain" is called "sub-server" and "parked domain" is called "alias server".
+
 > ##### What modules are included in the 'Un-used Modules' section in Webmin?
 
 Un-used modules means "Modules that are installed but for which the detection logic in the module did not find the related packages installed". Any module that has service detection functions will end up in un-used modules if it does not detect the service or application it manages. The way to get a module out of unused modules is to install the related package. Many standard modules will be in unused modules on any given system, because no system should be doing everything a Webmin system can manage, that'd be a chaotic.
-
