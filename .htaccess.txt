@@ -100,3 +100,5 @@ RewriteRule ^/documentation/virtualmin_for_cpanel_users                         
 RewriteRule ^/documentation/developer/cli                                                   /docs/development/command-line-api [R=301]
 RewriteRule ^/documentation/developer/cli_examples                                          /docs/development/command-line-api/#example-usage [R=301,NE]
 RewriteRule ^/documentation/developer/http                                                  /docs/development/remote-api [R=301]
+
+RewriteRule ^/documentation/developer/cli/create_domain                                     /docs/development/api-programs/create-domain [R=301]
