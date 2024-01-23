@@ -102,3 +102,4 @@ RewriteRule ^/documentation/developer/cli_examples                              
 RewriteRule ^/documentation/developer/http                                                  /docs/development/remote-api [R=301]
 
 RewriteRule ^/documentation/developer/cli/create_domain                                     /docs/development/api-programs/create-domain [R=301]
+RewriteRule ^/documentation/developer/cli/clone_domain                                      /docs/development/api-programs/clone-domain [R=301]
