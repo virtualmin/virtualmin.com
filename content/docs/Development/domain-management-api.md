@@ -27,21 +27,24 @@ fi
 
 #### External database account management
 
-To automatically create and delete accounts in an external database for each new domain user, you could utilize a script designed as follows:
+To automatically create and delete accounts in an external database for each new domain user, you can apply the following script:
 
 ```text
 #!/bin/sh
 if [ -z "$VIRTUALSERVER_PARENT" ]; then
     if [ "$VIRTUALSERVER_ACTION" = "CREATE_DOMAIN" ]; then
-        /usr/local/bin/add-to-database.pl "$VIRTUALSERVER_USER" "$VIRTUALSERVER_PASS"
+        /usr/local/bin/add-to-remote-database.pl "$VIRTUALSERVER_USER" "$VIRTUALSERVER_PASS"
     fi
     if [ "$VIRTUALSERVER_ACTION" = "DELETE_DOMAIN" ]; then
-        /usr/local/bin/remove-from-database.pl "$VIRTUALSERVER_USER"
+        /usr/local/bin/remove-from-remote-database.pl "$VIRTUALSERVER_USER"
     fi
 fi
 ```
 
 #### Update SSL certificate for Prosody
+
+To automatically update the SSL certificate for Prosody, after a domain's SSL certificate is updated, you can apply the following script:
+
 ```text
 if [ "$VIRTUALSERVER_ACTION" = "SSL_DOMAIN" ]; then
   /usr/bin/cp -f /etc/ssl/virtualmin/$VIRTUALSERVER_ID/$VIRTUALSERVER_DOM.key /etc/prosody/certs/$VIRTUALSERVER_DOM.key
@@ -65,7 +68,7 @@ Ensure your scripts have executable permissions and that you use absolute paths 
 
 ### Available variables in scripts
 
-Scripts have access to environment variables starting with `$VIRTUALSERVER_`, similar to those used in [templates](/XXXXXXX). These variables contain details about the virtual server.
+Scripts have access to environment variables starting with `$VIRTUALSERVER_`, similar to those described in [Template Variables](/docs/development/template-variables) page. These variables contain details about the virtual server.
 
 The action type is specified in `$VIRTUALSERVER_ACTION`, which can be:
 
@@ -80,5 +83,3 @@ The action type is specified in `$VIRTUALSERVER_ACTION`, which can be:
 | `DBPASS_DOMAIN`  | Changing a server's database password  |
 | `RESTORE_DOMAIN` | Restoring a server from backup         |
 | `SSL_DOMAIN`     | Modifying a server's SSL certificate   |
-
-Custom scripts in Virtualmin offer a flexible way to automate and extend the functionality around virtual server management, catering to specific requirements or system policies.
