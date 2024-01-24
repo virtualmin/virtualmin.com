@@ -271,3 +271,5 @@ RewriteRule ^/documentation/developer/cli/check_connectivity                    
 RewriteRule ^/documentation/developer/cli/search_maillogs                                   /docs/development/api-programs/search-maillogs [R=301]
 
 RewriteRule ^/documentation/developer/prepost                                               /docs/development/domain-management-api [R=301]
+RewriteRule ^/documentation/system/template_variables                                       /docs/development/template-variables [R=301]
+RewriteRule ^/documentation/system/templates                                                /docs/development/template-variables [R=301]
