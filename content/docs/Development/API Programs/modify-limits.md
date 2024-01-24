@@ -14,7 +14,7 @@ To change the number of domains that can be created, use the `--max-doms` flag f
 
 Limits on the numbers of databases, mailboxes and mail aliases that can be created are set with the `--max-dbs`, `--max-mailboxes` and `--max-aliases` flags respectively. Each must be followed either with a number, or the word `UNLIMITED`.
 
-To grant the domain owner access to Virtualmin UI capabilities such as editing aliases or users, the `--can-edit` flag should be used, followed by a capability code. Supported codes and their meanings are:
+To grant the domain owner access to Virtualmin user interface capabilities such as editing aliases or users, the `--can-edit` flag should be used, followed by a capability code. Supported codes and their meanings are:
 
 `domain` - Edit Virtual server details such as the description and password
 

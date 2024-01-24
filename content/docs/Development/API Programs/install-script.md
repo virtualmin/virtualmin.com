@@ -15,7 +15,7 @@ All scripts will also need the `--path` parameter, which must be followed by a U
 
 Those that use a database require the `--db` parameter, which must be followed by the database type and name, such as `--db mysql dbname`. If this is missing and the script requires it, the `install-script` command will fail with an error message. By default the database must already exist under the virtual server, but if the `--newdb` parameter is given it will be created as part of the script installation process.
 
-By default the exact database name you enter will be used, but when creating a new database for the script you can use the `--prefix-db` flag to request that the DB name be prefixed in the same way that it would be when installing a script from the Virtualmin UI.
+By default the exact database name you enter will be used, but when creating a new database for the script you can use the `--prefix-db` flag to request that the DB name be prefixed in the same way that it would be when installing a script from the Virtualmin user interface.
 
 If upgrading an existing script in this virtual server, you must supply the `--upgrade` parameter, followed by the install ID. This can be found from the `list-scripts` command, documented below.
 

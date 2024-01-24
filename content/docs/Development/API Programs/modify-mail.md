@@ -24,7 +24,7 @@ If DKIM is enabled on the system, by default all virtual servers share the same 
 
 To use a cloud mail filter, specify the `--cloud-mail-filter` flag followed by the name of a provider. This will update the MX records for the domain to point to that provider's filtering servers (which you typically must sign up for in advance). For some providers Virtualmin also needs to know a customer ID (used in the MX records), which is set with the `--cloud-mail-filter-id` flag. To revert to using only the local mail server, set the `--no-cloud-mail-filter` flag.
 
-In Virtualmin Pro, to use a cloud SMTP provider, specify the `--cloud-smtp` flag followed by a provider name like `ses`. The selected provider must have already been configured in the Virtualmin UI. To revert to direct email delivery, use the `--no-cloud-smtp` flag.
+In Virtualmin Pro, to use a cloud SMTP provider, specify the `--cloud-smtp` flag followed by a provider name like `ses`. The selected provider must have already been configured in the Virtualmin user interface. To revert to direct email delivery, use the `--no-cloud-smtp` flag.
 
 ### Command line help
 

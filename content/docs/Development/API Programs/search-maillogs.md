@@ -6,7 +6,7 @@ weight: 4012855
 
 ### Searches mail server and procmail logs
 
-This is the command-line equivant of the Search Mail Logs page in the Virtualmin web UI. It can find email messages delivered or relayed through the system by several different criteria, specified by command-line flags.
+This is the command-line equivant of the Search Mail Logs page in the Virtualmin user interface. It can find email messages delivered or relayed through the system by several different criteria, specified by command-line flags.
 
 To search by recipient, use the `--dest` flag followed by an email address, domain name or Unix username. To search by sender, use the `--source` flag followed by a sender's email address.
 
