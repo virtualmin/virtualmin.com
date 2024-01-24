@@ -71,14 +71,14 @@ The action type is specified in `$VIRTUALSERVER_ACTION`, which can be:
 
 | Action           | Description                            |
 |------------------|----------------------------------------|
-| `CREATE_DOMAIN`  | Creating a new virtual server.         |
-| `MODIFY_DOMAIN`  | Modifying a virtual server.            |
-| `DELETE_DOMAIN`  | Deleting a virtual server.             |
-| `DISABLE_DOMAIN` | Temporarily disabling a server.        |
-| `ENABLE_DOMAIN`  | Re-enabling a server.                  |
-| `DBNAME_DOMAIN`  | Changing a server's database login.    |
-| `DBPASS_DOMAIN`  | Changing a server's database password. |
-| `RESTORE_DOMAIN` | Restoring a server from backup.        |
+| `CREATE_DOMAIN`  | Creating a new virtual server          |
+| `MODIFY_DOMAIN`  | Modifying a virtual server             |
+| `DELETE_DOMAIN`  | Deleting a virtual server              |
+| `DISABLE_DOMAIN` | Temporarily disabling a server         |
+| `ENABLE_DOMAIN`  | Re-enabling a server                   |
+| `DBNAME_DOMAIN`  | Changing a server's database login     |
+| `DBPASS_DOMAIN`  | Changing a server's database password  |
+| `RESTORE_DOMAIN` | Restoring a server from backup         |
 | `SSL_DOMAIN`     | Modifying a server's SSL certificate   |
 
 Custom scripts in Virtualmin offer a flexible way to automate and extend the functionality around virtual server management, catering to specific requirements or system policies.
