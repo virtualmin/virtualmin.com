@@ -144,7 +144,7 @@ In the instructions below, _serverip_ is the IP address of the system that will 
 1. If you are using a firewall on this system, open up port 783 to enable connections to SpamAssassin
 
 #### Configuring Virtualmin to use a remote Spamd
-Once `spamd` is running on the remote system, you can configure Virtualmin to use it as follows. Note that this will prevent domains and mailboxes from having their own SpamAssassin rules, unless you setup `spam` to fetch them from a MySQL or LDAP database.
+Once `spamd` is running on the remote system, you can configure Virtualmin to use it as follows. Note that this will prevent domains and mailboxes from having their own SpamAssassin rules, unless you setup `spam` to fetch them from a MySQL/MariaDB or LDAP database.
 
  1. Login to Virtualmin as _root_, and go to **Email Messages ⇾ Spam and Virus Scanning**.
  2. Change the **SpamAssassin client program** menu to **spamc**.
@@ -156,7 +156,7 @@ Now try sending email to a mailbox in one of the domains with spam filtering ena
 #### Setting up Clamd on a remote system
 The easiest way to setup `clamd` is to use Virtualmin's built-in support for configuring it. The steps to do this are:
 
- 1. Install Virtualmin GPL or Pro on the system to be used for running `clamd`. You don't need to create any domains, or run any other servers like MySQL or Postfix.
+ 1. Install Virtualmin GPL or Pro on the system to be used for running `clamd`. You don't need to create any domains, or run any other servers like MySQL/MariaDB or Postfix.
  2. Login to the new Virtualmin, and go to **Email Messages ⇾ Spam and Virus Scanning**.
  3. Click the **Enable ClamAV Server** button.
  4. SSH into the system as _root_, and edit the file `clamd.conf` and make sure the line `TCPSocket 3310` exists and is not commented out.
