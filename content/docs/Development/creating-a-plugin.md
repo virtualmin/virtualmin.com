@@ -401,7 +401,7 @@ This optional function should be implemented by plugins that add and manage emai
 sub virtusers_ignore
 {
 my ($d) = @_;
-return ( "myplugin\@$d->{'dom'}" );
+return ( "myplugin@$d->{'dom'}" );
 }
 ```
 
@@ -625,4 +625,308 @@ It should detect the current state of the user, and use this information to dete
 
 #### mailbox_validate(user, olduser, in, new, domain)
 
-This function is called when the user form is saved, but before any changes are actually committed. It should check the form inputs in the in hash refe
+This function is called when the user form is saved, but before any changes are actually committed. It should check the form inputs in the in hash reference to make sure they are valid, and return either undefined on success, or an error message if there is some problem.
+
+#### mailbox_save(user, olduser, in, new, domain)
+
+This function must save the actual settings selected for this user, by updating whatever configuration files are needed for this capability. The `user` parameter is the update user details hash, containing his new username, password, real name and other attributes. The `olduser` parameter is the user hash from before the changes were made, and can be compared with user to detect username and other changes. `in` is the form inputs hash, new is a flag indicating if this is a new or edited user, and `domain` is the details of the virtual server this user is in.
+
+```perl
+sub mailbox_save
+{
+my ($user, $olduser, $in, $new, $d) = @_;
+if ($user->{'user'} ne $olduser->{'user'}) {
+  &set_user_access($olduser, 0);
+  }
+&set_user_access($user, $in->{'myplug'} ? 1 : 0);
+}
+```
+
+#### mailbox_delete(user, domain)
+
+This function is called when a user is deleted. It should check to see if he has the capability managed by this plugin enabled, and if so perform whatever tasks are needed to remove it. The parameters are the same as those for the `mailbox_save` function.
+
+```perl
+sub mailbox_save
+{
+my ($user, $d) = @_;
+&set_user_access($user, 0);
+}
+```
+
+#### mailbox_modify(user, olduser, domain)
+
+This function gets called when a user is modified by some part of Virtualmin other than the **Edit Users** page, for example by the `modify-user.pl` command-line script. It should compare the old and new user objects to see if anything that this plugin uses has changed, such as the username or password. If so, it must update whatever configuration files the plugin uses.
+
+```perl
+sub mailbox_modify
+{
+my ($user, $olduser, $d) = @_;
+if ($user->{'user'} ne $olduser->{'user'}) {
+  my $oldaccess = &get_user_access($olduser);
+  &set_user_access($olduser, 0);
+  &set_user_access($user, $oldaccess);
+  }
+}
+```
+
+#### mailbox_header(domain)
+
+If you want an additional column to appear in the user list indicating the state of this plugin's capability for users, this function should return the title for the column. Otherwise, it should just return undefined. If you don't need to define any extra column, then you don't even need to implement it.
+
+```perl
+sub mailbox_header
+{
+return "Plugin access";
+}
+```
+
+#### mailbox_column(user, domain)
+
+When a column exists for this plugin in the user list, this function will be called once for each user. It must return the text to display. If `mailbox_header` is not implemented, then this function doesn't need to be either.
+
+```perl
+sub mailbox_column
+{
+my ($user, $d) = @_;
+return &check_user_access($user) ? "Yes" : "No";
+}
+```
+
+#### mailbox_defaults_inputs(defs, domain)
+
+Virtualmin Pro allows users to define various defaults for new users added to domains, on a per-domain basis. If your plugin wants to be able to add to these defaults, you can implement this function. The `defs` parameters is a hash reference for a user object containing the defaults, which should be checked to find the current status for your settings.
+
+```perl
+sub mailbox_defaults_inputs
+{
+my ($defs, $d) = @_;
+return &ui_table_row("Allow access to My plugin by default?",
+                     &ui_yesno_radio("myplugin", $defs->{'myplugin'}));
+}
+```
+
+#### mailbox_defaults_parse(defs, domain, in)
+
+This function is the counterpart to `mailbox_defaults_inputs`. It should check form inputs in `in` and use them to update the default settings object `defs`.
+
+```perl
+sub mailbox_defaults_parse
+{
+my ($defs, $d, $in) = @_;
+$defs->{'myplugin'} = $in->{'myplugin'};
+}
+```
+
+### Database Functions
+
+In the core package, Virtualmin supports MySQL/MariaDB and PostgreSQL databases. However, the plugin architecture allows developers to add new database types which can then be associated with virtual servers. Typically a plugin that adds databases will also implement the `feature_` functions, so that the new database type can be enabled for new or existing virtual servers, just as is the case for MySQL/MariaDB and PostgreSQL.
+
+Because Virtualmin allows mailbox users to have access to some database types, the plugin can also include support for creating, listing and managing additional users associated with each database. Because not all database systems support granting a user full access to a database, implementation of the user-related functions is optional.
+
+#### database_name()
+
+This function must return the name of the database type.
+
+```perl
+sub database_name
+{
+return "FooSQL";
+}
+```
+
+#### database_list(domain)
+
+This function must return a list of the names of databases owned by the given `domain` object, each of which is a hash reference containing the following keys:
+
+| Key     | Description                                                                                                    |
+|---------|----------------------------------------------------------------------------------------------------------------|
+| name    | The unique database name                                                                                       |
+| type    | The database type code, typically set to `$module_name`                                                        |
+| desc    | A description of the database type, usually the same as returned by `database_name`                            |
+| users   | A flag, set to `1` if the database supports multiple users, `0` if not                                         |
+| link    | A URL path for managing the database's contents. If you have not implemented this, it this key can be left out |
+
+
+Typically the list of databases for a domain will be stored in the domain hash itself, in a key named `db_$module_name`. This removes the need for the plugin to store the domain-database mapping separately.
+
+```perl
+sub database_list
+{
+my ($d) = @_;
+my @rv;
+foreach my $db (split(/\s+/, $d->{'db_'.$module_name})) {
+        push(@rv, { 'name' => $db,
+                    'type' => $module_name,
+                    'desc' => &database_name(),
+                    'link' => "/$module_name/edit_dbase.cgi?db=$db" });
+        }
+return @rv;
+}
+```
+
+#### databases_all()
+
+This function should return a list of all databases known to the database server the plugin manages, even those not associated with any domain. Its return format should be the same as `database_list`.
+
+```perl
+sub databases_all
+{
+my @rv;
+foreach my $dbname (&list_foosql_databases()) {
+  push(@rv, { 'name' => $dbname,
+              'type' => $module_name,
+              'desc' => &database_name() });
+  }
+return @rv;
+}
+```
+
+#### database_clash(domain, name)
+
+This function must check if a database of the type managed by the plugin with the given `name` already exists, and if so return `1`. It is used by Virtualmin to prevent database name collisions at creation time. If no clash exists, it must return 0.
+
+```perl
+sub database_clash
+{
+my ($d, $name) = @_;
+foreach my $db (&list_foosql_databases()) {
+  return 1 if ($db eq $name);
+  }
+return 0;
+}
+```
+
+#### database_create(domain, name)
+
+This function is where the real work of creating a new database should happen. It must perform all the work needed to add a database and associate it with the virtual server, typically by adding it to the `db_$module_name` key in the `domain` hash reference. It should use `first_print` to output a message before creation starts, and `second_print` to display success or failure when done. It should return `1` if creation was successful, `0` if not.
+
+Access to the new database must be granted to the virtual server's owner. For databases managed by some kind of server (like MySQL/MariaDB and PostgreSQL), the domain's username and password must be able to login to access the new database. These can be found in the `domain` hash in the `user` and `pass` keys.
+
+```perl
+sub database_create
+{
+my ($d, $name) = @_;
+&$virtual_server::first_print("Creating FooSQL database $name ..");
+my $err = &create_foosql_database($name);
+if ($err) {
+  &$virtual_server::second_print(".. failed : $err");
+  return 0;
+  }
+else {
+  &$virtual_server::second_print(".. done");
+  $d->{'db_'.$module_name} .= " ".$name;
+  return 1;
+  }
+}
+```
+
+#### database_delete(domain, name)
+
+This function must delete a database of the type managed by this plugin, and remove access to it from the virtual server. Like `database_create`, it should use the `print` functions to display progress and status to the user.
+
+```perl
+sub database_delete
+{
+my ($d, $name) = @_;
+&$virtual_server::first_print("Deleting FooSQL database $name ..");
+my $err = &delete_foosql_database($name);
+if ($err) {
+  &$virtual_server::second_print(".. failed : $err");
+  return 0;
+  }
+else {
+  &$virtual_server::second_print(".. done");
+  $d->{'db_'.$module_name} =~ s/\s+\Q$name\E//g;
+  return 1;
+  }
+}
+```
+
+#### database_size(domain, name)
+
+This function is called by Virtualmin when a user displays information about a database, and when computing a virtual server's total disk usage. It must return two numbers :
+
+*   The size of the database on disk, in bytes.
+    
+*   The number of tables in the database.
+    
+
+```perl
+sub database_size
+{
+my ($d, $name) = @_;
+my $size = &disk_usage_kb("/var/foosql/$name");
+my @tables = &list_foosql_tables($name);
+return ( $size*1024, scalar(@tables) );
+}
+```
+
+#### database_users(domain, name)
+
+If the plugin's database type supports multiple logins, this function can be implemented to return a list of array references, each of which contains a login and password. Only users associated with `domain` and with access to the database specified by the `name` parameter need to be returned. If the password is encrypted, it is fine to use that as the second element of each array ref.
+
+```perl
+sub database_users
+{
+my ($d, $name) = @_;
+return &execute_foosql_sql($name, "select login,password from users where db = '$name'");
+}
+```
+
+#### database_create_user(domain, database, user, password)
+
+This function must create a new database with with access to the database specified by the `database` parameter, which is a hash reference returned by `database_list`. The new user must have the login set by the `user` parameter, and password specified by `password`. If something goes wrong, it should call `error` function.
+
+```perl
+sub database_create_user
+{
+my ($d, $db, $user, $pass) = @_;
+&execute_foosql_sql($db->{'name'}, "create user '$user' with password '$pass'");
+}
+```
+
+#### database_modify_user(domain, old-database, database, old-user, user, password)
+
+This function must modify the user in the database specified by the `old-database` parameter and named `old-user`, changing his login to `user` and password to `password` (if provided). If the modification fails, it should call `error` function.
+
+```perl
+sub database_modify_user
+{
+my ($db, $olddb, $db, $olduser, $user, $pass) = @_;
+if ($user ne $olduser) {
+  &execute_foosql_sql($olddb->{'name'}, "rename user '$olduser' to '$user'");
+  }
+if (defined($pass)) {
+  &execute_foosql_sql($olddb->{'name'}, "alter user '$user' password '$pass'");
+  }
+}
+```
+
+#### database_delete_user(domain, user)
+
+This function should delete the database user specified by the `user` parameter from all databases owned by the virtual server in `domain`.
+
+```perl
+sub database_delete_user
+{
+my ($d, $user) = @_;
+foreach my $name (&list_foosql_databases()) {
+  &execute_foosql_sql($name, "delete user '$user'");
+  }
+}
+```
+
+#### database_user(name)
+
+Some database servers impose limits on the length or allowed characters in database logins. This function should check if the given `name` exceeds any such restrictions, and if so truncate or modify it to be valid. It should then return the modified version.
+
+```perl
+sub database_user
+{
+my ($name) = @_;
+if (length($name) > 16) {
+  $name = substr($name, 0, 16);
+  }
+return $name;
+}
