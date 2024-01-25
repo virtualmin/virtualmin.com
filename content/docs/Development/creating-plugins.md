@@ -1,5 +1,5 @@
 ---
-title: "Creating a Plugin"
+title: "Creating Plugins"
 weight: 4010025
 ---
 
