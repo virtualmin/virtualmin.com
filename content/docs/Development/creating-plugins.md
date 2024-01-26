@@ -99,11 +99,11 @@ Many functions are passed a domain object as a parameter. This is simply a hash 
 
 In addition, for each feature the domain has enabled, the code for that feature will be set to `1` in the hash. For example, a domain with a website has `web` set to `1`, for email the code is `mail`, and for a Webmin login the code is `webmin`. Virtualmin will add an entry for your plugin when its feature is enabled for the domain, the code for which will be the same as the plugin's directory.
 
-### Core functions
+#### Core functions
 
 Functions in this section must be implemented by all plugins.
 
-#### feature_name()
+##### feature_name()
 
 This must return a short name for the feature, like _My plugin_.
 
@@ -114,11 +114,11 @@ return "My plugin name";
 }
 ```
 
-### Functions for features
+#### Functions for features
 
 The most common use for plugins is to add a new feature that can be selected when a virtual server is created or modified. The functions listed in this section should be implemented in this case, although not all are mandatory.
 
-#### feature_label(edit-form)
+##### feature_label(edit-form)
 
 This must return a longer name for the feature, for display in the server creation and editing pages. The `edit-form` parameter can be used to determine which page is calling the function.
 ```perl
@@ -128,7 +128,7 @@ return "Enable my plugin";
 }
 ```
 
-#### feature_check()
+##### feature_check()
 
 This optional function will be called when the plugin is registered by Virtualmin, to check that all of its dependencies are met. It must return undefined if everything is alright, or an error message if some program or service that the plugin depends upon is missing. If not implemented, Virtualmin will assume that the plugin has no dependencies.
 
@@ -144,7 +144,7 @@ else {
 }
 ```
 
-#### feature_losing(domain)
+##### feature_losing(domain)
 
 This should return text to be displayed when this feature is being removed from a domain. The domain parameter is the Virtualmin domain hash reference for the server the feature is being removed from.
 
@@ -155,7 +155,7 @@ return "My plugin for this virtual server will be disabled";
 }
 ```
 
-#### feature_disname(domain)
+##### feature_disname(domain)
 
 This optional function should return a description of what will be done when this feature is temporarily disabled. It is only needed if your plugin implements the `feature_disable` function, indicating that it can be disabled.
 
@@ -166,7 +166,7 @@ return "My plugin will be temporarily de-activated";
 }
 ```
 
-#### feature_clash(domain)
+##### feature_clash(domain)
 
 If activating this plugin feature in the given domain would clash with something already on the system, this function must return an error message. Otherwise, it can just return undef.
 
@@ -183,7 +183,7 @@ else {
 }
 ```
 
-#### feature_depends(domain)
+##### feature_depends(domain)
 
 If implemented, this function should check if the given domain object has all the features enabled that would be required by this plugin. For example, if your plugin implements something that is accessible via the web, the domain must have the `web` feature set. If a dependency is missing it must return an error message explaining this, or undefined if everything is alright.
 
@@ -200,7 +200,7 @@ else {
 }
 ```
 
-#### feature_suitable(parentdom, aliasdom, superdom)
+##### feature_suitable(parentdom, aliasdom, superdom)
 
 This function should check the given parent domain, alias target domain and super-domain objects, to ensure that they are suitable for this feature. It can be useful for preventing the plugin from being enabled in sub-domains or alias domains, where it may not be appropriate. It must return `1` if the feature can be used, or `0` if not. If not implemented, Virtualmin will not allow use of your plugin.
 
@@ -217,7 +217,7 @@ else {
 }
 ```
 
-#### feature_setup(domain)
+##### feature_setup(domain)
 
 This function will be called when the plugin feature is being enabled for some server, either at creation time or when the server is subsequently modified. It must perform whatever actions are needed, such as modifying config files, running commands and so on. It should notify the user of the features activation by calling the functions `first_print` and `second_print`, like so:
 
@@ -238,7 +238,7 @@ else {
 }
 ```
 
-#### feature_delete(domain)
+##### feature_delete(domain)
 
 This function is called when the feature is removed for some server, either at deletion time or when the server is modified. It must perform whatever config file changes or run whatever commands are needed to turn the feature off, and should use the `first_print` and `second_print` functions to notify the user about what it is doing.
 
@@ -252,7 +252,7 @@ system("somecommand --remove $d->{'dom'} >/dev/null 2>&1");
 }
 ```
 
-#### feature_modify(domain, olddomain)
+##### feature_modify(domain, olddomain)
 
 Whenever a virtual server is modified, this function will be called in all plugins. It should check if some attribute of the server that the plugin uses has changed (like dom or user), and update the appropriate config files. For example, if your feature configures some program that needs to know the virtual server's domain name, this function must compare `$domain→{'dom'}` and `$olddomain→{'dom'}` , and if they differ perform whatever updates are needed. It should only produce output when it actually does something though.
 
@@ -268,7 +268,7 @@ if ($d->{'dom'} ne $oldd->{'dom'}) {
 }
 ```
 
-#### feature_disable(domain)
+##### feature_disable(domain)
 
 If this function is defined, it will be called when a virtual server with the plugin feature active is disabled. It should temporarily turn off access to the feature in a non-destructive way, so that it can be fixed later by a call to `feature_enable`.
 
@@ -282,7 +282,7 @@ rename("/etc/someprogram/$d->{'dom'}", "/etc/someprogram/$d->{'dom'}.disabled");
 }
 ```
 
-#### feature_enable(domain)
+##### feature_enable(domain)
 
 This function will be called when a virtual server with the plugin's feature is re-enabled. It should undo whatever changes were made by the `feature_disable` function. It only needs to be implemented if `feature_disable` is.
 
@@ -296,13 +296,13 @@ rename("/etc/someprogram/$d->{'dom'}.disabled", "/etc/someprogram/$d->{'dom'}");
 }
 ```
 
-#### feature_bandwidth(domain, start, bwhash)
+##### feature_bandwidth(domain, start, bwhash)
 
 If defined, this function should report to Virtualmin the amount of bandwidth used by some virtual server since the given start Unix time. Bandwidth is the total number of bytes uploaded and downloaded, broken down by day. This function should scan whatever log file is available for the feature, extract upload and download counts for the domain, and add to the values in the `bwhash` hash reference.
 
 Because bandwidth is accumulated by day, the `bwhash` hash is index by the number of days since 1st Jan 1970 GMT, which is simply a Unix time divided by 86400.
 
-#### feature_webmin(domain, other-domains)
+##### feature_webmin(domain, other-domains)
 
 If you want your plugin to provide access to a Webmin module to the owners of virtual servers that have its feature enabled, this function can be used tell Virtualmin which modules access should be granted to. Typically, a plugin will grant access to its own module, which will have standard CGI scripts for use in further configuring whatever service the plugin enables.
 
@@ -329,7 +329,7 @@ else {
 }
 ```
 
-#### feature_import(domain-name, user-name, db-name)
+##### feature_import(domain-name, user-name, db-name)
 
 This function is called when an existing virtual server is being imported into Virtualmin. It should return `1` if the service configured by the plugin is already active for the given domain, perhaps because it was set up manually.
 
@@ -346,7 +346,7 @@ else {
 }
 ```
 
-#### feature_links(domain)
+##### feature_links(domain)
 
 This optional function allows the plugin to provide additional links on the left menu when a domain with the feature enabled is selected. It must return a list of hash references, each containing the following keys:
 
@@ -372,11 +372,11 @@ return ( { 'mod' => $module_name,
 }
 ```
 
-#### feature_always_links(domain)
+##### feature_always_links(domain)
 
 This function is similar to `feature_links`, but is called regardless of which domain is selected. It can be used when you have a page that can be used even for virtual servers that don't have the plugin's feature active.
 
-#### feature_validate(domain)
+##### feature_validate(domain)
 
 This function is optional, and is used by Virtualmin domain validation page. If implemented, it should check to ensure that all configuration files and other settings specific to the domain are setup properly. If any problems are found it should return an error message string, otherwise undefined.
 
@@ -393,7 +393,7 @@ else {
 }
 ```
 
-#### virtusers_ignore(domain)
+##### virtusers_ignore(domain)
 
 This optional function should be implemented by plugins that add and manage email aliases to a domain, for example, one that deals with mailing lists or auto-responders. Because you don't generally want these aliases showing up in the general list of those in the domain, it should return a list of full addresses to hide from the list.
 
@@ -405,13 +405,13 @@ return ( "myplugin@$d->{'dom'}" );
 }
 ```
 
-### Limits and template functions
+#### Limits and template functions
 
 Plugins can define fields that will appear on the owner limits page for a virtual server, and in server templates. Limits are useful if your plugin uses up resources of some kind, such as disk space for databases or memory for server processes. You can then allow the master administrator to define limits on these resources, via functions documented here.
 
 Virtualmin templates are the location of most configuration settings that are used when creating new virtual servers. If your plugin has some adjustable settings that might be used when it is enabled, you can implement the functions below to add new input fields to templates. These can then be fetched in your plugin's `feature_setup` function with the `get_template` call.
 
-#### feature_limits_input(domain)
+##### feature_limits_input(domain)
 
 This optional function should return a HTML inputs for limits specific to this plugin's feature. The initial values of those limits should be take from the `domain` object, where they must be stored in keys starting with the plugin's name (to avoid clashes). The HTML returned must make use of the `ui_table_row` function to format table columns.
 
@@ -427,7 +427,7 @@ if ($d->{$module_name}) {
 }
 ```
 
-#### feature_limits_parse(domain, in)
+##### feature_limits_parse(domain, in)
 
 This function parses the HTML form inputs generated by `feature_limits_input`. It should examine the `in` hash reference and update the `domain` object to set or clear limits based on the user's selections. If any errors are found it should return an error message string, or undefined if all is alright.
 
@@ -449,7 +449,7 @@ return undef;
 }
 ```
 
-#### template_input(template)
+##### template_input(template)
 
 This optional function must return HTML for editing template settings specific to this plugin. The `template` parameter is a hash reference to a template object, which contains settings for all features and plugins. Yours should only show and edit keys that start with the plugin's module name, so that they are properly merged when a non-default template is edited. HTML returned must make use of the `ui_table_row` function to format table columns.
 
@@ -463,7 +463,7 @@ return &ui_table_row("Default My plugin database size",
 }
 ```
 
-#### template_parse(template, in)
+##### template_parse(template, in)
 
 This function must check `in` for selections made by the user in the fields created by `template_input`, and then update the `template` hash reference. If there are any errors in the user's input it should return an error string, or undefined if everything is alright. Template keys must start with the plugin's module name, so that they are properly merged when a non-default template is edited.
 
@@ -481,11 +481,11 @@ else {
 }
 ```
 
-### Backup and restore functions
+#### Backup and restore functions
 
 In the Virtualmin architecture, each feature and plugin is responsible for backing up and restoring configuration files associated with a domain, but which are stored outside the virtual server's home directory. If your plugin adds a feature to Virtualmin which stores data in some location that won't be included in a domain's regular backup, you should implement the functions in this section to ensure that it is backed up and restored.
 
-#### feature_backup(domain, file, opts, all-opts)
+##### feature_backup(domain, file, opts, all-opts)
 
 This function should copy configuration files associated with the virtual server object `domain` and copy them to the path given by `file`. If there is just a single file then it can be copied directly, otherwise, your code should create a tar file of all required files and write it to that path.
 
@@ -508,7 +508,7 @@ else {
 }
 ```
 
-#### feature_restore(domain, file, opts, all-opts)
+##### feature_restore(domain, file, opts, all-opts)
 
 This function is the opposite of `feature_backup`. It should take the data in the file passed in with the `file` parameter, and update local config files or databases for the virtual server defined in `domain` to restore those settings. The format of `file` will be exactly the same as whatever your plugin created in the `feature_backup` function, although it may be in a different location.
 
@@ -531,11 +531,11 @@ else {
 }
 ```
 
-### Other user interface functions
+#### Other user interface functions
 
 These functions aren't really related to any feature or capability that the plugin provides, instead, the allow it to add elements to the Virtualmin user interface.
 
-#### settings_links
+##### settings_links
 
 If implemented, this function should return a list of hash references, each of which defines a new link under the **System Settings** menu. These are only accessible to the master administrator, and appear regardless of which domain is selected. They typically link to global configuration pages for the plugin.
 
@@ -559,7 +559,7 @@ return ( { 'link' => "/$module_name/edit_config.cgi",
 }
 ```
 
-#### theme_sections
+##### theme_sections
 
 Theme displays various information on the right-hand system information page after you login, such as the status of servers, available updates and comparative quota use. This function allows your plugin to add sections of its own, typically to display global status information.
 
@@ -586,13 +586,13 @@ return ( { 'title' => 'My plugin status',
 }
 ```
 
-### Functions for mailboxes
+#### Functions for mailboxes
 
 A Virtualmin plugin can also provide extra capabilities to virtual server users. This is done by implementing additional functions in the `virtual_feature.pl` file, similar to those used for adding a new server feature. This can be used for granting users access to some new service, like a game server or database, which is not supported natively by Virtualmin.
 
 When a plugin adds capabilities to a user, additional inputs will typically appear on the user editing page. In additional, the plugin can define extra columns to appear in the user list, to display the status of the new user capabilities.
 
-Most of the functions above take a user details hash reference as a parameter. Some of the useful keys in this hash are :
+Most of the functions above take a user details hash reference as a parameter. Some of the useful keys in this hash are:
 
 | Field       | Description                                                                   |
 |-------------|-------------------------------------------------------------------------------|
@@ -605,7 +605,7 @@ Most of the functions above take a user details hash reference as a parameter. S
 
 The functions that can be added to `virtual_feature.pl` to support user capabilities are:
 
-#### mailbox_inputs(user, new, domain)
+##### mailbox_inputs(user, new, domain)
 
 This function is called when the page for editing a virtual server user is displayed. The user parameter is a hash reference of user details, such as the login name, real name and home directory. The new parameter will be set to `1` if this is a new user, or `0` if editing an existing user. The domain parameter is a hash reference of virtual server information, as used in the plugin functions documented above.
 
@@ -623,11 +623,11 @@ return &ui_table_row("Allow access to My plugin?",
 
 It should detect the current state of the user, and use this information to determine the values of the inputs.
 
-#### mailbox_validate(user, olduser, in, new, domain)
+##### mailbox_validate(user, olduser, in, new, domain)
 
 This function is called when the user form is saved, but before any changes are actually committed. It should check the form inputs in the in hash reference to make sure they are valid, and return either undefined on success, or an error message if there is some problem.
 
-#### mailbox_save(user, olduser, in, new, domain)
+##### mailbox_save(user, olduser, in, new, domain)
 
 This function must save the actual settings selected for this user, by updating whatever configuration files are needed for this capability. The `user` parameter is the update user details hash, containing his new username, password, real name and other attributes. The `olduser` parameter is the user hash from before the changes were made, and can be compared with user to detect username and other changes. `in` is the form inputs hash, new is a flag indicating if this is a new or edited user, and `domain` is the details of the virtual server this user is in.
 
@@ -642,7 +642,7 @@ if ($user->{'user'} ne $olduser->{'user'}) {
 }
 ```
 
-#### mailbox_delete(user, domain)
+##### mailbox_delete(user, domain)
 
 This function is called when a user is deleted. It should check to see if he has the capability managed by this plugin enabled, and if so perform whatever tasks are needed to remove it. The parameters are the same as those for the `mailbox_save` function.
 
@@ -654,7 +654,7 @@ my ($user, $d) = @_;
 }
 ```
 
-#### mailbox_modify(user, olduser, domain)
+##### mailbox_modify(user, olduser, domain)
 
 This function gets called when a user is modified by some part of Virtualmin other than the **Edit Users** page, for example by the `modify-user.pl` command-line script. It should compare the old and new user objects to see if anything that this plugin uses has changed, such as the username or password. If so, it must update whatever configuration files the plugin uses.
 
@@ -670,7 +670,7 @@ if ($user->{'user'} ne $olduser->{'user'}) {
 }
 ```
 
-#### mailbox_header(domain)
+##### mailbox_header(domain)
 
 If you want an additional column to appear in the user list indicating the state of this plugin's capability for users, this function should return the title for the column. Otherwise, it should just return undefined. If you don't need to define any extra column, then you don't even need to implement it.
 
@@ -681,7 +681,7 @@ return "Plugin access";
 }
 ```
 
-#### mailbox_column(user, domain)
+##### mailbox_column(user, domain)
 
 When a column exists for this plugin in the user list, this function will be called once for each user. It must return the text to display. If `mailbox_header` is not implemented, then this function doesn't need to be either.
 
@@ -693,7 +693,7 @@ return &check_user_access($user) ? "Yes" : "No";
 }
 ```
 
-#### mailbox_defaults_inputs(defs, domain)
+##### mailbox_defaults_inputs(defs, domain)
 
 Virtualmin Pro allows users to define various defaults for new users added to domains, on a per-domain basis. If your plugin wants to be able to add to these defaults, you can implement this function. The `defs` parameters is a hash reference for a user object containing the defaults, which should be checked to find the current status for your settings.
 
@@ -706,7 +706,7 @@ return &ui_table_row("Allow access to My plugin by default?",
 }
 ```
 
-#### mailbox_defaults_parse(defs, domain, in)
+##### mailbox_defaults_parse(defs, domain, in)
 
 This function is the counterpart to `mailbox_defaults_inputs`. It should check form inputs in `in` and use them to update the default settings object `defs`.
 
@@ -718,13 +718,13 @@ $defs->{'myplugin'} = $in->{'myplugin'};
 }
 ```
 
-### Database Functions
+#### Database Functions
 
 In the core package, Virtualmin supports MySQL/MariaDB and PostgreSQL databases. However, the plugin architecture allows developers to add new database types which can then be associated with virtual servers. Typically a plugin that adds databases will also implement the `feature_` functions, so that the new database type can be enabled for new or existing virtual servers, just as is the case for MySQL/MariaDB and PostgreSQL.
 
 Because Virtualmin allows mailbox users to have access to some database types, the plugin can also include support for creating, listing and managing additional users associated with each database. Because not all database systems support granting a user full access to a database, implementation of the user-related functions is optional.
 
-#### database_name()
+##### database_name()
 
 This function must return the name of the database type.
 
@@ -735,7 +735,7 @@ return "FooSQL";
 }
 ```
 
-#### database_list(domain)
+##### database_list(domain)
 
 This function must return a list of the names of databases owned by the given `domain` object, each of which is a hash reference containing the following keys:
 
@@ -765,7 +765,7 @@ return @rv;
 }
 ```
 
-#### databases_all()
+##### databases_all()
 
 This function should return a list of all databases known to the database server the plugin manages, even those not associated with any domain. Its return format should be the same as `database_list`.
 
@@ -782,7 +782,7 @@ return @rv;
 }
 ```
 
-#### database_clash(domain, name)
+##### database_clash(domain, name)
 
 This function must check if a database of the type managed by the plugin with the given `name` already exists, and if so return `1`. It is used by Virtualmin to prevent database name collisions at creation time. If no clash exists, it must return 0.
 
@@ -797,7 +797,7 @@ return 0;
 }
 ```
 
-#### database_create(domain, name)
+##### database_create(domain, name)
 
 This function is where the real work of creating a new database should happen. It must perform all the work needed to add a database and associate it with the virtual server, typically by adding it to the `db_$module_name` key in the `domain` hash reference. It should use `first_print` to output a message before creation starts, and `second_print` to display success or failure when done. It should return `1` if creation was successful, `0` if not.
 
@@ -821,7 +821,7 @@ else {
 }
 ```
 
-#### database_delete(domain, name)
+##### database_delete(domain, name)
 
 This function must delete a database of the type managed by this plugin, and remove access to it from the virtual server. Like `database_create`, it should use the `print` functions to display progress and status to the user.
 
@@ -843,9 +843,9 @@ else {
 }
 ```
 
-#### database_size(domain, name)
+##### database_size(domain, name)
 
-This function is called by Virtualmin when a user displays information about a database, and when computing a virtual server's total disk usage. It must return two numbers :
+This function is called by Virtualmin when a user displays information about a database, and when computing a virtual server's total disk usage. It must return two numbers:
 
 *   The size of the database on disk, in bytes.
     
@@ -862,7 +862,7 @@ return ( $size*1024, scalar(@tables) );
 }
 ```
 
-#### database_users(domain, name)
+##### database_users(domain, name)
 
 If the plugin's database type supports multiple logins, this function can be implemented to return a list of array references, each of which contains a login and password. Only users associated with `domain` and with access to the database specified by the `name` parameter need to be returned. If the password is encrypted, it is fine to use that as the second element of each array ref.
 
@@ -874,7 +874,7 @@ return &execute_foosql_sql($name, "select login,password from users where db = '
 }
 ```
 
-#### database_create_user(domain, database, user, password)
+##### database_create_user(domain, database, user, password)
 
 This function must create a new database with with access to the database specified by the `database` parameter, which is a hash reference returned by `database_list`. The new user must have the login set by the `user` parameter, and password specified by `password`. If something goes wrong, it should call `error` function.
 
@@ -886,7 +886,7 @@ my ($d, $db, $user, $pass) = @_;
 }
 ```
 
-#### database_modify_user(domain, old-database, database, old-user, user, password)
+##### database_modify_user(domain, old-database, database, old-user, user, password)
 
 This function must modify the user in the database specified by the `old-database` parameter and named `old-user`, changing his login to `user` and password to `password` (if provided). If the modification fails, it should call `error` function.
 
@@ -903,7 +903,7 @@ if (defined($pass)) {
 }
 ```
 
-#### database_delete_user(domain, user)
+##### database_delete_user(domain, user)
 
 This function should delete the database user specified by the `user` parameter from all databases owned by the virtual server in `domain`.
 
@@ -917,7 +917,7 @@ foreach my $name (&list_foosql_databases()) {
 }
 ```
 
-#### database_user(name)
+##### database_user(name)
 
 Some database servers impose limits on the length or allowed characters in database logins. This function should check if the given `name` exceeds any such restrictions, and if so truncate or modify it to be valid. It should then return the modified version.
 
