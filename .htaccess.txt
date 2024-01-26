@@ -274,3 +274,4 @@ RewriteRule ^/documentation/developer/prepost                                   
 RewriteRule ^/documentation/system/template_variables                                       /docs/development/template-variables [R=301]
 RewriteRule ^/documentation/system/templates                                                /docs/development/template-variables [R=301]
 RewriteRule ^/documentation/developer/plugins                                               /docs/development/creating-plugins [R=301]
+RewriteRule ^/documentation/developer/scripts                                               /docs/development/creating-install-scripts [R=301]
