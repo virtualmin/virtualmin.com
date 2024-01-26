@@ -38,7 +38,7 @@ Script installers that are local to your Virtualmin installation are stored in t
 
 Every script installer has a unique ID, which must consist of only letters, numbers and the underscore character. The ID determines both the installer filename (i.e. `phpbb.pl`), and the names of functions within the script (which must be like `script_phpbb_desc` as in the example above).
 
-The same ID cannot be used by two different installers on the same system, even if one is built-in to Virtualmin and one is custom. For this reason, when writing an installer you should select an ID that is unlikely to clash with any that might be included in Virtualmin in the future. Starting it with the first part of your company's domain name, like `foocorp_billingapp` would be a good way to ensure this.
+The same ID cannot be used by two different installers on the same system, even if one is built-in to Virtualmin and one is custom. For this reason, when writing an installer you should select an ID that is unlikely to clash with any that might be included in Virtualmin in the future.
 
 ### The lifetime of a script 
 
@@ -61,7 +61,7 @@ When a script is installed via the web interface, Virtualmin performs the follow
 
 ### Script installer implementation 
 
-In this section, the functions that each script installer must implement will be covered. Not all functions are mandatory, as some deal with PHP dependencies that make no sense if your script does not use PHP or if it has no non-core modules. The example code for each function is taken from the Wordpress Blog installer, in `wordpress.pl`. This is a PHP application whose installation process is relatively simple, yet common to many other PHP programs.
+In this section, the functions that each script installer must implement will be covered. Not all functions are mandatory, as some deal with PHP dependencies that make no sense if your script does not use PHP or if it has no non-core modules. The example code for each function is taken from the Wordpress blog installer, in `wordpress.pl`. This is a PHP application whose installation process is relatively simple, yet common to many other PHP programs.
 
 In your own script, you would of course replace `scriptname` with the script ID you have selected.
 Also, just like a Perl module, make sure your install script file ends with the line: 
@@ -176,11 +176,11 @@ If the script being installed requires any non-default PHP configuration options
 ```perl
 sub script_wordpress_php_vars
 {
-return ([ 'memory_limit', '128M', '+' ],
-        [ 'max_execution_time', 60, '+' ],
-        [ 'file_uploads', 'On' ],
-        [ 'upload_max_filesize', '10M', '+' ],
-        [ 'post_max_size', '10M', '+' ] );
+return ( [ 'memory_limit', '128M', '+' ],
+         [ 'max_execution_time', 60, '+' ],
+         [ 'file_uploads', 'On' ],
+         [ 'upload_max_filesize', '10M', '+' ],
+         [ 'post_max_size', '10M', '+' ] );
 }
 ```
 
@@ -191,7 +191,7 @@ If the application being installed is written in PHP and requires any non-core P
 ```perl
 sub script_wordpress_php_modules
 {
-return ("mysql", "gd", "json", "xml");
+return  ("mysql", "gd", "json", "xml" );
 }
 ```
 
@@ -202,10 +202,10 @@ The same as `script_scriptname_php_modules`, but for optional PHP modules. Virtu
 ```perl
 sub script_wordpress_php_optional_modules
 {
-return ("curl", "ssh2", "pecl-ssh2", "date",
-        "hash", "imagick", "pecl-imagick", 
-        "iconv", "mbstring", "openssl",
-        "posix", "sockets", "tokenizer");
+return ( "curl", "ssh2", "pecl-ssh2", "date",
+         "hash", "imagick", "pecl-imagick", 
+         "iconv", "mbstring", "openssl",
+         "posix", "sockets", "tokenizer" );
 }
 ```
 
@@ -216,8 +216,8 @@ Pear is a repository of additional modules for PHP, which some Virtualmin script
 ```perl
 sub script_egroupware_pear_modules
 {
-return ("Auth_SASL", "Net_IMAP", "Net_Sieve",
-        "XML_Feed_Parser", "Log");
+return ( "Auth_SASL", "Net_IMAP", "Net_Sieve",
+         "XML_Feed_Parser", "Log" );
 }
 ```
 #### script_scriptname_perl_modules 
@@ -227,7 +227,7 @@ For scripts written in Perl that require modules that are not part of the standa
 ```perl
 sub script_twiki_perl_modules
 {
-return ("CGI::Session", "Net::SMTP");
+return ( "CGI::Session", "Net::SMTP" );
 }
 
 ```
@@ -254,8 +254,8 @@ my ($d, $ver) = @_;
 &has_domain_databases($d, [ "mysql" ]) ||
         return "WordPress requires a MySQL database" if (!@dbs);
 &require_mysql();
-if (&mysql::get_mysql_version() < 5) {
-        return "WordPress requires MySQL version 5 or higher";
+if (&compare_versions(&mysql::get_mysql_version(), "5.7") < 0) {
+        return "WordPress requires MySQL version 5.7 or higher";
         }
 return undef;
 }
@@ -271,7 +271,7 @@ If defined, this function should return a list of database types that the script
 sub script_wordpress_dbs
 {
 my ($d, $ver) = @_;
-return ("mysql");
+return ( "mysql" );
 }
 ```
 
@@ -392,7 +392,7 @@ If your script installer requires any commands to do its job that may not be ava
 ```perl
 sub script_wordpress_commands
 {
-return ("unzip");
+return ( "unzip" );
 }
 ```
 
@@ -428,7 +428,7 @@ my $dbpass = $dbtype eq "mysql" ? &mysql_pass($d) : &postgres_pass($d, 1);
 my $dbphptype = $dbtype eq "mysql" ? "mysql" : "psql";
 my $dbhost = &get_database_host($dbtype);
 my $dberr = &check_script_db_connection($dbtype, $dbname, $dbuser, $dbpass);
-return (0, "Database connection failed : $dberr") if ($dberr);
+return ( 0, "Database connection failed : $dberr" ) if ($dberr);
 ```
 
 The next step is to extract the downloaded source code, and then copy it to the created destination directory. This is done by calling the `unzip` and `cp` commands as the Virtualmin domain owner, so that there is no risk of files that he is not supposed to have access to being over-written. The source code temporary file can be found from the `files` hash reference in the `source` key, which was defined by the `script_scriptname_files` function.
@@ -440,7 +440,7 @@ Note how the code checks for expected files after extracting and copying the sou
 if (!-d $opts->{'dir'}) {
         $out = &run_as_domain_user($d, "mkdir -p ".quotemeta($opts->{'dir'}));
         -d $opts->{'dir'} ||
-                return (0, "Failed to create directory : <tt>$out</tt>.");
+                return ( 0, "Failed to create directory : <tt>$out</tt>." );
         }
 
 # Extract tar file to temp dir
@@ -451,14 +451,14 @@ $out = &run_as_domain_user($d, "cd ".quotemeta($temp).
                                " && unzip $files->{'source'}");
 my $verdir = "wordpress";
 -r "$temp/$verdir/wp-login.php" ||
-        return (0, "Failed to extract source : <tt>$out</tt>.");
+        return ( 0, "Failed to extract source : <tt>$out</tt>." );
 
 # Move html dir to target
 $out = &run_as_domain_user($d, "cp -rp ".quotemeta($temp)."/$verdir/* ".
                                quotemeta($opts->{'dir'}));
 my $cfileorig = "$opts->{'dir'}/wp-config-sample.php";
 my $cfile = "$opts->{'dir'}/wp-config.php";
--r $cfileorig || return (0, "Failed to copy source : <tt>$out</tt>.");
+-r $cfileorig || return ( 0, "Failed to copy source : <tt>$out</tt>." );
 ```
 
 Most scripts or applications have a configuration file of some kind that defines where to access the database, what domain they are running under, the URL path, and possibly an initial login and password. The script installers is responsible for creating or modifying this file to use the database connection details supplied by the `opts` parameter, as shown in the code snippet below.
@@ -524,7 +524,7 @@ my $url = &script_path_url($d, $opts).
 my $userurl = &script_path_url($d, $opts);
 my $rp = $opts->{'dir'};
 $rp =~ s/^$d->{'home'}\///;
-return (1, "WordPress installation complete. It can be accessed at <a href='$url'>$url</a>.", "Under $rp using $dbphptype database $dbname", $userurl);
+return ( 1, "WordPress installation complete. It can be accessed at <a href='$url'>$url</a>.", "Under $rp using $dbphptype database $dbname", $userurl );
 }
 ```
 #### script_scriptname_uninstall(&domain, version, &opts) 
@@ -570,9 +570,8 @@ if ($opts->{'newdb'}) {
         &delete_script_database($d, $opts->{'db'});
         }
 
-return (1, "WordPress directory and tables deleted.");
+return ( 1, "WordPress directory and tables deleted." );
 }
-
 ```
 #### script_scriptname_passmode(&domain, version) 
 
@@ -585,12 +584,14 @@ Most scripts that setup an initial login and password use those from the virtual
 | `3`    | Script only needs a username               |
 
 
-The custom login and password entered by the user will be passed to the `script_scriptname_install` function. If your script installer doesn't setup an initial login at all, you can either omit this function or have it return `0`. Additionally, this function can return an array containing a minimum password length and regular expression that the password must match. For example, the following code fragment from the WordPress installer requires a password that is at least 8 characters long, and contains at least one upper-case letter, one lower-case letter and one digit.
+The custom login and password entered by the user will be passed to the `script_scriptname_install` function. If your script installer doesn't setup an initial login at all, you can either omit this function or have it return `0`. 
+
+Additionally, this function can return an array containing a numeric code, minimum password length and regular expression that the password must match. For example, the following code fragment from the WordPress installer requires a password that is at least 8 characters long, and contains at least one upper-case letter, one lower-case letter and one digit.
 
 ```perl
 sub script_wordpress_passmode
 {
-return (1, 8, '^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$');
+return ( 1, 8, '^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$' );
 }
 ```
 
@@ -639,7 +640,7 @@ The style of installation code above will work for most scripts that you want to
 
 Many PHP applications come with a script that asks the user a series of questions, like the database login and name, domain name, and initial administration username and password. The script then uses this information to create a config file and perhaps populated the database.
 
-Ideally, Virtualmin script installers should create any needed config files directly - but in some cases this is too difficult due to their complexity. Similarly, it may not be possible to create and populate all the needed database tables if no SQL file is provided for doing this. In cases like this, it is simpler for a script installer to invoke the application's install code directly, by making an HTTP request to the correct URL.
+Ideally, Virtualmin script installers should create any needed config files directly, but in some cases this is too difficult due to their complexity. Similarly, it may not be possible to create and populate all the needed database tables if no SQL file is provided for doing this. In cases like this, it is simpler for a script installer to invoke the application's install code directly, by making an HTTP request to the correct URL.
 
 To figure out the installation URL and parameters it needs, you will need to install the application manually and run through its install process in a browser. The browser developer tools can be used to see what HTTP requests are made, and what parameters are passed to them.
 
@@ -662,10 +663,10 @@ my $ipage = "$opts->{'path'}/install/index.php?action=create_tables";
 my ($iout, $ierror);
 &post_http_connection($d, $ipage, $params, \$iout, \$ierror);
 if ($ierror) {
-        return (-1, "Database initialization failed : $ierror");
+        return ( -1, "Database initialization failed : $ierror" );
         }
 elsif ($iout !~ /all\s+tables\s+have\s+been\s+created/i) {
-        return (-1, "Database initialization failed");
+        return ( -1, "Database initialization failed" );
         }
 ```
 
@@ -701,10 +702,14 @@ if (!$upgrade) {
                 startcmd => "/home/example/public_html/nodejs/bin/node /home/example/public_html/nodejs/server.js",
                 logstd => "$opts->{'dir'}/node.log",
                 logerr => "$opts->{'dir'}/node.err",
-        }
-});
+                }
+        });
+# Start the server process
+&script_start_service($d, "nodejs", $port);
+
 # Configure webserver to proxy to it
 &setup_proxy($d, $opts->{'path'}, $port);
+
 ```
 
 Note that the `script_setup_service` function already takes care of enabling the server process to start automatically at boot.
@@ -726,10 +731,10 @@ my ($d, $version, $opts) = @_;
 
 # Remove the contents of the target directory
 my $derr = &delete_script_install_directory($d, $opts);
-return (0, $derr) if ($derr);
+return ( 0, $derr ) if ($derr);
 
 # Deletion complete
-return (1, "Node.js uninstallation complete.");
+return ( 1, "Node.js uninstallation complete." );
 }
 ```
 
