@@ -628,6 +628,21 @@ body.dark>footer.footer::after {
     }   
 }
 
+.post-content .docs-cards-container-4x {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+@media screen and (max-width: 920px) {
+    .post-content .docs-cards-container-4x {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+@media screen and (min-width: 1151px) and (max-width: 1460px) {
+    .post-content .docs-cards-container-4x {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }   
+}
+
 .post-content .docs-cards-container-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
