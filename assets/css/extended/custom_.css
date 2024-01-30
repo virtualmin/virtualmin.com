@@ -608,7 +608,7 @@ body.dark>footer.footer::after {
 
 .page-docs .docs-toc a.active {
     color: var(--primary);
-    font-weight: normal;
+    font-weight: 300;
 }
 
 .post-content .docs-cards-container {
