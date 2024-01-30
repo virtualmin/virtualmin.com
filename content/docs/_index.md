@@ -1,7 +1,8 @@
 ---
 title: "Documentation"
-date: 2023-11-13
+date: 2024-01-29
+author: "Ilia Ross"
 weight: 0
 ---
 
-... work in progress ...
+{{< docs-cards >}}

@@ -596,3 +596,24 @@ body.dark>footer.footer::after {
         margin-left: 20px;
     }
 }
+
+/* Docs cards */
+.post-content .docs-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--gap);
+    padding: calc(var(--gap) / 4) 0;
+}
+.post-content .docs-cards-container .docs-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+}
+.post-content .docs-cards-container .docs-card a {
+    margin-top: auto;
+}
+.post-content .docs-cards-container .docs-title {
+    margin-top: 0;
+}
