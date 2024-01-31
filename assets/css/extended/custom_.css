@@ -692,6 +692,7 @@ body.dark>footer.footer::after {
 
 .post-content .docs-cards-container-links .docs-card-links a .btn-text {
     font-weight: 300;
+    font-size: 112%;
 }
 
 .post-content .docs-cards-container .docs-card a {
