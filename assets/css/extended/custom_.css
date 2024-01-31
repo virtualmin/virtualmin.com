@@ -667,6 +667,7 @@ body.dark>footer.footer::after {
 .post-content .docs-cards-container .docs-card p {
     padding-left: calc(var(--gap) / 8);
     padding-right: calc(var(--gap) / 8);
+    font-size: 96%;
 }
 
 .post-content .docs-cards-container-links .docs-card-links {
