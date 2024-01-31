@@ -615,7 +615,7 @@ body.dark>footer.footer::after {
 .post-content .docs-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: calc(var(--gap) / 2.5);
+    gap: calc(var(--gap) / 2.66);
     padding: calc(var(--gap) / 8) 0;
 }
 
@@ -647,7 +647,7 @@ body.dark>footer.footer::after {
 .post-content .docs-cards-container-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: calc(var(--gap) / 3.33);
+    gap: calc(var(--gap) / 3.92);
     grid-auto-rows: 1fr;
 }
 
