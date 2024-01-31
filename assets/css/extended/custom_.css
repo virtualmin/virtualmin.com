@@ -682,9 +682,32 @@ body.dark>footer.footer::after {
     text-decoration: none;
     flex: 1;
 }
+.post-content .docs-cards-container-links .docs-card-links a:not(:hover) {
+    border-color: var(--border);
+}
+
+.post-content .docs-cards-container-links .docs-card-links a:not(:hover) .btn-text {
+    color: var(--content-strong);
+}
+
+.post-content .docs-cards-container-links .docs-card-links a .btn-text {
+    font-weight: 300;
+}
 
 .post-content .docs-cards-container .docs-card a {
     margin-top: auto;
+}
+
+.post-content .docs-cards-container .docs-card a:not(:hover) {
+    border-color: var(--border);
+}
+
+.post-content .docs-cards-container .docs-card a:not(:hover) .btn-text {
+    color: var(--content-strong);
+}
+
+.post-content .docs-cards-container .docs-card a .btn-text {
+    font-weight: 300;
 }
 
 .post-content .docs-cards-container .docs-title {
