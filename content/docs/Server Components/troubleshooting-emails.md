@@ -20,6 +20,43 @@ A successful connection shows a "Connected to smtp.gmail.com" message, while a f
 
 ISPs often block this port to curb spam, but they might unblock it if requested. It's advisable to check with your ISP regarding the possibility of unblocking it.
 
+### Troubleshooting SASL authentication
+
+To check if the SASL authentication daemon, i.e. `saslauthd` is running properly and can authenticate users as it should, you can use the `testsaslauthd` command, with the `-s` option, which can take `smtp` or `imap` or any other actual service name as an argument.
+
+#### For SMTP authentication
+
+```text
+testsaslauthd -u user -p pass -s smtp
+```
+
+#### For IMAP authentication
+
+```text
+testsaslauthd -u user -p pass -s imap
+```
+
+In these commands:
+- `-u user` should be replaced with the actual username you want to test.
+- `-p pass` should be replaced with the password for that user.
+- `-s smtp` or `-s imap` specifies the service you're testing authentication for, either SMTP or IMAP.
+
+#### Understanding test results
+
+- **Success**: A successful authentication test will output:
+  ```text
+  0: OK "Success."
+  ```
+  This output means that `saslauthd` successfully authenticated the user with the provided credentials, indicating that your SASL authentication setup for the specified service (SMTP or IMAP) is correctly configured.
+
+- **Failed**: A failed authentication test will show:
+  ```text
+  0: NO "authentication failed"
+  ```
+  This message indicates that `saslauthd` was unable to authenticate the user. This could be due to incorrect credentials, permission issues, or configuration problems in your SASL or email server setup.
+
+If you encounter a failed test, it's advisable to double-check the user credentials. Checking server logs can also offer more insights into the failure.
+
 ### Checking logs for email issues
 With modern systems employing _systemd_, the approach to log inspection has evolved. Traditional log files like `/var/log/maillog` or `/var/log/mail.log` are no longer the primary resources for troubleshooting. Instead, `journalctl` provides a centralized and more efficient method to access logs from all _systemd_ services.
 
