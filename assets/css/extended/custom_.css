@@ -609,13 +609,14 @@ body.dark>footer.footer::after {
 .page-docs .docs-toc a.active {
     color: var(--primary);
     font-weight: 300;
+    letter-spacing: normal;
 }
 
 .post-content .docs-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--gap);
-    padding: calc(var(--gap) / 4) 0;
+    gap: calc(var(--gap) / 2.5);
+    padding: calc(var(--gap) / 8) 0;
 }
 
 .post-content .docs-cards-container-3x {
@@ -646,7 +647,7 @@ body.dark>footer.footer::after {
 .post-content .docs-cards-container-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: calc(var(--gap) / 2);
+    gap: calc(var(--gap) / 3.33);
     grid-auto-rows: 1fr;
 }
 
@@ -654,14 +655,23 @@ body.dark>footer.footer::after {
 .post-content .docs-cards-container .docs-card {
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: var(--gap);
+    padding: calc(var(--gap) / 2.66);
     display: flex;
     flex-direction: column;
+}
+.post-content .docs-cards-container .docs-card p {
+    margin-bottom: calc(var(--content-gap) / 2.66);
+}
+
+.post-content .docs-cards-container .docs-card h4,
+.post-content .docs-cards-container .docs-card p {
+    padding-left: calc(var(--gap) / 8);
+    padding-right: calc(var(--gap) / 8);
 }
 
 .post-content .docs-cards-container-links .docs-card-links {
     padding: 0;
-    padding: calc(var(--gap) / 4);
+    padding: calc(var(--gap) / 16);
     border: none;
 }
 
