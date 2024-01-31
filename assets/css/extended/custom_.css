@@ -228,7 +228,7 @@ body.dark .logo>a>svg>g>path {
 @media screen and (max-width: 990px) {
 
     /* Dropdown link */
-    [data-product="virtualmin"]+nav>#menu.menu-authenticated .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li.hmenu-link--support {
+    [data-product="virtualmin"]+nav>#menu.menu-authenticated .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container>.hmenu-links>li.hmenu-link--support {
         display: initial;
     }
 
@@ -237,6 +237,16 @@ body.dark .logo>a>svg>g>path {
         display: none;
     }
 
+}
+/* Support link when authenticated is conditional
+   and can be located in the top links
+*/
+@media screen and (min-width: 990.98px) {
+
+    /* Dropdown link */
+    [data-product="virtualmin"]+nav>#menu.menu-authenticated .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container>.hmenu-links>li.hmenu-link--support {
+        display: none;
+    }
 }
 
 /* Documentation link */
