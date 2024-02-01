@@ -49,7 +49,7 @@ body.dark .logo>a>svg>g>path {
 }
 
 .header .logo>a>svg {
-    vertical-align: -31%;
+    vertical-align: -30%;
 }
 
 .logo .logo-switches svg {
@@ -729,3 +729,5 @@ body.dark>footer.footer::after {
 .post-content .docs-cards-container-links .docs-card-links a .btn-text {
     flex-grow: 1;
 }
+
+/* Landing page */
