@@ -54,13 +54,13 @@ In order to add additional PHP extensions, for all PHP versions installed on the
 #### Debian and derivatives
 
 ```text
-for v in $(ls /etc/php); do sudo apt-get install -y "php$v-"{curl,intl}; done
+for php in $(ls /etc/php); do sudo apt-get install -y "php$php-"{curl,intl}; done
 ```
 
 #### RHEL and derivatives
 
 ```text
-read -r -d '' -a phps < <(scl list-collections 2>/dev/null | grep 'php' | sed 's/$/-php/') ; phps+=("php") ; for php in "${phps[@]}"; do eval "sudo dnf -y install $php-{curl,intl}"; done
+for php in $(scl list-collections 2>/dev/null | grep 'php' | sed 's/$/-php/') php; do for ext in curl intl; do sudo dnf -y install "${php}-${ext}"; done; done
 ```
 
 A command above will install the `curl` and `intl` extensions for all PHP versions installed on the system. You can replace the names of the extensions with the ones you need to have installed.
