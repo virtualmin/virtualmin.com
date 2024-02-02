@@ -44,12 +44,15 @@ body.dark .logo>a>svg>g>path {
 }
 
 .header .logo>a {
-    line-height: inherit;
+    line-height: 0;
     margin-top: 0;
+    display: flex;
+    align-items: center;
 }
 
 .header .logo>a>svg {
-    vertical-align: -30%;
+    vertical-align: initial;
+    margin-top: 0.433rem;
 }
 
 .logo .logo-switches svg {
@@ -57,27 +60,12 @@ body.dark .logo>a>svg>g>path {
 }
 
 .dark .header .logo>a>svg {
-    vertical-align: -31%;
+    vertical-align: initial;
+    margin-top: 0.499rem;
 }
 
 .dark .logo .logo-switches svg {
     vertical-align: -5%;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 3),
-       only screen and (min--moz-device-pixel-ratio: 3),
-       only screen and (-o-min-device-pixel-ratio: 3/1), 
-       only screen and (min-device-pixel-ratio: 3),
-       only screen and (min-resolution: 288dpi),
-       only screen and (min-resolution: 3dppx) {
-        
-    .header .logo>a>svg {
-        vertical-align: -32%;
-    }
-
-    .dark .header .logo>a>svg {
-        vertical-align: -33%;
-    }
-
 }
 
 /*
