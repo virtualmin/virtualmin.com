@@ -1,6 +1,6 @@
 
 :root {
-    --header: #00359ef6;
+    --header: #0131abf6;
 }
 .dark {
     --header: #0c0c0cec;
@@ -796,7 +796,10 @@ body.dark>footer.footer::after {
 
 .page-index .index-page-intro-container .index-page-intro {
     /* background: linear-gradient(180deg, #031a47 5%, #0940edf3 50%, #053699fd 100%); */
-    background: linear-gradient(180deg, #031a47 5%, #0954edf3 50%, #053699fd 100%);
+
+    /* background: linear-gradient(180deg, #031a47 5%, #0954edf3 50%, #053699fd 100%); */
+    background: linear-gradient(180deg, #031a47 5%, #08033e 50%, #003db6fd 100%);
+
     /* background: linear-gradient(180deg, #031a47 5%, #6d00dd 50%, #053699fd 100%); */
 }
 
