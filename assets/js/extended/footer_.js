@@ -6,7 +6,7 @@
         "scroll",
         function () {
             this.currentScroll = window.scrollY || document.documentElement.scrollTop;
-            this.lastScroll = 2;
+            this.lastScroll = 2; //up
             if (this.currentScroll < this.lastScrollTop) {
                 this.lastScroll = 1; // down
             }
@@ -33,6 +33,4 @@
         },
         false
     );
-    // Trigger scroll event on initial load
-    window.dispatchEvent(new Event("scroll"));
 })();
