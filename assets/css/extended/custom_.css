@@ -735,3 +735,10 @@ body.dark>footer.footer::after {
 }
 
 /* Landing page */
+.page-index > body > header:not(.header-sticky) {
+    top: auto;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
