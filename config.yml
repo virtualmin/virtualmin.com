@@ -6,13 +6,6 @@ theme: PaperMod
 
 canonifyURLs: true
 
-menu:
-  main:
-    - identifier: forum
-      name: 'Forum'
-      url: https://forum.virtualmin.com/
-      weight: 0
-
 minify:
   minifyOutput: true
 

@@ -1,3 +1,11 @@
+
+:root {
+    --header: #00359ef6;
+}
+.dark {
+    --header: #0c0c0cec;
+}
+
 #menu a {
     padding-left: 0.433em;
     padding-right: 0.433em;
@@ -741,4 +749,71 @@ body.dark>footer.footer::after {
     position: absolute;
     width: 100%;
 }
+
+.page-index .index-page-intro-container ~ header:not(.header-sticky) {
+    background-color: transparent;
+}
+
+.page-index .index-page-intro-container ~ header:not(.header-sticky) svg > g > path,
+.page-index .index-page-intro-container ~ header:not(.header-sticky) svg > g > g > path:not(:last-child) {
+    display: none;
+}
+
+.page-index .index-page-intro-container ~ header:not(.header-sticky) .logo {
+    scale: 1.2;
+    transform: scale(1.015, 0.87) translateY(-0.166rem) translateX(-0.933rem);
+}
+/* 
+.page-index .index-page-intro-container ~ header:not(.header-sticky) #menu .hmenu-panel {
+    padding: 2em !important;
+}
+
+.page-index .index-page-intro-container ~ header:not(.header-sticky) #menu .hmenu-panel .hmenu-drop-down {
+    top: 0 !important;
+    right: 0 !important;
+    left: 0;
+    position: fixed;
+    display: grid;
+    max-height: unset;
+    min-height: unset;
+    max-width: unset;
+    min-width: unset;
+    height: calc(100% - 1em);
+    width: calc(100% - 1em);
+    overflow: hidden;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    z-index: 9999;
+    border-radius: var(--radius);
+} */
+
+.page-index .index-page-intro-container {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.page-index .index-page-intro-container .index-page-intro {
+    /* background: linear-gradient(180deg, #031a47 5%, #0940edf3 50%, #053699fd 100%); */
+    background: linear-gradient(180deg, #031a47 5%, #0954edf3 50%, #053699fd 100%);
+    /* background: linear-gradient(180deg, #031a47 5%, #6d00dd 50%, #053699fd 100%); */
+}
+
+.page-index .dark .index-page-intro-container .index-page-intro {
+    /* filter: grayscale(1) contrast(1.5); */
+    background: linear-gradient(180deg, #0a0a0a 5%, #0d1629 50%, var(--header) 100%)
+}
+
+.page-index .index-page-intro-container:before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: url('/header-elements-stars.svg') repeat-x;
+    z-index: 10;
+}
+
 

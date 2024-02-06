@@ -1,10 +1,12 @@
 <script>
     (function () {
+        // Define authentication state
         const menu = document.querySelector('#menu'),
             supportItem = document.querySelector('.menu-item--support'),
             signInItem = document.querySelector('.menu-item--singin'),
             userItem = document.querySelector('.menu-item--user'),
-            avatar_url = localStorage.getItem("virtualmin-menu-item--user--url");
+            avatar_url = localStorage.getItem("virtualmin-menu-item--user--url"),
+            header_sticky_cls = "header-sticky";
         if (avatar_url && avatar_url.toString().startsWith('http')) {
             const userAvatar = userItem.querySelector('a > img');
             userAvatar.src = avatar_url;
@@ -20,5 +22,41 @@
         if (signInItem && signInItem.classList.contains('hidden')) {
             supportItem.classList.remove('hidden');
         }
+
+        // Sticky header magic
+        window.addEventListener(
+            "scroll",
+            function () {
+                this.currentScroll = window.scrollY || document.documentElement.scrollTop;
+                this.lastScroll = 2; //up
+                if (this.currentScroll < this.lastScrollTop) {
+                    this.lastScroll = 1; // down
+                }
+                this.lastScrollTop = this.currentScroll <= 0 ? 0 : this.currentScroll;
+                const header = document.querySelector(".page-index > body > header"),
+                    headerBounds = header.getBoundingClientRect(),
+                    headerHeight = headerBounds.height;
+                if (
+                    this.lastScroll === 2 &&
+                    headerBounds.top <= 0 &&
+                    !header.classList.contains(header_sticky_cls)
+                ) {
+                    header.classList.add(header_sticky_cls);
+                    window.scrollBy(window.scrollY, +headerHeight);
+                    window.dispatchEvent(new Event("resize")); // reposition dropdown
+                } else if (
+                    this.lastScroll === 1 &&
+                    window.innerHeight - window.scrollY >= 0 &&
+                    header.classList.contains(header_sticky_cls)
+                ) {
+                    header.classList.remove(header_sticky_cls);
+                    window.scrollBy(window.scrollY, -headerHeight);
+                    window.dispatchEvent(new Event("resize")); // reposition dropdown
+                }
+            },
+            false
+        );
+        // Trigger scroll event on initial load
+        window.dispatchEvent(new Event("scroll"));
     })();
 </script>
