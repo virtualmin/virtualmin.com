@@ -22,10 +22,10 @@
                 header.classList.add(header_sticky_cls);
                 window.scrollBy(window.scrollY, +headerHeight);
             }
-            if (
-                header.classList.contains(header_sticky_cls) &&
+            else if (
+                this.lastScroll === 1 &&
                 window.innerHeight - window.scrollY >= 0 &&
-                this.lastScroll === 1
+                header.classList.contains(header_sticky_cls)
             ) {
                 header.classList.remove(header_sticky_cls);
                 window.scrollBy(window.scrollY, -headerHeight);
