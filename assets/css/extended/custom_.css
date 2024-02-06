@@ -795,17 +795,11 @@ body.dark>footer.footer::after {
 }
 
 .page-index .index-page-intro-container .index-page-intro {
-    /* background: linear-gradient(180deg, #031a47 5%, #0940edf3 50%, #053699fd 100%); */
-
-    /* background: linear-gradient(180deg, #031a47 5%, #0954edf3 50%, #053699fd 100%); */
-    background: linear-gradient(180deg, #031a47 5%, #08033e 50%, #003db6fd 100%);
-
-    /* background: linear-gradient(180deg, #031a47 5%, #6d00dd 50%, #053699fd 100%); */
+    background: linear-gradient(180deg, #000924 5%, #070056 50%, #003db6fd 100%);
 }
 
 .page-index .dark .index-page-intro-container .index-page-intro {
-    /* filter: grayscale(1) contrast(1.5); */
-    background: linear-gradient(180deg, #0a0a0a 5%, #0d1629 50%, var(--header) 100%)
+    background: linear-gradient(180deg, #040404 5%, #0b1a3b 50%, var(--header) 100%);
 }
 
 .page-index .index-page-intro-container:before {
