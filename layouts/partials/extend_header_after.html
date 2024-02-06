@@ -5,8 +5,7 @@
             supportItem = document.querySelector('.menu-item--support'),
             signInItem = document.querySelector('.menu-item--singin'),
             userItem = document.querySelector('.menu-item--user'),
-            avatar_url = localStorage.getItem("virtualmin-menu-item--user--url"),
-            header_sticky_cls = "header-sticky";
+            avatar_url = localStorage.getItem("virtualmin-menu-item--user--url");
         if (avatar_url && avatar_url.toString().startsWith('http')) {
             const userAvatar = userItem.querySelector('a > img');
             userAvatar.src = avatar_url;
@@ -22,8 +21,13 @@
         if (signInItem && signInItem.classList.contains('hidden')) {
             supportItem.classList.remove('hidden');
         }
-
+    })();
+</script>
+{{ if eq .RelPermalink "/" }}
+<script>
+    (function () {
         // Sticky header magic
+        const header_sticky_class_str = "header-sticky";
         window.addEventListener(
             "scroll",
             function () {
@@ -39,17 +43,17 @@
                 if (
                     this.lastScroll === 2 &&
                     headerBounds.top <= 0 &&
-                    !header.classList.contains(header_sticky_cls)
+                    !header.classList.contains(header_sticky_class_str)
                 ) {
-                    header.classList.add(header_sticky_cls);
+                    header.classList.add(header_sticky_class_str);
                     window.scrollBy(window.scrollY, +headerHeight);
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     this.lastScroll === 1 &&
                     window.innerHeight - window.scrollY >= 0 &&
-                    header.classList.contains(header_sticky_cls)
+                    header.classList.contains(header_sticky_class_str)
                 ) {
-                    header.classList.remove(header_sticky_cls);
+                    header.classList.remove(header_sticky_class_str);
                     window.scrollBy(window.scrollY, -headerHeight);
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 }
@@ -60,3 +64,4 @@
         window.dispatchEvent(new Event("scroll"));
     })();
 </script>
+{{ end }}
