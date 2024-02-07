@@ -1,7 +1,7 @@
-
 :root {
     --header: #0131abf6;
 }
+
 .dark {
     --header: #0c0c0cec;
 }
@@ -199,11 +199,11 @@ body.dark .logo>a>svg>g>path {
     }
 }
 
-[data-auth="0"].page-support .post-content #premium-support ~ p > a:not([href$="/signin"]) {
+[data-auth="0"].page-support .post-content #premium-support~p>a:not([href$="/signin"]) {
     display: none;
 }
 
-[data-auth="0"].page-support .post-content #premium-support ~ p > a[href$="/signin"].btn-outline-danger {
+[data-auth="0"].page-support .post-content #premium-support~p>a[href$="/signin"].btn-outline-danger {
     filter: hue-rotate(30deg)brightness(1.07)saturate(.9);
 }
 
@@ -250,6 +250,7 @@ body.dark .logo>a>svg>g>path {
     }
 
 }
+
 /* Support link when authenticated is conditional
    and can be located in the top links
 */
@@ -367,7 +368,7 @@ body.dark .logo>a>svg>g>path {
     }
 }
 
-[data-auth="1"].page-support .post-content #premium-support ~ p > a[href$="/signin"] {
+[data-auth="1"].page-support .post-content #premium-support~p>a[href$="/signin"] {
     display: none;
 }
 
@@ -648,7 +649,7 @@ body.dark>footer.footer::after {
 @media screen and (max-width: 640px) {
     .post-content .docs-cards-container-3x {
         grid-template-columns: 1fr;
-    }   
+    }
 }
 
 .post-content .docs-cards-container-4x {
@@ -660,10 +661,11 @@ body.dark>footer.footer::after {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
+
 @media screen and (min-width: 1151px) and (max-width: 1460px) {
     .post-content .docs-cards-container-4x {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }   
+    }
 }
 
 .post-content .docs-cards-container-links {
@@ -681,6 +683,7 @@ body.dark>footer.footer::after {
     display: flex;
     flex-direction: column;
 }
+
 .post-content .docs-cards-container .docs-card p {
     margin-bottom: calc(var(--content-gap) / 2.66);
 }
@@ -705,6 +708,7 @@ body.dark>footer.footer::after {
     text-decoration: none;
     flex: 1;
 }
+
 .post-content .docs-cards-container-links .docs-card-links a:not(:hover) {
     border-color: var(--border);
 }
@@ -743,25 +747,26 @@ body.dark>footer.footer::after {
 }
 
 /* Landing page */
-.page-index > body > header:not(.header-sticky) {
+.page-index>body>header:not(.header-sticky) {
     top: auto;
     bottom: 0;
     position: absolute;
     width: 100%;
 }
 
-.page-index .index-page-intro-container ~ header:not(.header-sticky) {
+.page-index .index-page-intro-container~header:not(.header-sticky) {
     background-color: transparent;
 }
 
-.page-index .index-page-intro-container ~ header:not(.header-sticky) svg > g > path,
-.page-index .index-page-intro-container ~ header:not(.header-sticky) svg > g > g > path:not(:last-child) {
+.page-index .index-page-intro-container~header:not(.header-sticky) svg>g>path,
+.page-index .index-page-intro-container~header:not(.header-sticky) svg>g>g>path:not(:last-child) {
     display: none;
 }
 
-.page-index .index-page-intro-container ~ header:not(.header-sticky) .logo {
+.page-index .index-page-intro-container~header:not(.header-sticky) .logo {
     scale: 1.2;
     transform: scale(1.015, 0.87) translateY(-0.166rem) translateX(-0.933rem);
+    backface-visibility: hidden;
 }
 
 .page-index .index-page-intro-container {
@@ -774,13 +779,14 @@ body.dark>footer.footer::after {
 
 .page-index .index-page-intro-container .index-page-intro {
     background: linear-gradient(180deg, #000924 5%, #070056 50%, #003db6fd 100%);
+    z-index: 99;
 }
 
 .page-index .dark .index-page-intro-container .index-page-intro {
     background: linear-gradient(180deg, #040404 5%, #0b1a3b 50%, var(--header) 100%);
 }
 
-.page-index .index-page-intro-container:before {
+.page-index .index-page-intro-container:after {
     content: "";
     position: absolute;
     top: 1rem;
@@ -788,7 +794,31 @@ body.dark>footer.footer::after {
     width: 100%;
     height: 25%;
     background: url('/header-elements-stars.svg') repeat-x;
-    z-index: 10;
+    z-index: 102;
 }
 
+.page-index .index-page-intro-container .index-page-shooting-star {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 0.066rem;
+    height: 0.066rem;
+    background-color: white;
+    border-radius: 100%;
+    animation: shoot 1.33s forwards;
+    animation-delay: 1.33s;
+    z-index: 102;
+}
 
+@keyframes shoot {
+    0% {
+        top: -6.66%;
+        left: 100%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 33.33%;
+        left: -33.33%;
+    }
+}
