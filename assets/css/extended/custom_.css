@@ -771,6 +771,13 @@ body.dark>footer.footer::after {
     overflow: hidden;
 }
 
+@media (hover: none) and (pointer: coarse) {
+    body {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+
 .page-index .index-page-intro-container .index-page-intro {
     background: linear-gradient(180deg, #000924 5%, #070056 50%, #003db6fd 100%);
 }
