@@ -813,12 +813,12 @@ body.dark>footer.footer::after {
 @keyframes shoot {
     0% {
         top: -6.66%;
-        left: 100%;
+        left: 66.66%;
         opacity: 1;
     }
 
     100% {
         top: 33.33%;
-        left: -33.33%;
+        left: -66.66%;
     }
 }
