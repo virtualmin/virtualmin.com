@@ -70,6 +70,7 @@
             $this.vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${$this.vh}px`);
         });
+        window.dispatchEvent(new Event("resize"));
     })();
 </script>
 {{ end }}
