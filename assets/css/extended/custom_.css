@@ -763,36 +763,11 @@ body.dark>footer.footer::after {
     scale: 1.2;
     transform: scale(1.015, 0.87) translateY(-0.166rem) translateX(-0.933rem);
 }
-/* 
-.page-index .index-page-intro-container ~ header:not(.header-sticky) #menu .hmenu-panel {
-    padding: 2em !important;
-}
-
-.page-index .index-page-intro-container ~ header:not(.header-sticky) #menu .hmenu-panel .hmenu-drop-down {
-    top: 0 !important;
-    right: 0 !important;
-    left: 0;
-    position: fixed;
-    display: grid;
-    max-height: unset;
-    min-height: unset;
-    max-width: unset;
-    min-width: unset;
-    height: calc(100% - 1em);
-    width: calc(100% - 1em);
-    overflow: hidden;
-    margin-top: 0.5em;
-    margin-left: 0.5em;
-    z-index: 9999;
-    border-radius: var(--radius);
-} */
 
 .page-index .index-page-intro-container {
     display: grid;
-    min-height: 100vh;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
-    grid-template-rows: 1fr;
     overflow: hidden;
 }
 

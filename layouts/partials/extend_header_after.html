@@ -62,6 +62,14 @@
         );
         // Trigger scroll event on initial load
         window.dispatchEvent(new Event("scroll"));
+
+        function setVhVariable() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            alert(vh);
+        }
+        window.addEventListener('resize', setVhVariable);
+        setVhVariable();
     })();
 </script>
 {{ end }}
