@@ -766,17 +766,11 @@ body.dark>footer.footer::after {
 
 .page-index .index-page-intro-container {
     display: grid;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
+    height: 100svh;
     width: 100%;
     overflow: hidden;
 }
-
-@media (hover: none) and (pointer: coarse) {
-    body {
-        padding-top: env(safe-area-inset-top);
-    }
-}
-
 
 .page-index .index-page-intro-container .index-page-intro {
     background: linear-gradient(180deg, #000924 5%, #070056 50%, #003db6fd 100%);

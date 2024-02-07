@@ -63,14 +63,6 @@
         );
         // Trigger scroll event on initial load
         window.dispatchEvent(new Event("scroll"));
-
-        // Address mobile browsers issue
-        // with 100vh height (unbelievable)
-        window.addEventListener('resize', function () {
-            $this.vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${$this.vh}px`);
-        });
-        window.dispatchEvent(new Event("resize"));
     })();
 </script>
 {{ end }}
