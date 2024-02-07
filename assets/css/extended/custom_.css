@@ -789,8 +789,10 @@ body.dark>footer.footer::after {
 
 .page-index .index-page-intro-container {
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
+    grid-template-rows: 1fr;
     overflow: hidden;
 }
 
@@ -808,7 +810,7 @@ body.dark>footer.footer::after {
     top: 1rem;
     left: 0;
     width: 100%;
-    height: 20%;
+    height: 25%;
     background: url('/header-elements-stars.svg') repeat-x;
     z-index: 10;
 }
