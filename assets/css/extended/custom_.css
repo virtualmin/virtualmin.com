@@ -767,7 +767,7 @@ body.dark>footer.footer::after {
 .page-index .index-page-intro-container {
     display: grid;
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
 }
