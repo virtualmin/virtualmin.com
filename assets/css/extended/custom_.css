@@ -789,12 +789,13 @@ body.dark>footer.footer::after {
 .page-index .index-page-intro-container:after {
     content: "";
     position: absolute;
-    top: 1rem;
+    top: 0;
     left: 0;
     width: 100%;
     height: 25%;
     background: url('/header-elements-stars.svg') repeat-x;
     z-index: 102;
+    opacity: 0.87;
 }
 
 .page-index .index-page-intro-container .index-page-shooting-star {
