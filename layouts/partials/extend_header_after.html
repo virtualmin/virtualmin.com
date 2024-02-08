@@ -28,7 +28,8 @@
     (function () {
         const $this = {};
         // Sticky header magic
-        const header_sticky_class_str = "header-sticky";
+        const header_sticky_class_str = "header-sticky",
+            menu_active_class_str = "#menu > li > a.dropdown-menu > span.active";
         window.addEventListener(
             "scroll",
             function () {
@@ -58,6 +59,15 @@
                     window.scrollBy(window.scrollY, -headerHeight);
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 }
+                if ($this.scrollTimeout) {
+                    clearTimeout($this.scrollTimeout);
+                }
+                $this.scrollTimeout = setTimeout(function () {
+                    if (window.scrollY < window.innerHeight &&
+                        document.querySelector(menu_active_class_str)) {
+                        window.dispatchEvent(new Event("resize")); // reposition dropdown
+                    }
+                }, 33);
             },
             false
         );
