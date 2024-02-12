@@ -993,6 +993,28 @@ html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-right {
     transform: scale(0.811);
 }
 
+@media screen and (max-width: 600px) {
+
+    html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-right,
+    html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-left,
+    .page-index .chocolat-wrapper .screen-full-container {
+        transform: scale(0.611);
+    }
+
+    html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-left {
+        left: -0.411em;
+    }
+
+    html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-right {
+        right: -0.411em;
+    }
+
+    .page-index .chocolat-wrapper .screen-full-container {
+        bottom: -0.911em;
+        left: 0;
+    }
+}
+
 html:not(.chocolat-fullscreen).page-index .chocolat-bottom,
 html:not(.chocolat-fullscreen).page-index .chocolat-top {
     display: none !important;
