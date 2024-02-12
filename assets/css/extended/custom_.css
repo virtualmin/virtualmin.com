@@ -821,7 +821,7 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .dark .index-page-intro-container {
-    background: linear-gradient(180deg, #000000 5%, #030b28ec 50%, #0b0b0bec 100%);
+    background: linear-gradient(180deg, #000000 5%, #030b28ec 50%, var(--header) 100%);
 }
 
 @keyframes rotate360 {
