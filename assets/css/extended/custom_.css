@@ -824,23 +824,13 @@ html:not(.page-index) .index-page-intro-container {
     background: linear-gradient(180deg, #040404 5%, #081738 50%, var(--header) 100%);
 }
 
-@keyframes scaleIn {
-    0% {
-        transform: scale(0.81)
-    }
-
-    100% {
-        transform: scale(1)
-    }
-}
-
 @keyframes rotate360 {
     0% {
-        transform: rotate(0) scale(1);
+        transform: rotate(0);
     }
 
     100% {
-        transform: rotate(-360deg) scale(1);
+        transform: rotate(-360deg);
     }
 }
 
@@ -853,9 +843,8 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .index-page-content-logo img {
-    animation: scaleIn 1s forwards alternate, rotate360 3s forwards alternate;
-    animation-delay: 0s, 1s;
-    transform: scale(0.81);
+    animation: rotate360 3s forwards alternate;
+    animation-delay: 0.666s;
 }
 
 .page-index body:not(.dark) .index-page-content-logo .index-page-content-logo-dark,
@@ -950,7 +939,7 @@ html:not(.page-index) .index-page-intro-container {
     background-color: white;
     border-radius: 100%;
     animation: shoot 1s linear;
-    animation-delay: 3s;
+    animation-delay: 3.33s;
     z-index: 103;
 }
 
@@ -971,3 +960,38 @@ html:not(.page-index) .index-page-intro-container {
     display: none;
 }
 
+.page-index .post-content img,
+.page-index img.chocolat-img {
+    filter: saturate(1.14) brightness(1.01)contrast(0.99) hue-rotate(4deg);
+    border-radius: var(--radius);
+    box-shadow: 1px 1px 0 1px #f9f9fb, -1px 0 28px #21201e03, 14px 14px 14px #4d4d4d40;
+}
+
+.page-index .dark .post-content img,
+.page-index .dark img.chocolat-img {
+    box-shadow: 1px 1px 0 1px #000, -1px 0 28px #12121203, 14px 14px 14px #17171740;
+    filter: none;
+}
+
+.page-index .chocolat-drop {
+    display: block;
+    background-color: transparent;
+    aspect-ratio: 16 / 9;
+    /* margin: -1.666em 1.333em 0 0.333em; */
+}
+
+.page-index .chocolat-wrapper,
+.page-index .chocolat-overlay.chocolat-visible {
+    background-color: transparent !important;
+    opacity: 1;
+}
+
+html:not(.chocolat-fullscreen).page-index .chocolat-bottom,
+html:not(.chocolat-fullscreen).page-index .chocolat-top {
+    display: none !important;
+    z-index: -1;
+}
+
+html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-left {
+    /* margin-left: -4rem; */
+}
