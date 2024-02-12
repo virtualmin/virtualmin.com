@@ -16,6 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     src: "/images/screenshots/" + screenshotType + "/2-stats-history.png",
                     title: "Webmin ⇾ System ⇾ Dashboard ⇾ Stats History",
                 },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/3-webmin-configuration.png",
+                    title: "Webmin ⇾ Webmin ⇾ Webmin Configuration",
+                },
             ];
         };
 
