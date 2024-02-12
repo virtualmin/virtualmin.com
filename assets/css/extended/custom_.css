@@ -972,3 +972,8 @@ html:not(.page-index) .index-page-intro-container {
         left: -50%;
     }
 }
+
+.page-index [href="#top"] {
+    display: none;
+}
+
