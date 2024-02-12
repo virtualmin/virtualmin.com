@@ -938,7 +938,7 @@ html:not(.page-index) .index-page-intro-container {
     height: 0.099rem;
     background-color: white;
     border-radius: 100%;
-    animation: shoot 1s linear;
+    animation: shoot 0.66s linear;
     animation-delay: 3.33s;
     z-index: 103;
 }
