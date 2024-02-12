@@ -824,23 +824,13 @@ html:not(.page-index) .index-page-intro-container {
     background: linear-gradient(180deg, #040404 5%, #081738 50%, var(--header) 100%);
 }
 
-@keyframes scaleIn {
-    0% {
-        transform: scale(0.81)
-    }
-
-    100% {
-        transform: scale(1)
-    }
-}
-
 @keyframes rotate360 {
     0% {
-        transform: rotate(0) scale(1);
+        transform: rotate(0);
     }
 
     100% {
-        transform: rotate(-360deg) scale(1);
+        transform: rotate(-360deg);
     }
 }
 
@@ -853,9 +843,8 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .index-page-content-logo img {
-    animation: scaleIn 1s forwards alternate, rotate360 3s forwards alternate;
-    animation-delay: 0s, 1s;
-    transform: scale(0.81);
+    animation: rotate360 3s forwards alternate;
+    animation-delay: 0.666s;
 }
 
 .page-index body:not(.dark) .index-page-content-logo .index-page-content-logo-dark,
@@ -950,7 +939,7 @@ html:not(.page-index) .index-page-intro-container {
     background-color: white;
     border-radius: 100%;
     animation: shoot 1s linear;
-    animation-delay: 3s;
+    animation-delay: 3.33s;
     z-index: 103;
 }
 
