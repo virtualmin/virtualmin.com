@@ -960,3 +960,41 @@ html:not(.page-index) .index-page-intro-container {
     display: none;
 }
 
+.page-index {
+    --primary-soft: rgba(15, 15, 15, .6);
+}
+
+.page-index .dark {
+    --primary-soft: rgba(15, 15, 15, .8);
+}
+
+.page-index .chocolat-drop {
+    background-color: transparent;
+    aspect-ratio: 16 / 9;
+    margin: -1em 0 2.666em 0;
+    overflow: initial;
+}
+
+html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-right,
+html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-left {
+    position: absolute;
+    left: 0.111em;
+    transform: scale(0.811);
+}
+
+html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-right {
+    left: initial;
+    right: 0.111em;
+}
+
+.page-index .chocolat-wrapper .screen-full-container {
+    bottom: -0.411em;
+    left: 0.533em;
+    transform: scale(0.811);
+}
+
+html:not(.chocolat-fullscreen).page-index .chocolat-bottom,
+html:not(.chocolat-fullscreen).page-index .chocolat-top {
+    display: none !important;
+    z-index: -1;
+}

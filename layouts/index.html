@@ -1,27 +1,41 @@
 {{ define "main" }}
-
 <article class="post-single">
     <header class="post-header">
-        <h1 class="post-title">
-            </h1>
-        <br>         
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis odio a nulla sodales, sit amet tempor mi accumsan. Praesent lobortis ante a consequat interdum. Aliquam bibendum et quam a bibendum. Nulla facilisi. Quisque maximus tellus et consectetur eleifend. Nullam dictum orci ut viverra pulvinar. Quisque rhoncus ipsum eros, a pulvinar orci egestas sed. Vestibulum lobortis mauris tellus, sollicitudin laoreet lorem vestibulum id. Duis eget laoreet elit, a molestie ex. Sed quis egestas arcu. Ut fermentum lacus ac ante sagittis viverra.
-
-        Nunc in arcu vitae lectus malesuada laoreet ut eget purus. Duis nec neque facilisis, accumsan eros consectetur, venenatis nibh. In sodales consequat ipsum in sodales. In ex lacus, sodales at odio id, semper aliquet libero. Quisque mollis eros non sem elementum consequat nec vel sapien. Vestibulum ullamcorper erat et posuere pharetra. Nunc vestibulum dolor quis est congue consequat. Donec in justo ut leo tincidunt hendrerit. Integer bibendum lectus est, egestas euismod sapien dictum sit amet. Etiam cursus interdum diam ac aliquam.
-
-        Pellentesque eu leo eget sapien varius iaculis. Pellentesque sagittis volutpat lorem, id porttitor ipsum blandit quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur diam ex, posuere a maximus id, mollis non lorem. Praesent nec magna eu odio posuere fermentum at sit amet augue. Nunc sapien urna, rutrum a pellentesque eget, tempus at sem. Integer at placerat ligula. In ut varius felis, vel porttitor metus. Praesent eleifend malesuada vestibulum.
-
-        Fusce euismod in purus nec cursus. Sed non mi nibh. Praesent leo ante, ultricies at odio id, fringilla posuere lectus. Fusce lorem quam, maximus at condimentum nec, ultricies quis enim. Integer id mi at turpis molestie aliquet. Morbi faucibus tellus vel viverra convallis. Maecenas erat elit, eleifend eu posuere vitae, aliquam id sem. Praesent et dapibus orci, eget blandit tellus. Donec ornare ullamcorper turpis, sit amet pretium ipsum commodo eget. Curabitur et posuere lorem, ut imperdiet erat. Nullam sit amet eros ornare erat porttitor interdum. Morbi vestibulum laoreet imperdiet. Vivamus venenatis velit vitae nisl placerat, sit amet tincidunt arcu volutpat. Maecenas condimentum facilisis arcu, eget mollis nunc fermentum sed. Donec ut scelerisque lectus. Etiam et neque vel leo placerat tristique.
-
-        Etiam vel gravida sem. Curabitur vitae arcu hendrerit, elementum nunc non, suscipit sapien. Donec dapibus lacus at ullamcorper efficitur. Mauris in eleifend purus, nec dictum nunc. Quisque aliquam magna in nisi condimentum, et tristique velit fringilla. Suspendisse vehicula dui ac placerat bibendum. Ut nec tortor dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam odio libero, imperdiet eget leo ac, rutrum porta ante. Aliquam convallis porta enim, ut eleifend nibh vulputate id. Mauris faucibus lorem vel tempor rhoncus. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Pellentesque sed lectus dolor. Ut at laoreet ipsum.
-
-        <br>         
-
+      {{ partial "breadcrumbs.html" . }}
+      <h1 class="post-title">
+        {{ .Title }}
+        {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+      </h1>
+      {{- if .Description }}
+      <div class="post-description">
+        {{ .Description }}
+      </div>
+      {{- end }}
+      {{- if not (.Param "hideMeta") }}
+      <div class="post-meta">
+        {{- partial "post_meta.html" . -}}
+        {{- partial "translation_list.html" . -}}
+        {{- partial "edit_post.html" . -}}
+        {{- partial "post_canonical.html" . -}}
+      </div>
+      {{- end }}
     </header>
     <div class="post-content">
-
-        
-
+        {{ .Content }}
     </div>
+    <footer class="post-footer">
+        {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+        <ul class="post-tags">
+        {{- range ($.GetTerms $tags) }}
+        <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+        </ul>
+        {{- if (.Param "ShowPostNavLinks") }}
+        {{- partial "post_nav_links.html" . }}
+        {{- end }}
+        {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
+        {{- partial "share_icons.html" . -}}
+        {{- end }}
+    </footer>
 </article>
 {{ end }}
