@@ -15,9 +15,17 @@ html {
     padding-right: 0.433em;
 }
 
-/* #menu>li:nth-last-child(3) {
-    display: none;
-} */
+.toc summary,
+#searchInput,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+    font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, segoe ui, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+}
 
 body .logo>a>svg {
     max-width: 250px;
