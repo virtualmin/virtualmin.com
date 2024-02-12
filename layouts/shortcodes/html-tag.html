@@ -1,6 +1,0 @@
-{{ if .Get 0 }}
-  {{ $tag := .Get 0 }}
-  {{ $class := .Get 1 }}
-  {{ $html := print "<" $tag " class=\"" $class "\"></" $tag ">" | safeHTML }}
-  {{ $html }}
-{{ end }}
