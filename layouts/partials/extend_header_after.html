@@ -29,19 +29,18 @@
         const $this = {};
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
-            menu_active_class_str = "#menu > li > a.dropdown-menu > span.active";
-        window.addEventListener(
-            "scroll",
-            function () {
+            menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
+            scrollFn = function () {
                 $this.currentScroll = window.scrollY || document.documentElement.scrollTop;
-                $this.lastScroll = 2; //up
+                $this.lastScroll = 2; // down
                 if ($this.currentScroll < $this.lastScrollTop) {
-                    $this.lastScroll = 1; // down
+                    $this.lastScroll = 1; // up
                 }
                 $this.lastScrollTop = $this.currentScroll <= 0 ? 0 : $this.currentScroll;
                 const header = document.querySelector(".page-index > body > header"),
                     headerBounds = header.getBoundingClientRect(),
                     headerHeight = headerBounds.height;
+                // console.log('Scroll', $this.lastScroll == 2 ? 'down' : 'up', $this.lastScrollTop, headerBounds)
                 if (
                     $this.lastScroll === 2 &&
                     headerBounds.top <= 0 &&
@@ -52,7 +51,7 @@
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
-                    window.innerHeight - window.scrollY >= 0 &&
+                    document.documentElement.clientHeight - window.scrollY >= 0 &&
                     header.classList.contains(header_sticky_class_str)
                 ) {
                     header.classList.remove(header_sticky_class_str);
@@ -62,15 +61,33 @@
                 if ($this.scrollTimeout) {
                     clearTimeout($this.scrollTimeout);
                 }
+
                 $this.scrollTimeout = setTimeout(function () {
-                    if (window.scrollY < window.innerHeight &&
-                        document.querySelector(menu_active_class_str)) {
-                        window.dispatchEvent(new Event("resize")); // reposition dropdown
+                    if (window.scrollY < window.innerHeight) {
+                        if (document.querySelector(menu_active_class_str)) {
+                            window.dispatchEvent(new Event("resize")); // reposition dropdown
+                        }
+
+                        // Auto scroll
+                        console.log('trying auto')
+                        if ($this.lastScroll === 1) {
+                            window.scrollTo({
+                                top: 0,
+                                left: 0,
+                                behavior: 'smooth'
+                            });
+                        } else if ($this.lastScroll === 2) {
+                            window.scrollTo({
+                                top: document.documentElement.clientHeight,
+                                left: 0,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 }, 33);
-            },
-            false
-        );
+            };
+        window.addEventListener("scroll", scrollFn, false);
+
         // Trigger scroll event on initial load
         window.dispatchEvent(new Event("scroll"));
     })();
