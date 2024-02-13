@@ -105,18 +105,19 @@
                             } else if ($this.lastScroll === 2) {
                                 const visibleHeight = window.innerHeight;
                                 const fullHeight = hero.clientHeight;
-                                const barHeight = fullHeight - visibleHeight;
-                                // alert(barHeight);
+                                const barHeight = Math.abs(fullHeight - visibleHeight);
+                                
                                 window.scrollTo({
                                     // Support pixel accuracy when scrolling to target (theoretically could be
                                     // risky but all devices it was tested on felt heaven smooth/precise)
                                     top: parseInt(hero.clientHeight -
-                                        (headerHeight - Math.ceil(devicePixelRatio) -
-                                            (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : barHeight || 1))),
+                                    (headerHeight - Math.ceil(devicePixelRatio) -
+                                    (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : barHeight || 1))),
                                     left: 0,
                                     behavior: 'smooth'
                                 });
                                 $this.scrollToAuto = true;
+                                // alert(barHeight);
                             }
                         }
                     }
