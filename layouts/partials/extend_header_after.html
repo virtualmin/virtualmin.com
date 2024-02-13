@@ -30,8 +30,7 @@
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
-            // touchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
-            touchDevice = false,
+            touchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
             scrollFn = function (evt) {
 
                 // If automatic scrollTo 
@@ -103,21 +102,16 @@
                                 });
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
-                                const visibleHeight = window.innerHeight;
-                                const fullHeight = hero.clientHeight;
-                                const barHeight = Math.abs(fullHeight - visibleHeight) + 1;
-                                
                                 window.scrollTo({
                                     // Support pixel accuracy when scrolling to target (theoretically could be
                                     // risky but all devices it was tested on felt heaven smooth/precise)
                                     top: parseInt(hero.clientHeight -
-                                    (headerHeight - Math.ceil(devicePixelRatio) -
-                                    (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : barHeight))),
+                                        (headerHeight - Math.ceil(devicePixelRatio) -
+                                            (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1))),
                                     left: 0,
                                     behavior: 'smooth'
                                 });
                                 $this.scrollToAuto = true;
-                                // alert(barHeight);
                             }
                         }
                     }
