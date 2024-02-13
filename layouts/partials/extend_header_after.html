@@ -30,10 +30,11 @@
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
+            touchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
             scrollFn = function (evt) {
 
                 // If automatic scrollTo 
-                if ($this.scrollToAuto) {
+                if (!touchDevice && $this.scrollToAuto) {
                     evt.preventDefault();
                     return;
                 }
@@ -92,7 +93,7 @@
                             window.dispatchEvent(new Event("resize")); // reposition dropdown
                         }
                         // Auto scroll (special (needed) implementation of snap scrolling)
-                        if (window.scrollY !== 0) {
+                        if (!touchDevice && window.scrollY !== 0) {
                             if ($this.lastScroll === 1) {
                                 window.scrollTo({
                                     top: 0,
@@ -108,7 +109,7 @@
                                         (headerHeight - Math.ceil(devicePixelRatio) -
                                             (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1))),
                                     left: 0,
-                                    behavior: 'ontouchstart' in window ? 'instant' : 'smooth'
+                                    behavior: 'smooth'
                                 });
                                 $this.scrollToAuto = true;
                             }
@@ -118,9 +119,11 @@
                 }, 133);
 
                 // Possibly scrolling to
-                setTimeout(function () {
-                    $this.scrollToAuto = false;
-                }, 134);
+                if (!touchDevice) {
+                    setTimeout(function () {
+                        $this.scrollToAuto = false;
+                    }, 134);
+                }
             };
         window.addEventListener("scroll", scrollFn, false);
 
