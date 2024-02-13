@@ -40,7 +40,16 @@
 
                 // If automatic adjustment scroll is happening
                 if ($this.scrollByAuto) {
-                    $this.scrollByAuto = false;
+                    if ($this.scrollByAuto === true) {
+                        $this.scrollByAuto = false;
+                    } else {
+                        if ($this.scrollByAuto !== 2) {
+                            $this.scrollByAuto = 2
+                            setTimeout(function () {
+                                $this.scrollByAuto = false;
+                            }, 600);
+                        }
+                    }
                     evt.preventDefault();
                     return;
                 }
@@ -65,7 +74,7 @@
                 ) {
                     header.classList.add(header_sticky_class_str);
                     window.scrollBy(window.scrollY, +headerHeight);
-                    $this.scrollByAuto = true;
+                    $this.scrollByAuto = 1;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
