@@ -101,6 +101,15 @@ virtualmin backup-domain --all-domains --all-features --newformat --dest /backup
 virtualmin install-service-cert --domain example.com --add-domain --service postfix
 ```
 
+#### Reset Dovecot SNI for all domains
+```sh
+#!/bin/sh
+for dom in `virtualmin list-domains --name-only --with-ssl`; do
+    virtualmin install-service-cert --domain $dom --remove-domain --service dovecot
+    virtualmin install-service-cert --domain $dom --add-domain --service dovecot
+done
+```
+
 #### Break and re-create the linkage for the SSL sharing
 ```sh
 #!/bin/sh
