@@ -69,7 +69,7 @@
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
-                    document.documentElement.clientHeight - window.scrollY >= 0 &&
+                    hero.clientHeight - window.scrollY >= 0 &&
                     header.classList.contains(header_sticky_class_str)
                 ) {
                     header.classList.remove(header_sticky_class_str);
@@ -102,7 +102,7 @@
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
                                 window.scrollTo({
-                                    top: (hero.clientHeight - ('ontouchstart' in window ? headerHeight : 0)),
+                                    top: hero.clientHeight - headerHeight + 1,
                                     left: 0,
                                     behavior: 'smooth'
                                 });
