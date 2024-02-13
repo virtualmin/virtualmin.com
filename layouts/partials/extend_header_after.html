@@ -30,17 +30,33 @@
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
-            scrollFn = function () {
+            scrollFn = function (evt) {
+
+                // If automatic scrollTo 
+                if ($this.scrollToAuto) {
+                    evt.preventDefault();
+                    return;
+                }
+
+                // If automatic adjustment scroll is happening
+                if ($this.scrollByAuto) {
+                    $this.scrollByAuto = false;
+                    evt.preventDefault();
+                    return;
+                }
+
+                // Define direction of scroll
                 $this.currentScroll = window.scrollY || document.documentElement.scrollTop;
                 $this.lastScroll = 2; // down
                 if ($this.currentScroll < $this.lastScrollTop) {
                     $this.lastScroll = 1; // up
                 }
                 $this.lastScrollTop = $this.currentScroll <= 0 ? 0 : $this.currentScroll;
+
+                // Update header position
                 const header = document.querySelector(".page-index > body > header"),
                     headerBounds = header.getBoundingClientRect(),
                     headerHeight = headerBounds.height;
-                // console.log('Scroll', $this.lastScroll == 2 ? 'down' : 'up', $this.lastScrollTop, headerBounds)
                 if (
                     $this.lastScroll === 2 &&
                     headerBounds.top <= 0 &&
@@ -48,6 +64,7 @@
                 ) {
                     header.classList.add(header_sticky_class_str);
                     window.scrollBy(window.scrollY, +headerHeight);
+                    $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
@@ -56,6 +73,7 @@
                 ) {
                     header.classList.remove(header_sticky_class_str);
                     window.scrollBy(window.scrollY, -headerHeight);
+                    $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 }
 
@@ -64,29 +82,40 @@
                     clearTimeout($this.scrollTimeout);
                 }
 
+                // Stack to call it only once
                 $this.scrollTimeout = setTimeout(function () {
+                    // Trigger only within hero header
                     if (window.scrollY < window.innerHeight) {
+                        // If dropdown is opened adjust its position (up or down)
                         if (document.querySelector(menu_active_class_str)) {
                             window.dispatchEvent(new Event("resize")); // reposition dropdown
                         }
-
-                        // Auto scroll
-                        console.log('trying auto')
-                        if ($this.lastScroll === 1) {
-                            window.scrollTo({
-                                top: 0,
-                                left: 0,
-                                behavior: 'smooth'
-                            });
-                        } else if ($this.lastScroll === 2) {
-                            window.scrollTo({
-                                top: document.documentElement.clientHeight,
-                                left: 0,
-                                behavior: 'smooth'
-                            });
+                        // Auto scroll (special (needed) implementation of snap scrolling)
+                        if (window.scrollY !== 0) {
+                            if ($this.lastScroll === 1) {
+                                window.scrollTo({
+                                    top: 0,
+                                    left: 0,
+                                    behavior: 'smooth'
+                                });
+                                $this.scrollToAuto = true;
+                            } else if ($this.lastScroll === 2) {
+                                window.scrollTo({
+                                    top: document.documentElement.clientHeight,
+                                    left: 0,
+                                    behavior: 'smooth'
+                                });
+                                $this.scrollToAuto = true;
+                            }
                         }
                     }
+                    clearTimeout($this.scrollTimeout);
                 }, 133);
+
+                // Possibly scrolling to
+                setTimeout(function () {
+                    $this.scrollToAuto = false;
+                }, 134);
             };
         window.addEventListener("scroll", scrollFn, false);
 
