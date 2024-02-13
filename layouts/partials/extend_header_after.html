@@ -102,9 +102,13 @@
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
                                 window.scrollTo({
-                                    top: (hero.clientHeight - parseInt(headerHeight / 8)),
+                                    // Support pixel accuracy when scrolling to target (theoretically could be
+                                    // risky but all devices it was tested on felt heaven smooth/precise)
+                                    top: parseInt(hero.clientHeight -
+                                        (headerHeight - Math.ceil(devicePixelRatio) -
+                                            (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1))),
                                     left: 0,
-                                    behavior: 'smooth'
+                                    behavior: 'ontouchstart' in window ? 'instant' : 'smooth'
                                 });
                                 $this.scrollToAuto = true;
                             }
