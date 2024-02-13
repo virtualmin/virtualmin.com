@@ -102,7 +102,7 @@
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
                                 window.scrollTo({
-                                    top: hero.clientHeight - headerHeight,
+                                    top: (hero.clientHeight - (headerHeight / 2)),
                                     left: 0,
                                     behavior: 'smooth'
                                 });
