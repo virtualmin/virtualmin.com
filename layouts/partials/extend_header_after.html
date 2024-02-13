@@ -58,6 +58,8 @@
                     window.scrollBy(window.scrollY, -headerHeight);
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 }
+
+                // Wait for scroll to finish completely
                 if ($this.scrollTimeout) {
                     clearTimeout($this.scrollTimeout);
                 }
@@ -84,7 +86,7 @@
                             });
                         }
                     }
-                }, 33);
+                }, 133);
             };
         window.addEventListener("scroll", scrollFn, false);
 
