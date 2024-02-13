@@ -54,7 +54,8 @@
                 $this.lastScrollTop = $this.currentScroll <= 0 ? 0 : $this.currentScroll;
 
                 // Update header position
-                const header = document.querySelector(".page-index > body > header"),
+                const hero = document.querySelector(".index-page-intro-container"),
+                    header = document.querySelector(".page-index > body > header"),
                     headerBounds = header.getBoundingClientRect(),
                     headerHeight = headerBounds.height;
                 if (
@@ -101,7 +102,7 @@
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
                                 window.scrollTo({
-                                    top: document.documentElement.clientHeight,
+                                    top: hero.clientHeight + 1,
                                     left: 0,
                                     behavior: 'smooth'
                                 });
