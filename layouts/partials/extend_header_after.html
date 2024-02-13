@@ -102,7 +102,7 @@
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
                                 window.scrollTo({
-                                    top: hero.clientHeight + 20,
+                                    top: (hero.clientHeight + ('ontouchstart' in window ? headerHeight : 0)),
                                     left: 0,
                                     behavior: 'smooth'
                                 });
