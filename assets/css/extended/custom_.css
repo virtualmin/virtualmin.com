@@ -811,7 +811,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container {
     display: grid;
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     width: 100%;
     overflow: hidden;
     z-index: 99;
@@ -836,7 +836,7 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .index-page-content-logo {
     grid-row: 1;
-    margin-top: -15svh;
+    margin-top: -15lvh;
     height: auto;
     text-align: -moz-center;
     text-align: -webkit-center;
@@ -902,7 +902,7 @@ html:not(.page-index) .index-page-intro-container {
     }
 
     .page-index .index-page-content-logo {
-        margin-top: -23svh;
+        margin-top: -23lvh;
     }
 
     .page-index .index-page-content-logo img {
@@ -969,7 +969,7 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     width: 100%;
     z-index: 11;
     background: linear-gradient(180deg, transparent 42%, #0938ad 93%, #0938ad 100%);
@@ -985,7 +985,7 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     width: 100%;
     z-index: 10;
     background-image: radial-gradient(circle at center, rgba(12, 0, 32, .84) 15%, transparent 225%);
@@ -1004,7 +1004,7 @@ html:not(.page-index) .index-page-intro-container {
     left: 0;
     background: linear-gradient(180deg, #000 18%, #ff0090c7 42%, #003db6fd 85%);
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     width: 100%;
     opacity: 0.91;
     z-index: 6;
@@ -1019,7 +1019,7 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     width: 100%;
     z-index: 5;
     background-image: url('/header-elements-image.png'), url('/header-elements-image-preload.png');
