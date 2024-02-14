@@ -31,7 +31,6 @@
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
             touchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
-            extraShift  = /iPad|iPhone|iPod/.test(navigator.userAgent) ? 44 : 0,
             scrollFn = function (evt) {
 
                 // Define direction of scroll
@@ -53,16 +52,16 @@
                     if (window.scrollY <= parseInt(headerBounds.height) || parseInt(window.scrollY + $this.lastScrollTopPosCalc) >= parseInt($this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc)) {
                         $this.scrollToAuto = false;
                     } else {
-                        evt.preventDefault();
-                        return;
+                        return true;
                     }
                 }
 
                 // If automatic adjustment scroll is happening
                 if ($this.scrollByAuto) {
-                    $this.scrollByAuto = false;
-                    evt.preventDefault();
-                    return;
+                    if ($this.scrollByAuto++ > 1) {
+                        $this.scrollByAuto = false;
+                    }
+                    return true;
                 }
 
                 // Make adjustments
@@ -71,18 +70,18 @@
                     headerBounds.top <= 0 &&
                     !header.classList.contains(header_sticky_class_str)
                 ) {
+                    $this.scrollByAuto = 1;
                     header.classList.add(header_sticky_class_str);
-                    window.scrollBy(window.scrollY, +headerHeight + extraShift);
-                    $this.scrollByAuto = true;
+                    window.scrollBy(0, +headerHeight);
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
                     hero.clientHeight - window.scrollY >= 0 &&
                     header.classList.contains(header_sticky_class_str)
                 ) {
+                    $this.scrollByAuto = 1;
                     header.classList.remove(header_sticky_class_str);
-                    window.scrollBy(window.scrollY, -headerHeight - extraShift);
-                    $this.scrollByAuto = true;
+                    window.scrollBy(0, -headerHeight);
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 }
 
@@ -125,7 +124,7 @@
                         }
                     }
                     clearTimeout($this.scrollTimeout);
-                }, 133);
+                }, 20e1);
             };
         window.addEventListener("scroll", scrollFn, false);
 
