@@ -73,7 +73,7 @@
                     header.classList.add(header_sticky_class_str);
                     window.scrollBy(window.scrollY, +headerHeight);
                     $this.scrollByAuto = true;
-                    alert(headerBounds + " : " + header.innerHeight );
+                    alert(headerHeight + " : " + header.offsetHeight );
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
@@ -84,8 +84,7 @@
                     window.scrollBy(window.scrollY, -headerHeight);
                     $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
-                    alert(headerHeight);
-                    alert(headerBounds + " : " + header.innerHeight );
+                    alert(headerHeight + " : " + header.offsetHeight );
                 }
 
                 // Wait for scroll to finish completely
