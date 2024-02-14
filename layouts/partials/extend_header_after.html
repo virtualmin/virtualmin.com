@@ -71,8 +71,7 @@
                     !header.classList.contains(header_sticky_class_str)
                 ) {
                     header.classList.add(header_sticky_class_str);
-                    !(/iPad|iPhone|iPod/.test(navigator.userAgent)) &&
-                        window.scrollBy(window.scrollY, +headerHeight);
+                    window.scrollBy(window.scrollY, +headerHeight);
                     $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
@@ -81,8 +80,7 @@
                     header.classList.contains(header_sticky_class_str)
                 ) {
                     header.classList.remove(header_sticky_class_str);
-                    !(/iPad|iPhone|iPod/.test(navigator.userAgent)) && 
-                        window.scrollBy(window.scrollY, -headerHeight);
+                    window.scrollBy(window.scrollY, -headerHeight);
                     $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
                 }
