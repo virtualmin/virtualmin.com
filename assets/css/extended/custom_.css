@@ -824,7 +824,7 @@ html:not(.page-index) .index-page-intro-container {
     place-content: center;
 }
 
-[data-os="ios"] .page-index .index-page-intro-container {
+[data-os="ios"].page-index .index-page-intro-container {
     height: 100dvh;
 }
 
@@ -1014,7 +1014,7 @@ html:not(.page-index) .index-page-intro-container {
     z-index: 6;
 }
 
-[data-os="ios"] .page-index .index-page-intro-container .index-page-content-bg-cover {
+[data-os="ios"].page-index .index-page-intro-container .index-page-content-bg-cover {
     height: 100dvh;
     background: linear-gradient(180deg, #000 18%, #15ff00c7 42%, #003db6fd 85%);
 }
