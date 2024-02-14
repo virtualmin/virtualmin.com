@@ -30,12 +30,12 @@
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
-            animationBehavior =
+            allowSnap =
                 ("ontouchstart" in window ||
                     navigator.maxTouchPoints > 0 ||
                     navigator.msMaxTouchPoints > 0 ||
                     window.safari !== undefined) ?
-                    'instant' : 'smooth',
+                    0 : 1,
             scrollFn = function (evt) {
 
                 // Define direction of scroll
@@ -53,7 +53,7 @@
                     headerHeight = headerBounds.height;
 
                 // If automatic scrollTo
-                if ($this.scrollToAuto) {
+                if (allowSnap && $this.scrollToAuto) {
                     if (window.scrollY <= parseInt(headerBounds.height) || parseInt(window.scrollY + $this.lastScrollTopPosCalc) >= parseInt($this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc)) {
                         $this.scrollToAuto = false;
                     } else {
@@ -104,12 +104,12 @@
                             window.dispatchEvent(new Event("resize")); // reposition dropdown
                         }
                         // Auto scroll (special (needed) implementation of snap scrolling)
-                        if (window.scrollY !== 0) {
+                        if (allowSnap && window.scrollY !== 0) {
                             if ($this.lastScroll === 1) {
                                 window.scrollTo({
                                     top: 0,
                                     left: 0,
-                                    behavior: animationBehavior
+                                    behavior: 'smooth',
                                 });
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
@@ -122,7 +122,7 @@
                                     // risky but all devices it was tested on felt heaven smooth/precise)
                                     top: $this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc,
                                     left: 0,
-                                    behavior: animationBehavior
+                                    behavior: 'smooth',
                                 });
                                 $this.scrollToAuto = true;
                             }
