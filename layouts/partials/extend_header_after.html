@@ -30,7 +30,12 @@
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
-            touchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
+            animationBehavior =
+                ("ontouchstart" in window ||
+                    navigator.maxTouchPoints > 0 ||
+                    navigator.msMaxTouchPoints > 0 ||
+                    window.safari !== undefined) ?
+                    'auto' : 'smooth',
             scrollFn = function (evt) {
 
                 // Define direction of scroll
@@ -46,9 +51,9 @@
                     header = document.querySelector(".page-index > body > header"),
                     headerBounds = header.getBoundingClientRect(),
                     headerHeight = headerBounds.height;
-                
+
                 // If automatic scrollTo
-                if (!touchDevice && $this.scrollToAuto) {
+                if ($this.scrollToAuto) {
                     if (window.scrollY <= parseInt(headerBounds.height) || parseInt(window.scrollY + $this.lastScrollTopPosCalc) >= parseInt($this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc)) {
                         $this.scrollToAuto = false;
                     } else {
@@ -58,7 +63,7 @@
 
                 // If automatic adjustment scroll is happening
                 if ($this.scrollByAuto) {
-                    if ($this.scrollByAuto++ > 1) {
+                    if ($this.scrollByAuto++ > 2) {
                         $this.scrollByAuto = false;
                     }
                     return true;
@@ -99,17 +104,17 @@
                             window.dispatchEvent(new Event("resize")); // reposition dropdown
                         }
                         // Auto scroll (special (needed) implementation of snap scrolling)
-                        if (!touchDevice && window.scrollY !== 0) {
+                        if (window.scrollY !== 0) {
                             if ($this.lastScroll === 1) {
                                 window.scrollTo({
                                     top: 0,
                                     left: 0,
-                                    behavior: 'smooth'
+                                    behavior: animationBehavior
                                 });
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
                                 $this.lastScrollTopPosOffset = parseInt(hero.clientHeight),
-                                $this.lastScrollTopPosCalc = parseInt(
+                                    $this.lastScrollTopPosCalc = parseInt(
                                         (headerHeight - Math.ceil(devicePixelRatio) -
                                             (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1)));
                                 window.scrollTo({
@@ -117,14 +122,14 @@
                                     // risky but all devices it was tested on felt heaven smooth/precise)
                                     top: $this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc,
                                     left: 0,
-                                    behavior: 'smooth'
+                                    behavior: animationBehavior
                                 });
                                 $this.scrollToAuto = true;
                             }
                         }
                     }
                     clearTimeout($this.scrollTimeout);
-                }, 20e1);
+                }, 25e1);
             };
         window.addEventListener("scroll", scrollFn, false);
 
