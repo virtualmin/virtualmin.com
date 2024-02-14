@@ -793,6 +793,10 @@ html:not(.page-index) .index-page-intro-container {
     box-shadow: 0 2px 3px -1px var(--header-shadow);
 }
 
+.page-index .dark .index-page-intro-container~header:not(.header-sticky) {
+    box-shadow: 0 3px 3px -1px var(--header-shadow);
+}
+
 .page-index .index-page-intro-container~header:not(.header-sticky) svg>g>path,
 .page-index .index-page-intro-container~header:not(.header-sticky) svg>g>g>path:not(:last-child) {
     display: none;
