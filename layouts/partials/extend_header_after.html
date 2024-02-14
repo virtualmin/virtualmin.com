@@ -83,6 +83,7 @@
                     window.scrollBy(window.scrollY, -headerHeight);
                     $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
+                    alert(headerHeight + " : " + header.offsetHeight + ":" + hero.clientHeight + " - " + window.scrollY + ":" + window.pageYOffset );
                 }
 
                 // Wait for scroll to finish completely
