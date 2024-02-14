@@ -80,10 +80,10 @@
                     header.classList.contains(header_sticky_class_str)
                 ) {
                     header.classList.remove(header_sticky_class_str);
-                    window.scrollBy(window.scrollY, -headerHeight);
+                    !(/iPad|iPhone|iPod/.test(navigator.userAgent)) && 
+                        window.scrollBy(window.scrollY, -headerHeight);
                     $this.scrollByAuto = true;
                     window.dispatchEvent(new Event("resize")); // reposition dropdown
-                    alert(headerHeight + " : " + header.offsetHeight + ":" + hero.clientHeight + " - " + window.scrollY + ":" + window.pageYOffset );
                 }
 
                 // Wait for scroll to finish completely
