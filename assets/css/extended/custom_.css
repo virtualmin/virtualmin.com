@@ -811,7 +811,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container {
     display: grid;
     height: 100vh;
-    height: 100lvh;
+    height: 100svh;
     width: 100%;
     overflow: hidden;
     z-index: 99;
@@ -822,6 +822,10 @@ html:not(.page-index) .index-page-intro-container {
     grid-gap: 1.333rem;
     place-items: center;
     place-content: center;
+}
+
+[data-os="ios"] .page-index .index-page-intro-container {
+    height: 100dvh;
 }
 
 @keyframes rotate360 {
@@ -836,7 +840,7 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .index-page-content-logo {
     grid-row: 1;
-    margin-top: -15lvh;
+    margin-top: -15svh;
     height: auto;
     text-align: -moz-center;
     text-align: -webkit-center;
@@ -902,7 +906,7 @@ html:not(.page-index) .index-page-intro-container {
     }
 
     .page-index .index-page-content-logo {
-        margin-top: -23lvh;
+        margin-top: -23svh;
     }
 
     .page-index .index-page-content-logo img {
@@ -969,7 +973,7 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     height: 100vh;
-    height: 100lvh;
+    height: 100svh;
     width: 100%;
     z-index: 11;
     background: linear-gradient(180deg, transparent 42%, #0938ad 93%, #0938ad 100%);
@@ -985,7 +989,7 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     height: 100vh;
-    height: 100lvh;
+    height: 100svh;
     width: 100%;
     z-index: 10;
     background-image: radial-gradient(circle at center, rgba(12, 0, 32, .84) 15%, transparent 225%);
@@ -1004,10 +1008,15 @@ html:not(.page-index) .index-page-intro-container {
     left: 0;
     background: linear-gradient(180deg, #000 18%, #ff0090c7 42%, #003db6fd 85%);
     height: 100vh;
-    height: 100lvh;
+    height: 100svh;
     width: 100%;
     opacity: 0.91;
     z-index: 6;
+}
+
+[data-os="ios"] .page-index .index-page-intro-container .index-page-content-bg-cover {
+    height: 100dvh;
+    background: linear-gradient(180deg, #000 18%, #15ff00c7 42%, #003db6fd 85%);
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-cover {
@@ -1019,7 +1028,7 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     height: 100vh;
-    height: 100lvh;
+    height: 100svh;
     width: 100%;
     z-index: 5;
     background-image: url('/header-elements-image.png'), url('/header-elements-image-preload.png');
