@@ -824,10 +824,6 @@ html:not(.page-index) .index-page-intro-container {
     place-content: center;
 }
 
-[data-os="ios"].page-index .index-page-intro-container {
-    height: 100lvh;
-}
-
 @keyframes rotate360 {
     0% {
         transform: rotate(0);
@@ -844,10 +840,6 @@ html:not(.page-index) .index-page-intro-container {
     height: auto;
     text-align: -moz-center;
     text-align: -webkit-center;
-}
-
-[data-os="ios"].page-index .index-page-content-logo {
-    margin-top: -15lvh;
 }
 
 .page-index .index-page-content-logo img {
@@ -913,9 +905,6 @@ html:not(.page-index) .index-page-intro-container {
         margin-top: -23svh;
     }
 
-    [data-os="ios"].page-index .index-page-content-logo {
-        margin-top: -23lvh;
-    }
 
     .page-index .index-page-content-logo img {
         max-width: 74%;
@@ -988,10 +977,6 @@ html:not(.page-index) .index-page-intro-container {
     opacity: 1;
 }
 
-[data-os="ios"].page-index .index-page-intro-container .index-page-content-cover {
-    height: 100lvh;
-}
-
 .page-index .dark .index-page-intro-container .index-page-content-cover {
     background: linear-gradient(180deg, transparent 52%, #0d0d0d 87%, #0d0d0d 100%);
 }
@@ -1010,10 +995,6 @@ html:not(.page-index) .index-page-intro-container {
     opacity: 1;
 }
 
-[data-os="ios"].page-index .index-page-intro-container .index-page-content-elements-cover {
-    height: 100lvh;
-}
-
 .page-index .index-page-intro-container .index-page-content-elements-cover {
     background-image: radial-gradient(circle at center, rgba(2, 0, 32, .84) 15%, transparent 225%);
 }
@@ -1028,14 +1009,6 @@ html:not(.page-index) .index-page-intro-container {
     width: 100%;
     opacity: 0.91;
     z-index: 6;
-}
-
-[data-os="ios"].page-index .index-page-intro-container .index-page-content-bg-cover {
-    height: 100lvh;
-}
-
-[data-os="ios"].page-index .index-page-intro-container .index-page-content-bg-cover {
-    height: 100lvh;
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-cover {
@@ -1054,10 +1027,6 @@ html:not(.page-index) .index-page-intro-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
-
-[data-os="ios"].page-index .index-page-intro-container .index-page-content-bg {
-    height: 100lvh;
 }
 
 .page-index [href="#top"] {
