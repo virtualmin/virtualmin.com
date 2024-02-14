@@ -73,8 +73,8 @@
                     header.classList.add(header_sticky_class_str);
                     window.scrollBy(window.scrollY, +headerHeight);
                     $this.scrollByAuto = true;
-                    alert(headerHeight + " : " + header.offsetHeight );
-                    window.dispatchEvent(new Event("resize")); // reposition dropdown
+                    alert(headerHeight + " : " + header.offsetHeight + ":" + window.scrollY + ":" + window.pageYOffset );
+                    // window.dispatchEvent(new Event("resize")); // reposition dropdown
                 } else if (
                     $this.lastScroll === 1 &&
                     hero.clientHeight - window.scrollY >= 0 &&
@@ -83,8 +83,8 @@
                     header.classList.remove(header_sticky_class_str);
                     window.scrollBy(window.scrollY, -headerHeight);
                     $this.scrollByAuto = true;
-                    window.dispatchEvent(new Event("resize")); // reposition dropdown
-                    alert(headerHeight + " : " + header.offsetHeight );
+                    // window.dispatchEvent(new Event("resize")); // reposition dropdown
+                    alert(headerHeight + " : " + header.offsetHeight + ":" + window.scrollY + ":" + window.pageYOffset );
                 }
 
                 // Wait for scroll to finish completely
