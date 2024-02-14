@@ -33,19 +33,6 @@
             touchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
             scrollFn = function (evt) {
 
-                // If automatic scrollTo 
-                if (!touchDevice && $this.scrollToAuto) {
-                    evt.preventDefault();
-                    return;
-                }
-
-                // If automatic adjustment scroll is happening
-                if ($this.scrollByAuto) {
-                    $this.scrollByAuto = false;
-                    evt.preventDefault();
-                    return;
-                }
-
                 // Define direction of scroll
                 $this.currentScroll = window.scrollY || document.documentElement.scrollTop;
                 $this.lastScroll = 2; // down
@@ -59,6 +46,25 @@
                     header = document.querySelector(".page-index > body > header"),
                     headerBounds = header.getBoundingClientRect(),
                     headerHeight = headerBounds.height;
+                
+                // If automatic scrollTo
+                if (!touchDevice && $this.scrollToAuto) {
+                    if (window.scrollY <= parseInt(headerBounds.height) || parseInt(window.scrollY + $this.lastScrollTopPosCalc) >= parseInt($this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc)) {
+                        $this.scrollToAuto = false;
+                    } else {
+                        evt.preventDefault();
+                        return;
+                    }
+                }
+
+                // If automatic adjustment scroll is happening
+                if ($this.scrollByAuto) {
+                    $this.scrollByAuto = false;
+                    evt.preventDefault();
+                    return;
+                }
+
+                // Make adjustments
                 if (
                     $this.lastScroll === 2 &&
                     headerBounds.top <= 0 &&
@@ -102,12 +108,14 @@
                                 });
                                 $this.scrollToAuto = true;
                             } else if ($this.lastScroll === 2) {
+                                $this.lastScrollTopPosOffset = parseInt(hero.clientHeight),
+                                $this.lastScrollTopPosCalc = parseInt(
+                                        (headerHeight - Math.ceil(devicePixelRatio) -
+                                            (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1)));
                                 window.scrollTo({
                                     // Support pixel accuracy when scrolling to target (theoretically could be
                                     // risky but all devices it was tested on felt heaven smooth/precise)
-                                    top: parseInt(hero.clientHeight -
-                                        (headerHeight - Math.ceil(devicePixelRatio) -
-                                            (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1))),
+                                    top: $this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc,
                                     left: 0,
                                     behavior: 'smooth'
                                 });
@@ -117,13 +125,6 @@
                     }
                     clearTimeout($this.scrollTimeout);
                 }, 133);
-
-                // Possibly scrolling to
-                if (!touchDevice) {
-                    setTimeout(function () {
-                        $this.scrollToAuto = false;
-                    }, 134);
-                }
             };
         window.addEventListener("scroll", scrollFn, false);
 
