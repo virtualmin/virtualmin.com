@@ -40,7 +40,7 @@ body .logo .logo-switches svg {
 }
 
 body .logo>a>svg path {
-    fill: #fff;
+    fill: var(--theme);
     stroke: none;
 }
 
@@ -869,7 +869,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-content-slogan {
     font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, segoe ui, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
     font-size: 1.6rem;
-    color: #fff;
+    color: var(--theme);
     grid-row: 2;
     text-align: center;
     line-height: 1.333;
@@ -898,29 +898,6 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .dark .index-page-content-button {
     opacity: 0.9;
-}
-
-@media screen and (max-height: 450px) {
-    .page-index .index-page-intro-container {
-        grid-gap: 1.111rem;
-    }
-
-    .page-index .index-page-content-logo {
-        margin-top: -23svh;
-    }
-
-
-    .page-index .index-page-content-logo img {
-        max-width: 74%;
-    }
-
-    .page-index .index-page-content-slogan {
-        font-size: 1.333rem;
-    }
-
-    .page-index .index-page-content-button {
-        scale: 0.81;
-    }
 }
 
 .page-index .index-page-intro-container::before {
@@ -1031,6 +1008,256 @@ html:not(.page-index) .index-page-intro-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    place-items: center;
+    height: 20vh;
+    margin-top: -5vh;
+    padding-top: 15vh;
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box {
+    border: 0.33px solid var(--border);
+    padding: 4px 6px;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 10px;
+    height: 125px;
+    width: 140px;
+    border-radius: 8px;
+    text-align: justify;
+    line-break: anywhere;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-grid;
+    justify-items: center;
+}
+
+@media screen and (max-width: 720px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 3rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 1rem;
+        transform: scale(0.966);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 0.666rem;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        transform: scale(0.922);
+        grid-gap: 0.533rem;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        transform: scale(0.861);
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        transform: scale(0.833);
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        padding-top: 13vh;
+    }
+}
+
+@media screen and (max-height: 660px) {
+    .page-index .index-page-intro-container {
+        grid-gap: 1.111rem;
+    }
+
+    .page-index .index-page-content-logo {
+        margin-top: -25svh;
+    }
+
+    .page-index .index-page-content-slogan {
+        margin-top: -5svh;
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks,
+    .page-index .index-page-intro-container>.index-page-content-button,
+    .page-index .index-page-intro-container>.index-page-content-slogan,
+    .page-index .index-page-intro-container>.index-page-content-logo {
+        transform: scale(0.933);
+    }
+}
+
+@media screen and (max-height: 580px) {
+    .page-index .index-page-intro-container {
+        grid-gap: 1.011rem;
+    }
+
+    .page-index .index-page-content-logo {
+        margin-top: -40svh;
+    }
+
+    .page-index .index-page-content-logo img {
+        max-width: 84%;
+    }
+
+    .page-index .index-page-content-slogan {
+        margin-top: -12svh;
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks,
+    .page-index .index-page-intro-container>.index-page-content-button,
+    .page-index .index-page-intro-container>.index-page-content-slogan,
+    .page-index .index-page-intro-container>.index-page-content-logo {
+        transform: scale(0.911);
+    }
+}
+
+@media screen and (max-height: 500px) {
+    .page-index .index-page-intro-container {
+        grid-gap: 0.511rem;
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks,
+    .page-index .index-page-intro-container>.index-page-content-button,
+    .page-index .index-page-intro-container>.index-page-content-slogan,
+    .page-index .index-page-intro-container>.index-page-content-logo {
+        transform: scale(0.811);
+    }
+}
+
+@media screen and (max-height: 420px) {
+    .page-index .index-page-intro-container {
+        grid-gap: 0.311rem;
+    }
+
+    .page-index .index-page-content-logo img {
+        max-width: 78%;
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks,
+    .page-index .index-page-intro-container>.index-page-content-button,
+    .page-index .index-page-intro-container>.index-page-content-slogan,
+    .page-index .index-page-intro-container>.index-page-content-logo {
+        transform: scale(0.766);
+    }
+}
+
+@media screen and (max-height: 400px) {
+    .page-index .index-page-intro-container {
+        grid-gap: 0.211rem;
+    }
+
+    .page-index .index-page-content-logo img {
+        max-width: 76%;
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks,
+    .page-index .index-page-intro-container>.index-page-content-button,
+    .page-index .index-page-intro-container>.index-page-content-slogan,
+    .page-index .index-page-intro-container>.index-page-content-logo {
+        transform: scale(0.711);
+    }
+}
+
+
+@media screen and (max-height: 380px) {
+    .page-index .index-page-intro-container {
+        grid-gap: 0.111rem;
+    }
+
+    .page-index .index-page-content-logo img {
+        max-width: 74%;
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks,
+    .page-index .index-page-intro-container>.index-page-content-button,
+    .page-index .index-page-intro-container>.index-page-content-slogan,
+    .page-index .index-page-intro-container>.index-page-content-logo {
+        transform: scale(0.699);
+    }
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon {
+    border: 1px solid var(--border);
+    content: " ";
+    position: absolute;
+    margin-top: -46px;
+    font-size: 2.333em;
+    width: 46px;
+    height: 46px;
+    border-radius: 100%;
+    z-index: 2;
+    clip-path: inset(0 0 23% 0);
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box>.title {
+    padding: 1px 4px;
+    color: var(--theme);
+    font-size: 0.899em;
+    line-height: 1.42em;
+}
+
+.page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
+    color: var(--primary);
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm {
+    position: absolute;
+    margin-top: 0.466em;
+    margin-left: 0.833em;
+    font-size: 0.399em;
+    color: var(--theme);
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.page-index .dark .index-page-intro-container .index-page-content-blocks .box>.icon>.wm {
+    color: var(--primary);
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-update,
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-code-branch,
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-clock {
+    margin-top: 0.599em;
+    margin-left: 0.566em;
+    font-size: .444em;
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-code-branch {
+    transform: scale(0.988);
 }
 
 .page-index [href="#top"] {
