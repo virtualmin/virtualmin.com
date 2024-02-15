@@ -80,17 +80,31 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // On resize accommodate Chocolat viewer
     window.addEventListener("resize", function () {
-        const targetClassList = document.querySelector("html").classList;
+        const targetClassList = document.documentElement.classList;
         if (
             document.fullscreenElement ||
-            document.webkitCurrentFullScreenElement ||
-            document.webkitFullscreenElement
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement
         ) {
             targetClassList.add("chocolat-fullscreen");
         } else {
             targetClassList.remove("chocolat-fullscreen");
             chocolat.api.set("imageSize", "contain");
             chocolat.api.position();
+        }
+    });
+
+    // On exit full screen, resize Chocolat viewer to avoid image overflow
+    document.addEventListener("fullscreenchange", function () {
+        // Check if the document is in fullscreen mode
+        if (
+            !document.fullscreenElement &&
+            !document.webkitFullscreenElement &&
+            !document.mozFullScreenElement &&
+            !document.msFullscreenElement
+        ) {
+            window.dispatchEvent(new Event("resize"));
         }
     });
 });
