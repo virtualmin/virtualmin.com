@@ -1022,7 +1022,7 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box {
-    border: 0.33px solid var(--border);
+    border: 0.66px solid var(--border);
     padding: 4px 6px;
     text-align: center;
     background-color: transparent;
@@ -1158,55 +1158,36 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (max-height: 420px) {
-    .page-index .index-page-intro-container {
-        grid-gap: 0.311rem;
-    }
-
-    .page-index .index-page-content-logo img {
-        max-width: 78%;
-    }
-
-    .page-index .index-page-intro-container>.index-page-content-blocks,
-    .page-index .index-page-intro-container>.index-page-content-button,
-    .page-index .index-page-intro-container>.index-page-content-slogan,
-    .page-index .index-page-intro-container>.index-page-content-logo {
-        transform: scale(0.766);
-    }
-}
-
 @media screen and (max-height: 400px) {
     .page-index .index-page-intro-container {
-        grid-gap: 0.211rem;
+        grid-gap: 1.111rem;
     }
 
-    .page-index .index-page-content-logo img {
-        max-width: 76%;
+    .page-index .index-page-content-logo {
+        margin-top: -15svh;
+    }
+
+    .page-index .index-page-content-slogan {
+        margin-top: -1svh;
     }
 
     .page-index .index-page-intro-container>.index-page-content-blocks,
     .page-index .index-page-intro-container>.index-page-content-button,
     .page-index .index-page-intro-container>.index-page-content-slogan,
     .page-index .index-page-intro-container>.index-page-content-logo {
-        transform: scale(0.711);
+        transform: scale(0.933);
+    }
+
+    .page-index .index-page-intro-container>.index-page-content-blocks {
+        display: none
     }
 }
 
-
-@media screen and (max-height: 380px) {
-    .page-index .index-page-intro-container {
-        grid-gap: 0.111rem;
-    }
-
-    .page-index .index-page-content-logo img {
-        max-width: 74%;
-    }
-
-    .page-index .index-page-intro-container>.index-page-content-blocks,
+@media screen and (max-height: 360px) {
     .page-index .index-page-intro-container>.index-page-content-button,
     .page-index .index-page-intro-container>.index-page-content-slogan,
     .page-index .index-page-intro-container>.index-page-content-logo {
-        transform: scale(0.699);
+        transform: scale(0.833);
     }
 }
 
