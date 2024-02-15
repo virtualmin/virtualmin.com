@@ -1184,6 +1184,13 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 @media screen and (max-height: 360px) {
+    .page-index .index-page-content-logo {
+        margin-top: -20svh;
+    }
+
+    .page-index .index-page-content-slogan {
+        margin-top: -5svh;
+    }
     .page-index .index-page-intro-container>.index-page-content-button,
     .page-index .index-page-intro-container>.index-page-content-slogan,
     .page-index .index-page-intro-container>.index-page-content-logo {
