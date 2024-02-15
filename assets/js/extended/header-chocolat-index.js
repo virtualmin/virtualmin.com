@@ -97,14 +97,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // On exit full screen, resize Chocolat viewer to avoid image overflow
     document.addEventListener("fullscreenchange", function () {
-        // Check if the document is in fullscreen mode
-        if (
-            !document.fullscreenElement &&
-            !document.webkitFullscreenElement &&
-            !document.mozFullScreenElement &&
-            !document.msFullscreenElement
-        ) {
+        window.dispatchEvent(new Event("resize"));
+        // Re-try when animation is complete
+        setTimeout(function () {
             window.dispatchEvent(new Event("resize"));
-        }
+        }, 120);
     });
 });
