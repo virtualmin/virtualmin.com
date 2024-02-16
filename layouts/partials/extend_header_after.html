@@ -30,11 +30,7 @@
         // Sticky header magic
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
-            allowSnap = 1 ||
-                ("ontouchstart" in window ||
-                    navigator.maxTouchPoints > 0 ||
-                    navigator.msMaxTouchPoints > 0) ?
-                    0 : 1,
+            allowSnap = 1,
             scrollFn = function (evt) {
 
                 // Define direction of scroll
