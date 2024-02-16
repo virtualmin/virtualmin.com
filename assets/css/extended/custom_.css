@@ -1033,8 +1033,10 @@ html:not(.page-index) .index-page-intro-container {
     text-align: justify;
     line-break: anywhere;
     font-family: 'Roboto Condensed', sans-serif;
-    display: inline-grid;
     justify-items: center;
+    display: inline-flex;
+    align-items: start;
+    justify-content: center;
 }
 
 @media screen and (max-width: 720px) {
@@ -1158,7 +1160,7 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (max-height: 400px) {
+@media screen and (max-height: 420px) {
     .page-index .index-page-intro-container {
         grid-gap: 1.111rem;
     }
