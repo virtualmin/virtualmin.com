@@ -1059,21 +1059,15 @@ html:not(.page-index) .index-page-intro-container {
 
 @media screen and (max-width: 500px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
-        grid-gap: 1rem;
+        grid-gap: 0.633rem;
+        justify-self: stretch;
         transform: scale(0.966);
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .page-index .index-page-intro-container .index-page-content-blocks {
-        grid-gap: 0.666rem;
     }
 }
 
 @media screen and (max-width: 455px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         transform: scale(0.922);
-        grid-gap: 0.533rem;
     }
 }
 
