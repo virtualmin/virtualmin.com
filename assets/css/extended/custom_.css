@@ -920,8 +920,8 @@ html:not(.page-index) .index-page-intro-container {
     position: absolute;
     top: -15%;
     left: -15%;
-    width: 0.011rem;
-    height: 0.011rem;
+    width: 1px;
+    height: 1px;
     background-color: white;
     border-radius: 100%;
     animation: shoot 0.66s linear;

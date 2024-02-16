@@ -33,8 +33,7 @@
             allowSnap =
                 ("ontouchstart" in window ||
                     navigator.maxTouchPoints > 0 ||
-                    navigator.msMaxTouchPoints > 0 ||
-                    window.safari !== undefined) ?
+                    navigator.msMaxTouchPoints > 0) ?
                     0 : 1,
             scrollFn = function (evt) {
 
@@ -55,10 +54,12 @@
                 // If automatic scrollTo
                 if (allowSnap && $this.scrollToAuto) {
                     if (window.scrollY <= parseInt(headerBounds.height) || parseInt(window.scrollY + $this.lastScrollTopPosCalc) >= parseInt($this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc)) {
-                        $this.scrollToAuto = false;
-                    } else {
-                        return true;
+                        $this.scrollToAuto = null;
+                        setTimeout(function () {
+                            $this.scrollToAuto = false;
+                        }, 120 + 120);
                     }
+                    return true;
                 }
 
                 // If automatic adjustment scroll is happening
@@ -91,45 +92,47 @@
                 }
 
                 // Wait for scroll to finish completely
-                if ($this.scrollTimeout) {
+                if (typeof $this.scrollTimeout === "number") {
                     clearTimeout($this.scrollTimeout);
                 }
 
                 // Stack to call it only once
-                $this.scrollTimeout = setTimeout(function () {
-                    // Trigger only within hero header
-                    if (window.scrollY < window.innerHeight) {
-                        // If dropdown is opened adjust its position (up or down)
-                        if (document.querySelector(menu_active_class_str)) {
-                            window.dispatchEvent(new Event("resize")); // reposition dropdown
-                        }
-                        // Auto scroll (special (needed) implementation of snap scrolling)
-                        if (allowSnap && window.scrollY !== 0) {
-                            if ($this.lastScroll === 1) {
-                                window.scrollTo({
-                                    top: 0,
-                                    left: 0,
-                                    behavior: 'smooth',
-                                });
-                                $this.scrollToAuto = true;
-                            } else if ($this.lastScroll === 2) {
-                                $this.lastScrollTopPosOffset = parseInt(hero.clientHeight),
-                                    $this.lastScrollTopPosCalc = parseInt(
-                                        (headerHeight - Math.ceil(devicePixelRatio) -
-                                            (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1)));
-                                window.scrollTo({
-                                    // Support pixel accuracy when scrolling to target (theoretically could be
-                                    // risky but all devices it was tested on felt heaven smooth/precise)
-                                    top: $this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc,
-                                    left: 0,
-                                    behavior: 'smooth',
-                                });
-                                $this.scrollToAuto = true;
+                if (!$this.scrollToAuto && $this.scrollToAuto !== null) {
+                    $this.scrollTimeout = setTimeout(function () {
+                        // Trigger only within hero header
+                        if (window.scrollY < window.innerHeight) {
+                            // If dropdown is opened adjust its position (up or down)
+                            if (document.querySelector(menu_active_class_str)) {
+                                window.dispatchEvent(new Event("resize")); // reposition dropdown
+                            }
+                            // Auto scroll (special (needed) implementation of snap scrolling)
+                            if (allowSnap && window.scrollY !== 0) {
+                                if ($this.lastScroll === 1) {
+                                    window.scrollTo({
+                                        top: 0,
+                                        left: 0,
+                                        behavior: 'smooth',
+                                    });
+                                    $this.scrollToAuto = true;
+                                } else if ($this.lastScroll === 2) {
+                                    $this.lastScrollTopPosOffset = parseInt(hero.clientHeight),
+                                        $this.lastScrollTopPosCalc = parseInt(
+                                            (headerHeight - Math.ceil(devicePixelRatio) -
+                                                (devicePixelRatio < 1 ? Math.ceil(headerHeight / 9.999) : 1)));
+                                    window.scrollTo({
+                                        // Support pixel accuracy when scrolling to target (theoretically could be
+                                        // risky but all devices it was tested on felt heaven smooth/precise)
+                                        top: $this.lastScrollTopPosOffset - $this.lastScrollTopPosCalc,
+                                        left: 0,
+                                        behavior: 'smooth',
+                                    });
+                                    $this.scrollToAuto = true;
+                                }
                             }
                         }
-                    }
-                    clearTimeout($this.scrollTimeout);
-                }, 25e1);
+                        clearTimeout($this.scrollTimeout);
+                    }, 120);
+                }
             };
         window.addEventListener("scroll", scrollFn, false);
 
