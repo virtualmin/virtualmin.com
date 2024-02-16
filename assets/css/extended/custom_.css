@@ -1013,7 +1013,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container .index-page-content-blocks {
     grid-row: 4;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 4rem;
     place-items: center;
     height: 20vh;
@@ -1027,8 +1027,8 @@ html:not(.page-index) .index-page-intro-container {
     text-align: center;
     background-color: transparent;
     margin-top: 10px;
-    height: 125px;
-    width: 140px;
+    height: 127px;
+    width: 150px;
     border-radius: 8px;
     text-align: justify;
     line-break: anywhere;
@@ -1039,13 +1039,61 @@ html:not(.page-index) .index-page-intro-container {
     justify-content: center;
 }
 
+.page-index .index-page-intro-container .index-page-content-blocks .box .title {
+    letter-spacing: -0.1px;
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(2) .title {
+    letter-spacing: 0.1px;
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(3) .title {
+    letter-spacing: -0.15px;
+}
+
+.page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(4) .title {
+    letter-spacing: -0.18px;
+}
+
+@media screen and (max-width: 860px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 2.666rem;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 2.333rem;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 1.999rem;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
-        grid-gap: 3rem;
+        grid-gap: 1.666rem;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-gap: 1.111rem;
     }
 }
 
 @media screen and (max-width: 640px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(4) {
+        display: none;
+    }
+
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 2rem;
     }
@@ -1066,6 +1114,14 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 @media screen and (max-width: 455px) {
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(3) {
+        display: none;
+    }
+
     .page-index .index-page-intro-container .index-page-content-blocks {
         transform: scale(0.922);
     }
@@ -1187,6 +1243,7 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-content-slogan {
         margin-top: -5svh;
     }
+
     .page-index .index-page-intro-container>.index-page-content-button,
     .page-index .index-page-intro-container>.index-page-content-slogan,
     .page-index .index-page-intro-container>.index-page-content-logo {
@@ -1232,16 +1289,19 @@ html:not(.page-index) .index-page-intro-container {
     color: var(--primary);
 }
 
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-linux,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-update,
-.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-code-branch,
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-smile-beam,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-clock {
     margin-top: 0.599em;
     margin-left: 0.566em;
     font-size: .444em;
 }
 
-.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-code-branch {
-    transform: scale(0.988);
+.page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-linux {
+    margin-top: 0.433em;
+    margin-left: 0.377em;
+    font-size: .511em;
 }
 
 .page-index [href="#top"] {
