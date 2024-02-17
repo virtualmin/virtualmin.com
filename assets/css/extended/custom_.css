@@ -1293,7 +1293,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-update,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-smile-beam,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-clock {
-    margin-top: 0.599em;
+    margin-top: .611em;
     margin-left: 0.566em;
     font-size: .444em;
 }
