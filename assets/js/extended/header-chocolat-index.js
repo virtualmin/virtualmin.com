@@ -10,16 +10,57 @@ window.addEventListener("DOMContentLoaded", () => {
             return [
                 {
                     src: "/images/screenshots/" + screenshotType + "/1-dashboard.png",
-                    title: "Webmin ⇾ System ⇾ Dashboard",
+                    title: "Virtualmin ⇾ Dashboard",
                 },
                 {
-                    src: "/images/screenshots/" + screenshotType + "/2-stats-history.png",
-                    title: "Webmin ⇾ System ⇾ Dashboard ⇾ Stats History",
+                    src: "/images/screenshots/" + screenshotType + "/2-virtual-server-summary.png",
+                    title: "Virtualmin ⇾ Virtual Server Summary",
                 },
                 {
-                    src: "/images/screenshots/" + screenshotType + "/3-webmin-configuration.png",
-                    title: "Webmin ⇾ Webmin ⇾ Webmin Configuration",
+                    src: "/images/screenshots/" + screenshotType + "/3-create-virtual-server.png",
+                    title: "Virtualmin ⇾ Create Virtual Server",
                 },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/4-edit-users.png",
+                    title: "Virtualmin ⇾ Edit Users",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/5-create-user.png",
+                    title: "Virtualmin ⇾ Create User",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/6-create-ssh-user.png",
+                    title: "Virtualmin ⇾ Create SSH User",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/7-create-ftp-user.png",
+                    title: "Virtualmin ⇾ Create FTP User",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/8-create-mail-user.png",
+                    title: "Virtualmin ⇾ Create Mail User",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/9-create-database-user.png",
+                    title: "Virtualmin ⇾ Create Database User",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/10-create-webserver-user.png",
+                    title: "Virtualmin ⇾ Create Webserver User",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/11-edit-user-defaults.png",
+                    title: "Virtualmin ⇾ Edit User Defaults",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/12-email-all-mailboxes.png",
+                    title: "Virtualmin ⇾ Email All Mailboxes",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/13-email-client-settings.png",
+                    title: "Virtualmin ⇾ Email Client Settings",
+                },
+
             ];
         };
 
@@ -44,7 +85,8 @@ window.addEventListener("DOMContentLoaded", () => {
         chocolatOptions = function () {
             return {
                 container: document.querySelector(".chocolat-drop"),
-                loop: true,
+                loop: false,
+                allowZoom: false,
                 imageSize: "scale-down",
                 closeOnBackgroundClick: false,
             };
