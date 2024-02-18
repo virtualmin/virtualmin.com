@@ -1342,18 +1342,6 @@ html:not(.chocolat-fullscreen).page-index .chocolat-img {
     filter: saturate(1.3)hue-rotate(6deg);
 }
 
-html.chocolat-fullscreen.page-index .chocolat-img {
-    box-shadow: -1.5px -1.5px 0 1.5px #f9f9fb,1.5px -1.5px 0 1.5px #f9f9fb,-1.5px 1.5px 0 1.5px #f9f9fb,1.5px 1.5px 0 1.5px #f9f9fb,-1px 0 28px #21201e03,14px 14px 14px #4d4d4d40;
-}
-
-html.chocolat-fullscreen.page-index .dark .chocolat-img {
-    box-shadow: -1.5px -1.5px 0 1.5px #0a0a0a,1.5px -1.5px 0 1.5px #0a0a0a,-1.5px 1.5px 0 1.5px #0a0a0a,1.5px 1.5px 0 1.5px #0a0a0a,-1px 0 28px #12121203,14px 14px 14px #17171740;
-}
-
-.page-index.chocolat-fullscreen .chocolat-img {
-    margin-top: -1%;
-}
-
 .page-index .chocolat-wrapper .screen-full-container {
     bottom: -0.411em;
     left: 0.533em;
