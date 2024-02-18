@@ -60,6 +60,26 @@ window.addEventListener("DOMContentLoaded", () => {
                     src: "/images/screenshots/" + screenshotType + "/13-email-client-settings.png",
                     title: "Virtualmin ⇾ Email Client Settings",
                 },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/14-edit-databases.png",
+                    title: "Virtualmin ⇾ Edit Databases",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-install-script-wordpress.png",
+                    title: "Virtualmin ⇾ Install Scripts",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-installed-script-wordpress.png",
+                    title: "Virtualmin ⇾ Installed WordPress",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/16-file-manager.png",
+                    title: "Virtualmin ⇾ File Manager",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/16-file-manager-edit-file.png",
+                    title: "Virtualmin ⇾ File Manager ⇾ Edit File",
+                },
 
             ];
         };
