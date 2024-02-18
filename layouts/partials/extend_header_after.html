@@ -52,7 +52,7 @@
                         $this.scrollToAuto = null;
                         setTimeout(function () {
                             $this.scrollToAuto = false;
-                        }, 51 * 4);
+                        }, 180 * 4);
                     }
                     return true;
                 }
@@ -119,7 +119,7 @@
                             }
                         }
                         clearTimeout($this.scrollTimeout);
-                    }, 51);
+                    }, 180);
                 }
             };
         window.addEventListener("scroll", scrollFn, false);
