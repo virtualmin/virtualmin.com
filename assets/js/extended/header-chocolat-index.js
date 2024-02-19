@@ -70,7 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/15-installed-script-wordpress.png",
-                    title: "Virtualmin ⇾ Installed WordPress",
+                    title: "Virtualmin ⇾ Install Scripts ⇾ Installed WordPress",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/16-file-manager.png",
@@ -80,7 +80,18 @@ window.addEventListener("DOMContentLoaded", () => {
                     src: "/images/screenshots/" + screenshotType + "/16-file-manager-edit-file.png",
                     title: "Virtualmin ⇾ File Manager ⇾ Edit File",
                 },
-
+                {
+                    src: "/images/screenshots/" + screenshotType + "/17-terminal.png",
+                    title: "Virtualmin ⇾ Terminal",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/17-terminal-edit-file-using-nano.png",
+                    title: "Virtualmin ⇾ Terminal ⇾ Edit File",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/17-terminal-dropdown.png",
+                    title: "Virtualmin ⇾ Dropdown Terminal",
+                },
             ];
         };
 
