@@ -7,6 +7,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.classList.contains("dark")
                     ? "dark"
                     : "light";
+            let systemType = "intel";
+            try {
+                if (["Macintosh", "MacIntel", "MacPPC", "Mac68K"].indexOf(window.navigator.platform) !== -1) {
+                    systemType = "mac";
+                }
+            } catch (error) {};
             return [
                 {
                     src: "/images/screenshots/" + screenshotType + "/1-dashboard.png",
@@ -92,6 +98,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     src: "/images/screenshots/" + screenshotType + "/17-terminal-dropdown.png",
                     title: "Virtualmin ⇾ Dropdown Terminal",
                 },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/100-shortkeys-" + systemType + ".png",
+                    title: "Virtualmin ⇾ Dashboard ⇾ Available Shortkeys",
+                },
             ];
         };
 
@@ -116,7 +126,7 @@ window.addEventListener("DOMContentLoaded", () => {
         chocolatOptions = function () {
             return {
                 container: document.querySelector(".chocolat-drop"),
-                loop: false,
+                loop: true,
                 allowZoom: false,
                 imageSize: "scale-down",
                 closeOnBackgroundClick: false,
