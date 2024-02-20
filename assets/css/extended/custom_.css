@@ -974,10 +974,12 @@ html:not(.page-index) .index-page-intro-container {
     background-position: center -150px;
     opacity: 0.85;
     opacity: 1;
+    filter: contrast(1.4)saturate(3)hue-rotate(25deg);
 }
 
-.page-index .index-page-intro-container .index-page-content-elements-cover {
+.page-index .dark .index-page-intro-container .index-page-content-elements-cover {
     background-image: radial-gradient(circle at center, rgba(2, 0, 32, .84) 15%, transparent 225%);
+    filter: contrast(1.25)saturate(3)brightness(1.5);
 }
 
 .page-index .index-page-intro-container .index-page-content-bg-cover {
@@ -1298,7 +1300,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-smile-beam,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-clock {
     margin-top: .611em;
-    margin-left: 0.566em;
+    margin-left: 0.543em;
     font-size: .444em;
 }
 
