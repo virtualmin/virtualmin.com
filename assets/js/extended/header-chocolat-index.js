@@ -227,7 +227,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/100-shortkeys-" + systemType + ".png",
-                    title: "Virtualmin ⇾ Available Shortkeys",
+                    title: "Keyboard Shortcuts",
                 },
             ];
         };
