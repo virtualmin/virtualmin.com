@@ -94,8 +94,140 @@ window.addEventListener("DOMContentLoaded", () => {
                     title: "Virtualmin ⇾ Dropdown Terminal",
                 },
                 {
+                    src: "/images/screenshots/" + screenshotType + "/18-change-ip-address.png",
+                    title: "Virtualmin ⇾ Manage Virtual Server ⇾ Change IP Address",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/19-server-owner-limits.png",
+                    title: "Virtualmin ⇾ Manage Virtual Server ⇾ Server Owner Limits",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/20-move-virtual-server.png",
+                    title: "Virtualmin ⇾ Manage Virtual Server ⇾ Move Virtual Server",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/21-ssl-certificate.png",
+                    title: "Virtualmin ⇾ Manage Virtual Server ⇾ SSL Certificate",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/21-ssl-certificate-le.png",
+                    title: "Virtualmin ⇾ Manage Virtual Server ⇾ SSL Certificate ⇾ Let's Encrypt",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/22-dns-options.png",
+                    title: "Virtualmin ⇾ DNS Settings ⇾ DNS Options",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/22-dns-records.png",
+                    title: "Virtualmin ⇾ DNS Settings ⇾ DNS Records",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/23-php-options.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ PHP Options",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/24-manage-php-configuration.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ Manage PHP Configuration",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/24-manage-php-configuration-resource-limits.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ Manage PHP Configuration ⇾ Resource Limits",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/24-manage-php-configuration-edit-manually.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ Manage PHP Configuration ⇾ Edit Configuration Manually",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/25-protected-web-directories.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ Protected Directories",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/26-website-options.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ Website Options",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/27-spam-and-virus-delivery.png",
+                    title: "Virtualmin ⇾ Mail Options ⇾ Spam and Virus Delivery",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/28-apache-access-log.png",
+                    title: "Virtualmin ⇾ Logs and Reports ⇾ Apache Access Log",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/29-disk-usage.png",
+                    title: "Virtualmin ⇾ Logs and Reports ⇾ Disk Usage",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/30-virtual-server-action-log.png",
+                    title: "Virtualmin ⇾ Logs and Reports ⇾ Virtual Server Action Log",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/31-create-account-plan.png",
+                    title: "Virtualmin ⇾ System Settings ⇾ Account Plans",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/31-checking-configuration.png",
+                    title: "Virtualmin ⇾ System Settings ⇾ Re-Check Configuration",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/32-database-servers.png",
+                    title: "Virtualmin ⇾ System Settings ⇾ Database Servers",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/33-edit-server-template-virtual-ip-address.png",
+                    title: "Virtualmin ⇾ System Settings ⇾ Server Templates ⇾ Virtual IP Address",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/34-change-ip-addresses.png",
+                    title: "Virtualmin ⇾ Addresses and Networking ⇾ Change IP Addresses",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/35-cloud-dns-providers.png",
+                    title: "Virtualmin ⇾ Addresses and Networking ⇾ Cloud DNS Providers",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/36-dynamic-ip-update.png",
+                    title: "Virtualmin ⇾ Addresses and Networking ⇾ Dynamic IP Update",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/37-shared-ip-addresses.png",
+                    title: "Virtualmin ⇾ Addresses and Networking ⇾ Shared IP Addresses",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/38-domainkeys-identified-mail.png",
+                    title: "Virtualmin ⇾ Email Settings ⇾ DomainKeys Identified Mail",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/39-spam-and-virus-scanning.png",
+                    title: "Virtualmin ⇾ Email Settings ⇾ Spam and Virus Scanning",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/40-disk-quota-monitoring.png",
+                    title: "Virtualmin ⇾ Limits and Validation ⇾ Disk Quota Monitoring",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/41-import-virtual-server.png",
+                    title: "Virtualmin ⇾ Add Servers ⇾ Import Virtual Server",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/42-migrate-virtual-server.png",
+                    title: "Virtualmin ⇾ Add Servers ⇾ Migrate Virtual Server",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/43-backup-virtual-servers.png",
+                    title: "Virtualmin ⇾ Backup and Restore ⇾ Backup Virtual Servers",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/44-virtualmin-virtual-servers.png",
+                    title: "Virtualmin ⇾ List Virtual Servers",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/45-system-statistics.png",
+                    title: "Virtualmin ⇾ System Statistics",
+                },
+                {
                     src: "/images/screenshots/" + screenshotType + "/100-shortkeys-" + systemType + ".png",
-                    title: "Virtualmin ⇾ Dashboard ⇾ Available Shortkeys",
+                    title: "Virtualmin ⇾ Available Shortkeys",
                 },
             ];
         };
