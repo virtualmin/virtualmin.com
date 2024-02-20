@@ -253,6 +253,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 false
             );
+            // Toggle full screen on clicking the container
+            document.querySelector(".chocolat-image-wrapper").addEventListener(
+                "click",
+                function (e) {
+                    e.stopPropagation();
+                    document.querySelector(".chocolat-bottom .chocolat-fullscreen").click();
+                },
+                false
+            );
         },
         chocolatOptions = function () {
             return {
