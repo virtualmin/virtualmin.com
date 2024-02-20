@@ -990,6 +990,7 @@ html:not(.page-index) .index-page-intro-container {
     width: 100%;
     opacity: 0.91;
     z-index: 6;
+    filter: saturate(1.5) contrast(1.5);
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-cover {
@@ -1008,6 +1009,7 @@ html:not(.page-index) .index-page-intro-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    filter: brightness(1.25) contrast(1.75);
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks {
