@@ -95,7 +95,7 @@
                 if (!$this.scrollToAuto && $this.scrollToAuto !== null) {
                     $this.scrollTimeout = setTimeout(function () {
                         // Trigger only within hero header
-                        if (window.scrollY < window.innerHeight / 1.333 ) {
+                        if (window.scrollY < window.innerHeight / 2 ) {
                             // If dropdown is opened adjust its position (up or down)
                             if (document.querySelector(menu_active_class_str)) {
                                 window.dispatchEvent(new Event("resize")); // reposition dropdown

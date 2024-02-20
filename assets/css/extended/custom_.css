@@ -979,7 +979,7 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .dark .index-page-intro-container .index-page-content-elements-cover {
     background-image: radial-gradient(circle at center, rgba(2, 0, 32, .84) 15%, transparent 225%);
-    filter: contrast(1.25)saturate(3)brightness(1.5);
+    filter: contrast(1.29)saturate(3.3)brightness(1.5);
 }
 
 .page-index .index-page-intro-container .index-page-content-bg-cover {
