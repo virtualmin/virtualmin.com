@@ -7,12 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.classList.contains("dark")
                     ? "dark"
                     : "light";
-            let systemType = "intel";
-            try {
-                if (["Macintosh", "MacIntel", "MacPPC", "Mac68K"].indexOf(window.navigator.platform) !== -1) {
-                    systemType = "mac";
-                }
-            } catch (error) {};
+            const systemType = navigator.userAgent.includes("Mac") ? "mac" : "linux";
             return [
                 {
                     src: "/images/screenshots/" + screenshotType + "/1-dashboard.png",
