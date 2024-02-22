@@ -12,7 +12,7 @@ Virtualmin is a powerful and flexible web hosting control panel for Linux and BS
 
 {{< html div chocolat-drop >}}
 
-### Virtualmin features
+### Virtualmin Features
 Virtualmin is a uniquely powerful and flexible web server administration tool. It is unmatched in features and flexibility. Based on Webmin, it offers a wide array of productivity-enhancing tools for hosting providers, web developers, web designers, and end users.
 
 {{< index-1 >}}
