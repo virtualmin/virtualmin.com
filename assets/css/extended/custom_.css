@@ -753,7 +753,7 @@ body.dark>footer.footer::after {
 
 .page-index .docs-cards-container-links .docs-card-links .text {
     align-items: start;
-    padding: 0.9rem 0.75rem 0.75rem 0.75rem;
+    padding: 0.7rem 0.7rem 0.7rem 0.9rem;
     font-size: 1.02rem;
 
     line-height: 1.42;
@@ -769,8 +769,14 @@ body.dark>footer.footer::after {
 }
 
 .page-index .docs-cards-container-links .docs-card-links .text .inner-text {
-    text-indent: calc(0.75rem * 2);
-    line-break: anywhere;
+    text-indent: calc(0.9rem * 2);
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.post-content .docs-cards-container-links.docs-cards-container-links-icon-large {
+    grid-template-columns: repeat(auto-fit,minmax(235px,1fr));
 }
 
 .post-content .docs-cards-container-links .docs-card-links-icon {
