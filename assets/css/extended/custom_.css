@@ -1046,6 +1046,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-content-button {
     cursor: pointer;
     grid-row: 3;
+    z-index: 13 !important;
 }
 
 .page-index .index-page-content-button a {
