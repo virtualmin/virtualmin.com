@@ -1616,6 +1616,10 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     content: " ";
 }
 
+.page-index .index-page-intro-block-testimony.index-page-intro-block-download::after {
+    background-position: 0 1%;
+}
+
 .page-index .dark .index-page-intro-block-testimony::after {
     filter: grayscale(1)brightness(0.75)contrast(5)opacity(0.33)invert(1);
 }
@@ -1649,6 +1653,19 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     text-shadow: 0.5px 0.5px #00000022;
     gap: calc(var(--gap) / 2);
     opacity: 0.75;
+}
+
+.page-index .index-page-intro-block-download {
+    gap: var(--gap);
+}
+
+.page-index .index-page-intro-block-download a {
+    filter: saturate(1.5) brightness(1.05) contrast(1.05) hue-rotate(345deg);
+    text-shadow: none;
+}
+
+.page-index .dark .index-page-intro-block-download a {
+    filter: saturate(1.15) brightness(1) contrast(1.05) hue-rotate(345deg);
 }
 
 .page-index .dark .index-page-intro-block-testimony-text {
@@ -1688,6 +1705,10 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
         gap: calc(var(--gap) / 4);
     }
 
+    .page-index .index-page-intro-block-download .index-page-intro-block-testimony-text {
+        gap: calc(var(--gap) / 1);
+    }
+
     .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
         transform: scale(0.933);
     }
@@ -1702,6 +1723,10 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
         gap: calc(var(--gap) / 8);
     }
 
+    .page-index .index-page-intro-block-download .index-page-intro-block-testimony-text {
+        gap: calc(var(--gap) / 1);
+    }
+
     .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
         transform: scale(0.877);
     }
@@ -1714,6 +1739,10 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 @media screen and (max-width: 432px) {
     .page-index .index-page-intro-block-testimony-text {
         gap: calc(var(--gap) / 12);
+    }
+
+    .page-index .index-page-intro-block-download .index-page-intro-block-testimony-text {
+        gap: calc(var(--gap) / 1);
     }
 
     .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {

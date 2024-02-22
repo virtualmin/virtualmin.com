@@ -22,3 +22,5 @@ Virtualmin is a uniquely powerful and flexible web server administration tool. I
 Virtualmin has competition. A lot of it. We even compete with ourselves when it comes to choosing to purchase your tools or select an open-source option. We think we’ve built the most powerful and flexible web hosting control panel in the world in nearly every area.
 
 {{< index-2 >}}
+
+{{< index-3 >}}

@@ -5,9 +5,13 @@ window.addEventListener("resize", function () {
     // Set the height of the footer
     const blockSeparatorSelStr = ".index-page-intro-separator-block",
         leftOffset = document.querySelector(".post-content").getBoundingClientRect().left,
-        documentWidth = document.documentElement.getBoundingClientRect().width;
-    document.querySelector(blockSeparatorSelStr).style.width = documentWidth + "px";
-    document.querySelector(blockSeparatorSelStr).style.marginLeft = -leftOffset + "px";
+        documentWidth = document.documentElement.getBoundingClientRect().width,
+        blockSeparators = document.querySelectorAll(blockSeparatorSelStr);
+
+    blockSeparators.forEach((blockSeparator) => {
+        blockSeparator.style.width = documentWidth + "px";
+        blockSeparator.style.marginLeft = -leftOffset + "px";
+    });
 });
 
 // Trigger resize on load
