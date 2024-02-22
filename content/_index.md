@@ -3,7 +3,6 @@ title: ""
 date: 2024-02-11
 showtoc: false
 hideMeta: true
-loadBootstrapGrid: true
 loadGalleryIndex: true
 ---
 
