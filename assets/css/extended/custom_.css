@@ -775,7 +775,7 @@ body.dark>footer.footer::after {
 }
 
 .post-content .docs-cards-container-links.docs-cards-container-links-icon-large {
-    grid-template-columns: repeat(auto-fit,minmax(235px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
 }
 
 .post-content .docs-cards-container-links .docs-card-links-icon {
@@ -1507,7 +1507,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .chocolat-drop {
     background-color: transparent;
     aspect-ratio: 16 / 9;
-    margin: -1em 0 2.666em 0;
+    margin: -1em 0 3.666em 0;
     overflow: initial;
 }
 
@@ -1562,13 +1562,133 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 }
 
 .page-index .index-page-intro-separator-block {
-    height: 150px;
+    height: 180px;
     box-sizing: border-box;
-    background-color: var(--border);
-    /* background-image: url('/section-elements-banner.svg'); */
-    /* background-repeat: repeat-y; */
-    /* background-size: cover; */
-    /* background-position: 0 90%; */
-    /* filter: saturate(1.25) brightness(0.98) contrast(1.15); */
+    background-color: #e4e4e4;
+    margin-top: 3.333em;
+    margin-bottom: 2.666em;
+}
 
+.page-index .dark .index-page-intro-block-testimony {
+    background-color: unset;
+}
+
+.page-index .index-page-intro-block-testimony::after {
+    background-image: url('/section-elements-testimony.webp');
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: 0 50%;
+    filter: grayscale(1)brightness(.9)contrast(1.9)opacity(.12);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    float: right;
+    z-index: 1;
+    content: " ";
+}
+
+.page-index .dark .index-page-intro-block-testimony::after {
+    filter: grayscale(1)brightness(0.75)contrast(5)opacity(0.33)invert(1);
+}
+
+.page-index .dark .index-page-intro-block-testimony::before {
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-position: 0 90%;
+    background: linear-gradient(180deg,#00000051 0%,#00000077 50%,#00000051 100%);
+    text-align: center;
+    display: flex;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    z-index: 2;
+    content: " ";
+}
+
+.page-index .index-page-intro-block-testimony-text {
+    z-index: 3;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    place-items: center;
+    align-content: center;
+    place-content: center;
+    position: absolute;
+    text-align: center;
+    height: inherit;
+    width: inherit;
+    text-align: center;
+    text-shadow: 0.5px 0.5px #00000022;
+    gap: calc(var(--gap) / 2);
+    opacity: 0.75;
+}
+
+.page-index .dark .index-page-intro-block-testimony-text {
+    text-shadow: 1.5px 1.5px #000000;
+}
+
+.page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
+    transform: scale(0.966);
+    opacity: 0.25;
+}
+
+.page-index .dark .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
+    opacity: 0.75;
+}
+
+.page-index .dark .index-page-intro-block-testimony .index-page-intro-block-testimony-text {
+    opacity: 0.85;
+}
+
+.page-index .index-page-intro-block-testimony-text p {
+    margin-bottom: 0;
+}
+
+.page-index .index-page-intro-block-testimony-text p>span {
+    font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, segoe ui, Oxygen, Ubuntu, Cantarell, open sans, helvetica neue, sans-serif;
+    font-weight: 400;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: inline-flex;
+    max-width: 735px;
+}
+
+@media screen and (max-width: 768.98px) {
+    .page-index .index-page-intro-block-testimony-text {
+        padding: 0 var(--gap);
+        gap: calc(var(--gap) / 4);
+    }
+
+    .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
+        transform: scale(0.933);
+    }
+
+    .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text p>span {
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .page-index .index-page-intro-block-testimony-text {
+        gap: calc(var(--gap) / 8);
+    }
+
+    .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
+        transform: scale(0.877);
+    }
+
+    .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text p {
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 432px) {
+    .page-index .index-page-intro-block-testimony-text {
+        gap: calc(var(--gap) / 12);
+    }
+
+    .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
+        transform: scale(0.711);
+    }
 }
