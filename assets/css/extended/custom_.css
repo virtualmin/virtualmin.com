@@ -1080,7 +1080,7 @@ html:not(.page-index) .index-page-intro-container {
     grid-row: 2;
     text-align: center;
     line-height: 1.333;
-    text-shadow: 1px 1px #01071a;
+    text-shadow: 1.5px 1.5px #01071a;
     padding-left: 0.211em;
     padding-right: 0.211em;
     font-weight: 200;
@@ -1235,10 +1235,10 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box {
-    border: 0.66px solid var(--border);
+    border: 1px solid var(--border);
     padding: 4px 6px;
     text-align: center;
-    background-color: transparent;
+    background-color: #00000030;
     margin-top: 10px;
     height: 127px;
     width: 150px;
@@ -1252,14 +1252,9 @@ html:not(.page-index) .index-page-intro-container {
     justify-content: center;
 }
 
-/* Detect whether the user has requested the web content to be presented with a higher contrast. */
-@media (prefers-contrast: more) {
-    .page-index .index-page-intro-container .index-page-content-blocks .box>.icon,
+@media only screen and (-webkit-max-device-pixel-ratio: 2) {
     .page-index .index-page-intro-container .index-page-content-blocks .box {
-        background-color: #00000030;
-    }
-    .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
-        text-shadow: 1.5px 1.5px #000;
+        border: 0.66px solid var(--border);
     }
 }
 
@@ -1489,6 +1484,7 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon {
     border: 1px solid var(--border);
+    border-bottom: none;
     content: " ";
     position: absolute;
     margin-top: -46px;
@@ -1498,6 +1494,7 @@ html:not(.page-index) .index-page-intro-container {
     border-radius: 100%;
     z-index: 2;
     clip-path: inset(0 0 23% 0);
+    background-color: #00000030;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
@@ -1505,7 +1502,7 @@ html:not(.page-index) .index-page-intro-container {
     color: var(--theme);
     font-size: 0.899em;
     line-height: 1.42em;
-    text-shadow: 1px 1px #000;
+    text-shadow: 1.5px 1.5px #01071a;
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
