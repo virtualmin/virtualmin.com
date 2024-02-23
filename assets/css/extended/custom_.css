@@ -1252,12 +1252,35 @@ html:not(.page-index) .index-page-intro-container {
     justify-content: center;
 }
 
+/* Detect whether the user has requested the web content to be presented with a higher contrast. */
+@media (prefers-contrast: more) {
+    .page-index .index-page-intro-container .index-page-content-blocks .box>.icon,
+    .page-index .index-page-intro-container .index-page-content-blocks .box {
+        background-color: #00000030;
+    }
+    .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
+        text-shadow: 1.5px 1.5px #000;
+    }
+}
+
+@media only screen and (-webkit-max-device-pixel-ratio: 1) {
+    .page-index .index-page-intro-container .index-page-content-logo,
+    .page-index .index-page-intro-container .index-page-content-slogan,
+    .page-index .index-page-intro-container .index-page-content-button,
+    .page-index .index-page-intro-container .index-page-content-blocks {
+        transform: scale(1.5);
+    }
+    .page-index .index-page-intro-container .index-page-content-button {
+        margin-top: 2.5em;
+    }
+}
+
 .page-index .index-page-intro-container .index-page-content-blocks .box .title {
     letter-spacing: -0.1px;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(2) .title {
-    letter-spacing: 0.1px;
+    letter-spacing: 0.05px;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(3) .title {
@@ -1482,7 +1505,7 @@ html:not(.page-index) .index-page-intro-container {
     color: var(--theme);
     font-size: 0.899em;
     line-height: 1.42em;
-    text-shadow: 0.5px 0.5px #01071a;
+    text-shadow: 1px 1px #000;
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
