@@ -1091,6 +1091,10 @@ html:not(.page-index) .index-page-intro-container {
     color: var(--primary);
 }
 
+.page-index[data-os="linux"] .dark .index-page-content-slogan {
+    color: var(--primary-strong);
+}
+
 .page-index .index-page-content-button {
     cursor: pointer;
     grid-row: 3;
