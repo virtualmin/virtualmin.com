@@ -1244,12 +1244,15 @@ html:not(.page-index) .index-page-intro-container {
     width: 150px;
     border-radius: var(--radius);
     text-align: justify;
-    line-break: anywhere;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
     font-family: 'Roboto Condensed', sans-serif;
     justify-items: center;
     display: inline-flex;
     align-items: start;
     justify-content: center;
+    letter-spacing: -0.5px;
 }
 
 @media only screen and (-webkit-max-device-pixel-ratio: 2) {
@@ -1268,22 +1271,6 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-intro-container .index-page-content-button {
         margin-top: 2.5em;
     }
-}
-
-.page-index .index-page-intro-container .index-page-content-blocks .box .title {
-    letter-spacing: -0.1px;
-}
-
-.page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(2) .title {
-    letter-spacing: 0.05px;
-}
-
-.page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(3) .title {
-    letter-spacing: -0.15px;
-}
-
-.page-index .index-page-intro-container .index-page-content-blocks .box:nth-child(4) .title {
-    letter-spacing: -0.18px;
 }
 
 @media screen and (max-width: 860px) {
