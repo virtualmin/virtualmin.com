@@ -1492,6 +1492,12 @@ html:not(.page-index) .index-page-intro-container {
     text-shadow: 1.5px 1.5px #01071a;
 }
 
+.page-index[data-os="linux"] .index-page-intro-container .index-page-content-blocks .box>.title {
+    font-weight: 400;
+    opacity: 0.75;
+}
+
+
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
     color: var(--primary);
 }
