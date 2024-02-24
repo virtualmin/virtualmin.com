@@ -1719,7 +1719,27 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     color: #fb4884;
     opacity: 1;
     transform: scale(1);
+    animation: heartbeat 2.111s infinite;
 }
+
+@keyframes heartbeat {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.111);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.111);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
 
 .page-index .dark .index-page-intro-block-download .index-page-intro-block-testimony-text > .wm {
     color: #ff3d79;
