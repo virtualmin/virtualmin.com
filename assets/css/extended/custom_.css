@@ -1201,8 +1201,8 @@ html:not(.page-index) .index-page-intro-container {
     left: 0;
     filter: saturate(2);
     /* background: linear-gradient(180deg, #000000 13%, #e305ffe4 42%, #003db6ed 85%); */
-    background: linear-gradient(180deg, #000000 13%, #00dccadd 52%, #003db6ed 85%);
-    /* background: linear-gradient(180deg, #000000 13%, #083ca3de 42%, #003db6c2 85%); */
+    /* background: linear-gradient(180deg, #000000 13%, #00dccadd 52%, #003db6ed 85%); */
+    background: linear-gradient(180deg, #000000 13%, #1257c6f7 42%, #003db6c2 85%);
     height: 100vh;
     height: 100svh;
     width: 100%;
@@ -1246,7 +1246,7 @@ html:not(.page-index) .index-page-intro-container {
     text-align: center;
     background-color: #00000020;
     margin-top: 10px;
-    height: 127px;
+    height: 130px;
     width: 150px;
     border-radius: var(--radius);
     text-align: justify;
@@ -1482,7 +1482,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
     padding: 1px 4px;
     color: var(--theme);
-    font-size: 0.899em;
+    font-size: .927em;
     line-height: 1.42em;
     text-shadow: 1px 1px #01071a;
 }
