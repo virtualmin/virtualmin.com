@@ -59,7 +59,7 @@ Ensure the primary server uses the correct IP for zone transfers:
 2. In **Cluster slave servers**, enter the external IP of your primary server in **Default master server IP for remote secondary zones** field.
 3. Click **Save** button.
 
-### **Customizing the primary NS record name**
+### Customizing the primary NS record name
 
 If you prefer a different naming convention for the primary NS record (by default, it uses your server's hostname), you can modify it in Virtualmin:
 
