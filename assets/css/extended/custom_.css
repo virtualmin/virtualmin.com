@@ -1225,7 +1225,7 @@ html:not(.page-index) .index-page-intro-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.8) contrast(8);
+    filter: brightness(0.8) contrast(4);
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks {
