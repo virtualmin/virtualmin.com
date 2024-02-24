@@ -270,6 +270,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 allowZoom: false,
                 imageSize: "scale-down",
                 closeOnBackgroundClick: false,
+                afterImageLoad: function() {
+                    this.elems.img.setAttribute("aria-label", "Screenshot Gallery");
+                },
             };
         };
 
