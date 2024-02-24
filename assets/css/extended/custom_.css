@@ -1200,8 +1200,9 @@ html:not(.page-index) .index-page-intro-container {
     top: 0;
     left: 0;
     filter: saturate(2);
-    background: linear-gradient(180deg, #000000 13%, #e305ffe4 42%, #003db6ed 85%);
-    /* background: linear-gradient(180deg, #000000 13%, #00dccadd 52%, #003db6ed 85%); */
+    /* background: linear-gradient(180deg, #000000 13%, #e305ffe4 42%, #003db6ed 85%); */
+    background: linear-gradient(180deg, #000000 13%, #00dccadd 52%, #003db6ed 85%);
+    /* background: linear-gradient(180deg, #000000 13%, #083ca3de 42%, #003db6c2 85%); */
     height: 100vh;
     height: 100svh;
     width: 100%;
@@ -1210,7 +1211,7 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-cover {
-    background: linear-gradient(180deg, #000 13%, #003effdd 42%, #0d0d0ded 85%);
+    background: linear-gradient(180deg, #000 13%, #004699dd 42%, #0d0d0ded 85%);
 }
 
 .page-index .index-page-intro-container .index-page-content-bg {
