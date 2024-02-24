@@ -1616,8 +1616,8 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .page-index .index-page-intro-block-testimony::after {
     background-image: url('/section-elements-testimony.webp');
     background-repeat: repeat-y;
-    background-size: cover;
-    background-position: 0 150%;
+    background-size: 90%;
+    background-position: 60% 30%;
     filter: grayscale(1)brightness(.9)contrast(1.9)opacity(.12);
     height: 100%;
     width: 100%;
