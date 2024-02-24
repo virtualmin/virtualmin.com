@@ -1051,6 +1051,7 @@ html:not(.page-index) .index-page-intro-container {
     height: auto;
     text-align: -moz-center;
     text-align: -webkit-center;
+    align-self: self-end;
 }
 
 .page-index .index-page-content-logo img {
@@ -1261,18 +1262,6 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media only screen and (-webkit-max-device-pixel-ratio: 1) {
-    .page-index .index-page-intro-container .index-page-content-logo,
-    .page-index .index-page-intro-container .index-page-content-slogan,
-    .page-index .index-page-intro-container .index-page-content-button,
-    .page-index .index-page-intro-container .index-page-content-blocks {
-        transform: scale(1.5);
-    }
-    .page-index .index-page-intro-container .index-page-content-button {
-        margin-top: 2.5em;
-    }
-}
-
 @media screen and (max-width: 860px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 2.666rem;
@@ -1376,6 +1365,7 @@ html:not(.page-index) .index-page-intro-container {
 
     .page-index .index-page-content-logo {
         margin-top: -25svh;
+        align-self: auto;
     }
 
     .page-index .index-page-content-slogan {
