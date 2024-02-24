@@ -1081,7 +1081,7 @@ html:not(.page-index) .index-page-intro-container {
     grid-row: 2;
     text-align: center;
     line-height: 1.333;
-    text-shadow: 1.5px 1.5px #01071a;
+    text-shadow: 1px 1px #01071a;
     padding-left: 0.211em;
     padding-right: 0.211em;
     font-weight: 300;
@@ -1483,18 +1483,18 @@ html:not(.page-index) .index-page-intro-container {
     color: var(--theme);
     font-size: 0.899em;
     line-height: 1.42em;
-    text-shadow: 1.5px 1.5px #01071a;
+    text-shadow: 1px 1px #01071a;
 }
 
 .page-index[data-os="linux"] .index-page-intro-container .index-page-content-blocks .box>.title {
     font-weight: 400;
     opacity: 0.78;
+    text-shadow: 1.5px 1.5px #01071a;
 }
 
 .page-index[data-os="linux"] .dark .index-page-intro-container .index-page-content-blocks .box>.title {
     opacity: 0.86;
 }
-
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
     color: var(--primary);
@@ -1679,7 +1679,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 }
 
 .page-index .dark .index-page-intro-block-testimony-text {
-    text-shadow: 1.5px 1.5px #000000;
+    text-shadow: 1px 1px #000000;
 }
 
 .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
