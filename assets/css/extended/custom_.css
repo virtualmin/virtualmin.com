@@ -1238,7 +1238,7 @@ html:not(.page-index) .index-page-intro-container {
     border: 1px solid var(--border);
     padding: 4px 6px;
     text-align: center;
-    background-color: #00000030;
+    background-color: #00000020;
     margin-top: 10px;
     height: 127px;
     width: 150px;
@@ -1481,7 +1481,7 @@ html:not(.page-index) .index-page-intro-container {
     border-radius: 100%;
     z-index: 2;
     clip-path: inset(0 0 23% 0);
-    background-color: #00000030;
+    background-color: #00000020;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
@@ -1494,7 +1494,11 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index[data-os="linux"] .index-page-intro-container .index-page-content-blocks .box>.title {
     font-weight: 400;
-    opacity: 0.75;
+    opacity: 0.78;
+}
+
+.page-index[data-os="linux"] .dark .index-page-intro-container .index-page-content-blocks .box>.title {
+    opacity: 0.86;
 }
 
 
@@ -1521,7 +1525,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-update,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-smile-beam,
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm-clock {
-    margin-top: .611em;
+    margin-top: .622em;
     margin-left: 0.543em;
     font-size: .444em;
 }
@@ -1605,7 +1609,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .page-index .index-page-intro-separator-block {
     height: 180px;
     box-sizing: border-box;
-    background-color: #e4e4e4;
+    background-color: #edededed;
     margin-top: 3.333em;
     margin-bottom: 2.666em;
 }
@@ -1618,7 +1622,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     background-image: url('/section-elements-testimony.webp');
     background-repeat: repeat-y;
     background-size: cover;
-    background-position: 0 50%;
+    background-position: 0 150%;
     filter: grayscale(1)brightness(.9)contrast(1.9)opacity(.12);
     height: 100%;
     width: 100%;
@@ -1664,12 +1668,11 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     width: inherit;
     text-align: center;
     text-shadow: 0.5px 0.5px #00000022;
-    gap: calc(var(--gap) / 2);
-    opacity: 0.75;
+    gap: calc(var(--gap) / 3);
 }
 
-.page-index .index-page-intro-block-download {
-    gap: var(--gap);
+.page-index .index-page-intro-block-download .index-page-intro-block-testimony-text {
+    gap: calc(var(--gap) / 2);
 }
 
 .page-index .index-page-intro-block-download a {
@@ -1686,16 +1689,16 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 }
 
 .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
-    transform: scale(0.966);
-    opacity: 0.25;
+    transform: scale(0.911);
+}
+
+.page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text p,
+.page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text .btn {
+    text-shadow: none;
 }
 
 .page-index .dark .index-page-intro-block-testimony .index-page-intro-block-testimony-text>i {
     opacity: 0.75;
-}
-
-.page-index .dark .index-page-intro-block-testimony .index-page-intro-block-testimony-text {
-    opacity: 0.85;
 }
 
 .page-index .index-page-intro-block-testimony-text p {
@@ -1710,6 +1713,17 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     hyphens: auto;
     display: inline-flex;
     max-width: 735px;
+}
+
+.page-index .index-page-intro-block-download .index-page-intro-block-testimony-text > .wm {
+    color: #fb4884;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.page-index .dark .index-page-intro-block-download .index-page-intro-block-testimony-text > .wm {
+    color: #ff3d79;
+    opacity: 1;
 }
 
 @media screen and (max-width: 768.98px) {
