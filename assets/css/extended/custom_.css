@@ -1258,7 +1258,7 @@ html:not(.page-index) .index-page-intro-container {
     display: inline-flex;
     align-items: start;
     justify-content: center;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.65px;
 }
 
 @media only screen and (-webkit-max-device-pixel-ratio: 2) {
@@ -1485,20 +1485,13 @@ html:not(.page-index) .index-page-intro-container {
     font-size: .927em;
     line-height: 1.42em;
     text-shadow: 1px 1px #01071a;
-}
-
-.page-index[data-os="linux"] .index-page-intro-container .index-page-content-blocks .box>.title {
     font-weight: 400;
-    opacity: 0.78;
-    text-shadow: 1.5px 1.5px #01071a;
-}
-
-.page-index[data-os="linux"] .dark .index-page-intro-container .index-page-content-blocks .box>.title {
-    opacity: 0.86;
+    opacity: 0.85;
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
     color: var(--primary);
+    opacity: 0.95;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.icon>.wm {
@@ -1507,7 +1500,7 @@ html:not(.page-index) .index-page-intro-container {
     margin-left: 0.833em;
     font-size: 0.399em;
     color: var(--theme);
-    opacity: 0.8;
+    opacity: 0.9;
     z-index: 1;
     text-shadow: 0.5px 0.5px #01071a;
 }
