@@ -1167,7 +1167,7 @@ html:not(.page-index) .index-page-intro-container {
     height: 100svh;
     width: 100%;
     z-index: 11;
-    background: linear-gradient(180deg, transparent 42%, #0938ad 93%, #0938ad 100%);
+    background: linear-gradient(180deg, #0938ad15 36%, #0938ad 93%, #0938ad 100%);
     opacity: 1;
 }
 
@@ -1202,7 +1202,7 @@ html:not(.page-index) .index-page-intro-container {
     filter: saturate(2);
     /* background: linear-gradient(180deg, #000000 13%, #e305ffe4 42%, #003db6ed 85%); */
     /* background: linear-gradient(180deg, #000000 13%, #00dccadd 52%, #003db6ed 85%); */
-    background: linear-gradient(180deg, #000000 13%, #1257c6f7 42%, #003db6c2 85%);
+    background: linear-gradient(180deg, #000000 13%, #2458aaf7 42%, #003db6c2 85%);
     height: 100vh;
     height: 100svh;
     width: 100%;
@@ -1211,7 +1211,7 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-cover {
-    background: linear-gradient(180deg, #000 13%, #004699dd 42%, #0d0d0ded 85%);
+    background: linear-gradient(180deg, #000 13%, #18285cfa 36%, #0d0d0ded 85%);
 }
 
 .page-index .index-page-intro-container .index-page-content-bg {
@@ -1244,7 +1244,7 @@ html:not(.page-index) .index-page-intro-container {
     border: 1px solid var(--border);
     padding: 4px 6px;
     text-align: center;
-    background-color: #07246e70;
+    background-color: #07246e81;
     margin-top: 10px;
     height: 130px;
     width: 180px;
@@ -1464,7 +1464,7 @@ html:not(.page-index) .index-page-intro-container {
     border-radius: 100%;
     z-index: 2;
     clip-path: inset(0 0 23% 0);
-    background-color: #07246e70;
+    background-color: #07246e81;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
@@ -1473,6 +1473,7 @@ html:not(.page-index) .index-page-intro-container {
     font-size: .95em;
     line-height: 1.38em;
     text-shadow: 1px 1px #01071a;
+    transform: scaleX(0.98);
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
@@ -1595,9 +1596,9 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .page-index .index-page-intro-block-testimony::after {
     background-image: url('/section-elements-testimony.webp');
     background-repeat: repeat-y;
-    background-size: 90%;
-    background-position: 60% 30%;
-    filter: grayscale(1)brightness(.9)contrast(1.9)opacity(.12);
+    background-size: 100%;
+    background-position: 0 15%;
+    filter: grayscale(1)brightness(1)contrast(2)opacity(.1);
     height: 100%;
     width: 100%;
     display: flex;
