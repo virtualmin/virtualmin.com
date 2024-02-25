@@ -1244,7 +1244,7 @@ html:not(.page-index) .index-page-intro-container {
     border: 1px solid var(--border);
     padding: 4px 6px;
     text-align: center;
-    background-color: #00000020;
+    background-color: #07246e70;
     margin-top: 10px;
     height: 126px;
     width: 164px;
@@ -1258,6 +1258,11 @@ html:not(.page-index) .index-page-intro-container {
     align-items: start;
     justify-content: center;
     letter-spacing: -0.41px;
+}
+
+.page-index .dark .index-page-intro-container .index-page-content-blocks .box>.icon,
+.page-index .dark .index-page-intro-container .index-page-content-blocks .box {
+    background-color: #0c0c112b;
 }
 
 @media only screen and (-webkit-max-device-pixel-ratio: 2) {
@@ -1475,7 +1480,7 @@ html:not(.page-index) .index-page-intro-container {
     border-radius: 100%;
     z-index: 2;
     clip-path: inset(0 0 23% 0);
-    background-color: #00000020;
+    background-color: #07246e70;
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
