@@ -1246,8 +1246,8 @@ html:not(.page-index) .index-page-intro-container {
     text-align: center;
     background-color: #07246e70;
     margin-top: 10px;
-    height: 126px;
-    width: 164px;
+    height: 130px;
+    width: 180px;
     border-radius: var(--radius);
     text-align: justify;
     word-break: break-word;
@@ -1257,7 +1257,6 @@ html:not(.page-index) .index-page-intro-container {
     display: inline-flex;
     align-items: start;
     justify-content: center;
-    letter-spacing: -0.41px;
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.icon,
@@ -1271,37 +1270,22 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1016px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 2.666rem;
     }
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 926px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 2.333rem;
     }
 }
 
-@media screen and (max-width: 855px) {
-    .page-index .index-page-intro-container .index-page-content-blocks {
-        grid-gap: 1.999rem;
-    }
-}
-
-@media screen and (max-width: 820px) {
-    .page-index .index-page-intro-container .index-page-content-blocks {
-        grid-gap: 1.666rem;
-    }
-}
-
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 891px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 1.111rem;
     }
-}
-
-@media screen and (max-width: 750px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1315,13 +1299,13 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 666px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 1rem;
     }
 }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 600px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-gap: 0.633rem;
         justify-self: stretch;
@@ -1329,7 +1313,7 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 574px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1343,19 +1327,19 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (max-width: 435px) {
+@media screen and (max-width: 471px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         transform: scale(0.9);
     }
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 451px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         transform: scale(0.861);
     }
 }
 
-@media screen and (max-width: 395px) {
+@media screen and (max-width: 431px) {
     .page-index .index-page-intro-container .index-page-content-blocks {
         transform: scale(0.833);
     }
@@ -1484,12 +1468,11 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .index-page-intro-container .index-page-content-blocks .box>.title {
-    padding: 2px 4px 1px 4px;
+    padding: 1px 4px 0 4px;
     color: var(--theme);
-    font-size: .895em;
+    font-size: .95em;
     line-height: 1.38em;
     text-shadow: 1px 1px #01071a;
-    transform: scaleY(1.027);
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-blocks .box>.title {
