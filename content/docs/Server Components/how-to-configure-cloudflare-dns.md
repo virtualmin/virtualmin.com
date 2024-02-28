@@ -13,7 +13,7 @@ Before diving into domain-specific settings, you need to establish the connectio
 
 1. Navigate to **Addresses and Networking** ⇾ **Cloud DNS Providers**.
 2. Here, you’ll find a list of supported cloud DNS providers. Select Cloudflare and configure your account details to allow Virtualmin to interact with your Cloudflare account.
-3. Upon selecting Cloudflare, you’ll be prompted to enter authentication details such as your Cloudflare account email and API key or token. For details on how to generate an API key or token, refer to relevant [Cloudflare's documentation](https://support.cloudflare.com/hc/en-us/articles/200167836-Managing-API-Tokens-and-Keys).
+3. Upon selecting Cloudflare, you’ll be prompted to enter authentication details such as your Cloudflare account **Email and API key** or **API token**. For the API token to be functional, it must be configured with at least the minimum required permissions, which include _read_ access to _Account Settings_, and _edit_ access to _Zone:Zone_ and _Zone:DNS_. For additional details on how to generate an API key or token, refer to relevant [Cloudflare's documentation](https://support.cloudflare.com/hc/en-us/articles/200167836-Managing-API-Tokens-and-Keys).
 
 ### Configuring DNS for existing domains
 
