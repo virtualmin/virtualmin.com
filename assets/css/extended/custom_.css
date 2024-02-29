@@ -1316,7 +1316,7 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (min-height: 830px) {
+@media screen and (min-height: 820px) {
     .page-index .index-page-intro-container-inner-1-wrapper {
         padding-top: calc(var(--gap) * 3);
     }
