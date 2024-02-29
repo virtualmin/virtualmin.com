@@ -1316,9 +1316,9 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
-@media screen and (min-height: 820px) {
+@media screen and (min-height: 810px) {
     .page-index .index-page-intro-container-inner-1-wrapper {
-        padding-top: calc(var(--gap) * 3);
+        padding-top: calc(var(--gap) * 2.633);
     }
 }
 
