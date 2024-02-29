@@ -1,59 +1,37 @@
 {{ if eq .RelPermalink "/" }}
 <section class="index-page-intro-container">
-    <span class="index-page-content-shooting-star"></span> 
-    <span class="index-page-content-logo">
-        <img aria-label="Light palette-compatible Virtualmin logo" alt="" class="index-page-content-logo-light" src="/header-elements-logo.svg">
-        <img aria-label="Dark palette-compatible Virtualmin logo" alt="" class="index-page-content-logo-dark" src="/header-elements-logo-dark.svg">
-    </span> 
-    <span class="index-page-content-slogan">
-        A haven of efficiency and control<br>&nbsp; for virtual server management
-    </span>
-    <span class="index-page-content-button">
-        <a href="/download/" class="btn btn-danger btn-rounded">
-            <i class="wm wm-fw wm-download"></i>&nbsp;
-            Try Virtualmin
-        </a>
-    </span>
-    <span class="index-page-content-cover"></span>
-    <span class="index-page-content-elements-cover"></span>
-    <span class="index-page-content-bg-cover"></span>
-    <span class="index-page-content-bg"></span>
-    <span class="index-page-content-blocks">
-        <span class="box">
-            <span class="icon">
-                <span class="wm wm-fw wm-clock"></span>
-            </span>
-            <span class="title">
-                Maximize efficiency with an open-source web hosting control panel that saves you time and money.
-            </span>
-        </span>
-        <span class="box">
-            <span class="icon">
-                <span class="wm wm-fw wm-smile-beam"></span>
-            </span>
-            <span class="title">
-                Full server control in your hands. Perfect for web developers, IT professionals and hosting providers.
-            </span>
-        </span>
-        <span class="box">
-            <span class="icon">
-                <span class="wm wm-fw wm-update
-                "></span>
-            </span>
-            <span class="title">
-                Ease server security updates and webapp deployments, from WordPress to Django and many more.
-                
-            </span>
-        </span>
-        <span class="box">
-            <span class="icon">
-                <span class="wm wm-fw wm-linux
-                "></span>
-            </span>
-            <span class="title">
-                Pick from a range of Linux distros, Debian and Ubuntu to Rocky Linux, AlmaLinux and RHEL.
-            </span>
-        </span>
-    </span>
+    <div class="index-page-intro-container-inner">
+        <div class="index-page-intro-container-inner-1">
+            <span class="index-page-content-bg-1"></span>
+            <div class="index-page-intro-container-inner-1-wrapper">
+                <span class="index-page-content-slogan">
+                    A haven of efficiency and control<br>for website management
+                </span>
+                <span class="index-page-content-text">
+                    <h3 class="index-page-content-text-title"><span class="wm wm-fw wm-virtualmin-tick"></span>Efficiency</h3>
+                    <p>Maximize efficiency with an open-source web hosting control panel that saves you time and money.</p>
+                    <h3 class="index-page-content-text-title"><span class="wm wm-fw wm-virtualmin-tick"></span>Control</h3>
+                    <p>Full server control in your hands. Perfect for web developers, IT professionals and hosting providers.</p>
+                    <h3 class="index-page-content-text-title"><span class="wm wm-fw wm-virtualmin-tick"></span>Ease</h3>
+                    <p>Ease server security updates and webapp deployments, from WordPress to Django and many more.</p>
+                    <h3 class="index-page-content-text-title"><span class="wm wm-fw wm-virtualmin-tick"></span>Freedom</h3>
+                    <p>Pick from a range of Linux distros, from Debian and Ubuntu to Rocky Linux, AlmaLinux and RHEL.</p>
+                    <br>
+                </span>
+                <span class="index-page-content-button">
+                    <a href="/download/" class="btn btn-danger btn-rounded">
+                        <i class="wm wm-fw wm-download"></i>&nbsp;
+                        Try Virtualmin
+                    </a>
+                </span>
+                <br>
+            </div>
+        </div>
+        
+        <div class="index-page-intro-container-inner-2">
+            <span class="index-page-content-bg-2-cover"></span>
+            <span class="index-page-content-bg-2"></span>
+        </div>
+    </div>
 </section>
 {{ end }}
