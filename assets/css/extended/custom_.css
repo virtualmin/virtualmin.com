@@ -1214,7 +1214,7 @@ html:not(.page-index) .index-page-intro-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-position: calc(50% + 20px) center;
+    background-position: calc(50% + 15px) center;
     filter: brightness(1)contrast(3)grayscale(0)saturate(1);
 }
 
