@@ -1040,10 +1040,6 @@ html:not(.page-index) .index-page-intro-container {
     place-content: center;
 }
 
-.page-index .dark .index-page-intro-container {
-    background-color: #1b1c1e;
-}
-
 .page-index .index-page-intro-container-inner {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1158,6 +1154,19 @@ html:not(.page-index) .index-page-intro-container {
     z-index: 12;
 }
 
+.page-index .index-page-intro-container .index-page-content-bg-2-cover:before {
+    background-color: transparent;
+    background-size: 60px 60px;
+    background-position: 0 0, 30px 30px;
+    background-image: linear-gradient(21deg, var(--main-bg) 29%, transparent 29%, transparent 66%, var(--main-bg) 66%, var(--main-bg)), linear-gradient(21deg, var(--main-bg) 29%, transparent 29%, transparent 66%, var(--main-bg) 66%, var(--main-bg));
+    z-index: 7;
+    content: " ";
+    position: absolute;
+    height: 100vh;
+    height: 100svh;
+    width: 30px;
+}
+
 .page-index .index-page-intro-container .index-page-content-bg-2-cover {
     position: absolute;
     filter: saturate(2);
@@ -1167,6 +1176,7 @@ html:not(.page-index) .index-page-intro-container {
     width: 50%;
     z-index: 6;
 }
+
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-2-cover {
     background: linear-gradient(180deg, #001644ed 13%, #9a14abb1 42%, #002162f2 85%);
@@ -1178,7 +1188,7 @@ html:not(.page-index) .index-page-intro-container {
     height: 100svh;
     width: 50%;
     z-index: 1;
-    background-image: url('/header-elements-image-web.png'), url('/header-elements-image-web-preload.jpg');
+    background-image: url('/header-elements-image-web.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -1186,23 +1196,30 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-1 {
-    filter: brightness(2.5)contrast(2.5)grayscale(1)saturate(0)opacity(.051)invert(1);
+    filter: brightness(2.5)contrast(2.5)grayscale(1)saturate(0)opacity(.061)invert(1);
 }
 
 .page-index .index-page-intro-container .index-page-content-bg-2 {
     position: absolute;
-    height: 100vh;
-    height: 100svh;
+    height: calc(100vh - 60px);
+    height: calc(100svh - 60px);
     width: 50%;
     z-index: 5;
-    background-image: url('/header-elements-image.jpg'), url('/header-elements-image-preload.png');
+    background-image: url('/header-elements-image.webp'), url('/header-elements-image-preload.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: brightness(1)contrast(2)grayscale(0)saturate(1);
+    background-position: calc(50% + 15px) bottom;
+    filter: brightness(1)contrast(3)grayscale(0)saturate(1);
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-height: 520px) {
+    .page-index .index-page-intro-container .index-page-content-bg-2 {
+        background-position: calc(50% + 15px) center;
+    }
+}
+
+@media screen and (max-width: 1199.00px) {
     .page-index .index-page-intro-container-inner {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
@@ -1388,20 +1405,23 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .page-index .index-page-intro-separator-block {
     height: 180px;
     box-sizing: border-box;
-    background-color: #edededed;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     margin-top: 3.333em;
     margin-bottom: 2.666em;
 }
 
 .page-index .dark .index-page-intro-block-testimony {
     background-color: unset;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
 }
 
 .page-index .index-page-intro-block-testimony::after {
     background-image: url('/section-elements-testimony.webp');
     background-repeat: repeat-y;
     background-size: 100%;
-    background-position: 0 15%;
+    background-position: 0 96%;
     filter: grayscale(1)brightness(1)contrast(2)opacity(.1);
     height: 100%;
     width: 100%;
@@ -1432,6 +1452,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     position: absolute;
     z-index: 2;
     content: " ";
+    transform: scaleY(0.992);
 }
 
 .page-index .index-page-intro-block-testimony-text {
@@ -1526,7 +1547,6 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
         transform: scale(1);
     }
 }
-
 
 .page-index .dark .index-page-intro-block-download .index-page-intro-block-testimony-text>.wm {
     color: #ff3d79;
