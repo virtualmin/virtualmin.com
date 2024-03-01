@@ -1209,13 +1209,13 @@ html:not(.page-index) .index-page-intro-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-position: calc(50% + 15px) bottom;
+    background-position: calc(50% + 20px) bottom;
     filter: brightness(1)contrast(3)grayscale(0)saturate(1);
 }
 
 @media screen and (max-height: 520px) {
     .page-index .index-page-intro-container .index-page-content-bg-2 {
-        background-position: calc(50% + 15px) center;
+        background-position: calc(50% + 20px) center;
     }
 }
 
