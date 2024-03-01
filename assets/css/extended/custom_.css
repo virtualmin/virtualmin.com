@@ -987,6 +987,12 @@ html:not(.page-index) .index-page-intro-container {
     width: 100%;
 }
 
+@media screen and (min-width: 1200px) {
+    .page-index>body>header:not(.header-sticky) .nav {
+        max-width: calc(100% - var(--gap) * 2);
+    }
+}
+
 .page-index>body>header:not(.header-sticky) .menu-item--singin .btn {
     background-color: transparent;
     border: 1px solid var(--primary) !important;
@@ -1099,7 +1105,6 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 .page-index .index-page-content-button {
-    cursor: pointer;
     margin-top: calc(var(--gap) * 2);
     margin-bottom: calc(var(--gap) * 2);
     z-index: 13 !important;
