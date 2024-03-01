@@ -1210,7 +1210,7 @@ html:not(.page-index) .index-page-intro-container {
     height: calc(100svh - 60px);
     width: 50%;
     z-index: 5;
-    background-image: url('/header-elements-image.webp'), url('/header-elements-image-preload.png');
+    background-image: url('/header-elements-image.jpg'), url('/header-elements-image-preload.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
