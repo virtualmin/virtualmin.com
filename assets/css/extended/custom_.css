@@ -1098,9 +1098,20 @@ html:not(.page-index) .index-page-intro-container {
     }
 }
 
+.page-index .index-page-content-slogan,
+.page-index .index-page-content-text,
+.page-index .index-page-content-text h3 {
+    color: var(--content-strong);
+}
+
+.page-index .dark .index-page-content-slogan,
+.page-index .dark .index-page-content-text,
+.page-index .dark .index-page-content-text h3 {
+    color: var(--primary);
+}
+
 .page-index .index-page-content-slogan {
     font-size: 1.6rem;
-    color: var(--primary);
     display: flex;
     line-height: 1.211;
     text-shadow: none;
