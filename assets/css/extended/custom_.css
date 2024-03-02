@@ -988,7 +988,7 @@ html:not(.page-index) .index-page-intro-container {
         position: absolute;
         width: 100%;
     }
-    
+
     .page-index>body>header:not(.header-sticky) .nav {
         max-width: calc(100% - var(--gap) * 2);
     }
@@ -1030,6 +1030,7 @@ html:not(.page-index) .index-page-intro-container {
         box-shadow: none;
     }
 }
+
 /* Display only on decently large screens. Start. */
 
 .page-index .index-page-intro-container {
@@ -1232,36 +1233,45 @@ html:not(.page-index) .index-page-intro-container {
 
 /* Scaling. Start. */
 @media screen and (min-width: 1680px) and (min-height: 900px) {
+
     .page-index .index-page-content-slogan,
     .page-index .index-page-content-text,
     .page-index .index-page-content-button {
         transform: scale(1.2);
     }
+
     .page-index .index-page-content-text {
         padding-top: calc(var(--gap) * 1);
         padding-left: calc(var(--gap) * 4);
     }
+
     .page-index .index-page-content-button {
         margin-top: calc(var(--gap) * 3);
     }
 }
+
 @media screen and (min-width: 2048px) and (min-height: 1152px) {
+
     .page-index .index-page-content-slogan,
     .page-index .index-page-content-text,
     .page-index .index-page-content-button {
         transform: scale(1.4);
     }
+
     .page-index .index-page-content-text {
         padding-top: calc(var(--gap) * 3);
         padding-left: calc(var(--gap) * 6);
     }
+
     .page-index .index-page-content-text p {
         max-width: 78%;
     }
+
     .page-index .index-page-content-button {
         margin-top: calc(var(--gap) * 6);
     }
 }
+
 /* Scaling. End. */
 
 /* Screen specific adjustments. Start. */
@@ -1269,20 +1279,25 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-content-text {
         padding-left: calc(var(--gap) * 1.5);
     }
+
     .page-index .index-page-content-text p {
         max-width: 92%;
     }
 }
+
 @media screen and (min-height: 800px) and (max-height: 899.98px) {
     .page-index .index-page-intro-container-inner-1-wrapper {
         padding-top: calc(var(--gap) * 1.5);
     }
+
     .page-index .index-page-content-slogan {
         margin-bottom: calc(var(--gap) * 2.5);
     }
+
     .page-index .index-page-content-text {
         padding-top: calc(var(--gap) / 2);
     }
+
     .page-index .index-page-content-button {
         margin-top: calc(var(--gap) * 1);
     }
@@ -1292,20 +1307,25 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-content-text {
         padding-left: calc(var(--gap) * 1);
     }
+
     .page-index .index-page-content-text p {
         max-width: 94%;
     }
 }
+
 @media screen and (min-height: 720px) and (max-height: 799.98px) {
     .page-index .index-page-intro-container-inner-1-wrapper {
         padding-top: calc(var(--gap) / 1);
     }
+
     .page-index .index-page-content-slogan {
         margin-bottom: calc(var(--gap) * 2);
     }
+
     .page-index .index-page-content-text {
         padding-top: calc(var(--gap) / 4);
     }
+
     .page-index .index-page-content-button {
         margin-top: calc(var(--gap) / 2);
     }
@@ -1315,10 +1335,12 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-content-text {
         padding-left: calc(var(--gap) / 2);
     }
+
     .page-index .index-page-content-text p {
         max-width: 100%;
     }
 }
+
 /* Screen specific adjustments. End. */
 
 /* Go up button */
