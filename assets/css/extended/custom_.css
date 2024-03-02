@@ -1222,13 +1222,13 @@ html:not(.page-index) .index-page-intro-container {
     height: calc(100svh - 60px);
     width: 50%;
     z-index: 5;
-    background-image: url('/header-elements-image.jpg'), url('/header-elements-image-preload.png');
+    background-image: url('/header-elements-image.webp'), url('/header-elements-image-preload.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     /* background-position: calc(50% - 15px) center; */
-    /* filter: brightness(1)contrast(3)grayscale(0)saturate(1); */
-    filter: brightness(1)contrast(1)grayscale(0)saturate(1.5)hue-rotate(-25deg);
+    filter: brightness(1)contrast(3)grayscale(0)saturate(1);
+    /* filter: brightness(1)contrast(1)grayscale(0)saturate(1.5)hue-rotate(-25deg); */
 }
 
 /* Scaling. Start. */
