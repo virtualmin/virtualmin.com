@@ -1245,7 +1245,9 @@ html:not(.page-index) .index-page-intro-container {
 /* Scaling. Start. */
 @media screen and (min-width: 1680px) and (min-height: 900px) {
 
-    .page-index .index-page-content-slogan,
+    .page-index .index-page-content-slogan {
+        transform: scaleX(1.2) scaleY(1.4);
+    }
     .page-index .index-page-content-text,
     .page-index .index-page-content-button {
         transform: scale(1.2);
@@ -1263,7 +1265,9 @@ html:not(.page-index) .index-page-intro-container {
 
 @media screen and (min-width: 2048px) and (min-height: 1152px) {
 
-    .page-index .index-page-content-slogan,
+    .page-index .index-page-content-slogan {
+        transform: scaleX(1.4) scaleY(1.6);
+    }
     .page-index .index-page-content-text,
     .page-index .index-page-content-button {
         transform: scale(1.4);
