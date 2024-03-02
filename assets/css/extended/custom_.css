@@ -1032,7 +1032,6 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 /* Display only on decently large screens. Start. */
-
 .page-index .index-page-intro-container {
     display: grid;
     height: 100vh;
@@ -1204,7 +1203,6 @@ html:not(.page-index) .index-page-intro-container {
     width: 50%;
     z-index: 6;
 }
-
 
 .page-index .dark .index-page-intro-container .index-page-content-bg-2-cover {
     background: linear-gradient(180deg, #001644ed 13%, #9a14abb1 42%, #002162f2 85%);
