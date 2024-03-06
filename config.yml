@@ -1,5 +1,5 @@
-baseURL: https://virtualmin.com/
-# baseURL: https://virtualmin.dev/
+# baseURL: https://virtualmin.com/
+baseURL: https://www.virtualmin.dev/
 languageCode: en-us
 title: Virtualmin — Open Source Web Hosting Control Panel
 theme: PaperMod
@@ -16,13 +16,13 @@ params:
   version: 
     virtualmin: '7.8.2'
 
-  env: production
+  # env: production
 
-  analytics:
-     google:
-       trackingCode:
-         production: 'UA-503706-1'
-         devel: 'G-LT56QHK5DW'
+  # analytics:
+  #    google:
+  #      trackingCode:
+  #        production: 'UA-503706-1'
+  #        devel: 'G-LT56QHK5DW'
 
   title: Virtualmin
   description: "Powerful and flexible web hosting control panel for Linux and BSD systems"
