@@ -1,6 +1,6 @@
 # Redirect old WordPress pages to the new HTML versions
 RewriteRule ^os-support                                                                     /docs/os-support/ [R=301,L]
-RewriteRule ^professional                                                                   /docs/professional/ [R=301,L]
+RewriteRule ^professional                                                                   /docs/professional-features/ [R=301,L]
 RewriteRule ^license-faq                                                                    /docs/faq/#license [R=301,L,NE]
 RewriteRule ^payments-faq                                                                   /docs/faq/#how-do-i-update-payment-information-or-find-my-invoices [R=301,L,NE]
 RewriteRule ^professional                                                                   /docs/professional-features [R=301,L]
