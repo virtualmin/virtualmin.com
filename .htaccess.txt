@@ -1,4 +1,4 @@
-
+# Redirect old WordPress pages to the new HTML versions
 RewriteRule ^os-support                                                                     /docs/os-support/ [R=301,L]
 RewriteRule ^professional                                                                   /docs/professional/ [R=301,L]
 RewriteRule ^license-faq                                                                    /docs/faq/#license [R=301,L,NE]
