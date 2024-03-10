@@ -486,7 +486,7 @@ body.dark .logo>a>svg>g>path {
     }
 }
 
-.main {
+body>.main {
     padding-bottom: calc(24px * 6);
 }
 
