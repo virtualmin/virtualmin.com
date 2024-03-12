@@ -5,16 +5,29 @@
             supportItem = document.querySelector('.menu-item--support'),
             signInItem = document.querySelector('.menu-item--singin'),
             userItem = document.querySelector('.menu-item--user'),
-            avatar_url = localStorage.getItem("virtualmin-menu-item--user--url");
-        if (avatar_url && avatar_url.toString().startsWith('http')) {
+            user__avatar_url = localStorage.getItem("virtualmin-menu-item--user--url"),
+            user__admin = parseInt(localStorage.getItem("virtualmin-menu-item--user--admin")),
+            user__admin_updates = parseInt(localStorage.getItem("virtualmin-menu-item--user--admin-updates")),
+            user__shopping = parseInt(localStorage.getItem("virtualmin-menu-item--user--shoppings")),
+            menuSetStatus = function (menu, auth, admin, adminUpdates) {
+                menu.classList.add(auth ? 'menu-authenticated' : 'menu-unauthenticated');
+                if (admin) {
+                    menu.setAttribute('data-admin', 1);
+                    menu.setAttribute('data-admin-updates', adminUpdates ? 1 : 0);
+                }
+                if (user__shopping) {
+                    menu.setAttribute('data-shoppings', 1);
+                }
+            };
+        if (user__avatar_url && user__avatar_url.toString().startsWith('http')) {
             const userAvatar = userItem.querySelector('a > img');
-            userAvatar.src = avatar_url;
+            userAvatar.src = user__avatar_url;
             userItem.classList.remove('hidden');
-            menu.classList.add('menu-authenticated');
+            menuSetStatus(menu, 1, user__admin, user__admin_updates);
             document.documentElement.setAttribute('data-auth', 1);
         } else {
             signInItem.classList.remove('hidden');
-            menu.classList.add('menu-unauthenticated');
+            menuSetStatus(menu, 0);
             document.documentElement.setAttribute('data-auth', 0);
         }
         // https://cdn.forum.virtualmin.com/user_avatar/forum.virtualmin.com/ilia/144/10185_2.png
@@ -101,7 +114,7 @@
                 if (!$this.scrollToAuto && $this.scrollToAuto !== null) {
                     $this.scrollTimeout = setTimeout(function () {
                         // Trigger only within hero header
-                        if (window.scrollY < window.innerHeight / 2 ) {
+                        if (window.scrollY < window.innerHeight / 2) {
                             // If dropdown is opened adjust its position (up or down)
                             if (document.querySelector(menu_active_class_str)) {
                                 window.dispatchEvent(new Event("resize")); // reposition dropdown
@@ -115,7 +128,7 @@
                                         behavior: 'smooth',
                                     });
                                     $this.scrollToAuto = true;
-                                } 
+                                }
                                 else if ($this.lastScroll === 2) {
                                     $this.lastScrollTopPosOffset = parseInt(hero.clientHeight),
                                         $this.lastScrollTopPosCalc = parseInt(

@@ -18,8 +18,8 @@ html {
 }
 
 #menu a {
-    padding-left: 0.433em;
-    padding-right: 0.433em;
+    padding-left: 0.443em;
+    padding-right: 0.443em;
 }
 
 .toc summary,
@@ -218,6 +218,7 @@ body.dark .logo>a>svg>g>path {
     }
 }
 
+[data-auth="0"] #menu.menu-unauthenticated .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button[data-auth-req="1"],
 [data-auth="0"].page-support .post-content #premium-support~p>a:not([href$="/signin"]) {
     display: none;
 }
@@ -345,6 +346,10 @@ body.dark .logo>a>svg>g>path {
         display: contents;
     }
 
+    /* Don't display My Account twice in dropdown */
+    #menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button.btn--user-account {
+        display: none;
+    }
 
     /* My Account button tweaks */
     [data-product="virtualmin"]+nav>#menu.menu-authenticated .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container:first-child>.hmenu-links>li.hmenu-link--user>div {
@@ -463,6 +468,88 @@ body.dark .logo>a>svg>g>path {
 
 #menu>li>a[href*="/account/signin/"]>span>span+span {
     margin-left: -0.66em;
+}
+
+#menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons {
+    cursor: default;
+}
+
+#menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button.float-left {
+    float: left;
+}
+
+#menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button>.wm {
+    font-size: 18px;
+}
+
+#menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button>.wm.wm-user-circle-auth {
+    transform: scale(1.033, 1);
+}
+
+#menu .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button>.wm.wm-shopping-basket {
+    transform: scale(1, 1.05);
+    font-size: 17px;
+    margin-bottom: 2px;
+}
+
+#menu:not([data-admin="1"]) .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button[data-auth-admin="1"] {
+    display: none;
+}
+
+#menu[data-admin="1"] .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button.float-group {
+    margin-left: 5%;
+}
+
+/* Dropdown menu notification */
+#menu[data-shoppings="1"] .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button>.wm.wm.wm-shopping-basket::after,
+#menu[data-admin="1"][data-admin-updates="1"] .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button>.wm.wm-refresh::after {
+    content: "";
+    position: absolute;
+    margin-left: 1px;
+    margin-top: -6px;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: crimson;
+    pointer-events: none;
+}
+
+#menu[data-shoppings="1"] .hmenu-panel .hmenu-drop-down .hmenu-body-contents>.hmenu-container .hmenu-links.hmenu-buttons button>.wm.wm.wm-shopping-basket::after {
+    margin-left: 0;
+    margin-top: -5px;
+}
+
+#menu[data-shoppings="1"] .menu-item--dropdown-menu::after,
+#menu[data-admin="1"][data-admin-updates="1"] .menu-item--dropdown-menu::after {
+    content: "";
+    position: absolute;
+    top: 14px;
+    margin-left: 22px;
+    width: 19px;
+    height: 18px;
+    border-radius: 100%;
+    background-color: crimson;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#menu[data-shoppings="1"] .menu-item--dropdown-menu::before,
+#menu[data-admin="1"][data-admin-updates="1"] .menu-item--dropdown-menu::before {
+    content: "";
+    position: absolute;
+    content: '\f046';
+    color: #fffe;
+    font-family: WebminCom;
+    font-size: 13px;
+    top: -6px;
+    margin-left: 26px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+#menu[data-shoppings="1"] .menu-item--dropdown-menu::before {
+    content: '\f048' !important;
+    margin-left: 24.5px !important;
 }
 
 /* User icon */
@@ -1131,6 +1218,7 @@ html:not(.page-index) .index-page-intro-container {
         top: 1%;
         right: 1%;
     }
+
     100% {
         opacity: 1;
         top: 7.5%;
@@ -1144,6 +1232,7 @@ html:not(.page-index) .index-page-intro-container {
         top: 1%;
         right: 30%;
     }
+
     100% {
         opacity: 1;
         top: 7.5%;
@@ -1298,6 +1387,7 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-content-slogan {
         transform: scaleX(1.2) scaleY(1.4);
     }
+
     .page-index .index-page-content-text,
     .page-index .index-page-content-button {
         transform: scale(1.2);
@@ -1318,6 +1408,7 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-content-slogan {
         transform: scaleX(1.4) scaleY(1.6);
     }
+
     .page-index .index-page-content-text,
     .page-index .index-page-content-button {
         transform: scale(1.4);

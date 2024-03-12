@@ -5,18 +5,21 @@
         <div class="hmenu-container">
           <ul class="hmenu-links">
             <li class="hmenu-link--signin">
-              <div><a href="/account/signin/" class="btn btn-danger"><span
-                    class="wm wm-user-circle"></span>&nbsp;&nbsp;Sign In</a></div>
+              <div><a href="/account/signin/" class="btn btn-danger">
+                <span class="wm wm-user-circle"></span>&nbsp;&nbsp;Sign In</a></div>
             </li>
             <li class="hmenu-link--user">
-              <div><a href="/account/signin/" class="btn btn-primary"><span
-                    class="wm wm-user-circle"></span>&nbsp;&nbsp;My Account</a></div>
+              <div><a href="/account/" class="btn btn-primary">
+                  <span class="wm wm-user-circle-auth"></span>&nbsp;&nbsp;My Account</a></div>
             </li>
             <li class="hmenu-link--download"><a href="/download/"><span>Download</span></a></li>
             <li class="hmenu-link--shop"><a href="/shop/"><span>Shop</span></a></li>
             <li class="hmenu-link--docs"><a href="/docs/"><span>Documentation</span></a></li>
-            <li class="hmenu-link--forum"><a target='_self'
-                href="https://forum.virtualmin.com/"><span>Forum</span></a></li>
+            <li class="hmenu-link--forum">
+              <a target='_self' href="https://forum.virtualmin.com/">
+                <span>Forum</span>
+              </a>
+            </li>
             <li class="hmenu-link--search"><a href="/search/"><span>Search</span></a></li>
           </ul>
           <div class="clearfix"></div>
@@ -42,7 +45,23 @@
         <hr>
         <div class="hmenu-container">
           <ul class="hmenu-links hmenu-buttons">
-            <li class="hmenu-link-button"></li>
+            <li class="hmenu-link-button">
+              <button title="My Account" class="float-left btn--user-account" data-auth-req="1"
+                onclick="location.href='/account/'">
+                <span class="wm wm-user-circle-auth"></span>
+              </button>
+              <button title="Shopping Cart" class="float-left" data-auth-req="1" onclick="location.href='/cart/'">
+                <span class="wm wm-shopping-basket"></span>
+              </button>
+              <button title="Admin Dashboard" class="float-left float-group" data-auth-admin="1" data-auth-req="1"
+                onclick="location.href='/wp-admin/'">
+                <span class="wm wm-dashboard"></span>
+              </button>
+              <button title="Admin Updates" class="float-left" data-auth-admin="1" data-auth-req="1"
+                onclick="location.href='/wp-admin/update-core.php'">
+                <span class="wm wm-refresh"></span>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
