@@ -1565,24 +1565,22 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .page-index .index-page-intro-separator-block {
     height: 180px;
     box-sizing: border-box;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
     margin-top: 3.333em;
     margin-bottom: 2.666em;
+    background-color: #0001;
 }
 
 .page-index .dark .index-page-intro-block-testimony {
-    background-color: unset;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
+    background-color: #0006;
 }
 
 .page-index .index-page-intro-block-testimony::after {
-    background-image: url('/section-elements-separator.webp');
+    background-image: url('/header-elements-stars.svg');
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: bottom;
-    filter: grayscale(1)brightness(1)contrast(2)opacity(.1);
+    background-position: top;
+    opacity: 1;
+    filter: contrast(1) brightness(0.5);
     height: 100%;
     width: 100%;
     display: flex;
@@ -1593,26 +1591,12 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 }
 
 .page-index .index-page-intro-block-testimony.index-page-intro-block-download::after {
-    background-position: top;
+    background-position: bottom;
 }
 
 .page-index .dark .index-page-intro-block-testimony::after {
-    filter: grayscale(1)brightness(0.75)contrast(5)opacity(0.33)invert(1);
-}
-
-.page-index .dark .index-page-intro-block-testimony::before {
-    background-repeat: repeat-y;
-    background-size: cover;
-    background-position: 0 90%;
-    background: linear-gradient(180deg, #00000051 0%, #00000077 50%, #00000051 100%);
-    text-align: center;
-    display: flex;
-    height: inherit;
-    width: inherit;
-    position: absolute;
-    z-index: 2;
-    content: " ";
-    /* transform: scaleY(0.982); */
+    opacity: 0.75;
+    filter: none;
 }
 
 .page-index .index-page-intro-block-testimony-text {
