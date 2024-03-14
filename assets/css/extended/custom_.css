@@ -6,11 +6,15 @@
     --nav-width: 1140px;
 
     --card-text: #ffffffdd;
+
+    --block-bg: #0001;
 }
 
 .dark {
     --header: #0c0c0cec;
     --card-text: #ffffffee;
+
+    --block-bg: #0006;
 }
 
 html {
@@ -1567,11 +1571,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     box-sizing: border-box;
     margin-top: 3.333em;
     margin-bottom: 2.666em;
-    background-color: #0001;
-}
-
-.page-index .dark .index-page-intro-block-testimony {
-    background-color: #0006;
+    background-color: var(--block-bg);
 }
 
 .page-index .index-page-intro-block-testimony::after {
