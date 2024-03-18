@@ -1,7 +1,8 @@
 <script>
     (function () {
         // Define authentication state
-        const menu = document.querySelector('#menu'),
+        const permalink = '{{ .RelPermalink }}',
+            menu = document.querySelector('#menu'),
             supportItem = document.querySelector('.menu-item--support'),
             signInItem = document.querySelector('.menu-item--singin'),
             userItem = document.querySelector('.menu-item--user'),
@@ -33,6 +34,18 @@
         // https://cdn.forum.virtualmin.com/user_avatar/forum.virtualmin.com/ilia/144/10185_2.png
         if (signInItem && signInItem.classList.contains('hidden')) {
             supportItem.classList.remove('hidden');
+        }
+        // For maintenance page in the shop (not the actual page)
+        if (permalink && permalink.includes('/maintenance/')) {
+            document.querySelector('nav .menu-item--shop > a > span').classList.add('active');
+            const isAdmin = parseInt(localStorage.getItem("virtualmin-menu-item--user--admin"));
+            if (isAdmin) {
+                document.documentElement.setAttribute('data-admin', true);
+            } else {
+                window.addEventListener('load', function () {
+                    document.querySelector('.main .__maintenance__.alert>.alert.__admin__').remove();
+                });
+            }
         }
     })();
 </script>
