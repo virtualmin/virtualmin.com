@@ -1819,7 +1819,31 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 html:not([data-admin="true"]) .main .__maintenance__.alert>.alert.__admin__ {
     display: none;
 }
-
 /*
  * MAINTENANCE PAGE. End. 
  */
+ 
+/*
+ * MAINTENANCE PAGE. Start. 
+ */
+ .not-found {
+    font-size: 80px;
+}
+
+.not-found:before {
+    content: "THAT’S AN ERROR";
+    font-size: 18px;
+    margin-top: -100px;
+    position:absolute;
+}
+
+.not-found:after {
+    content: "PAGE NOT FOUND";
+    font-size: 18px;
+    margin-top: 100px;
+    position:absolute;
+}
+/*
+ * MAINTENANCE PAGE. End. 
+ */
+ 
