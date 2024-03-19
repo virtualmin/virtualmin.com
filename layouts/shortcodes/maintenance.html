@@ -10,9 +10,10 @@
       <div class="__admin__ alert alert-warning">
         <i class="wm wm-fw wm-sm wm-users-cog"></i> <strong>Admin Note</strong><br>
         <p>
-          Normally, the shop leaves native maintenance mode automatically after updates.
-          If it doesn't, simply remove the <tt>.maintenance</tt> file from the
-          website's root. For manually activated maintenance, switch it off in the admin panel.
+          Normally, the shop exits maintenance mode on its own after updates. If it stays in
+          maintenance, something has really gone wrong. To forcefully exit maintenance mode,
+          run <tt>wp maintenance-mode deactivate</tt> or delete the <tt>.maintenance</tt> file
+          from the root directory.
         </p>
       </div>
 </div>
