@@ -1826,7 +1826,7 @@ html:not([data-admin="true"]) .main .__maintenance__.alert>.alert.__admin__ {
  */
  
 /*
- * MAINTENANCE PAGE. Start. 
+ * 404 ERROR PAGE. Start. 
  */
  .not-found {
     font-size: 80px;
@@ -1846,6 +1846,6 @@ html:not([data-admin="true"]) .main .__maintenance__.alert>.alert.__admin__ {
     position:absolute;
 }
 /*
- * MAINTENANCE PAGE. End. 
+ * 404 ERROR PAGE. End. 
  */
- 
+
