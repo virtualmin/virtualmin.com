@@ -1792,11 +1792,19 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     z-index: -1;
 }
 
+.main .__maintenance__.__error__.alert::before {
+    background-image: none;
+}
+
 .main .__maintenance__.alert>i,
 .main .__maintenance__.alert>strong {
     padding-top: calc(var(--gap) / 2);
     padding-bottom: var(--gap);
     font-size: 115%;
+}
+
+.main .__maintenance__.alert>strong>tt {
+    font-size: 87%;
 }
 
 .main .__maintenance__.alert>strong {
