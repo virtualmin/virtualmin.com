@@ -36,15 +36,17 @@
             supportItem.classList.remove('hidden');
         }
         // For maintenance page in the shop (not the actual page)
-        if (permalink && permalink.includes('/maintenance/')) {
+        if (permalink &&
+            (permalink.includes('/maintenance/') || permalink.includes('/error/'))) {
             document.querySelector('nav .menu-item--shop > a > span').classList.add('active');
-            const isAdmin = parseInt(localStorage.getItem("virtualmin-menu-item--user--admin"));
-            if (isAdmin) {
-                document.documentElement.setAttribute('data-admin', true);
-            } else {
-                window.addEventListener('load', function () {
-                    document.querySelector('.main .__maintenance__.alert>.alert.__admin__').remove();
-                });
+            if (permalink.includes('/maintenance/')) {
+                if (parseInt(localStorage.getItem("virtualmin-menu-item--user--admin"))) {
+                    document.documentElement.setAttribute('data-admin', true);
+                } else {
+                    window.addEventListener('load', function () {
+                        document.querySelector('.main .__maintenance__.alert>.alert.__admin__').remove();
+                    });
+                }
             }
         }
     })();
