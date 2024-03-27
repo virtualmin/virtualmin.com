@@ -1756,7 +1756,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 }
 
 /*
- * MAINTENANCE PAGE. Start. 
+ * MAINTENANCE/FATAL-ERROR PAGE
  */
 .main:has(.__maintenance__.alert) {
     display: flex;
@@ -1803,6 +1803,11 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     font-size: 115%;
 }
 
+.main .__maintenance__.__error__.alert>i,
+.main .__maintenance__.__error__.alert>strong {
+    font-size: 105%;
+}
+
 .main .__maintenance__.alert>strong>tt {
     font-size: 87%;
 }
@@ -1830,7 +1835,7 @@ html:not([data-admin="true"]) .main .__maintenance__.alert>.alert.__admin__ {
     display: none;
 }
 /*
- * MAINTENANCE PAGE. End. 
+ * END MAINTENANCE/FATAL-ERROR PAGE
  */
  
 /*
