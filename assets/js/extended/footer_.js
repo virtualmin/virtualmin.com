@@ -5,7 +5,8 @@ document.addEventListener("keydown", function (e) {
     if (
         document.activeElement.tagName === "INPUT" ||
         document.activeElement.tagName === "TEXTAREA" ||
-        document.activeElement.contentEditable === "true"
+        document.activeElement.contentEditable === "true" ||
+        e.ctrlKey || e.metaKey
     ) {
         return;
     }
