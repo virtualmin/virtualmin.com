@@ -6,25 +6,14 @@
             supportItem = document.querySelector('.menu-item--support'),
             signInItem = document.querySelector('.menu-item--singin'),
             userItem = document.querySelector('.menu-item--user'),
-            user__avatar_param = "virtualmin-menu-item--user--url",
-            user__admin_param = "virtualmin-menu-item--user--admin",
-            user__admin_updates_param = "virtualmin-menu-item--user--admin-updates",
-            user__shopping_param = "virtualmin-menu-item--user--shoppings",
-            user__avatar_url = localStorage.getItem(user__avatar_param),
-            user__admin = parseInt(localStorage.getItem(user__admin_param)),
-            user__admin_updates = parseInt(localStorage.getItem(user__admin_updates_param)),
-            user__shopping = parseInt(localStorage.getItem(user__shopping_param)),
-            menuSetStatus = function (menu, auth, admin, adminUpdates) {
-                menu.classList.add(auth ? 'menu-authenticated' : 'menu-unauthenticated');
-                if (admin) {
-                    menu.setAttribute('data-admin', 1);
-                    menu.setAttribute('data-admin-updates', adminUpdates ? 1 : 0);
-                }
-                if (user__shopping) {
-                    menu.setAttribute('data-shoppings', 1);
-                }
-            };
+            user_param_prefix = "virtualmin-menu-item--user-",
+            user__avatar_param = `${user_param_prefix}-url`,
+            user__admin_param = `${user_param_prefix}-admin`,
+            user__admin_updates_param = `${user_param_prefix}-admin-updates`,
+            user__shopping_param = `${user_param_prefix}-shoppings`;
+
         // Try to get the user data from the URL
+        // if passed in redirect from the shop
         const url = new URL(window.location.href),
             params = url.searchParams;
         if (params.has(user__avatar_param)) {
@@ -43,6 +32,20 @@
             localStorage.setItem(user__shopping_param,
                 parseInt(params.get(user__shopping_param)));
         }
+        const user__avatar_url = localStorage.getItem(user__avatar_param),
+            user__admin = parseInt(localStorage.getItem(user__admin_param)),
+            user__admin_updates = parseInt(localStorage.getItem(user__admin_updates_param)),
+            user__shopping = parseInt(localStorage.getItem(user__shopping_param)),
+            menuSetStatus = function (menu, auth, admin, adminUpdates) {
+                menu.classList.add(auth ? 'menu-authenticated' : 'menu-unauthenticated');
+                if (admin) {
+                    menu.setAttribute('data-admin', 1);
+                    menu.setAttribute('data-admin-updates', adminUpdates ? 1 : 0);
+                }
+                if (user__shopping) {
+                    menu.setAttribute('data-shoppings', 1);
+                }
+            };
         // Set the user menu items
         if (user__avatar_url && user__avatar_url.toString().startsWith('http')) {
             const userAvatar = userItem.querySelector('a > img');
