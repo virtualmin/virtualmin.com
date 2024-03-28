@@ -6,10 +6,14 @@
             supportItem = document.querySelector('.menu-item--support'),
             signInItem = document.querySelector('.menu-item--singin'),
             userItem = document.querySelector('.menu-item--user'),
-            user__avatar_url = localStorage.getItem("virtualmin-menu-item--user--url"),
-            user__admin = parseInt(localStorage.getItem("virtualmin-menu-item--user--admin")),
-            user__admin_updates = parseInt(localStorage.getItem("virtualmin-menu-item--user--admin-updates")),
-            user__shopping = parseInt(localStorage.getItem("virtualmin-menu-item--user--shoppings")),
+            user__avatar_param = "virtualmin-menu-item--user--url",
+            user__admin_param = "virtualmin-menu-item--user--admin",
+            user__admin_updates_param = "virtualmin-menu-item--user--admin-updates",
+            user__shopping_param = "virtualmin-menu-item--user--shoppings",
+            user__avatar_url = localStorage.getItem(user__avatar_param),
+            user__admin = parseInt(localStorage.getItem(user__admin_param)),
+            user__admin_updates = parseInt(localStorage.getItem(user__admin_updates_param)),
+            user__shopping = parseInt(localStorage.getItem(user__shopping_param)),
             menuSetStatus = function (menu, auth, admin, adminUpdates) {
                 menu.classList.add(auth ? 'menu-authenticated' : 'menu-unauthenticated');
                 if (admin) {
@@ -20,6 +24,26 @@
                     menu.setAttribute('data-shoppings', 1);
                 }
             };
+        // Try to get the user data from the URL
+        const url = new URL(window.location.href),
+            params = url.searchParams;
+        if (params.has(user__avatar_param)) {
+            localStorage.setItem(user__avatar_param,
+                decodeURIComponent(params.get(user__avatar_param)));
+        }
+        if (params.has(user__admin_param)) {
+            localStorage.setItem(user__admin_param,
+                parseInt(params.get(user__admin_param)));
+        }
+        if (params.has(user__admin_updates_param)) {
+            localStorage.setItem(user__admin_updates_param,
+                parseInt(params.get(user__admin_updates_param)));
+        }
+        if (params.has(user__shopping_param)) {
+            localStorage.setItem(user__shopping_param,
+                parseInt(params.get(user__shopping_param)));
+        }
+        // Set the user menu items
         if (user__avatar_url && user__avatar_url.toString().startsWith('http')) {
             const userAvatar = userItem.querySelector('a > img');
             userAvatar.src = user__avatar_url;
@@ -31,7 +55,6 @@
             menuSetStatus(menu, 0);
             document.documentElement.setAttribute('data-auth', 0);
         }
-        // https://cdn.forum.virtualmin.com/user_avatar/forum.virtualmin.com/ilia/144/10185_2.png
         if (signInItem && signInItem.classList.contains('hidden')) {
             supportItem.classList.remove('hidden');
         }
