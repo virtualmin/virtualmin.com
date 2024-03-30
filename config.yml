@@ -1,5 +1,4 @@
-# baseURL: https://virtualmin.com/
-baseURL: https://www.virtualmin.dev/
+baseURL: https://virtualmin.com/
 languageCode: en-us
 title: Virtualmin — Open Source Web Hosting Control Panel
 theme: PaperMod
@@ -13,10 +12,7 @@ enableRobotsTXT: true
 #robotsNoIndex: true
 
 params:
-  version: 
-    virtualmin: '7.8.2'
-
-  # env: production
+  env: production
 
   # analytics:
   #    google:
@@ -40,17 +36,6 @@ params:
     URL: "https://github.com/virtualmin/virtualmin.com/tree/master/content"
     Text: "Suggest Changes"
     appendFilePath: true
-
-  # home-info mode
-  homeInfoParams:
-    Title: "What is Virtualmin?"
-    content: >
-        Virtualmin is a powerful and flexible web hosting control panel for Linux and BSD systems. Available in an open-source community-supported version, and a more feature-filled version with premium support, Virtualmin is the cost-effective and comprehensive solution to virtual web hosting management. And, Virtualmin is the most popular and most comprehensive open-source control panel with hundreds of thousands installations worldwide.
-  
-  # we always need the container
-  socialIcons:
-    - name: github
-      url: "https://github.com/virtualmin/virtualmin-gpl"
 
   # we need to respect user OS preferences in terms of chosen color palette
   defaultTheme: auto
