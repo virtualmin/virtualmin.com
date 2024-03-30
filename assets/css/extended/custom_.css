@@ -1787,7 +1787,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 75% 50%;
-    filter: grayscale(0)opacity(.2)brightness(.75) hue-rotate(190deg);
+    filter: grayscale(0)opacity(.2)brightness(.75)hue-rotate(190deg);
     transform: scale(0.9);
     z-index: -1;
 }
@@ -1815,14 +1815,15 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .main .__maintenance__.alert>strong {
     vertical-align: 6%;
 }
+
 /*
  * END MAINTENANCE/FATAL-ERROR PAGE
  */
- 
+
 /*
  * 404 ERROR PAGE. Start. 
  */
- .not-found {
+.not-found {
     font-size: 80px;
 }
 
@@ -1830,16 +1831,16 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     content: "THAT’S AN ERROR";
     font-size: 18px;
     margin-top: -100px;
-    position:absolute;
+    position: absolute;
 }
 
 .not-found:after {
     content: "PAGE NOT FOUND";
     font-size: 18px;
     margin-top: 100px;
-    position:absolute;
+    position: absolute;
 }
+
 /*
  * 404 ERROR PAGE. End. 
  */
-
