@@ -1815,25 +1815,6 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .main .__maintenance__.alert>strong {
     vertical-align: 6%;
 }
-
-.main .__maintenance__.alert>.alert {
-    margin-bottom: calc(1em / 2);
-    z-index: 1;
-    color: #5c4400;
-    background-color: #e09c0029;
-    border-color: #aa8c3154;
-}
-.dark .main .__maintenance__.alert>.alert {
-    background-color: #e09c0015;
-    color: #bc9f0a;
-}
-.main .__maintenance__.alert>.alert > p:last-child {
-    margin-bottom: 0;
-}
-
-html:not([data-admin="true"]) .main .__maintenance__.alert>.alert.__admin__ {
-    display: none;
-}
 /*
  * END MAINTENANCE/FATAL-ERROR PAGE
  */
