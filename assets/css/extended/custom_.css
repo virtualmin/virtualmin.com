@@ -1787,7 +1787,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 75% 50%;
-    filter: grayscale(1) opacity(.2) brightness(0.75);
+    filter: grayscale(0)opacity(.2)brightness(.75) hue-rotate(190deg);
     transform: scale(0.9);
     z-index: -1;
 }
