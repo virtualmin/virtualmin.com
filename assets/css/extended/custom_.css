@@ -1816,7 +1816,8 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     vertical-align: 6%;
 }
 
-.main .__error__.alert.no-debug>strong>span {
+.main .__error__.alert.no-debug>strong>span,
+.main .__error__.alert.no-debug>strong>tt {
     display: none;
 }
 
