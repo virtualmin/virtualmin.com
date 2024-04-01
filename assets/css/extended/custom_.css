@@ -8,7 +8,7 @@
     --card-text: #ffffffdd;
     --card-text-bright: #ffffff;
 
-    --block-bg: #0001;
+    --block-bg: #0000000a;
 }
 
 .dark {
@@ -1119,6 +1119,7 @@ html:not(.page-index) .index-page-intro-container {
     grid-gap: 1.333rem;
     place-items: center;
     place-content: center;
+    position: relative;
 }
 
 .page-index .index-page-intro-container-inner {
@@ -1134,9 +1135,13 @@ html:not(.page-index) .index-page-intro-container {
     display: grid;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-bg);
     overflow: auto;
     scrollbar-width: none;
+    background: linear-gradient(60deg, #0a279c 0%, #9f16bb 85%);
+}
+
+.page-index .dark .index-page-intro-container-inner-content {
+    background: linear-gradient(60deg, #03357c 0%, #7f0897 85%);
 }
 
 .page-index .index-page-intro-container-inner-content::-webkit-scrollbar {
@@ -1151,25 +1156,52 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .index-page-content-slogan {
     font-size: 1.933rem;
-    color: var(--content-strong);
+    color: var(--card-text);
     display: flex;
     line-height: 1.211;
     text-shadow: none;
     text-align: center;
     font-weight: 300;
-    transform: scaleY(1.2);
+    transform: scaleY(1.15);
     place-content: center;
-    margin-bottom: calc(var(--gap) * 4);
+    text-shadow: 1px 0 #000;
 }
 
-.page-index .dark .index-page-content-slogan {
-    color: var(--primary);
+@media screen and (max-width: 600px) {
+
+    .page-index .index-page-content-slogan {
+        font-size: 1.633rem;
+    }
+
+    .index-page-content-button {
+        transform: scale(0.91);
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    .page-index .index-page-content-slogan {
+        font-size: 1.433rem;
+    }
+
+    .index-page-content-button {
+        transform: scale(0.88);
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .page-index .index-page-content-slogan {
+        font-size: 1.333rem;
+    }
+
+    .index-page-content-button {
+        transform: scale(0.86);
+    }
 }
 
 .page-index .index-page-content-button {
-    margin-top: calc(var(--gap) * 2);
-    margin-bottom: calc(var(--gap) * 2);
-    z-index: 13 !important;
+    margin-top: calc(var(--gap) * 1.666);
     display: flex;
     align-self: end;
     width: 100%;
@@ -1190,6 +1222,101 @@ html:not(.page-index) .index-page-intro-container {
 
 .page-index .index-page-intro-container>* {
     z-index: 12;
+}
+
+.page-index .index-page-intro-container .index-page-content-bg3,
+.page-index .index-page-intro-container .index-page-content-bg2,
+.page-index .index-page-intro-container .index-page-content-bg1 {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: -5%;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+@media screen and (max-height: 600px) {
+
+    .page-index .index-page-intro-container .index-page-content-bg3,
+    .page-index .index-page-intro-container .index-page-content-bg2,
+    .page-index .index-page-intro-container .index-page-content-bg1 {
+        top: -6%;
+    }
+}
+
+@media screen and (max-height: 480px) {
+
+    .page-index .index-page-intro-container .index-page-content-bg3,
+    .page-index .index-page-intro-container .index-page-content-bg2,
+    .page-index .index-page-intro-container .index-page-content-bg1 {
+        top: -8%;
+    }
+}
+
+.page-index .index-page-intro-container .index-page-content-bg3 svg,
+.page-index .index-page-intro-container .index-page-content-bg2 svg,
+.page-index .index-page-intro-container .index-page-content-bg1 svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.page-index .index-page-intro-container .index-page-content-bg3 svg path,
+.page-index .index-page-intro-container .index-page-content-bg2 svg path,
+.page-index .index-page-intro-container .index-page-content-bg1 svg path {
+    fill: #fff3;
+}
+
+.page-index .dark .index-page-intro-container .index-page-content-bg3 svg path,
+.page-index .dark .index-page-intro-container .index-page-content-bg2 svg path,
+.page-index .dark .index-page-intro-container .index-page-content-bg1 svg path {
+    fill: #fff2;
+}
+
+.rotating1 {
+    animation: rotate1 40s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotate1 {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating2 {
+    animation: rotate2 20s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotate2 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.rotating3 {
+    animation: rotate3 40s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes rotate3 {
+    from {
+        transform: rotate(-540deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
 }
 
 /* Go up button */
