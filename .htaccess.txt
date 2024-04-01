@@ -275,3 +275,7 @@ RewriteRule ^documentation/system/template_variables                            
 RewriteRule ^documentation/system/templates                                                /docs/development/template-variables [R=301,L]
 RewriteRule ^documentation/developer/plugins                                               /docs/development/creating-plugins [R=301,L]
 RewriteRule ^documentation/developer/scripts                                               /docs/development/creating-install-scripts [R=301,L]
+
+RewriteCond %{REQUEST_URI} documentation
+RewriteCond %{REQUEST_URI} cloudmin
+RewriteRule ^(.*)$ https://archive.virtualmin.com/$1 [R=302,L]
