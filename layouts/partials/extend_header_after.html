@@ -85,13 +85,6 @@
         const header_sticky_class_str = "header-sticky",
             menu_active_class_str = "#menu > li > a.dropdown-menu > span.active",
             scrollFn = function (evt) {
-
-                // If screen is too small, do not trigger
-                if (!window.matchMedia("(min-width: 1200px)").matches ||
-                    !window.matchMedia("(min-height: 720px)").matches) {
-                    return true;
-                }
-
                 // Define direction of scroll
                 $this.currentScroll = window.scrollY || document.documentElement.scrollTop;
                 $this.lastScroll = 2; // down
