@@ -6,7 +6,7 @@ hideMeta: true
 loadGalleryIndex: true
 ---
 
-Virtualmin is a powerful and flexible web hosting control panel for Linux and BSD systems. It is available in an open-source community-supported version (GPL), as well as a more feature-filled version (Pro) with premium support. Virtualmin is the cost-effective solution to virtual web hosting management and is the most popular and comprehensive open-source control panel delivering reliable performance for users around the world.
+Virtualmin is the leading and most sophisticated web hosting control panel designed for Linux systems. It supports a wide range of Linux distributions, including Debian and Ubuntu, Rocky Linux, AlmaLinux, and RHEL. Available in both a community-supported open-source version and a feature-rich Pro version, providing a cost-effective and efficient solution for web hosting management. It is ideal for web developers, IT professionals, and hosting providers, simplifying server security updates and the deployment of web applications ranging from WordPress to Django to ensure ease of use and a seamless website management experience.
 
 {{< html div chocolat-drop >}}
 
