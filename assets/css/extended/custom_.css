@@ -1663,3 +1663,8 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 /*
  * 404 ERROR PAGE. End. 
  */
+
+ html[class*="page-changelog"] .post-tags,
+ html[class*="page-archives"] .post-tags {
+    display: none;
+}
