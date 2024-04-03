@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.2 released"
 date: 2022-09-22
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Add significant improvements to CloudFlare DNS support including proxying and importing existing zones

@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.1 released"
 date: 2022-05-22
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Fix a bug upon disabling `mod_php`

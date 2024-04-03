@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.7 released"
 date: 2023-04-16
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Fix support for enabling and disabling the `HTTP2` protocol

@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.8 released"
 date: 2023-09-15
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Update host and domain default page [#629](https://github.com/virtualmin/virtualmin-gpl/issues/629)

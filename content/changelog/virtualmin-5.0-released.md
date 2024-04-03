@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 5.0 released"
 date: 2016-01-08
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 This is a major new release (thus the 5.0 designator). This release will coincide with changes in the install script happening tonight, to make Authentic Theme the default theme and Filemin the default file manager.

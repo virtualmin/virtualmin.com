@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.03 released"
 date: 2018-04-23
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 This release includes multiple script installer updates, removes support for PHP 4 but adds 7.2, improves the handling of dynamic DNS zones, and fixes a bunch of small bugs.

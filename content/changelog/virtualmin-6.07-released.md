@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.07 released"
 date: 2019-07-15
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Virtual servers to backup can now be selected by reseller.

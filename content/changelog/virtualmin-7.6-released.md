@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.6 released"
 date: 2023-03-30
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Add ability to host DNS zones on remote Webmin servers

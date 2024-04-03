@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.15 released"
 date: 2021-03-07
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 This major update re-designs the PHP options page, adds the ability to request SSL certs for all virtual servers, and allows DNS hosting to be offloaded to Amazon Route 53.

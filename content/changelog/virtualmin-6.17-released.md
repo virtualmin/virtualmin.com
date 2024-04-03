@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.17 released"
 date: 2021-09-09
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
  - Added a field to the virtual server creation page to use an existing SSH key for logins, or generate a new key.

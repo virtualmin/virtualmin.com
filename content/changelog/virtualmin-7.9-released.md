@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.9 released"
 date: 2023-12-16
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Add reworked navigation menu for better usability and accessibility

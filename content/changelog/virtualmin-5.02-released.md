@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 5.02 released"
 date: 2016-04-26
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Added a new script installer for Rainloop version 1.9.4.415.

@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.0 released"
 date: 2022-03-23
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Add `fcgiwrap` to execute CGI scripts on systems without `suexec`

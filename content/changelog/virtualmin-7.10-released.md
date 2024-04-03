@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.10 released"
 date: 2024-03-24
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Add S3 account management integration

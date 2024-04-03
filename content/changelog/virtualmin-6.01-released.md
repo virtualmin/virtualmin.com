@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.01 released"
 date: 2017-10-17
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Multiple remote MySQL servers can now be defined, and selected on a per-domain basis at virtual server creation time. This allows some or all domains to easily use different MySQL hosts.

@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 5.04 released"
 date: 2016-08-03
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - SSL versions 2 and 3 and TLS versions 1.0 and 1.1 are disabled by default in the Apache configuration for new domains.

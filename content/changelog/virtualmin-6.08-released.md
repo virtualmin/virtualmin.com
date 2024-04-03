@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.08 released"
 date: 2019-10-16
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Fixes for several security issues that could be exploited by domain owners.

@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.09 released"
 date: 2020-03-15
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Support for systems without suEXEC, like CentOS 8.

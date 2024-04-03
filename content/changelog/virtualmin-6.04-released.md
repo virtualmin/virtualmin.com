@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.04 released"
 date: 2018-10-10
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Before a DNS zone is updated, BIND will be told to freeze it and thaw afterwards. This ensures that dynamic updates are preserved.

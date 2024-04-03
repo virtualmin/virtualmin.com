@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.10 released"
 date: 2020-07-13
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
  - Added the set-dkim API command to enable and disable DKIM.

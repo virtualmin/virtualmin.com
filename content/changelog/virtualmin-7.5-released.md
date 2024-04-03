@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.5 released"
 date: 2023-01-07
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - Fixed the way PHP extensions are enabled when installing scripts

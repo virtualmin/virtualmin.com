@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 7.3 released"
 date: 2022-10-22
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 * Added support for the upcoming WebSockets Terminal module

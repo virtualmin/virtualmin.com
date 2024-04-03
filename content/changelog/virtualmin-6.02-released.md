@@ -1,7 +1,8 @@
 ---
 title: "Virtualmin 6.02 released"
 date: 2017-12-17
-tags: ["changelog", "virtualmin-changelog"]
+tags: ["changelog"]
+author: "Ilia Ross"
 ---
 
 - When adding an alias to a domain with a Let's Encrypt SSL certificate, the cert is automatically updated to include the alias domain.
