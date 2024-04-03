@@ -1137,11 +1137,11 @@ html:not(.page-index) .index-page-intro-container {
     align-items: center;
     overflow: auto;
     scrollbar-width: none;
-    background: linear-gradient(60deg, #0a279c 0%, #9f16bb 85%);
+    background: linear-gradient(60deg,#042199 6%,#ab08cc 86%);
 }
 
 .page-index .dark .index-page-intro-container-inner-content {
-    background: linear-gradient(60deg, #03357c 0%, #7f0897 85%);
+    background: linear-gradient(60deg, #022872 6%, #7e0098 86%);
 }
 
 .page-index .index-page-intro-container-inner-content::-webkit-scrollbar {
@@ -1165,6 +1165,7 @@ html:not(.page-index) .index-page-intro-container {
     transform: scaleY(1.15);
     place-content: center;
     text-shadow: 1px 0 #000;
+    margin-top: calc(var(--gap) * -1);
 }
 
 @media screen and (max-width: 600px) {
