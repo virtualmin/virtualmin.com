@@ -3,4 +3,4 @@
 <li class="menu-item--shop"><a href="/shop/"><span>Shop</span></a></li>
 <li class="menu-item--docs"><a href="/docs/"><span{{ with $currentPage.File }}{{ if eq $currentPage.File.LogicalName "docs.md" }} class="active"{{ end }}{{ end }}>Documentation</span></a></li>
 <li class="menu-item--support hidden"><a href="/support/"><span{{ with $currentPage.File }}{{ if eq $currentPage.File.LogicalName "support.md" }} class="active"{{ end }}{{ end }}>Support</span></a></li>
-<li><a href="https://forum.virtualmin.com/" target="_self"><span>Forum</span></a></li>
+<li><a href="https://forum.virtualmin.com/" onclick="themeLink(event, this)" target="_self"><span>Forum</span></a></li>
