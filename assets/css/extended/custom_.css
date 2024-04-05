@@ -81,6 +81,7 @@ body.dark .logo>a>svg>g>path {
     margin-top: 0;
     display: flex;
     align-items: center;
+    filter: saturate(1.233);
 }
 
 .header .logo>a>svg {
