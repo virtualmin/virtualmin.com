@@ -14,12 +14,6 @@ enableRobotsTXT: true
 params:
   env: production
 
-  # analytics:
-  #    google:
-  #      trackingCode:
-  #        production: 'UA-503706-1'
-  #        devel: 'G-LT56QHK5DW'
-
   title: Virtualmin
   description: "Powerful and flexible web hosting control panel for Linux and BSD systems"
   keywords: [webmin, usermin, virtualmin, cloudmin, linux, system administration]
