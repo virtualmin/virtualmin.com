@@ -3,6 +3,80 @@ languageCode: en-us
 title: Virtualmin — Open Source Web Hosting Control Panel
 theme: PaperMod
 
+module:
+  mounts:
+  - source: layouts
+    target: layouts
+  - source: ../webmin.com/layouts/docs/list.html
+    target: layouts/docs/single.html
+  - source: ../webmin.com/layouts/docs/list.html
+    target: layouts/docs/list.html
+  - source: ../webmin.com/layouts/shortcodes/badge.html
+    target: layouts/shortcodes/badge.html
+  - source: ../webmin.com/layouts/shortcodes/link.html
+    target: layouts/shortcodes/link.html
+  - source: ../webmin.com/layouts/shortcodes/hotkey.html
+    target: layouts/shortcodes/hotkey.html
+  - source: ../webmin.com/layouts/shortcodes/html.html
+    target: layouts/shortcodes/html.html
+  - source: ../webmin.com/layouts/shortcodes/include.html
+    target: layouts/shortcodes/include.html
+  - source: ../webmin.com/layouts/shortcodes/icon.html
+    target: layouts/shortcodes/icon.html
+  - source: ../webmin.com/layouts/shortcodes/details-start.html
+    target: layouts/shortcodes/details-start.html
+  - source: ../webmin.com/layouts/shortcodes/alert.html
+    target: layouts/shortcodes/alert.html
+  - source: ../webmin.com/layouts/shortcodes/note.html
+    target: layouts/shortcodes/note.html
+  - source: ../webmin.com/layouts/shortcodes/details-end.html
+    target: layouts/shortcodes/details-end.html
+  - source: ../webmin.com/layouts/_default/_markup/render-image.html
+    target: layouts/_default/_markup/render-image.html
+  - source: ../webmin.com/layouts/partials/edit_post.html
+    target: layouts/partials/edit_post.html
+  - source: ../webmin.com/layouts/partials/docs_toc.html
+    target: layouts/partials/docs_toc.html
+  - source: ../webmin.com/layouts/partials/docs_filetree.html
+    target: layouts/partials/docs_filetree.html
+  - source: ../webmin.com/layouts/partials/extend_head.html
+    target: layouts/partials/extend_head.html
+  - source: ../webmin.com/layouts/partials/header.html
+    target: layouts/partials/header.html
+  - source: ../webmin.com/layouts/partials/main-buttons.html
+    target: layouts/partials/main-buttons.html
+  - source: assets
+    target: assets
+  - source: ../webmin.com/assets/css/chocolat.css
+    target: assets/css/chocolat.css
+  - source: ../webmin.com/assets/css/extended/custom.css
+    target: assets/css/extended/custom.css
+  - source: ../webmin.com/assets/js/chocolat.js
+    target: assets/js/chocolat.js
+  - source: ../webmin.com/assets/js/extended/docs-filetree.js
+    target: assets/js/extended/docs-filetree.js
+  - source: ../webmin.com/assets/js/extended/docs-toc.js
+    target: assets/js/extended/docs-toc.js
+  - source: ../webmin.com/assets/js/extended/header.js
+    target: assets/js/extended/header.js
+  - source: ../webmin.com/assets/js/extended/docs-fastsearch.js
+    target: assets/js/extended/docs-fastsearch.js
+  - source: ../webmin.com/assets/js/extended/header-chocolat.js
+    target: assets/js/extended/header-chocolat.js
+  - source: ../webmin.com/assets/js/extended/header-chocolat-docs.js
+    target: assets/js/extended/header-chocolat-docs.js
+  - source: ../webmin.com/assets/js/extended/footer.js
+    target: assets/js/extended/footer.js
+  imports:
+  - path: "../../webmin.com/themes/PaperMod"
+    mounts:
+    - source: assets
+      target: assets
+    - source: i18n
+      target: i18n
+    - source: layouts
+      target: layouts
+
 canonifyURLs: true
 
 minify:

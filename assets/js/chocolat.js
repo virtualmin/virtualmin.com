@@ -1,1 +1,0 @@
-../../../webmin.com/assets/js/chocolat.js
