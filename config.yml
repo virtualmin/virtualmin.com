@@ -69,14 +69,7 @@ module:
     target: assets/js/extended/footer.js
   imports:
   - path: "../../webmin.com/themes/PaperMod"
-    mounts:
-    - source: assets
-      target: assets
-    - source: i18n
-      target: i18n
-    - source: layouts
-      target: layouts
-
+   
 canonifyURLs: true
 
 minify:
