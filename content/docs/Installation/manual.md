@@ -57,7 +57,7 @@ The modules can be found in the following locations:
   - https://software.virtualmin.com/vm/7/pro/rpm - RPM format modules
   - https://software.virtualmin.com/vm/7/pro/apt - Debian and Ubuntu module packages
   
-You will need to make a note of your serial number and license key, found on your [My Account](/account/software-licenses) page at Virtualmin.com, so that you can login using the serial number as the username and the license key as the password.
+You will need to make a note of your serial number and license key, found on your [My Account](/account/) page at Virtualmin.com, so that you can login using the serial number as the username and the license key as the password.
 
 ### Virtualmin GPL
 The modules can be found in the following locations:
