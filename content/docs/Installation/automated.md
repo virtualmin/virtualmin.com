@@ -23,7 +23,7 @@ We recommend using a minimal server version instance of your preferable operatin
 ### Running the install script
 Installation is performed automatically by the OS-neutral Virtualmin `virtualmin-install.sh` script. This script sets up the license key in `/etc/virtualmin-license` file and configures the appropriate package management and installation tool for use with the Virtualmin software repository. It will then install the `virtualmin-config` package, which performs the remainder of the installation, appropriate for your OS and version.
 
-Download the file from the **Software Licenses** section of your [Account](/account/) page, under the **Software Licenses tab, if you're using Virtualmin Pro. All of your purchased products will be available for download throughout the life of your license period. If you're using Virtualmin GPL, that can be downloaded from the [Download](/download/) page.
+Download the file from the **Software Licenses** section of your [My Account](/account/) page, under the **Software Licenses tab, if you're using Virtualmin Pro. All of your purchased products will be available for download throughout the life of your license period. If you're using Virtualmin GPL, that can be downloaded from the [Download](/download/) page.
 
 With the `virtualmin-install.sh` script on your server, run this command as root:
 
