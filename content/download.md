@@ -16,7 +16,7 @@ Start with a *freshly installed*, [Grade A supported OS](/docs/os-support/) on y
 {{< alert warning exclamation-triangle "" "Do not pre-install or pre-configure any additional packages on your OS. The installer expects a freshly installed, supported, OS, and anything you do differently may cause conflicts or configuration errors. If you will be enabling third-party package repositories, do so *after* installation of Virtualmin, and only with extreme caution." >}}
 
 ### Download and run install script
-If you have already purchased a [Virtualmin Professional](/docs/professional-features/) license, you can find it in [My Account → Software Licenses](/account/software-licenses/). If not, you can purchase a license or download Virtualmin GPL.
+If you have already purchased a [Virtualmin Professional](/docs/professional-features/) license, you can find it in [My Account → Software Licenses](/account/account/). If not, you can purchase a license or download Virtualmin GPL.
 
 {{< link "success|medium|outline|rounded" heart "/shop/" "Try Virtualmin Professional" >}}&nbsp;&nbsp;or&nbsp;&nbsp;{{< link "dark|medium|outline|rounded" download "https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh" "Download Virtualmin GPL" >}}
 
@@ -26,7 +26,7 @@ The quickest way to initiate the installation of Virtualmin GPL on your server i
 sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)"
 ```
 
-{{< note "For Virtualmin Professional, use the command suggested on [My Account → Software Licenses](/account/software-licenses/) page." "Note:" "notification" >}}
+{{< note "For Virtualmin Professional, use the command suggested on [My Account → Software Licenses](/account/) page." "Note:" "notification" >}}
 
 ### Install script options
 

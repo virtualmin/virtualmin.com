@@ -106,7 +106,7 @@ Once you have a serial number and a license key, you would need to undergo GPL t
 
 > ##### How to upgrade Virtualmin license?
 
-Upgrading your Virtualmin Professional license is straightforward and does not require a reinstallation of Virtualmin! Once you've purchased your new license, just run the `virtualmin change-license` command. This action will update your system with the new serial number and license key. All existing licenses details can be found in the [My Account → Software Licenses](/account/software-licenses/) page on the Virtualmin website.
+Upgrading your Virtualmin Professional license is straightforward and does not require a reinstallation of Virtualmin! Once you've purchased your new license, just run the `virtualmin change-license` command. This action will update your system with the new serial number and license key. All existing licenses details can be found in the [My Account → Software Licenses](/account/) page on the Virtualmin website.
 
 > ##### How do I renew an expired license?
 
