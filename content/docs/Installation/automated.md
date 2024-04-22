@@ -9,6 +9,7 @@ weight: 2010000
 - Automated installation requires a freshly installed, [supported OS](/docs/os-support/)
 - 1 GB RAM (less for the `--minimal` installation), more is better
 - 1 GB free disk space, more for your domain data
+- A domain name with DNS records pointing to your server's IP address
 
 ### Installation
 There are two methods for installing Virtualmin. The first is a fully automated script described in this document, and the other is a manual installation documented in the [Manual Installation](/docs/installation/manual/) page. When possible, the automated installation described here is _highly recommended_, as it removes many possible errors during configuration and insures that all applications are built with appropriate options for virtual hosting within the Virtualmin system. If you haven't read the [Download](/download/) page yet, you should do so now, as it provides all of the steps needed for installation in _most_ cases on a single page. You should only proceed to more complex installation docs, if the steps provided on the download page won't work for you.
