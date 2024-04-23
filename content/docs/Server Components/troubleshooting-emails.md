@@ -41,7 +41,7 @@ In these commands:
 - `-p pass` should be replaced with the password for that user.
 - `-s smtp` or `-s imap` specifies the service you're testing authentication for, either SMTP or IMAP.
 
-{{< note "In Debian and derivative operating systems, when testing connection to SMTP, you might need to specify the `-f /var/spool/postfix/var/run/saslauthd/mux` option. This is used to direct the system to the correct location of the `saslauthd` communication socket for proper authentication handling by Postfix." "Note:" "notification" >}}
+{{< note "In Debian and derivative operating systems, when testing connection to SMTP or IMAP, you might need to specify the `-f /var/spool/postfix/var/run/saslauthd/mux` option. This is used to direct the system to the correct location of the `saslauthd` communication socket for proper authentication handling." "Note:" "notification" >}}
 
 #### Understanding test results
 
