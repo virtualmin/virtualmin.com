@@ -55,6 +55,33 @@ if [ "$VIRTUALSERVER_ACTION" = "SSL_DOMAIN" ]; then
 fi
 ```
 
+#### Sync SSL certificate with a remote server
+
+To sync the SSL certificate with a remote server, you can apply the following script:
+
+```text
+if [ "$VIRTUALSERVER_ACTION" = "SSL_DOMAIN" ]; then
+    # Define the base directory for the SSL files
+    BASE_DIR="/etc/ssl/virtualmin/$VIRTUALSERVER_ID"
+    
+    # Define the key and cert file paths
+    KEY_FILE="$BASE_DIR/$VIRTUALSERVER_DOM.key"
+    CERT_FILE="$BASE_DIR/$VIRTUALSERVER_DOM.cert"
+    
+    # Define the remote server's hostname or IP address and username
+    REMOTE_HOST="username@remote-server-address"
+    
+    # Define the destination base path (same as the source server)
+    DESTINATION_PATH="$BASE_DIR/"
+
+    # Use rsync to transfer the key file
+    rsync -avz "$KEY_FILE" "$REMOTE_HOST":"$DESTINATION_PATH"
+    
+    # Use rsync to transfer the cert file
+    rsync -avz "$CERT_FILE" "$REMOTE_HOST":"$DESTINATION_PATH"
+fi
+```
+
 ### Setting up pre and post modification scripts
 
 1. Log in as the master administrator.
