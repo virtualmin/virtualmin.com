@@ -1,6 +1,7 @@
 ---
 title: "How to Backup Virtual Servers"
 author: "Jamie Cameron"
+date: "2024-05-03"
 weight: 2510500
 ---
 
@@ -145,4 +146,4 @@ This can even be used to migrate templates, custom fields, script installers, co
 
 ### Command line backup tools
 
-If you prefer to work at the command line, backups and restores can be done using the tools listed on the [Backup and Restore API](XXXXXX) page. These allow you to create your own scripts for backing up on complex schedules, emailing backups to somewhere, using rsync to transfer home directory contents, or whatever you can come up with.
+If you prefer to work at the command line, backups and restores can be done using the tools listed on the [Backup and Restore API](/docs/development/api-programs/backup-domain) page. These allow you to create your own scripts for backing up on complex schedules, emailing backups to somewhere, using rsync to transfer home directory contents, or whatever you can come up with.

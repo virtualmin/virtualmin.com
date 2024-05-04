@@ -1,6 +1,6 @@
 ---
 title: "Replication and Shared Storage"
-date: "2023-01-22"
+date: "2024-05-03"
 author: "Ilia Ross"
 weight: 2510610
 ---
@@ -59,4 +59,4 @@ When deleting a domain from a replica:
 - Use the `--preserve-remote` flag in the `delete-domain` API command or the corresponding UI checkbox to avoid removing shared contents.
 - For complete removal, delete the domain from all replicas first, then from the master system.
 
-{{< alert primary exclamation "" "A built-in [domain synchronization](XXXXX) feature in Cloudmin will automatically use replication mode when the destination system is running Virtualmin." >}}
+{{< alert primary exclamation "" "A built-in [domain synchronization](https://archive.virtualmin.com/documentation/cloudmin/vm/vsync) feature in Cloudmin will automatically use replication mode when the destination system is running Virtualmin." >}}

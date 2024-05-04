@@ -1,6 +1,7 @@
 ---
 title: "How to Migrate to a New Server"
 author: "Ilia Ross"
+date: "2023-12-12"
 weight: 2510501
 ---
 
