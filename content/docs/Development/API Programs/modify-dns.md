@@ -20,7 +20,9 @@ To enable the DMARC DNS record for a domain, use the `--dmarc` flag - or to disa
 
 This command can also be used to add and remove DNS records from all the selected domains. Adding is done with the `--add-record` flag, which must be followed by a single parameter containing the record name, type and value. Alternately, you can use `--add-record-with-ttl` followed by the name, type, TTL and value. If your cloud DNS provider supports proxy records, you can use the `--add-proxy-record` with the same parameters as `--add-record`.
 
-Conversely, deletion is done with the `--remove-record` flag, followed by a single parameter containing the name and type of the record(s) to delete. You can also optionally include the record values, to disambiguate records with the same name but different values (like MX records). Both the additional and deletion flags can be given multiple times.
+Conversely, deletion is done with the `--remove-record` flag, followed by a single parameter containing the name and type of the record(s) to delete. You can also optionally include the record values, to disambiguate records with the same name but different values (like MX records).
+
+You can also update an existing record with the `--update-record` flag, which must be followed by two parameters. First is the current name and type, and second is the new name, type and values.  The record addition, modification and deletion flags can be given multiple times.
 
 Similarly, the default TTL for records can be set with the `--ttl` flag followed by a number in seconds. Suffixes like h, m and d are also allowed to specific a TTL in hours, minutes or days. Alternately, the `--all-ttl` flag can be used to set the TTL for all records in the domain.
 
@@ -63,6 +65,7 @@ virtualmin modify-dns --domain name | --all-domains | --all-nonvirt-domains
                      [--add-record-with-ttl "name type TTL value"]
                      [--add-proxy-record "name type value"]
                      [--remove-record "name type value"]
+                     [--update-record "oldname oldtype" "name type value"]
                      [--ttl seconds | --all-ttl seconds]
                      [--add-slave hostname]* | [--add-all-slaves]
                      [--remove-slave hostname]* | [--sync-all-slaves]
