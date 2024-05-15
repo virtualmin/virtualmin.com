@@ -23,7 +23,7 @@ If you have already purchased a [Virtualmin Professional](/docs/professional-fea
 The quickest way to initiate the installation of Virtualmin GPL on your server is to log in via SSH using a terminal, and execute the following pre-prepared command:
 
 ```
-sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- -b LAMP
+sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --bundle LAMP
 ```
 
 {{< note "For Virtualmin Professional, use the command suggested on [My Account → Software Licenses](/account/) page." "Note:" "notification" >}}
