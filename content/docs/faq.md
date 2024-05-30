@@ -128,7 +128,7 @@ As with cancellations, you can make changes to your licenses in the **My Account
 
 Expired licenses don't have any intrinsic value and are removed from the **Software Licenses** page one month after their expiration date.
 
-> ##### Why do I see license error message?
+> ##### Why do I see a license error message?
 
 If you receive a warning about your Virtualmin license, it indicates the license, meant for only one server, is in use on multiple servers. This is temporarily acceptable during server migration, and the warning will automatically disappear within a few days after deactivating the old server. If you're using the license on multiple servers for other reasons, you'll need to buy an extra license.
 
