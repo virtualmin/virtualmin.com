@@ -11,7 +11,7 @@ This guide will take you through the steps to change the interface theme in Virt
 If you're the server administrator and wish to update the theme for all users, follow these instructions:
 
 1. **Log in as administrator**  
-   Access your Virtualmin panel by logging in as the [Master Administrator](/docs/step-by-step-tutorials/understanding-virtual-server-and-account-types/#master-administrator), typically using the _root_ account credentials.
+   Access your Virtualmin panel by logging in as the [Master Administrator](/docs/getting-started/understanding-virtual-server-and-account-types/#master-administrator), typically using the _root_ account credentials.
 
 2. **Navigate to Webmin section**  
    In the top-left corner of your dashboard, click on **Webmin** to access the Webmin module.
