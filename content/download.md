@@ -11,7 +11,7 @@ Usually, getting started with Virtualmin can be done with a few simple steps, us
 {{< alert primary question "" "Never run the install.sh script to upgrade or renew or to try to repair an existing Virtualmin system! The `virtualmin change-license` command is used for license changes and renewals. [Check the license FAQ](/docs/faq/#license) for details." >}}
 
 ### Install your operating system
-Start with a *freshly installed*, [Grade A supported OS](/docs/os-support/) on your server or VPS. Rocky Linux and Ubuntu LTS are very popular options for hosting, and are a safe choice, but any Grade A supported system should work fine. Be sure to configure your system with a [fully qualified domain name](/docs/installation/automated#fully-qualified-domain-name), as it will save you a lot of time and documentation spelunking later.
+Start with a *freshly installed*, [Grade A supported OS](/docs/os-support/) on your server or VPS. Rocky Linux and Ubuntu LTS are very popular options for hosting, and are a safe choice, but any Grade A supported system should work fine. Be sure to configure your system with a [fully qualified domain name](/docs/installation/automated#fully-qualified-domain-name), as it will save you a lot of time and documentation spelunking later. Do not name your system with the same as a domain you'll be hosting in Virtualmin.
 
 {{< alert warning exclamation-triangle "" "Do not pre-install or pre-configure any additional packages on your OS. The installer expects a freshly installed, supported, OS, and anything you do differently may cause conflicts or configuration errors. If you will be enabling third-party package repositories, do so *after* installation of Virtualmin, and only with extreme caution." >}}
 
@@ -32,7 +32,9 @@ sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-
 
 There are some available options to install different configurations (including installing Nginx instead of Apache, and leaving out some of the mail processing stack for small memory systems). Run the install script with the `--help` flag for a list of available options, and consult the documentation, especially about the available [installation bundles](/docs/installation/automated#lamp-apache-vs-lemp-nginx) and the [minimal installation mode](/docs/installation/automated#full-install-vs-minimal-install), if choosing a non-default installation type.
 
-The install script may ask you some questions. If your system does not have a fully qualified hostname, the script will ask you to provide one.
+The install script may ask you some questions.
+
+If your system does not have a fully qualified hostname, the script will ask you to provide one. Do not use a name you will be hosting in Virtualmin. e.g. if you are hosting `virtualmin.com` in Virtualmin, you could name your system `srv1.virtualmin.com` or `main.virtualmin.com`, but you should not name it `virtualmin.com`.
 
 Or, if your system doesn't have enough memory for the installation type you've chosen, it'll offer to create a swap file. 
 
