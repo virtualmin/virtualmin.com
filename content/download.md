@@ -1,6 +1,6 @@
 ---
 title: "Downloading and Installing"
-date: 2023-11-13
+date: 2024-07-09
 draft: false
 showtoc: false
 hideMeta: true
@@ -34,7 +34,7 @@ There are some available options to install different configurations (including 
 
 The install script may ask you some questions.
 
-If your system does not have a fully qualified hostname, the script will ask you to provide one. Do not use a name you will be hosting in Virtualmin. e.g. if you are hosting `virtualmin.com` in Virtualmin, you could name your system `srv1.virtualmin.com` or `main.virtualmin.com`, but you should not name it `virtualmin.com`.
+If your system does not have a fully qualified hostname, the script will ask you to provide one. Do not use a name you will be hosting in Virtualmin. For example, if you are hosting `virtualmin.com` in Virtualmin, you could name your system `srv1.virtualmin.com` or `main.virtualmin.com`, but you should not name it `virtualmin.com`.
 
 Or, if your system doesn't have enough memory for the installation type you've chosen, it'll offer to create a swap file. 
 
