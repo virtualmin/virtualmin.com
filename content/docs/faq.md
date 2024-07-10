@@ -7,7 +7,7 @@ weight: 800000
 ## FAQ
 ### Installation
 
-> ##### Should I install Webmin before I run `virtualmin-install.sh` script?
+> ##### Should I pre-install Webmin before I run `virtualmin-install.sh` script?
 
 No.  The install script runs best on a freshly installed Grade A [supported operating](/docs/os-support/#grade-a-supported-systems) system.
 
