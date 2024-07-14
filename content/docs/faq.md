@@ -1,6 +1,6 @@
 ---
 title: "FAQ"
-date: 2023-11-24
+date: 2024-07-14
 author: "Ilia Ross"
 weight: 800000
 ---
@@ -136,7 +136,7 @@ If you receive a warning about your Virtualmin license, it indicates the license
 
 If your billing information has expired, we will not be able to renew your licenses automatically. To add a new default payment method, browse to **My Account ⇾ Payment methods**, and then click the **Add payment method** button.
 
-### Packages and webapps upgrades
+### Packages and web apps upgrades
 
 > ##### Virtualmin and all related packages are outdated, and no updates are available. Why?
 
