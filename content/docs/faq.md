@@ -136,6 +136,28 @@ If you receive a warning about your Virtualmin license, it indicates the license
 
 If your billing information has expired, we will not be able to renew your licenses automatically. To add a new default payment method, browse to **My Account ⇾ Payment methods**, and then click the **Add payment method** button.
 
+### Security
+
+> #### What are the default file and directory permissions?
+When Webmin and Virtualmin create files and directories, they rely on the default mode mask ("umask") without setting specific permissions. By default, all files and directories have full permissions set to "666 (rw-rw-rw-)" for files and "777 (rwxrwxrwx)" for directories. The "umask" value, typically set to "022", modifies these default permissions. This means the actual default permissions are set and calculated as follows:
+- For files
+  
+  ```
+  666 - 022 = 644 (rw-r--r--)
+  ```
+- For directories
+  
+  ```
+  777 - 022 = 755 (rwxr-xr-x)
+  ```
+
+However, these default settings can be overridden in **Webmin ⇾ Webmin Configuration: Advanced Options** page under the **Umask (unset permission bits) for created files** option, which for example can be set to "027" to restrict default permissions to "640 (rw-r-----)" for files and "750 (rwxr-x---)" for directories.
+
+Additionally, Webmin and Virtualmin offer specific settings for certain files and directories:
+- Default home directory permissions can be controlled in **System ⇾ Users and Groups: Configuration ⇾ Home directory options** page.
+- Permissions for files in the "public_html" directory can be set in **System Settings ⇾ Server Templates: Edit Server Template / Website for domain** using the **Permissions on website subdirectory** option.
+{{< note "Changes made in templates only apply to newly created virtual servers." "Note:" "notification" >}}
+
 ### Packages and web apps upgrades
 
 > ##### Virtualmin and all related packages are outdated, and no updates are available. Why?
