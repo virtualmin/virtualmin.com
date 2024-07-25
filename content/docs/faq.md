@@ -110,11 +110,20 @@ Upgrading your Virtualmin Professional license is straightforward and does not r
 
 > ##### How do I renew an expired license?
 
-To re-activate a system with an expired license, simply buy a new license in our shop, and use the `change-license` command to apply it to your server. Your server will instantly be activated on the new license. The `change-license` command can be used for Virtualmin, like this:
+To re-activate a system with an expired license, simply buy a new license in our shop, and use the `change-license` command to apply it to your server. Your server will instantly be activated on the new license.
+
+The `change-license` command can be used for Virtualmin, like this:
 
 ```text
 virtualmin change-license --serial NEWSERIAL --key NEWKEY
 ```
+
+To change license using latest `virtualmin-install.sh` script you can use the following command:
+
+```text
+sh -c "$(curl -fsSL https://software.virtualmin.com/cgi-bin/install.cgi?serial=1234567\&key=AAbbCCddEE)" -- --setup
+```
+{{< note "`1234567` and `AAbbCCddEE` should be replaced with your actual serial and key." "Note:" "notification" >}}
 
 > ##### How do I cancel a recurring license?
 
@@ -165,7 +174,7 @@ Additionally, Webmin and Virtualmin offer specific settings for certain files an
 This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
 
 ```
-sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
+sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
 
 > ##### How to update Virtualmin and all related packages?
@@ -177,25 +186,25 @@ Upgrading from the command line is also possible, using the `dnf` or `apt-get` c
 For example, on RHEL and derivatives, you can run the following command to update all system packages, including Virtualmin related ones:
 
 ```text
-sudo dnf update -y
+dnf update -y
 ```
 
 On Debian and derivatives, you can run the following command:
 
 ```text
-sudo apt-get update && apt-get upgrade -y
+apt-get update && apt-get upgrade -y
 ```
 
 Alternately, you can install specific packages, e.g.:
 
 ```text
-sudo dnf update perl webmin wbm-virtual-server usermin -y
+dnf update perl webmin wbm-virtual-server usermin -y
 ```
 
 or
 
 ```text
-sudo apt-get install perl webmin webmin-virtual-server usermin -y
+apt-get install perl webmin webmin-virtual-server usermin -y
 ```
 
 > ##### How can I make sure my web applications are up-to-date without having to wait for the next Virtualmin release?
