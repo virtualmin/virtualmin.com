@@ -88,6 +88,14 @@ This feature allows you to define limits on CPU and memory use that apply to thi
 
 [![](/images/docs/screenshots/professional-features/light/resource-limits.png "Resource Limits Screenshot")](/images/docs/screenshots/professional-features/light/resource-limits.png)
 
+{{< html span "" "" "edit_html" >}}
+#### Edit web pages
+This feature lets you create, upload, and edit HTML files directly on the virtual server, offering both a visual editor and a raw HTML editor for quick and flexible content modification.
+
+[![](/images/docs/screenshots/professional-features/light/edit-web-pages.png "Edit Web Pages Editor Screenshot")](/images/docs/screenshots/professional-features/light/edit-web-pages.png)
+
+{{< html span "" "" "edit_php" >}}
+
 {{< html span "" "" "edit_connect" >}}
 #### External connectivity check
 This feature checks the external accessibility of virtual servers, to run various tests to ensure that one or more virtual server's web, DNS and mail servers are accessible from the rest of the Internet. This is useful for debugging various connectivity and configuration problems.
