@@ -87,14 +87,11 @@ TRAP=/etc/webmin/virtual-server/procmail-logger.pl
 VIRTUALMIN=|/etc/webmin/virtual-server/lookup-domain.pl $LOGNAME
 EXITCODE=$?
 :0
-* ?/bin/test "$EXITCODE" = "73"
-/dev/null
-EXITCODE=0
-:0
-* ?/bin/test "$VIRTUALMIN" != ""
-{
-INCLUDERC=/etc/webmin/virtual-server/procmail/$VIRTUALMIN
-}
+* ! EXITCODE   ?? ^0$
+* ! VIRTUALMIN ?? ^$
+{ EXITCODE=73 HOST= }
+:0E
+{ INCLUDERC=/etc/webmin/virtual-server/procmail/$VIRTUALMIN }
 ORGMAIL=$HOME/Maildir/
 DEFAULT=$HOME/Maildir/
 DROPPRIVS=yes
