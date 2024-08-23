@@ -15,7 +15,7 @@ A refund is guaranteed within first 30 days of purchase, and can be performed af
 
 ### Press and media contacts
 
-Please visit our online [press kit](/press-kit) for press contact information, logo imagery in scalable formats, and screenshots. For questions contact [webmaster@virtualmin.com](mailto:webmaster@virtualmin.com).
+Please visit our online [press kit](/press-kit) for press contact information, logo imagery in scalable formats, and screenshots. For questions, [contact us](mailto:webmasterATvirtualminDOTcom) using the email address in the link.
 
 ### Questions and bug reports
 
