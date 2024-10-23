@@ -12,7 +12,10 @@ weight: 2010000
 - A domain name with DNS records pointing to your server's IP address
 
 ### Installation
-There are two methods for installing Virtualmin. The first is a fully automated script described in this document, and the other is a manual installation documented in the [Manual Installation](/docs/installation/manual/) page. When possible, the automated installation described here is _highly recommended_, as it removes many possible errors during configuration and insures that all applications are built with appropriate options for virtual hosting within the Virtualmin system. If you haven't read the [Download](/download/) page yet, you should do so now, as it provides all of the steps needed for installation in _most_ cases on a single page. You should only proceed to more complex installation docs, if the steps provided on the download page won't work for you.
+There are two methods for installing Virtualmin. The first is a fully automated script described in this document, and the other is a manual installation documented in the [Manual Installation](/docs/installation/manual/) page. When possible, the automated installation described here is highly recommended, as it removes many possible errors during configuration and insures that all applications are built with appropriate options for virtual hosting within the Virtualmin system. If you haven't read the [Download](/download/) page yet, you should do so now, as it provides all of the steps needed for installation in _most_ cases on a single page. You should only proceed to more complex installation docs, if the steps provided on the download page won't work for you.
+
+{{< html span "" "" "mysql-vs-mariadb" >}}
+{{< alert primary exclamation "" "The Virtualmin installer treats MariaDB and MySQL as interchangeable, so if MySQL is already installed, it will recognize and use it. To ensure compatibility, install MySQL using your package manager with the `mysql-server` and `mysql-common` packages before running the installer, if you prefer the Oracle-managed MySQL over the community-driven MariaDB." >}}
 
 ### Automated installation using `virtualmin-install.sh` script
 In most cases, installing Virtualmin is as simple as installing a supported operating system of your choice, followed by running the Virtualmin `virtualmin-install.sh` script.
