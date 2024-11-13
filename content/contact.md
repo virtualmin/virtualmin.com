@@ -7,7 +7,7 @@ hideMeta: true
 
 ### Sales and purchase support
 
-If you have a question about your order, need information about quantity/reseller discounts, or have a complex deployment that may require hands-on support, file [new ticket](https://forum.virtualmin.com/new-message?groupname=staff&title=Sales+and+purchase+support+request) to us in a private message to discuss it.
+If you have a question about your order or need information on reseller discounts, open a [new ticket](https://forum.virtualmin.com/new-message?groupname=staff&title=Sales+and+purchase+support+request) by sending us a private message to discuss.
 
 ### Refund and order cancellation
 
