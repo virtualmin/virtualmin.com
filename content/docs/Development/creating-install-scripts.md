@@ -113,6 +113,26 @@ return ( "6.4.2", "5.9.3" );
 }
 ```
 
+#### script_scriptname_release_version
+
+If this function exists and returns 1, version numbers are split on a dash character to extract the release number, and compared separately from the version. This is almost never needed in practice.
+```perl
+sub script_wordpress_release_version
+{
+return 1;
+}
+```
+
+#### script_scriptname_release
+
+May return a release number that indicates that a newer version of this script installer is available, even if the script version itself has not changed.
+```perl
+sub script_wordpress_release
+{
+return 2;
+}
+```
+
 #### script_scriptname_realversion
 
 If the script is typically upgraded outside of Virtualmin, this function must return the script version number by reading it from script's source code. This is used to determine if an upgrade is available, and to display the current version to users. If the script is not upgraded outside of Virtualmin, this function can be omitted.
