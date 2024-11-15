@@ -140,13 +140,13 @@ This feature allow the administrator to include additional links that appear in 
 [![](/images/docs/screenshots/professional-features/light/create-custom-link.png "Create Custom Link Screenshot")](/images/docs/screenshots/professional-features/light/create-custom-link.png)
 
 {{< html span "" "" "remotedns" >}}
-#### Remote DNS Servers
+#### Remote DNS servers
 This feature lets you add a remote DNS server running on another system managed by Virtualmin, allowing it to be used as primary or secondary to improve reliability or provide external DNS for specific virtual servers.
 
 [![](/images/docs/screenshots/professional-features/light/remote-dns-servers.png "Remote DNS Servers Screenshot")](/images/docs/screenshots/professional-features/light/remote-dns-servers.png)
 
 {{< html span "" "" "newacmes" >}}
-#### SSL Providers
+#### SSL providers
 This feature allows you to choose from a variety of SSL certificate providers, including Let's Encrypt, ZeroSSL, Google Trust Services, Buypass, SSL.com, Sectigo, and others. You can also set up automatic renewal of SSL certificates, choose between RSA and EC certificate algorithms, and check connectivity before requesting a certificate.
 
 [![](/images/docs/screenshots/professional-features/light/ssl-providers.png "SSL Providers Screenshot")](/images/docs/screenshots/professional-features/light/ssl-providers.png)
