@@ -139,6 +139,12 @@ This feature allow the administrator to include additional links that appear in 
 
 [![](/images/docs/screenshots/professional-features/light/create-custom-link.png "Create Custom Link Screenshot")](/images/docs/screenshots/professional-features/light/create-custom-link.png)
 
+{{< html span "" "" "remotedns" >}}
+#### Remote DNS Servers
+This feature lets you add a remote DNS server running on another system managed by Virtualmin, allowing it to be used as primary or secondary to improve reliability or provide external DNS for specific virtual servers.
+
+[![](/images/docs/screenshots/professional-features/light/remote-dns-servers.png "Remote DNS Servers Screenshot")](/images/docs/screenshots/professional-features/light/remote-dns-servers.png)
+
 {{< html span "" "" "newmxs" >}}
 #### Secondary mail servers
 This feature is used to add a secondary mail server that can also receive email for one of the virtual servers managed by Virtualmin, but only as a temporary relay rather than the final destination. It is wise to setup a secondary server for heavily used mail domains, to act as a backup or holding place in case the primary mail server is down.
