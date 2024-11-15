@@ -145,6 +145,12 @@ This feature lets you add a remote DNS server running on another system managed 
 
 [![](/images/docs/screenshots/professional-features/light/remote-dns-servers.png "Remote DNS Servers Screenshot")](/images/docs/screenshots/professional-features/light/remote-dns-servers.png)
 
+{{< html span "" "" "newacmes" >}}
+#### SSL Providers
+This feature allows you to choose from a variety of SSL certificate providers, including Let's Encrypt, ZeroSSL, Google Trust Services, Buypass, SSL.com, Sectigo, and others. You can also set up automatic renewal of SSL certificates, choose between RSA and EC certificate algorithms, and check connectivity before requesting a certificate.
+
+[![](/images/docs/screenshots/professional-features/light/ssl-providers.png "SSL Providers Screenshot")](/images/docs/screenshots/professional-features/light/ssl-providers.png)
+
 {{< html span "" "" "newmxs" >}}
 #### Secondary mail servers
 This feature is used to add a secondary mail server that can also receive email for one of the virtual servers managed by Virtualmin, but only as a temporary relay rather than the final destination. It is wise to setup a secondary server for heavily used mail domains, to act as a backup or holding place in case the primary mail server is down.
