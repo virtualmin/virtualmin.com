@@ -137,7 +137,7 @@ As with cancellations, you can make changes to your licenses in the **My Account
 
 Expired licenses don't have any intrinsic value and are removed from the **Software Licenses** page one month after their expiration date.
 
-> ##### Why do I see license error message?
+> ##### Why do I see a license error message?
 
 If you receive a warning about your Virtualmin license, it indicates the license, meant for only one server, is in use on multiple servers. This is temporarily acceptable during server migration, and the warning will automatically disappear within a few days after deactivating the old server. If you're using the license on multiple servers for other reasons, you'll need to buy an extra license.
 
@@ -223,7 +223,7 @@ Remember, it's always a good idea to backup your data before attempting any majo
 
 > ##### What are the key terminology differences between cPanel and Virtualmin
 
-Virtualmin and cPanel have key differences in terminology --- in Virtualmin, what cPanel refers to as "domain" is called "virtual server", a "sub-domain" is called "sub-server" and "parked domain" is called "alias server".
+Virtualmin and cPanel have key differences in terminology --- in Virtualmin, what cPanel refers to as "domain" is called a "Virtual Server", "add-on" domains roughly akin to a "sub-server" and "parked domain" may be comparable to an "alias". "Subdomains" as they appear in cPanel are not usefully comparable to anything in Virtualmin. Either a Virtual Server or a Sub-Server can have a subdomain name. A subdomain is just a name to Virtualmin. A sub-server in Virtualmin is a domain owned by a top-level or parent Virtual Server, it has no relation to how it is named.
 
 > ##### What modules are included in the 'Un-used Modules' section in Webmin?
 
