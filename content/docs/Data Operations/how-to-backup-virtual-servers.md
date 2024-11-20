@@ -78,6 +78,8 @@ Fortunately, Virtualmin has a solution by utilizing differential backups. These 
 
 Enabling differential mode for a scheduled backup is as simple as changing the **Backup level** option to **Differential**. This will only apply to home directory contents, as Virtualmin does not support detection of differential changes to databases, so if your virtual servers have a large amount of data in a database, the saving will probably be minimal.
 
+{{< alert warning question "" "The differential backup connects to the latest full backup for the domain, regardless of its destination. Virtualmin currently does not support multiple full and differential schedules for different destinations, but multiple destinations can be set up using the state-preserving option “Neither (all files, and don’t update the state)” for compatibility." >}}
+
 When restoring, the latest full backup must be restored first, followed by the latest differential. This ensures that all files are returned to their state at the time the differential backup was made.
 
 ### Date-based backups

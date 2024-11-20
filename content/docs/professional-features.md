@@ -55,12 +55,12 @@ This feature allows you to create and manage additional webserver users for a vi
 
 [![](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png "Manage Extra Webserver Users Screenshot")](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png)
 
-#### Install scripts
+#### Manage web apps
 <!-- Run this code in browser's console of Virtualmin Pro to get update table of scripts: $("td.ui_radio_radio").remove(),$('[name="fast"]').remove(),$("table thead th").first().remove(),$(".ui_select.heighter-28").each((function(){$(this).replaceWith($(this).val())})),$("tbody td label, tbody td a").each((function(){$(this).replaceWith($(this).text())})),$("table, table *").each((function(){for($(this).removeClass();this.attributes.length>0;)this.removeAttribute(this.attributes[0].name);$(this).is("input")&&$(this).remove()})); -->
 
 Virtualmin Professional provides automated installation of dozens of installable web applications, including blogs, wikis, content management systems, ad servers, ecommerce systems, and more.
 
-{{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable scripts" >}}
+{{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable web apps" >}}
 {{% include file="/data/docs/list-of-installable-scripts.md" %}}
 {{< details-end >}}
 
@@ -87,6 +87,14 @@ This expanded feature set in Virtualmin Professional provides a robust solution 
 This feature allows you to define limits on CPU and memory use that apply to this virtual server and all sub-servers. Limits apply to both PHP scripts, and commands run via an SSH login. They can be used to prevent any one domain owner from overloading the system with a fork bomb or commands that use an excessive amount of RAM.
 
 [![](/images/docs/screenshots/professional-features/light/resource-limits.png "Resource Limits Screenshot")](/images/docs/screenshots/professional-features/light/resource-limits.png)
+
+{{< html span "" "" "edit_html" >}}
+#### Edit web pages
+This feature lets you create, upload, and edit HTML files directly on the virtual server, offering both a visual editor and a raw HTML editor for quick and flexible content modification.
+
+[![](/images/docs/screenshots/professional-features/light/edit-web-pages.png "Edit Web Pages Editor Screenshot")](/images/docs/screenshots/professional-features/light/edit-web-pages.png)
+
+{{< html span "" "" "edit_php" >}}
 
 {{< html span "" "" "edit_connect" >}}
 #### External connectivity check
@@ -130,6 +138,18 @@ This feature can be used to setup a mailbox cleanup policy that applies to some 
 This feature allow the administrator to include additional links that appear in the left navigation menu when a virtual server is selected.
 
 [![](/images/docs/screenshots/professional-features/light/create-custom-link.png "Create Custom Link Screenshot")](/images/docs/screenshots/professional-features/light/create-custom-link.png)
+
+{{< html span "" "" "remotedns" >}}
+#### Remote DNS servers
+This feature lets you add a remote DNS server running on another system managed by Virtualmin, allowing it to be used as primary or secondary to improve reliability or provide external DNS for specific virtual servers.
+
+[![](/images/docs/screenshots/professional-features/light/remote-dns-servers.png "Remote DNS Servers Screenshot")](/images/docs/screenshots/professional-features/light/remote-dns-servers.png)
+
+{{< html span "" "" "newacmes" >}}
+#### SSL providers
+This feature allows you to choose from a variety of SSL certificate providers, including Let's Encrypt, ZeroSSL, Google Trust Services, Buypass, SSL.com, Sectigo, and others. You can also set up automatic renewal of SSL certificates, choose between RSA and EC certificate algorithms, and check connectivity before requesting a certificate.
+
+[![](/images/docs/screenshots/professional-features/light/ssl-providers.png "SSL Providers Screenshot")](/images/docs/screenshots/professional-features/light/ssl-providers.png)
 
 {{< html span "" "" "newmxs" >}}
 #### Secondary mail servers

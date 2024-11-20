@@ -1,6 +1,6 @@
 ---
 title: "OS Support"
-date: 2023-11-21
+date: 2024-07-10
 draft: false
 weight: 900000
 ---
@@ -16,7 +16,6 @@ Grade A systems have an automated installation script, a well-maintained softwar
 - Debian 11 and 12 on i386 and amd64
 - Ubuntu 20.04 LTS, 22.04 LTS and 24.04 LTS on i386 and amd64
 - Rocky, Alma, and RHEL 8 and 9 on x86_64
-- CentOS and RHEL 7 on x86_64 (no longer recommended)
 
 ### Grade B supported systems
 

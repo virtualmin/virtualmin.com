@@ -7,7 +7,7 @@ weight: 2120000
 
 This quick guide details the process of creating new virtual servers.
 
-{{< alert primary exclamation "" "Before proceeding, it is strongly recommended to gain an understanding of the various virtual server types in Virtualmin — including [**Top-level servers**](/docs/step-by-step-tutorials/understanding-virtual-server-and-account-types/#understanding-top-level-virtual-servers), [**Sub-servers**](/docs/step-by-step-tutorials/understanding-virtual-server-and-account-types/#understanding-sub-servers), and [**Aliases**](/docs/step-by-step-tutorials/understanding-virtual-server-and-account-types/#understanding-virtual-server-aliases) — as this knowledge is crucial for effective domain management." >}}
+{{< alert primary exclamation "" "Before proceeding, it is strongly recommended to gain an understanding of the various virtual server types in Virtualmin — including [**Top-level servers**](/docs/getting-started/understanding-virtual-server-and-account-types/#understanding-top-level-virtual-servers), [**Sub-servers**](/docs/getting-started/understanding-virtual-server-and-account-types/#understanding-sub-servers), and [**Aliases**](/docs/getting-started/understanding-virtual-server-and-account-types/#understanding-virtual-server-aliases) — as this knowledge is crucial for effective domain management." >}}
 
 #### How to create a top-level virtual server
 

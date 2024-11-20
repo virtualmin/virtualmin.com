@@ -1,13 +1,13 @@
 ---
 title: "FAQ"
-date: 2023-11-24
+date: 2024-07-14
 author: "Ilia Ross"
 weight: 800000
 ---
 ## FAQ
 ### Installation
 
-> ##### Should I install Webmin before I run `virtualmin-install.sh` script?
+> ##### Should I pre-install Webmin before I run `virtualmin-install.sh` script?
 
 No.  The install script runs best on a freshly installed Grade A [supported operating](/docs/os-support/#grade-a-supported-systems) system.
 
@@ -110,11 +110,20 @@ Upgrading your Virtualmin Professional license is straightforward and does not r
 
 > ##### How do I renew an expired license?
 
-To re-activate a system with an expired license, simply buy a new license in our shop, and use the `change-license` command to apply it to your server. Your server will instantly be activated on the new license. The `change-license` command can be used for Virtualmin, like this:
+To re-activate a system with an expired license, simply buy a new license in our shop, and use the `change-license` command to apply it to your server. Your server will instantly be activated on the new license.
+
+The `change-license` command can be used for Virtualmin, like this:
 
 ```text
 virtualmin change-license --serial NEWSERIAL --key NEWKEY
 ```
+
+To change license using latest `virtualmin-install.sh` script you can use the following command:
+
+```text
+sh -c "$(curl -fsSL https://software.virtualmin.com/cgi-bin/install.cgi?serial=1234567\&key=AAbbCCddEE)" -- --setup
+```
+{{< note "`1234567` and `AAbbCCddEE` should be replaced with your actual serial and key." "Note:" "notification" >}}
 
 > ##### How do I cancel a recurring license?
 
@@ -136,14 +145,36 @@ If you receive a warning about your Virtualmin license, it indicates the license
 
 If your billing information has expired, we will not be able to renew your licenses automatically. To add a new default payment method, browse to **My Account ⇾ Payment methods**, and then click the **Add payment method** button.
 
-### Packages and webapps upgrades
+### Security
+
+> #### What are the default file and directory permissions?
+When Webmin and Virtualmin create files and directories, they rely on the default mode mask ("umask") without setting specific permissions. By default, all files and directories have full permissions set to "666 (rw-rw-rw-)" for files and "777 (rwxrwxrwx)" for directories. The "umask" value, typically set to "022", modifies these default permissions. This means the actual default permissions are set and calculated as follows:
+- For files
+  
+  ```
+  666 - 022 = 644 (rw-r--r--)
+  ```
+- For directories
+  
+  ```
+  777 - 022 = 755 (rwxr-xr-x)
+  ```
+
+However, these default settings can be overridden in **Webmin ⇾ Webmin Configuration: Advanced Options** page under the **Umask (unset permission bits) for created files** option, which for example can be set to "027" to restrict default permissions to "640 (rw-r-----)" for files and "750 (rwxr-x---)" for directories.
+
+Additionally, Webmin and Virtualmin offer specific settings for certain files and directories:
+- Default home directory permissions can be controlled in **System ⇾ Users and Groups: Configuration ⇾ Home directory options** page.
+- Permissions for files in the "public_html" directory can be set in **System Settings ⇾ Server Templates: Edit Server Template / Website for domain** using the **Permissions on website subdirectory** option.
+{{< note "Changes made in templates only apply to newly created virtual servers." "Note:" "notification" >}}
+
+### Packages and web apps upgrades
 
 > ##### Virtualmin and all related packages are outdated, and no updates are available. Why?
 
 This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
 
 ```
-sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
+sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
 ```
 
 > ##### How to update Virtualmin and all related packages?
@@ -155,25 +186,25 @@ Upgrading from the command line is also possible, using the `dnf` or `apt-get` c
 For example, on RHEL and derivatives, you can run the following command to update all system packages, including Virtualmin related ones:
 
 ```text
-sudo dnf update -y
+dnf update -y
 ```
 
 On Debian and derivatives, you can run the following command:
 
 ```text
-sudo apt-get update && apt-get upgrade -y
+apt-get update && apt-get upgrade -y
 ```
 
 Alternately, you can install specific packages, e.g.:
 
 ```text
-sudo dnf update perl webmin wbm-virtual-server usermin -y
+dnf update perl webmin wbm-virtual-server usermin -y
 ```
 
 or
 
 ```text
-sudo apt-get install perl webmin webmin-virtual-server usermin -y
+apt-get install perl webmin webmin-virtual-server usermin -y
 ```
 
 > ##### How can I make sure my web applications are up-to-date without having to wait for the next Virtualmin release?

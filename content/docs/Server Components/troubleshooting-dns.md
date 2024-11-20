@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting DNS"
-date: 2024-01-01
+date: 2024-11-09
 author: "Ilia Ross"
 weight: 2198000
 ---
@@ -95,3 +95,56 @@ MX (Mail Exchanger) records direct how emails should be routed:
 - For more detailed troubleshooting, refer to the [BIND Troubleshooting Tools](https://webmin.com/docs/modules/bind-dns-server/#bind-troubleshooting-tools) in the Webmin documentation.
 
 Remember, DNS issues often stem from misconfigurations across different systems, including your domain registrar and your Virtualmin server. Ensuring consistency and correctness in these configurations is key to resolving DNS-related problems.
+
+### Using cloud DNS providers
+
+When utilizing cloud-based DNS providers like Cloudflare, it's important to understand how their proxy services interact with your server's configuration. Specifically, services like Webmin and mail may become inaccessible if they're running on ports not supported by Cloudflare's proxy.
+
+#### Cloudflare proxy and port limitations
+
+Cloudflare enhances security and performance by acting as a proxy between your server and the internet. However, it only proxies specific ports, which can affect access to services running on non-standard ports such as Webmin and mail services.
+
+- **Default port issue**: By default, Webmin listens on port `10000`, which is not among the ports that Cloudflare proxies. Similarly, mail services (SMTP, IMAP, POP3) use ports that are not supported by Cloudflare's proxy.
+
+- **Supported ports**: Cloudflare proxies the following ports:
+
+  - **HTTP ports**: `80`, `8080`, `8880`, `2052`, `2082`, `2086`, `2095`
+  - **HTTPS ports**: `443`, `2053`, `2083`, `2087`, `2096`, `8443`
+
+  To keep Webmin accessible through Cloudflare's proxy, you need to configure Webmin to listen on one of these supported ports, such as `8443`.
+
+#### Changing Webmin ports for Cloudflare compatibility
+
+To ensure Webmin remains accessible while using Cloudflare's proxy services, adjust the port Webmin listens on to one that is supported.
+
+1. **Access Webmin configuration**:
+
+   - Log in to your Webmin interface.
+   - Navigate to **Webmin ⇾ Webmin Configuration**.
+
+2. **Modify listening port**:
+
+   - Click on **Ports and Addresses**.
+   - In the **Listen on port** field, enter an allowed port, e.g., `8443`.
+   - Click **Save** to apply the new settings.
+
+#### Mail services and Cloudflare
+
+Mail services (SMTP, IMAP, POP3) are not supported by Cloudflare's proxy. If you enable the proxy (orange cloud icon) for your mail-related DNS records, email delivery will fail.
+
+Ensure that the DNS records for your mail services have the proxy **disabled** (gray cloud icon). This applies to:
+
+  - **MX records**: Direct mail servers for your domain.
+  - **Mail-related A records**: Such as `mail.example.com`, which should have the proxy disabled.
+
+By disabling the proxy for these records, mail traffic will bypass Cloudflare and connect directly to your server, ensuring proper mail delivery.
+
+#### Important considerations
+
+- **Firewall adjustments**: Update your server's firewall settings to allow incoming connections on the new port `8443` after changing Webmin's port.
+
+#### Additional resources
+
+- **Supported ports**: For a complete list of ports and additional details, refer to [Cloudflare's official documentation](https://developers.cloudflare.com/fundamentals/get-started/reference/network-ports/).
+
+- **Webmin configuration guidance**: For more information on adjusting Webmin settings, see the [Webmin Configuration](https://webmin.com/docs/modules/webmin-configuration/#ports-and-addresses) documentation.

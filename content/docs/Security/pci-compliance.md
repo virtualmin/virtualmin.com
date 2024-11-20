@@ -62,6 +62,8 @@ Older protocols and ciphers like are considered insecure and must be disabled ac
    ```
 3. Restart Dovecot by running `systemctl restart dovecot` command.
 
+{{< alert primary exclamation "" "As of November 2024, Microsoft Outlook does not support TLS 1.3. To maintain compatibility with Outlook clients, keep TLS 1.2 enabled alongside TLS 1.3 in your Postfix and Dovecot configurations." >}}
+
 #### ProFTPD configuration
 1. Edit the ProFTPD configuration file:
    - On RHEL and derivatives `/etc/proftpd/mod_tls.conf` file.
