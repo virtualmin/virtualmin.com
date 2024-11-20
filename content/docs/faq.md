@@ -223,7 +223,7 @@ Remember, it's always a good idea to backup your data before attempting any majo
 
 > ##### What are the key terminology differences between cPanel and Virtualmin
 
-Virtualmin and cPanel have key differences in terminology --- in Virtualmin, what cPanel refers to as "domain" is called a "Virtual Server", "add-on" domains roughly akin to a "sub-server" and "parked domain" may be comaprable to an "alias". "Subdomains" as they appear in cPanel are not usefully comparable to anything in Virtualmin. Either a Virtual Server or a Sub-Server can have a subdomain name. A subdomain is just a name to Virtualmin. A sub-server in Virtualmin is a domain owned by a top-level or parent Virtual Server, it has no relation to how it is named.
+Virtualmin and cPanel have key differences in terminology --- in Virtualmin, what cPanel refers to as "domain" is called a "Virtual Server", "add-on" domains roughly akin to a "sub-server" and "parked domain" may be comparable to an "alias". "Subdomains" as they appear in cPanel are not usefully comparable to anything in Virtualmin. Either a Virtual Server or a Sub-Server can have a subdomain name. A subdomain is just a name to Virtualmin. A sub-server in Virtualmin is a domain owned by a top-level or parent Virtual Server, it has no relation to how it is named.
 
 > ##### What modules are included in the 'Un-used Modules' section in Webmin?
 
