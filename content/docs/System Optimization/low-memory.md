@@ -262,8 +262,51 @@ If you already have a swap file and need to enlarge it:
 
 Always back up important data before performing such operations, as mistakes can lead to data loss. Additionally, consider the impact on your system's performance and storage when adjusting swap space. For a better performance, it's recommended to add more RAM instead of increasing swap space.
 
-### Debugging memory usage
+### Understanding memory usage with the OOM Killer
 The Out-Of-Memory (OOM) Killer in Linux-based systems is a mechanism that is invoked when the system is critically low on memory. The process that the OOM Killer terminates first depends on several factors, primarily the calculated OOM score of the processes running on the system.
+
+#### How the OOM Killer selects a process to terminate
+The OOM Killer evaluates all processes on the system and assigns each one an OOM score, which determines the likelihood of the process being terminated during an out-of-memory event. The calculation is based on:
+
+- 	**Memory usage**
+   
+    Processes consuming more memory generally have higher scores.
+
+- 	**OOM score `oom_score_adj` adjustment**
+
+    Processes can have their score explicitly adjusted via `/proc/<pid>/oom_score_adj`, with values ranging from -1000 (never kill) to 1000 (high likelihood of being killed).
+
+- 	**Critical system processes**
+
+    Kernel threads and certain _root_-owned processes are deprioritized unless no other options are available.
+- 	**Impact of termination**
+
+    The OOM Killer prioritizes processes whose termination will free the most memory while minimizing disruption.
+
+To view the OOM score of a running process:
+
+```text
+cat /proc/<pid>/oom_score
+```
+
+To see the adjustment value:
+
+```text
+cat /proc/<pid>/oom_score_adj
+```
+
+Processes with a higher OOM score are more likely to be terminated, but factors like process priority and system configuration can influence this decision.
+
+#### Automatic adjustments based on process activity
+The OOM score can automatically increase for processes that appear “idle” or less active, but this is indirectly influenced by memory usage trends and process behavior rather than a direct “idle detection.” For example:
+
+- Processes holding large amounts of memory but not actively using it may see their OOM score increase over time.
+
+- Background or low-priority processes (e.g., daemons, detached sessions) may become higher-priority candidates for termination because they are often deemed “less critical” to the system’s immediate performance.
+
+- Inactive processes consuming significant portions of file cache or buffer memory can also gain higher badness scores because freeing their memory benefits the system.
+
+#### Debugging memory usage
 
 If you suspect that the OOM Killer is terminating processes on your system, you can use the following steps to investigate the issue:
 
