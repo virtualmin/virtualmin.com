@@ -84,7 +84,7 @@ Persistent connections are connections that remain open after a request is compl
 
 This adjustment is made in the main Apache's configuration file, which varies depending on the operating system.
 
-- **RHEL and derivatives**: Edit the `/etc/httpd/conf/httpd.conf` file.
+- **EL and derivatives**: Edit the `/etc/httpd/conf/httpd.conf` file.
 - **Debian and Derivatives**: Modify the `/etc/apache2/apache2.conf` file.
 
 To make this adjustment, open the correct to your operating system Apache configuration file and add or modify the following directives:
@@ -108,7 +108,7 @@ apachectl -V | grep MPM
 ##### MPM: "prefork" and "worker"
 Note that "prefork" and "worker" MPMs are mutually exclusive, and only one can be enabled and used at a time. Adjust the values from the sample configuration based on your current MPM. Configuration files may vary depending on the operating system.
 
-For example, in Debian and derivatives, the configuration file is `/etc/apache2/mods-available/mpm_prefork.conf` for "prefork" MPM and `/etc/apache2/mods-available/mpm_worker.conf` for "worker" MPM. In RHEL and derivatives, the configuration file is `/etc/httpd/conf.modules.d/00-mpm.conf`, however any custom directives for either "prefork" or "worker" MPM should be placed in a custom file under the `/etc/httpd/conf.d/` directory.
+For example, in Debian and derivatives, the configuration file is `/etc/apache2/mods-available/mpm_prefork.conf` for "prefork" MPM and `/etc/apache2/mods-available/mpm_worker.conf` for "worker" MPM. In EL and derivatives, the configuration file is `/etc/httpd/conf.modules.d/00-mpm.conf`, however any custom directives for either "prefork" or "worker" MPM should be placed in a custom file under the `/etc/httpd/conf.d/` directory.
 
 Here is a sample configuration to optimize memory usage on low-memory systems for "prefork" MPM:
 
@@ -154,7 +154,7 @@ Below is a sample configuration designed to optimize memory usage in low-memory 
 </IfModule>
 ```
 
-Remember to restart Apache after making changes to the configuration. This can be done using `systemctl restart httpd` on RHEL and derivatives, or `systemctl restart apache2` on Debian and derivatives.
+Remember to restart Apache after making changes to the configuration. This can be done using `systemctl restart httpd` on EL and derivatives, or `systemctl restart apache2` on Debian and derivatives.
 
 This configuration aims to balance the need for responsiveness with the limitations of low-memory environments. It should provide a good starting point, but you may need to tweak the settings further based on your specific server's performance and the nature of the traffic it handles.
 

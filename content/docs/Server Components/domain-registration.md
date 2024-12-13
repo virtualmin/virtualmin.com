@@ -13,7 +13,7 @@ Virtualmin provides a plugin to automate domain registration, streamlining the p
 
 #### Installing the plugin
 
-1. **For RHEL and derivatives**
+1. **For EL and derivatives**
    ```text
    dnf install wbm-virtualmin-registrar
    ```

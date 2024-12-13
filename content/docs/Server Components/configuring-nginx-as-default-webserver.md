@@ -34,7 +34,7 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
       ```text
       systemctl disable --now apache2
       ```
-   - RHEL and derivatives
+   - EL and derivatives
       ```text
       systemctl disable --now httpd
       ```
@@ -47,7 +47,7 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
       ```text
       apt-get install nginx-full webmin-virtualmin-nginx webmin-virtualmin-nginx-ssl
       ```
-   - RHEL and derivatives
+   - EL and derivatives
       ```text
       dnf install nginx wbm-virtualmin-nginx wbm-virtualmin-nginx-ssl
       ```
@@ -72,7 +72,7 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
       ```text
       apt-get install apache2 libapache2-mod-fcgid apache2-suexec-custom
       ```
-   - RHEL and derivatives
+   - EL and derivatives
       ```text
       dnf install httpd mod_fcgid mod_ssl mod_http2
       ```

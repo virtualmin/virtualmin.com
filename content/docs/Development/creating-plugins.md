@@ -15,7 +15,7 @@ A plugin typically adds a new possible to virtual servers, in addition to the st
 
 The steps to start writing your own plugin are similar to those for creating a new Webmin module:
 
-1.  Find the Webmin _root_ directory, which will be `/usr/libexec/webmin` on RHEL and derivatives or `/usr/share/webmin` on Debian and derivatives systems.
+1.  Find the Webmin _root_ directory, which will be `/usr/libexec/webmin` on EL and derivatives or `/usr/share/webmin` on Debian and derivatives systems.
     
 2.  Pick a directory name for your plugin that is not currently in use by any other Webmin module. Plugin directories typically start with `virtualmin-` - so for the purposes of this documentation, we will assume that yours is going to be called `virtualmin-your-plugin`.
     

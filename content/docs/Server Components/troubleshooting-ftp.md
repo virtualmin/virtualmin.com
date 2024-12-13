@@ -37,7 +37,7 @@ To load the `ip_conntrack_ftp` module:
    modprobe ip_conntrack_ftp
    ```
 2. **Immediate effect**: This command immediately loads the module into the running kernel, without requiring a reboot.
-3. **Persisting the change**: To ensure the module is loaded on system boot, add `ip_conntrack_ftp` to your module loading configuration (e.g., `/etc/modules` on Debian and derivatives or create a file in `/etc/modules-load.d/` on RHEL and derivatives).
+3. **Persisting the change**: To ensure the module is loaded on system boot, add `ip_conntrack_ftp` to your module loading configuration (e.g., `/etc/modules` on Debian and derivatives or create a file in `/etc/modules-load.d/` on EL and derivatives).
 
 ##### Post-Configuration
 

@@ -95,7 +95,7 @@ These can be run on one or two other systems on your network, and Virtualmin on 
 
 In the instructions below, _serverip_ is the IP address of the system that will be running `spamd`, and _virtualminip_ is the IP of the Virtualmin machine.
 
-#### Setting up Spamd on RHEL and derivatives
+#### Setting up Spamd on EL and derivatives
  1. Login to the system you want to run `spamd` on as _root_.
  2. Install SpamAssassin with:
     ```text
@@ -161,7 +161,7 @@ The easiest way to setup `clamd` is to use Virtualmin's built-in support for con
  3. Click the **Enable ClamAV Server** button.
  4. SSH into the system as _root_, and edit the file `clamd.conf` and make sure the line `TCPSocket 3310` exists and is not commented out.
  5. Also make sure the line `TCPAddr 127.0.0.1` does _not_ exist or is commented out.
- 6. Run the command `systemctl restart clamd@scan` on RHEL and derivatives or `systemctl restart clamav-daemon` on Debian and derivatives to apply the configuration changes.
+ 6. Run the command `systemctl restart clamd@scan` on EL and derivatives or `systemctl restart clamav-daemon` on Debian and derivatives to apply the configuration changes.
  7. If you are using a firewall on this system, open up port 3310 to enable connections to ClamAV.
 
 ### Configuring Virtualmin to use a remote Clamd

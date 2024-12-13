@@ -57,7 +57,7 @@ In order to add additional PHP extensions, for all PHP versions installed on the
 for php in $(ls /etc/php); do sudo apt-get install -y "php$php-"{curl,intl}; done
 ```
 
-#### RHEL and derivatives
+#### EL and derivatives
 
 ```text
 for php in $(scl list-collections 2>/dev/null | grep 'php' | sed 's/$/-php/') php; do for ext in curl intl; do sudo dnf -y install "${php}-${ext}"; done; done

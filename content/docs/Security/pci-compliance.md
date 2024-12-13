@@ -22,7 +22,7 @@ Older protocols and ciphers like are considered insecure and must be disabled ac
 
 #### Apache configuration
 1. Edit the Apache configuration file:
-   - On RHEL and derivatives `/etc/httpd/conf.d/ssl.conf` file.
+   - On EL and derivatives `/etc/httpd/conf.d/ssl.conf` file.
    - On Debian and derivatives `/etc/apache2/mods-enabled/ssl.conf` file.
 2. Set the following directives:
    ```text
@@ -31,7 +31,7 @@ Older protocols and ciphers like are considered insecure and must be disabled ac
 	SSLSessionTickets   off
    ```
 3. Restart Apache running:
-   - On RHEL and derivatives `systemctl reload httpd` command.
+   - On EL and derivatives `systemctl reload httpd` command.
    - On Debian and derivatives `systemctl reload apache2` command.
 
 #### Nginx configuration
@@ -66,7 +66,7 @@ Older protocols and ciphers like are considered insecure and must be disabled ac
 
 #### ProFTPD configuration
 1. Edit the ProFTPD configuration file:
-   - On RHEL and derivatives `/etc/proftpd/mod_tls.conf` file.
+   - On EL and derivatives `/etc/proftpd/mod_tls.conf` file.
    - On Debian and derivatives `/etc/proftpd/tls.conf` file.
 2. Set the following directives:
    ```text
