@@ -149,7 +149,7 @@ You may see a license error message if you're using the same Pro license on mult
   - Virtualmin will switch to "read-only" mode on all affected servers, and you won't be able to make changes through the Virtualmin UI or CLI.
   - Your websites, databases, and other system services will continue running normally.
 
-* For expired licenses, you have a 7-day grace period to renew before restrictions apply.
+* For expired licenses, there’s a 7-day grace period to renew before the same restrictions are applied.
 
 To resolve license errors, you can either:
   - Complete your server migration within the grace period.
