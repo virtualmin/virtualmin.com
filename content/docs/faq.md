@@ -139,7 +139,22 @@ Expired licenses don't have any intrinsic value and are removed from the **Softw
 
 > ##### Why do I see a license error message?
 
-If you receive a warning about your Virtualmin license, it indicates the license, meant for only one server, is in use on multiple servers. This is temporarily acceptable during server migration, and the warning will automatically disappear within a few days after deactivating the old server. If you're using the license on multiple servers for other reasons, you'll need to buy an extra license.
+You may see a license error message if you're using the same Pro license on multiple servers. Here are the important details to understand:
+
+* Each Pro license is valid for exactly one server. Using it on multiple servers will trigger a license error unless you're in the migration grace period.
+
+* When migrating between servers or testing, you get a 21-day grace period (minus 48 hours for license server lock release) to use the same license on multiple servers.
+
+* After the grace period expires:
+  - Virtualmin will switch to "read-only" mode on all affected servers, and you won't be able to make changes through the Virtualmin UI or CLI.
+  - Your websites, databases, and other system services will continue running normally.
+
+* For expired licenses, you have a 7-day grace period to renew before restrictions apply.
+
+To resolve license errors, you can either:
+  - Complete your server migration within the grace period.
+  - Purchase additional licenses for extra servers.
+  - Ensure you're only using the license on one server.
 
 > ##### How do I update payment information or find my invoices?
 
