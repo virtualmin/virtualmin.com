@@ -27,12 +27,16 @@ Most Grade B systems do not fully support automatic installation but are expecte
 
 For enabling automatic installation support, use the `--unstable` param when running the `virtualmin-install.sh` script.
 
-- Fedora Server 39 and up on x86_64
+##### Debian derivatives
+- Ubuntu interim (non-LTS) on i386 and amd64
+- Kali Linux Rolling 2023 and above on i386 and amd64
+##### EL derivatives
 - CentOS Stream 8 and 9 on x86_64
-- Oracle Linux 8 and 9 on x86_64
+- Fedora Server 40 and above on x86_64
 - Amazon Linux 2023 and above on x86_64
+- Oracle Linux 8 and 9 on x86_64
 - CloudLinux Linux 8 and 9 on x86_64
-- Kali Linux Rolling 2023 and above on x86_64
+- openEuler 24.03 and above on x86_64
 
 #### Grade B systems without automatic installation support
 - Raspbian Linux
