@@ -198,7 +198,7 @@ When a new version is available, you will see a message on the **Dashboard** pag
 
 Upgrading from the command line is also possible, using the `dnf` or `apt-get` commands, depending on your OS.
 
-For example, on EL and derivatives, you can run the following command to update all system packages, including Virtualmin related ones:
+For example, on EL systems, you can run the following command to update all system packages, including Virtualmin related ones:
 
 ```text
 dnf update -y

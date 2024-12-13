@@ -9,7 +9,7 @@ Virtualmin includes a convenient module for submitting support requests and prov
 
 ### Installing the support module
 
-- EL and derivatives:
+- EL systems:
   ```bash
   dnf install wbm-virtualmin-support
   ```

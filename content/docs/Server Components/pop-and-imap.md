@@ -20,8 +20,8 @@ Support for full email-style usernames, i.e. `user@domain.tld` is a standard fea
 
 Previously, enabling SMTP authentication for email-style usernames required manual configuration:
 
-- On RHEL, and its derivatives, this was done by adding the `-r` flag to `FLAGS=` in `/etc/sysconfig/saslauthd`.
-- On Debian and Ubuntu, you would add the `-r` flag to `PARAMS=` in `/etc/default/saslauthd`.
+- On EL systems, this was done by adding the `-r` flag to `FLAGS=` in `/etc/sysconfig/saslauthd`.
+- On Debian and derivatives, you would add the `-r` flag to `PARAMS=` in `/etc/default/saslauthd`.
 
 These configurations ensured that `saslauthd` could interpret `user@domain.tld` formatted usernames.
 

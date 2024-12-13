@@ -28,8 +28,8 @@ If visiting a domain on your server shows incorrect content, it could be due to 
    - Verify that each `VirtualHost` block lists an IP address, not an asterisk (i.e. __*__).
 
 3. **Restart Apache**:
-   - For EL derivatives: `systemctl restart httpd`.
-   - For Debian derivatives: `systemctl restart apache2`.
+   - For EL systems: `systemctl restart httpd`.
+   - For Debian and derivatives: `systemctl restart apache2`.
 
 ### Virtualmin configuration settings
 

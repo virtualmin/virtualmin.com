@@ -26,7 +26,7 @@ When managing multiple PHP versions in Virtualmin, it's crucial to understand th
   
 - **Identifying `mod_php` installation**
   - In Debian and derivatives, `mod_php` is typically part of packages like `libapache2-mod-php` (or other version numbers like `libapache2-mod-php8.3`).
-  - In EL and derivatives, look for packages named `php`, `php83-php` or similar, depending on the PHP version.
+  - In EL systems, look for packages named `php`, `php83-php` or similar, depending on the PHP version.
 
 #### Uninstalling `mod_php`
 To remove `mod_php` and avoid numerous issues, you can uninstall it using your package manager.
@@ -34,7 +34,7 @@ To remove `mod_php` and avoid numerous issues, you can uninstall it using your p
     ```text
     apt-get remove libapache2-mod-php*
     ```
-  - For EL and derivatives
+  - For EL systems
     ```text
     dnf remove $(dnf list installed | awk -F. '{print $1}' | grep -E '^php$|^php[0-9]+-php$')
     ```

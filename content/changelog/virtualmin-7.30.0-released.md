@@ -19,4 +19,4 @@ author: "Ilia Ross"
 * Fix numerous DNS-related bugs
 * Fix support for `zstd` compression in backups
 * Fix an issue with MySQL user creation in certain edge cases
-* Fix config file to set the correct port/socket for Postgrey in EL derivatives
+* Fix config file to set the correct port/socket for Postgrey in EL systems

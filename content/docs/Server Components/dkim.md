@@ -16,7 +16,7 @@ Virtualmin uses a **milter** (mail filter) for DKIM signing and verification. Th
 
 ### Installing DKIM packages
 
-Virtualmin facilitates DKIM configuration on Debian and RHEL (Enterprise Linux) derivatives, which provide the necessary DKIM milter packages.
+Virtualmin facilitates DKIM configuration on supported systems, which provide the necessary DKIM milter packages.
 
 #### Automated installation in Virtualmin
 
@@ -26,14 +26,14 @@ Virtualmin facilitates DKIM configuration on Debian and RHEL (Enterprise Linux) 
 
 #### Manual installation via command line
 
+- On EL systems:
+  ```text
+  dnf install opendkim
+  ```
+
 - On Debian and derivatives:
   ```text
   apt-get install opendkim
-  ```
-
-- On RHEL derivatives:
-  ```text
-  dnf install opendkim
   ```
 
 ### Enabling DKIM in Virtualmin

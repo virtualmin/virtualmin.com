@@ -13,13 +13,15 @@ Check the `/root/virtualmin-install.log`. It is possible that your package manag
 If your package manager is configured to use non-OS package repositories, or if you have installed alternative versions of packages before installation, conflicts are likely to occur during installation. If you plan to use non-OS standard packages (other than those provided by Virtualmin repositories), they should be installed _after_ installation of Virtualmin, and you should add an exclude directive to the `dnf` or `apt-get` configuration in order to insure similar conflicts do not happen in the future. Also note that if you are using non-OS standard packages, you may need to configure the relevant Webmin module to make it aware of the location of the configuration files. Note that if your Linux distribution was installed by your ISP (such as with a VPS image), you may want to verify that no additional repositories were setup.
 
 ### Package manager errors
-Sometimes package manager metadata can end up in a broken state. Try cleaning the metadata to see if it resolves the problem. On RHEL systems (Alma/Rocky/CentOS):
+Sometimes package manager metadata can end up in a broken state. Try cleaning the metadata to see if it resolves the problem.
+
+On EL systems (Alma/Rocky/CentOS):
 
 ```text
 dnf clean all
 ```
 
-On Debian/Ubuntu systems:
+On Debian and derivatives (Ubuntu):
 
 ```text
 apt-get clean ; apt-get update
@@ -55,13 +57,13 @@ freshclam
 
 Afterwards, try manually starting `clamd` service from the command line.
 
-On RHEL systems:
+On EL systems:
 
 ```text
 systemctl start clamd@scan
 ```
 
-On Debian/Ubuntu systems:
+On Debian and derivatives:
 
 ```text
 systemctl start clamav-daemon
