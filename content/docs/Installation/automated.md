@@ -44,18 +44,18 @@ Usage: virtualmin-install.sh [options]
 
   --bundle|-b <LAMP|LEMP>          choose bundle to install (defaults to LAMP)
   --type|-t <full|mini|micro|nano> installation type (defaults to full)
-  --unstable|-e                    enable Grade B system support (see documentation)
-  --module|-o                      source custom shell module in post-install phase
+  --unstable|-e                    enable unstable OS support (not recommended)
+  --module|-o                      load custom module in post-install phase
 
   --hostname|-n                    force hostname during installation
   --no-package-updates|-x          skip package updates during installation
 
-  --setup|-s                       reconfigure Virtualmin repos without installing
-  --connect|-C <ipv4|ipv6>         test connectivity to the repos without installing
+  --setup|-s                       reconfigure repos without installing
+  --connect|-C <ipv4|ipv6>         test connectivity without installing
 
-  --insecure-downloads|-i          skip SSL certificate check for remote downloads
+  --insecure-downloads|-i          skip SSL certificate check for downloads
 
-  --uninstall|-u                   remove all Virtualmin packages and dependencies
+  --uninstall|-u                   remove all packages and dependencies
 
   --force|-f|--yes|-y              assume "yes" to all prompts
   --force-reinstall|-fr            force reinstall Virtualmin (not recommended)
