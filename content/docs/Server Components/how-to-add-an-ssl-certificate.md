@@ -36,6 +36,7 @@ If needed, and if your hostname resolves correctly, enable **Setup SSL certifica
 Keep in mind that Virtualmin is designed to automatically handle SSL certificate requests and installations from any ACME-compatible provider. However, if there have been manual changes made to the configuration files or specific server settings, these could interfere with the process. If you encounter issues, consider the following points for troubleshooting:
 
 - **DNS**: If SSL provider cannot verify your domain, ensure your DNS settings are correct and propagated.
+{{< alert primary exclamation "" "To obtain SSL certificates via DNS validation—including wildcard certificates—Virtualmin must manage your domain’s DNS zone. This is required to add the temporary DNS records necessary for the validation process." >}}
     1. **Verify DNS records**: Ensure that both the A (IPv4) and AAAA (IPv6) DNS records for your domain are correctly pointing to your server's IP addresses. These records should be configured with your domain registrar or DNS provider.
     2. **Consistency between DNS and web server**: 
          - **IPv4 and IPv6 consistency**: Make sure that both the IPv4 and IPv6 addresses in your DNS records match the IP addresses configured on your web server.
