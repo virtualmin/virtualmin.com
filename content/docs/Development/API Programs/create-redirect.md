@@ -16,7 +16,7 @@ By default, requests for sub-paths under the URL path will be mapped to the same
 
 For domains with both non-SSL and SSL websites, you can use the `--http` and `--https` flags to limit the alias or redirect to one website type or the other.
 
-To set a custom HTTP status code for the redirect, you can use the `--code` flag followed by a number. Otherwise the default code of 301 (temporary redirect) will be used.
+To set a custom HTTP status code for the redirect, you can use the `--code` flag followed by a number. Otherwise the default code of 302 (temporary redirect) will be used.
 
 ### Command line help
 
