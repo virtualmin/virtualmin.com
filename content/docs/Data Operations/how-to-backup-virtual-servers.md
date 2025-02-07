@@ -1,11 +1,11 @@
 ---
-title: "How to Backup Virtual Servers"
+title: "How to Backup and Restore Virtual Servers"
 author: "Jamie Cameron"
 date: "2024-05-03"
 weight: 2510500
 ---
 
-This tutorial provides detailed guidance on creating backups for virtual servers in Virtualmin, including steps for setting up scheduled, differential, and encrypted backups, purging old backups, as well as backing up global settings.
+This tutorial provides detailed guidance on creating and restoring backups for virtual servers in Virtualmin, including steps for setting up scheduled, differential, and encrypted backups, purging old backups, and backing up global settings.
 
 {{< alert primary exclamation "" "Virtualmin provides multiple tools to help you keep good backups automatically. The first step after any installation of Virtualmin should probably be thinking about your backup procedures and setting up Virtualmin to automate those procedures for you." >}}
 
