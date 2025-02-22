@@ -38,31 +38,50 @@ sh virtualmin-install.sh
 The `virtualmin-install.sh` has a number of options that can be used to perform a particular type of installation. The usage (`--help`) output describes the available options:
 
 ```
-Usage:  virtualmin-install.sh [options]
+Usage: virtualmin-install.sh [options]
 
-  If called without arguments, installs Virtualmin.
+  If called without arguments, installs Virtualmin with default options.
 
-  --help|-h                display this help and exit
-  --bundle|-b <LAMP|LEMP>  choose bundle to install (defaults to LAMP)
-  --minimal|-m             install a smaller subset of packages for low-memory/low-resource systems
-  --unstable|-e            enable support for Grade B systems (not recommended, see documentation)
-  --no-package-updates|-x  skip installing system package updates
-  --setup|-s               setup Virtualmin software repositories and exit
-  --hostname|-n            set fully qualified hostname
-  --force|-f               assume "yes" as answer to all prompts
-  --verbose|-v             increase verbosity
-  --uninstall|-u           removes all Virtualmin packages (do not use on a production system)
+  --bundle|-b <LAMP|LEMP>          choose bundle to install (defaults to LAMP)
+  --type|-t <full|mini|micro|nano> installation type (defaults to full)
+  --unstable|-e                    enable unstable OS support (not recommended)
+  --module|-o                      load custom module in post-install phase
+
+  --hostname|-n                    force hostname during installation
+  --no-package-updates|-x          skip package updates during installation
+
+  --setup|-s                       reconfigure repos without installing
+  --connect|-C <ipv4|ipv6>         test connectivity without installing
+
+  --insecure-downloads|-i          skip SSL certificate check for downloads
+
+  --uninstall|-u                   remove all packages and dependencies
+
+  --force|-f|--yes|-y              assume "yes" to all prompts
+  --force-reinstall|-fr            force reinstall Virtualmin (not recommended)
+  --no-banner|-nb                  suppress installation messages and warnings
+  --verbose|-v                     enable verbose mode
+  --version|-V                     show installer version
+  --help|-h                        show this help
 ```
 
-### LAMP (Apache) vs. LEMP (Nginx)
-The Virtualmin install script can setup Apache or Nginx. The default, and best-tested and most feature-complete, is Apache. But, if you prefer Nginx, you can install a bundle with the LEMP stack instead of the LAMP stack. Use the `--bundle LEMP` option for Nginx.
+### Installation variations
 
-### Full install vs. minimal install
-The full LAMP or LEMP stack, plus a full mail processing stack including SpamAssassin and ClamAV, is quite large, requiring about 2GB minimum system memory in order to function well (and more is better). If you're using a lower memory system, it's not recommended, and maybe not even possible, to run the full mail stack along with LAMP or LEMP.
+#### Bundle types
 
-We provide an installation option, `--minimal`, that leaves off much of the mail processing stack. The installed components can still send and receive mail from local processes, but spam and anti-virus scanning will need to be outsourced to a remote system (for example, a Cloudmin Services host), and several other ancillary packages will not be installed. The minimal installation type can most probably operate just fine with only 1GB of RAM (but more is still better).
+The Virtualmin install script supports two webserver configurations. Apache (LAMP stack), the default and most feature-complete option, and Nginx (LEMP stack), which is equally supported and can be selected if it better suits your preference.
 
-If you want to locally host mail for end users (including IMAP/POP clients), the minimal installation target is not the right choice.
+To install the LEMP stack with Nginx, use `--bundle LEMP` flag during installation.
+
+#### Package types
+The installation offers multiple types to fit different system requirements and hosting preferences.
+
+ - **Full install:** Includes the complete LAMP or LEMP stack and a full mail processing setup, including spam and antivirus scanning. This option requires a minimum of 4GB of RAM, though more is recommended for optimal performance.
+ - **Mini install:** Excludes spam and antivirus scanning, intrusion prevention, and FTP service. Basic mail services (send/receive via local processes) are retained, but advanced mail processing must be handled remotely. Requires at least 1GB of RAM (more is better) and is suitable for resource-limited systems where spam filtering and antivirus are handled externally or are unnecessary.
+ - **Micro install:** Builds on the Mini type by excluding all mail-related services entirely, making it ideal for systems hosting web applications without local mail or where mail services are hosted externally.
+ - **Nano install:** Builds on the Micro type by also removing DNS components. This lightweight option is ideal for resource-constrained systems that rely on external mail or DNS services or don’t need them at all.
+
+You can specify the desired installation type during setup using the `--type` parameter, such as `--type nano`. If you plan to locally host mail for end users stick with the default `--type full` option.
 
 ### Questions `virtualmin-install.sh` might ask you
 Depending on your OS and the state of your system, the `virtualmin-install.sh` script may ask one or more questions.
