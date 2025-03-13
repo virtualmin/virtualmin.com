@@ -26,7 +26,7 @@ Virtualmin allows the selection of different PHP versions and execution modes fo
 
 1. **Enable Sury/PHP repository**
    ```text
-   apt-get -y install apt-transport-https lsb-release ca-certificates curl && curl -sSL -o /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg && sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/sury-debian-php-$(lsb_release -sc).list' && apt-get update
+   apt-get -y install apt-transport-https lsb-release ca-certificates curl && curl -sSL -o /usr/share/keyrings/debsuryorg-archive-keyring.gpg https://packages.sury.org/php/apt.gpg && sh -c 'echo "deb [signed-by=/usr/share/keyrings/debsuryorg-archive-keyring.gpg] https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/sury-debian-php-$(lsb_release -sc).list' && apt-get update
    ```
 2. **Install PHP packages**
    ```text
