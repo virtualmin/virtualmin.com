@@ -11,14 +11,14 @@ WP Workbench is a new Virtualmin plugin designed to simplify WordPress site mana
 WP Workbench is available in standard Virtualmin repositories and can be easily
 installed using your system's package manager:
 
-**For Debian and derivatives:**
-```
-apt install virtualmin-wp-workbench
-```
-
 **For EL systems:**
 ```
-dnf install virtualmin-wp-workbench
+dnf install wbm-virtualmin-wp-workbench
+```
+
+**For Debian and derivatives:**
+```
+apt install webmin-virtualmin-wp-workbench
 ```
 
 After installation, the module will appear on the "Manage Web Apps" page when a
