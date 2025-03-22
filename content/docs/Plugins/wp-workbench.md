@@ -232,3 +232,6 @@ For more details just use `virtualmin configure-script --script-type wordpress` 
 2. Select the tab corresponding to the task you want to perform
 3. Make your changes and click "Apply" to save them
 4. Use "Login to WordPress" for direct access to the WordPress admin area
+
+{{< alert primary exclamation "" "Access to WP Workbench for virtual server owners is only available if the master administrator has granted them permission to manage web apps." >}}
+
