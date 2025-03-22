@@ -24,7 +24,7 @@ apt install webmin-virtualmin-wp-workbench
 After installation, the module will appear on the "Manage Web Apps" page when a
 specific WordPress instance is selected.
 
-## Why Use WP Workbench?
+## Why use WP Workbench?
 
 - **Simplified management**: Control your WordPress sites directly from Virtualmin
 - **Time-saving**: Perform bulk operations on plugins and themes
@@ -33,9 +33,9 @@ specific WordPress instance is selected.
 - **Convenience**: One-click WordPress admin access
 - **Automation**: Robust CLI for scripting common tasks with full integration with Virtualmin
 
-## User Interface
+## User interface tabs
 
-### System Tab
+### System
 
 This tab helps you optimize WordPress performance and security:
 
@@ -57,7 +57,7 @@ This tab helps you optimize WordPress performance and security:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-system.png "System — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-system.png)
 
-### Settings Tab
+### Settings
 
 Manage core WordPress settings without accessing the WordPress dashboard:
 
@@ -100,7 +100,7 @@ Manage core WordPress settings without accessing the WordPress dashboard:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-settings.png "Settings — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-settings.png)
 
-### Plugins Tab
+### Plugins
 
 Comprehensive plugin management in one place:
 
@@ -115,7 +115,7 @@ Comprehensive plugin management in one place:
   
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-plugins.png "Plugins — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-plugins.png)
 
-### Themes Tab
+### Themes
 
 Keep your site's appearance up-to-date and secure:
 
@@ -130,7 +130,7 @@ Keep your site's appearance up-to-date and secure:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-themes.png "Themes — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-themes.png)
 
-### Backup and Restore Tab
+### Backup and restore
 
 Protect your WordPress site with comprehensive backup tools:
 
@@ -144,7 +144,7 @@ Protect your WordPress site with comprehensive backup tools:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-backup-and-restore.png "Backup and Restore — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-backup-and-restore.png)
 
-### Clone Tab
+### Clone
 
 Duplicate your WordPress site for testing or development:
 
@@ -165,7 +165,7 @@ Duplicate your WordPress site for testing or development:
 
 {{< alert warning exclamation-triangle "" "The tab to clone a WordPress instance will not be available to the virtual server owner unless the master administrator has granted them database management permissions." >}}
 
-### Development Tab
+### Development
 
 Control technical settings for troubleshooting and optimization:
 
@@ -187,7 +187,7 @@ Control technical settings for troubleshooting and optimization:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-development.png "Development — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-development.png)
 
-## Command Line Interface
+## Command line interface
 
 WP Workbench includes a powerful CLI for automating WordPress management through
 the `virtualmin configure-script` command.
