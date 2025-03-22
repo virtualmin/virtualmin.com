@@ -161,6 +161,10 @@ Duplicate your WordPress site for testing or development:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-clone.png "Clone — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-clone.png)
 
+{{< alert primary exclamation "" "The ability to clone a WordPress instance to a new sub-server is only available if the master administrator has granted the virtual server owner permission to create sub-servers and aliases. The ability to clone to top-level virtual servers is available to master administrators and resellers only." >}}
+
+{{< alert warning exclamation-triangle "" "The tab to clone a WordPress instance will not be available to the virtual server owner unless the master administrator has granted them database management permissions." >}}
+
 ### Development Tab
 
 Control technical settings for troubleshooting and optimization:
