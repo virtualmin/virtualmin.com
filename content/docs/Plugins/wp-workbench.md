@@ -24,6 +24,8 @@ apt install webmin-virtualmin-wp-workbench
 After installation, the module will appear on the "Manage Web Apps" page when a
 specific WordPress instance is selected.
 
+{{< alert primary exclamation-triangle "" "The WP Workbench plugin is only available to [Virtualmin Pro](https://www.virtualmin.com/shop/) subscribers." >}}
+
 ## Why use WP Workbench?
 
 - **Simplified management**: Control your WordPress sites directly from Virtualmin
