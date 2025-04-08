@@ -226,6 +226,16 @@ virtualmin configure-script --script-type wordpress --domain example.com --opt '
 virtualmin configure-script --script-type wordpress --domain example.com --opt 'clone same --dir=wordpress-clone'
 ```
 
+### Install or upgrade WP-CLI
+```
+virtualmin configure-script --script-type wordpress --domain example.com --wp-cli install
+```
+
+### Retrieve detailed instance information
+```
+virtualmin configure-script --script-type wordpress --domain example.com --wp-cli info
+```
+
 For more details just use `virtualmin configure-script --script-type wordpress` command.
 
 ## Getting started
