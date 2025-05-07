@@ -637,7 +637,7 @@ body.dark>footer.footer::after {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     max-width: var(--main-max-width);
     margin: 0 auto;
     padding: 0 var(--gap);
@@ -683,6 +683,10 @@ body.dark>footer.footer::after {
 
 .footer-content .footer-socials a:hover i.wm-telegram {
     color: #147eff;
+}
+
+.footer-content .footer-socials a i {
+    height: -webkit-fill-available;
 }
 
 .footer-content .footer-searchable {
