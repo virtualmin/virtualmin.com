@@ -146,7 +146,7 @@ You may see a license error message if you're using the same Pro license on mult
 * When migrating between servers or testing, you get a 21-day grace period (minus 48 hours for license server lock release) to use the same license on multiple servers.
 
 * After the grace period expires:
-  - Virtualmin will switch to "read-only" mode on all affected servers, and you won't be able to make changes through the Virtualmin UI or CLI.
+  - Virtualmin will temporarily disable features that allow changes to be made through either the UI or CLI on all affected servers.
   - Your websites, databases, and other system services will continue running normally.
 
 * For expired licenses, there’s a 7-day grace period to renew before the same restrictions are applied.
