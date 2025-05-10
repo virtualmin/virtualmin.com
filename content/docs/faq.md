@@ -162,7 +162,7 @@ If your billing information has expired, we will not be able to renew your licen
 
 ### Security
 
-> #### What are the default file and directory permissions?
+> ##### What are the default file and directory permissions?
 When Webmin and Virtualmin create files and directories, they rely on the default mode mask ("umask") without setting specific permissions. By default, all files and directories have full permissions set to "666 (rw-rw-rw-)" for files and "777 (rwxrwxrwx)" for directories. The "umask" value, typically set to "022", modifies these default permissions. This means the actual default permissions are set and calculated as follows:
 - For files
   
@@ -181,6 +181,10 @@ Additionally, Webmin and Virtualmin offer specific settings for certain files an
 - Default home directory permissions can be controlled in **System ⇾ Users and Groups: Configuration ⇾ Home directory options** page.
 - Permissions for files in the "public_html" directory can be set in **System Settings ⇾ Server Templates: Edit Server Template / Website for domain** using the **Permissions on website subdirectory** option.
 {{< note "Changes made in templates only apply to newly created virtual servers." "Note:" "notification" >}}
+
+> ##### When I use **Manage Virtual Server ⇾ Switch To Server's Admin**, is there a way to return without logging out?
+
+When you use that option, you become that user. For security reasons, there’s no way to switch back. Allowing it could let users trick the system into becoming the *root* user, which would be a big security risk.
 
 ### Packages and web apps upgrades
 
@@ -233,6 +237,12 @@ In Virtualmin, go to **System Settings ⇾ Script Installers / Installer Updates
 Upgrading major versions of your Linux distribution, such as from Ubuntu 22.04 to 24.04, AlmaLinux 8 to 9, or Debian 11 to 12, is a significant process and is not something we can assist with. It's important to note that distro upgrades can sometimes lead to complications. Some users might experience issues that require manual intervention to resolve, while others may find the upgrade process smooth and without major problems. We strongly recommend that such questions be directed to the respective forums or support communities. They are better equipped to provide detailed, distribution-specific advice and guidelines for the upgrade process.
 
 Remember, it's always a good idea to backup your data before attempting any major system upgrade.
+
+### Migration and transfer
+
+> ##### What is the difference between migrating and transferring a virtual server?
+
+The “Migrate Virtual Server” option is for importing a backup file from another panel into Virtualmin. The “Transfer Virtual Server” option is the opposite—it’s for pushing a virtual server from one Virtualmin system to another. Some people use it to move domains from an old server to a new one. If you’re importing a backup from another panel, “Migrate Virtual Server” is the way to go.
 
 ### User interface
 
