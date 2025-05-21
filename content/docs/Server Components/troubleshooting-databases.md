@@ -34,7 +34,7 @@ This troubleshoot aims to provide practical steps to troubleshoot and fix memory
 2. **Configure swap space**: As a temporary solution, add or increase swap space.
 
 #### Implement monitoring tools
-   - Set up special tools like [Zabbix](https://www.zabbix.com/download) to monitor system and database performance.
+   - Set up special tools like [Middleware](https://app.middleware.io/auth/register/), [Zabbix](https://www.zabbix.com/download) to monitor system and database performance.
    - Configure MySQL/MariaDB monitor and/or alerts for high memory usage in **Webmin / Tools ⇾ System and Server Status** module.
 
 ### Why can all of my users see a database named `test`?
