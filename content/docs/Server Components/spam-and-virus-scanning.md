@@ -160,7 +160,9 @@ The easiest way to setup `clamd` is to use Virtualmin's built-in support for con
  2. Login to the new Virtualmin, and go to **Email Messages ⇾ Spam and Virus Scanning**.
  3. Click the **Enable ClamAV Server** button.
  4. SSH into the system as _root_, and edit the file `clamd.conf` and make sure the line `TCPSocket 3310` exists and is not commented out.
- 5. Also make sure the line `TCPAddr 127.0.0.1` does _not_ exist or is commented out.
+ 5. Ensure that the `TCPAddr` line is set to the IP address to which system connections to `clamd` will be directed.
+{{< alert primary terminal-square "" "On systems with *systemd* socket activation, run `systemctl edit clamav-daemon.socket`, add `ListenStream=0.0.0.0:3310` under the new `[Socket]` section, then restart the socket and service to apply the change." >}}
+{{< note "Avoid using `0.0.0.0` in production; instead, bind ClamAV to a specific trusted IP to reduce exposure." "Note:" "security" >}}
  6. Run the command `systemctl restart clamd@scan` on EL systems or `systemctl restart clamav-daemon` on Debian and derivatives to apply the configuration changes.
  7. If you are using a firewall on this system, open up port 3310 to enable connections to ClamAV.
 
