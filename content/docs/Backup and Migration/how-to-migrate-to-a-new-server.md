@@ -2,7 +2,7 @@
 title: "How to Migrate to a New Server"
 author: "Ilia Ross"
 date: "2023-12-12"
-weight: 2510501
+weight: 2510505
 ---
 
 Migrating your Virtualmin installation to a new server involves several steps, such as backups and restores, testing, and going live. This document is designed to help you navigate through this process. The process of migrating your Virtualmin installation is versatile, and unaffected by differences in operating system, version, or architecture. For example, you can smoothly transition from an Alma-based LAMP stack to a Debian-based LEMP stack, or from a LAMP stack on Ubuntu to a LEMP stack on Rocky.
