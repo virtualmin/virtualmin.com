@@ -1,11 +1,11 @@
 ---
 title: "Exploring Backup Structure"
 author: "Ilia Ross"
-date: "2025-07-11"
+date: "2025-07-12"
 weight: 2510503
 ---
 
-This tutorial helps Virtualmin users understand what’s inside a Virtualmin
+This tutorial helps Virtualmin users understand what's inside a Virtualmin
 backup file, explaining how backup files are named, what each file represents,
 and how file structures differ depending on your chosen backup format.
 
@@ -118,13 +118,64 @@ Email templates for automated messages.
 
 {{< alert primary note "" "Depending on the selected backup options, you may find more or fewer global configuration files in this section." >}}
 
+## Backup modes and file organization
+Virtualmin offers two backup modes that organize your backup files a little
+differently within the main archive.
+
+- ### Single archive file mode
+
+    This is the standard backup mode. All components are stored as separate files in
+the main archive, as described above, for example:
+
+   ```
+   backup-file.tar.gz
+   ├── domain.tld_dir
+   ├── domain.tld_dns
+   ├── domain.tld_mysql
+   ├── domain.tld_web
+   ├── virtualmin_config
+   └── [other component files]
+   ```
+
+- ### One file per server mode
+
+    This mode reorganizes the backup for direct access to website files. The home
+directory contents are placed directly at the archive root. All other components
+are moved to a `.backup` directory. For example:
+
+   ```
+   backup-file.tar.gz
+   ├── .backup/
+   │   ├── domain.tld_dir (empty)
+   │   ├── domain.tld_dns
+   │   ├── domain.tld_mysql
+   │   ├── domain.tld_web
+   │   ├── virtualmin_config
+   │   └── [other component files]
+   ├── Maildir/
+   ├── bin/
+   ├── cgi-bin/
+   ├── domains/
+   ├── etc/
+   ├── homes/
+   ├── logs/
+   ├── public_html/
+   ├── tmp/
+   ├── .bash_history
+   ├── .bash_logout
+   ├── .bash_profile
+   └── .bashrc
+   ```
+
+The internal file names and content stay the same in both modes; only the
+organization within the archive changes.
+
 ## Compression format of nested archives
-The format of nested archives within the backup matches the compression method
-you select. Most components are not compressed, but some are. With tar-based
-archives, these nested archives are never compressed—they simply bundle multiple
-files together. In zip-based backups, nested archives are minimally compressed,
-mainly to group files into a single archive. The internal structure remains
-consistent; only the archive handling aligns with your selected backup method.
+The format of nested archives within the backup matches your chosen compression
+method, but regardless of whether "tar" or "zip" is used, these nested archives
+remain uncompressed, as they simply group files together without reducing their
+size. The internal structure stays consistent; only the archive handling varies
+based on your selection.
 
 ## Conclusion
 
