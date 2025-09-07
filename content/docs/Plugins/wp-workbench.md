@@ -31,26 +31,15 @@ dnf install wbm-virtualmin-wp-workbench
 
 ## Accessing
 
-After installation, you will see a new menu item called "WP Workbench Manager"
-in the main navigation menu. You will also find a new management option called
-"WP Workbench" under "Manage Web Apps" for each domain with WordPress installed.
-
-- **WP Workbench Manager**
-
-  Is for bulk management of multiple WordPress instances, on local and remote
-  systems, and appears in the main navigation menu
-- **WP Workbench**
-
-  Is for managing a single WordPress instance on a local system and appears
-  under "Manage Web Apps" for each domain.
-
+After installation, "WP Workbench Manager" appears in the left navigation menu
+for multi-site management (local and remote). "WP Workbench" is on each domain's
+"Manage WordPress" page, accessible from that domain's "Manage Web Apps" list.
 
 {{< alert primary exclamation-triangle "" "The WP Workbench plugin is only available to [Virtualmin Pro](https://www.virtualmin.com/shop/) subscribers." >}}
 
-
 ## Getting started
 
-### WP Workbench Manager
+### Bulk-site management
 1. Go to "WP Workbench Manager" by clicking the link at the navigation menu
 2. Click "Find Instances" to scan for WordPress installations on local and remote systems
 3. View all your WordPress instances in the "Instances" tab
@@ -59,9 +48,9 @@ in the main navigation menu. You will also find a new management option called
 6. Click on any instance's login icon for direct access to the WordPress admin area
 7. Use "Import Instances" to add WordPress sites not installed through Virtualmin
 
-### WP Workbench
+### Single-site management
 
-1. Navigate to the WP Workbench in your WordPress management page in "Manage Web Apps" page
+1. In the domain section, go to "Manage Web Apps" and choose the WordPress site to manage
 2. Select the tab corresponding to the task you want to perform
 3. Make your changes and click "Apply" to save them
 4. Use "Login to WordPress" for direct access to the WordPress admin area
@@ -69,9 +58,10 @@ in the main navigation menu. You will also find a new management option called
 {{< alert primary exclamation "" "Access to WP Workbench for virtual server owners is only available if the master administrator has granted them permission to manage web apps." >}}
 
 
-## WP Workbench Manager
+## Bulk-site management
 
-WP Workbench Manager provides a centralized interface to manage multiple WordPress sites, whether they are on the local server or remote systems.
+WP Workbench Manager lets you manage multiple WordPress sites in one place,
+across local and remote servers.
 
 * **Centralized control**: Manage multiple WordPress sites from one interface
 * **Speed**: View and update core, plugins, and themes in bulk
@@ -116,6 +106,7 @@ servers with comprehensive details:
 
 **Special features of this tab:**
 - **Refresh Instances**: Refresh the cache for all collected instances, both local and remote, to detect new installations or changes to existing instances
+  {{< alert warning exclamation "" "Indexing creates the list of instances from local and remote servers. On larger setups, this may take some time. Until it's done, sites won't appear, and sites changed externally may show outdated info until the next refresh." >}}
 - **Import Instances**: Import existing installations that were created outside of Virtualmin to manage them alongside other sites
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-instances.png "Instances — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-instances.png)
@@ -196,9 +187,10 @@ Customize WP Workbench Manager using module config:
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-configuration.png "Configuration — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-configuration.png)
 
 
-## WP Workbench
+## Single-site management
 
-WP Workbench offers a simple interface to manage a single WordPress site:
+WP Workbench offers a simple interface for in-depth control of a single
+WordPress site:
 
 - **Simplified management**: Easily control the main WordPress site settings
 - **Time-saving**: Perform bulk operations on plugins and themes
@@ -414,7 +406,7 @@ Here are some examples of how to use the WP Workbench CLI to manage WordPress
 sites, either in bulk across multiple instances or individually on a local
 system.
 
-### WP Workbench Manager
+### Bulk-site management
 
 Use the `virtualmin configure-all-scripts` to manage multiple WordPress
 instances in bulk on either local or remote systems from the command line.
@@ -535,7 +527,7 @@ virtualmin configure-all-scripts --app wordpress \
 For more details, just use the `virtualmin configure-all-scripts --app
 wordpress` command.
 
-### WP Workbench
+### Single-site management
 
 Use the `virtualmin configure-script` to manage individual WordPress
 instances on the local system from the command line.
