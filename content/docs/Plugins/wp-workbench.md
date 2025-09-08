@@ -1,43 +1,238 @@
 ---
 title: "WP Workbench"
 author: "Ilia Ross"
+date: "2024-09-04"
 weight: 2511100
 ---
 
-WP Workbench is a new Virtualmin plugin designed to simplify WordPress site management. It provides a clear, centralized interface for handling plugins, themes, backups, cloning, and development settings—all in one place for a WordPress instance. Whether you prefer a graphical interface or CLI, WP Workbench gives you direct access to essential WordPress management tools without needing WordPress admin credentials.
+WP Workbench is a specially crafted Virtualmin plugin that simplifies WordPress
+management. It lets you manage core settings, update plugins and themes, run
+instant or scheduled backups to local or remote cloud storage, clone sites,
+search and replace across databases, and more, all from one place.
+
+Whether you have one site or many across local and remote servers, you can use
+the same interface or the CLI without having to log into each WordPress admin
+dashboard.
 
 ## Installation
 
-WP Workbench is available in standard Virtualmin repositories and can be easily
-installed using your system's package manager:
-
-**For EL systems:**
-```
-dnf install wbm-virtualmin-wp-workbench
-```
+This plugin is available in the standard Virtualmin Pro repositories and can be
+easily installed using your system's package manager.
 
 **For Debian and derivatives:**
 ```
 apt install webmin-virtualmin-wp-workbench
 ```
 
-After installation, the module will appear on the "Manage Web Apps" page when a
-specific WordPress instance is selected.
+**For EL systems:**
+```
+dnf install wbm-virtualmin-wp-workbench
+```
+
+## Accessing
+
+After installation, "WP Workbench Manager" appears in the left navigation menu
+for multi-site management (local and remote). "WP Workbench" is on each domain's
+"Manage WordPress" page, accessible from that domain's "Manage Web Apps" list.
 
 {{< alert primary exclamation-triangle "" "The WP Workbench plugin is only available to [Virtualmin Pro](https://www.virtualmin.com/shop/) subscribers." >}}
 
-## Why use WP Workbench?
+## Getting started
 
-- **Simplified management**: Control your WordPress sites directly from Virtualmin
+### Bulk-site management
+1. Go to "WP Workbench Manager" by clicking the link at the navigation menu
+2. Click "Find Instances" to scan for WordPress installations on local and remote systems
+3. View all your WordPress instances in the "Instances" tab
+4. Use the "Plugins", "Themes", or "Backups" tabs for bulk operations
+5. Click on any instance's settings icon for individual management
+6. Click on any instance's login icon for direct access to the WordPress admin area
+7. Use "Import Instances" to add WordPress sites not installed through Virtualmin
+
+### Single-site management
+
+1. In the domain section, go to "Manage Web Apps" and choose the WordPress site to manage
+2. Select the tab corresponding to the task you want to perform
+3. Make your changes and click "Apply" to save them
+4. Use "Login to WordPress" for direct access to the WordPress admin area
+
+{{< alert primary exclamation "" "Access to WP Workbench for virtual server owners is only available if the master administrator has granted them permission to manage web apps." >}}
+
+
+## Bulk-site management
+
+WP Workbench Manager lets you manage multiple WordPress sites in one place,
+across local and remote servers.
+
+* **Centralized control**: Manage multiple WordPress sites from one interface
+* **Speed**: View and update core, plugins, and themes in bulk
+* **Safety**: Schedule backups and easily restore them using local or cloud storage
+* **Remote management**: Manage sites on remote systems connected via the "Webmin ⇾ Webmin Servers Index" module
+* **Performance monitoring**: Track PHP versions, memory usage, and disk usage
+* **Convenience**: One-click WordPress admin access without passwords
+* **Automation**: Robust CLI for scripting common tasks with full integration with Virtualmin
+
+### User interface tabs
+
+#### Instances
+
+The main dashboard shows all your WordPress sites across local and remote
+servers with comprehensive details:
+
+- **Site information**: Title, URL, location (local/remote)
+- **WordPress version**: Current version with update indicators
+- **Resource usage**: PHP version, memory limits, disk space
+- **Plugin/theme counts**: Number installed with update status
+- **Security status**: Brute-force and password protection indicators
+- **Backup information**: Number and total size of backups
+- **Quick actions**: Settings, login, and management buttons per instance
+
+**Bulk actions available:**
+- Bulk apply
+  - System
+    - Enable/disable brute-force login failure protection
+    - Enable/disable password protection for admin dashboard
+    - Set automatic core updates (disabled/minor versions/major and minor versions)
+  - Backups
+    - Backup both files and database
+    - Backup only files
+    - Backup only database
+  - Development
+    - Set debug mode (disabled/display errors/log errors)
+    - Enable/disable maintenance mode
+    - Enable/disable cron job scheduler
+- Check integrity
+- Check for updates
+- Upgrade selected instances
+
+**Special features of this tab:**
+- **Refresh Instances**: Refresh the cache for all collected instances, both local and remote, to detect new installations or changes to existing instances
+  {{< alert warning exclamation "" "Indexing creates the list of instances from local and remote servers. On larger setups, this may take some time. Until it's done, sites won't appear, and sites changed externally may show outdated info until the next refresh." >}}
+- **Import Instances**: Import existing installations that were created outside of Virtualmin to manage them alongside other sites
+
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-instances.png "Instances — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-instances.png)
+
+#### Plugins
+
+Comprehensive plugin management across all instances:
+
+- **Consolidated view**: All plugins from all sites in one table
+- **Version tracking**: Current version and available updates highlighted
+- **Usage information**: See which sites use each plugin
+- **Upgrade selected**: Upgrade selected plugins across all sites
+
+**Bulk actions available:**
+- Bulk apply
+  - Activate
+  - Deactivate
+  - Delete
+  - Enable/disable auto-updates
+
+**Special feature of this tab:**
+- **Upgrade All Available Plugins**: Upgrade all available plugins for all your instances in one go
+
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-plugins.png "Plugins — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-plugins.png)
+
+#### Themes
+
+Centralized theme management:
+
+- **Unified listing**: All themes from all instances
+- **Version control**: Track installed and available versions
+- **Usage tracking**: Identify which sites use each theme
+- **Upgrade selected**: Upgrade selected themes across all sites
+
+**Bulk actions available:**
+- Bulk apply
+  - Activate
+  - Delete
+  - Enable/disable auto-updates
+
+**Special feature of this tab:**
+- **Upgrade All Available Themes**: Upgrade all available themes for all your instances in one go
+
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-themes.png "Themes — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-themes.png)
+
+#### Backups
+
+Advanced scheduled backup management:
+
+- **Scheduled backups**: Create automated backups with flexible scheduling
+- **Multiple destinations**: Local file system and cloud storage support
+- **Backup types**: Full, database-only, or files-only
+- **Schedule options**: Hourly, daily, weekly, monthly, or complex cron schedule
+- **Email notifications**: Configure alerts for backup success or failure
+- **Retention policies**: Automatic cleanup of old backups
+- **Backup logs**: View and restore from backup history
+- **Multi-destination support**: Send backups to multiple locations
+
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-backups.png "Backups — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-backups.png)
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-backups-edit.png "Edit Scheduled Backup — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-backups-edit.png)
+
+### Configurable options
+
+Customize WP Workbench Manager using module config:
+
+- **Remote server support**: Enable/disable remote instance management
+  {{< alert primary note "Note" "If turned on, this feature lets you manage WordPress installations on remote servers listed in the \"Webmin ⇾ Webmin Servers Index\" module. Those servers need to be running Virtualmin Pro and have the \"WP Workbench\" plugin installed and active. After refreshing the instances, WordPress installations from remote servers listed in the module's index page will appear and be manageable—just as if they were hosted on the local server." >}}
+- **Background caching**: Update instance data automatically
+- **Column visibility**: Choose which information to display
+- **Sorting preferences**: Default column sorting options
+- **Include extra columns**: Show more details for plugins and themes tabs
+- **Site preview services**: Select thumbnail provider for site previews among Automatic/Microlink/Thumb
+- **WP-CLI updates**: Automatically upgrade WP-CLI with core updates
+- **Disk space calculation**: Include disk space usage information
+- **Credential storage**: Save admin login information securely
+- **Display options**: Customize backup destination display format
+
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-configuration.png "Configuration — WP Workbench Manager")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-manager-configuration.png)
+
+
+## Single-site management
+
+WP Workbench offers a simple interface for in-depth control of a single
+WordPress site:
+
+- **Simplified management**: Easily control the main WordPress site settings
 - **Time-saving**: Perform bulk operations on plugins and themes
-- **Enhanced security**: Backup and restore options provide peace of mind
-- **Developer-friendly**: Access to cloning, debugging, and maintenance tools
+- **Safety**: Backup and restore options in a few clicks
+- **Enhanced security**: Brute-force protection and password protection for admin dashboard
+- **Developer-friendly**: Access to cloning, debugging tools, and database search-and-replace operations
 - **Convenience**: One-click WordPress admin access
 - **Automation**: Robust CLI for scripting common tasks with full integration with Virtualmin
 
-## User interface tabs
+### User interface tabs
 
-### System
+#### Dashboard
+
+This tab provides comprehensive site information:
+
+- **Visual site preview**: Thumbnail preview of your WordPress site
+- **Web app details**: 
+  - WordPress core version with update status
+  - Plugin and theme counts with available updates
+  - Backup size and count
+  - Files and database size
+  - Memory usage limits
+  - SSL certificate expiry
+- **WP-CLI version**: Installed command-line tool version
+- **Installation details**: 
+  - Site name and URLs
+  - Installation date and directory
+  - PHP version information
+  - Database credentials and table prefix
+- **Quick actions**:
+  - Show detailed information
+  - Check integrity
+  - Check for updates
+  - Re-install WordPress core
+  - Update cache
+  - Login to WordPress admin
+  - Re-install dependencies
+  - Un-install web app
+
+[![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-dashboard.png "Dashboard — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-dashboard.png)
+
+#### System
 
 This tab helps you optimize WordPress performance and security:
 
@@ -49,9 +244,14 @@ This tab helps you optimize WordPress performance and security:
   
   This higher limit ensures plugin installations, updates, and admin tasks run smoothly.
 
-- **Fail2Ban protection integration**: Guard against brute force attacks
+- **Enable brute-force login failure protection**: Guard against brute force attacks
   
   Monitors failed login attempts and temporarily blocks suspicious IP addresses.
+
+- **Enable password protection for the admin dashboard**: Add an extra layer of security
+  
+  Requires an additional username and password before accessing the WP admin dashboard login page.
+  {{< alert warning exclamation-triangle "" "If enabled, the \"Login to WordPress\" button will only work after you enter this extra username and password. For convenience, you can save these credentials in your browser so automatic login always works." >}}
 
 - **WordPress auto-updates**: Control update behavior
   
@@ -59,7 +259,7 @@ This tab helps you optimize WordPress performance and security:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-system.png "System — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-system.png)
 
-### Settings
+#### Settings
 
 Manage core WordPress settings without accessing the WordPress dashboard:
 
@@ -102,7 +302,7 @@ Manage core WordPress settings without accessing the WordPress dashboard:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-settings.png "Settings — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-settings.png)
 
-### Plugins
+#### Plugins
 
 Comprehensive plugin management in one place:
 
@@ -113,11 +313,11 @@ Comprehensive plugin management in one place:
   - Update
   - Delete
   - Enable/disable auto-updates
-- **One-click WordPress login**: Direct access to WordPress admin
+- **Manage in WordPress**: Direct link to WordPress plugin management
   
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-plugins.png "Plugins — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-plugins.png)
 
-### Themes
+#### Themes
 
 Keep your site's appearance up-to-date and secure:
 
@@ -128,25 +328,25 @@ Keep your site's appearance up-to-date and secure:
   - Update
   - Delete
   - Enable/disable auto-updates
-- **View update availability**: Easily see which themes need updating
+- **Manage in WordPress**: Direct link to WordPress theme management
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-themes.png "Themes — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-themes.png)
 
-### Backup and restore
+#### Backup and restore
 
-Protect your WordPress site with comprehensive backup tools:
+Protect your WordPress site with comprehensive backup and restore tools:
 
 - **Backup options**:
   - Full site backup (files and database)
   - Files-only backup
   - Database-only backup
-- **Restore capability**: Recover from any backup
+- **Restore capability**: Recover from any available backup
 - **Backup management**: Delete outdated backups
-- **Backup details**: View size, date, and type information
+- **Backup details**: View size, date, and backup type information
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-backup-and-restore.png "Backup and Restore — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-backup-and-restore.png)
 
-### Clone
+#### Clone
 
 Duplicate your WordPress site for testing or development:
 
@@ -163,11 +363,13 @@ Duplicate your WordPress site for testing or development:
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-clone.png "Clone — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-clone.png)
 
+{{< alert success question "" "The domain name of the new clone is applied automatically, and all database tables are updated to match." >}}
+
 {{< alert primary exclamation "" "The ability to clone a WordPress instance to a new sub-server is only available if the master administrator has granted the virtual server owner permission to create sub-servers and aliases. The ability to clone to top-level virtual servers is available to master administrators and resellers only." >}}
 
 {{< alert warning exclamation-triangle "" "The tab to clone a WordPress instance will not be available to the virtual server owner unless the master administrator has granted them database management permissions." >}}
 
-### Development
+#### Development
 
 Control technical settings for troubleshooting and optimization:
 
@@ -187,63 +389,219 @@ Control technical settings for troubleshooting and optimization:
   
   Improves page load times by reducing HTTP requests.
 
+- **Database replacements**: Search and replace strings in database
+
+  A powerful tool for bulk database operations. Features include:
+
+  - Test mode for previewing changes
+  - Regular expression support
+  - Table and column filtering options
+  - Support for serialized data
+
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-development.png "Development — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-development.png)
 
 ## Command line interface
 
-WP Workbench includes a powerful CLI for automating WordPress management through
-the `virtualmin configure-script` command.
+Here are some examples of how to use the WP Workbench CLI to manage WordPress
+sites, either in bulk across multiple instances or individually on a local
+system.
 
-Below are some examples of how to use the CLI to manage WordPress sites.
+### Bulk-site management
 
-### System settings
-```
-virtualmin configure-script --script-type wordpress --domain example.com --opt 'wp_memory_limit 512M'
-```
+Use the `virtualmin configure-all-scripts` to manage multiple WordPress
+instances in bulk on either local or remote systems from the command line.
 
-### WordPress settings
-```
-virtualmin configure-script --script-type wordpress --domain example.com --opt 'blogname "My Site Name"'
-```
+#### Basic operations
 
-### Plugin management
 ```
-virtualmin configure-script --script-type wordpress --domain example.com --opt 'plugins activate plugin1,plugin2'
-```
+# Refresh instances cache
+virtualmin configure-all-scripts --app wordpress --refresh-instances
 
-### Theme management
-```
-virtualmin configure-script --script-type wordpress --domain example.com --opt 'themes update theme1,theme2'
-```
+# Import instances created outside Virtualmin
+virtualmin configure-all-scripts --app wordpress --import-instances
 
-### Backup operations
-```
-virtualmin configure-script --script-type wordpress --domain example.com --opt 'backup full'
+# List all instances
+virtualmin configure-all-scripts --app wordpress --list instances
+
+# List all plugins across instances
+virtualmin configure-all-scripts --app wordpress --list plugins
+
+# List all themes across instances
+virtualmin configure-all-scripts --app wordpress --list themes
 ```
 
-### Site cloning
+#### System management
+
 ```
-virtualmin configure-script --script-type wordpress --domain example.com --opt 'clone same --dir=wordpress-clone'
+# Enable brute-force protection for specific domains
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --domain example.org --action enable-fail2ban
+
+# Enable password protection for all domains
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action enable-httpdauth
+
+# Set auto-updates to minor versions only
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action enable-minor-updates
+
+# Upgrade WordPress core for selected domains
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --domain example.org --action upgrade-core
+
+# Check integrity of all installations
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action check-integrity
 ```
 
-### Install or upgrade WP-CLI
+#### Backup management
+
 ```
-virtualmin configure-script --script-type wordpress --domain example.com --wp-cli install
+# Create full backup for specific domain
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --action backup-full
+
+# Backup only database for all domains
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action backup-db
+
+# Backup only files for multiple domains
+virtualmin configure-all-scripts --app wordpress \
+  --domain site1.com --domain site2.com --action backup-files
 ```
 
-### Retrieve detailed instance information
+#### Plugin management
+
 ```
-virtualmin configure-script --script-type wordpress --domain example.com --wp-cli info
+# Activate specific plugins across all sites
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action activate-plugins akismet,wordfence
+
+# Update all plugins on specific domains
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --action update-plugins
+
+# Enable auto-updates for specific plugins
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action enable-plugins-auto-updates jetpack,woocommerce
+
+# Deactivate and delete unused plugins
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action deactivate-plugins hello.php
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action delete-plugins hello.php
 ```
 
-For more details just use `virtualmin configure-script --script-type wordpress` command.
+#### Theme management
 
-## Getting started
+```
+# Update all themes across all sites
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action update-themes
 
-1. Navigate to the WP Workbench in your WordPress management page in "Manage Web Apps"
-2. Select the tab corresponding to the task you want to perform
-3. Make your changes and click "Apply" to save them
-4. Use "Login to WordPress" for direct access to the WordPress admin area
+# Activate a specific theme on multiple sites
+virtualmin configure-all-scripts --app wordpress \
+  --domain site1.com --domain site2.com --action activate-themes twentytwentyfour
 
-{{< alert primary exclamation "" "Access to WP Workbench for virtual server owners is only available if the master administrator has granted them permission to manage web apps." >}}
+# Enable auto-updates for themes
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action enable-themes-auto-updates
+```
 
+#### Development settings
+
+```
+# Enable debug mode for development sites
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --action enable-debug
+
+# Enable maintenance mode during updates
+virtualmin configure-all-scripts --app wordpress \
+  --all-domains --action enable-maintenance
+
+# Disable cron jobs for troubleshooting
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --action disable-cron-jobs
+```
+
+For more details, just use the `virtualmin configure-all-scripts --app
+wordpress` command.
+
+### Single-site management
+
+Use the `virtualmin configure-script` to manage individual WordPress
+instances on the local system from the command line.
+
+#### System settings
+```
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'wp_memory_limit 512M'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'wp_admin_memory_limit 768M'
+```
+
+#### WordPress settings
+```
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'blogname "My Site Name"'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'blogdescription "My Site Tagline"'
+```
+
+#### Plugin management
+```
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'plugins activate plugin1,plugin2'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'plugins deactivate plugin1'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'plugins update plugin1,plugin2'
+```
+
+#### Theme management
+```
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'themes activate twentytwentyfour'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'themes update theme1,theme2'
+```
+
+#### Backup operations
+```
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'backup full'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'backup files'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'backup database'
+```
+
+#### Site cloning
+```
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'clone same --dir=wordpress-clone'
+
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'clone subdomain --subdomain=staging'
+```
+
+#### WP-CLI management
+```
+# Install or upgrade WP-CLI
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --wpi install
+
+# Get detailed instance information
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --wpi info
+```
+
+For more details, just use the `virtualmin configure-script --app wordpress`
+command.
