@@ -31,7 +31,7 @@ author: "Ilia Ross"
 * Change to use relative dates for last login and days until renewal when applicable
 * Drop legacy S3 Perl modules and now always require using AWS-CLI
 * Drop supporting outdated panels for migration backups, except for cPanel, Plesk, and DirectAdmin
-* Fix Jailkit support for sub-servers #1082
+* Fix Jailkit support for sub-servers [#1082](https://github.com/virtualmin/virtualmin-gpl/issues/1082)
 * Fix Rackspace endpoint for London
 * Fix alias domains to allow DKIM to be enabled
 * Fix config check to support Postfix configured as a relay
