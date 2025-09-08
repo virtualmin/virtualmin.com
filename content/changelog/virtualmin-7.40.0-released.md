@@ -3,7 +3,6 @@ title: "Virtualmin 7.40.0 released"
 date: 2025-09-08
 tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
-draft: true
 ---
 
 * Add built-in password recovery support for the login page
