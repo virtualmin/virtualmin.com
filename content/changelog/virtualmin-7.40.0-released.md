@@ -1,6 +1,6 @@
 ---
 title: "Virtualmin 7.40.0 released"
-date: 2025-09-08
+date: 2025-09-07
 tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
