@@ -1,6 +1,6 @@
 ---
 title: "OS Support"
-date: 2024-07-10
+date: 2025-10-17
 draft: false
 weight: 900000
 ---
