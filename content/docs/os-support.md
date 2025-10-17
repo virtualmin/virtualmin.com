@@ -14,7 +14,7 @@ If you're just starting out with Virtualmin, and want to have an easy installati
 Grade A systems have an automated installation script, a well-maintained software repository for updates, and are expected to work out of the box if you run the install script on a freshly installed system running one of these OS. We strongly recommend the current stable release of one of these systems for most users. We never support beta or pre-release versions of any OS.
 
 - Debian 11 and 12 on i386 and amd64
-- Ubuntu 20.04 LTS, 22.04 LTS and 24.04 LTS on i386 and amd64
+- Ubuntu 22.04 LTS and 24.04 LTS on i386 and amd64
 - Rocky, Alma, and RHEL 8 and 9 on x86_64
 
 ### Grade B supported systems
