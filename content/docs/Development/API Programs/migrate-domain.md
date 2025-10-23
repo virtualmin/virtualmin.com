@@ -8,7 +8,10 @@ weight: 4012065
 
 Virtualmin has the capability to import servers from other hosting programs, such as cPanel and Plesk. This program can perform an import from the command line, which will create a new server in Virtualmin with all the same settings and content as the original server.
 
-The `--source` parameter must be followed by the name of the backup or export file to migrate from. The `--type` parameter must be followed by the short name of the product that originally created the backup, such as `cpanel`, `ensim`, `plesk` or `psa`.
+The `--source` parameter must be followed by the name of the backup or export
+file to migrate from. The `--type` parameter must be followed by the short name
+of the product that originally created the backup, such as `cpanel`, `plesk` or
+`directadmin`.
 
 By default, Virtualmin will attempt to work out the domain name from the backup automatically. However, this can be overridden with the `--domain` parameter, which must be followed by a domain name. Similarly, the original username and password will be used unless set with `--user` and `--pass` respectively. Some migration formats do not contain the password, in which case `--pass` must be given, as an error will be displayed if it is missing.
 
@@ -26,7 +29,7 @@ The `--template` parameter can be used to specify a Virtualmin template by name 
 
 ```text
 virtualmin migrate-domain --source file
-                          --type cpanel|ensim|psa|plesk|plesk9|lxadmin|directadmin
+                          --type cpanel|plesk|directadmin
                           --domain name
                          [--user username]
                          [--pass "password"]
