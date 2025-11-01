@@ -40,7 +40,7 @@ Virtualmin facilitates DKIM configuration on supported systems, which provide th
 
 To activate DKIM for outgoing emails:
 
-1. Access Virtualmin as _root_ and go to **Email Messages ⇾ DomainKeys Identified Mail**.
+1. Access Virtualmin as _root_ and go to **Email Settings ⇾ DomainKeys Identified Mail**.
 2. Set **Signing of outgoing mail enabled?** to **Yes**.
 3. In **Selector for DKIM record name**, enter a name to identify the signing key, like the current year and month, e.g. `202312`.
 4. Click **Save**.
@@ -54,7 +54,7 @@ Virtualmin will display the steps taken to configure and activate DKIM. Note tha
 
 To turn off DKIM signing completely:
 
-1. Navigate to **Email Messages ⇾ DomainKeys Identified Mail**.
+1. Navigate to **Email Settings ⇾ DomainKeys Identified Mail**.
 2. Change **Signing of outgoing mail enabled?** to **No**.
 3. Click **Save**.
 
