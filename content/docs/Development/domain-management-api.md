@@ -46,6 +46,7 @@ fi
 To automatically update the SSL certificate for Prosody, after a domain's SSL certificate is updated, you can apply the following script:
 
 ```text
+#!/bin/sh
 if [ "$VIRTUALSERVER_ACTION" = "SSL_DOMAIN" ]; then
   /usr/bin/cp -f /etc/ssl/virtualmin/$VIRTUALSERVER_ID/$VIRTUALSERVER_DOM.key /etc/prosody/certs/$VIRTUALSERVER_DOM.key
   /usr/bin/cp -f /etc/ssl/virtualmin/$VIRTUALSERVER_ID/$VIRTUALSERVER_DOM.combined /etc/prosody/certs/$VIRTUALSERVER_DOM.combined
@@ -60,6 +61,7 @@ fi
 To sync the SSL certificate with a remote server, you can apply the following script:
 
 ```text
+#!/bin/sh
 if [ "$VIRTUALSERVER_ACTION" = "SSL_DOMAIN" ]; then
     # Define the base directory for the SSL files
     BASE_DIR="/etc/ssl/virtualmin/$VIRTUALSERVER_ID"
