@@ -84,6 +84,34 @@ if [ "$VIRTUALSERVER_ACTION" = "SSL_DOMAIN" ]; then
 fi
 ```
 
+#### Set default WP Workbench options for new WordPress sites
+
+```text
+#!/bin/sh
+
+# Virtualmin CLI
+VIRTUALMIN=/usr/sbin/virtualmin
+[ -x "$VIRTUALMIN" ] || exit 0
+
+# Only for script changes on a domain
+[ "$VIRTUALSERVER_ACTION" = "SCRIPT_DOMAIN" ] || exit 0
+
+# Only for WordPress script
+[ "$VIRTUALSERVER_LASTSAVE_SCRIPT" = "wordpress" ] || exit 0
+
+# Only for fresh installs
+[ "$SCRIPT_UPGRADE" = "1" ] && exit 0
+
+# Set memory limits for this WordPress site and enable brute-force protection
+"$VIRTUALMIN" configure-script \
+    --app wordpress --app-path $SCRIPT_PATH --domain "$VIRTUALSERVER_DOM" \
+    --apply 'wp_memory_limit 512M' \
+    --apply 'wp_max_memory_limit 768M' \
+    --apply 'fail2ban_foreign true'
+
+exit 0
+```
+
 ### Setting up pre and post modification scripts
 
 1. Log in as the master administrator.
