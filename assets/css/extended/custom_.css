@@ -1512,6 +1512,7 @@ html:not(.page-index) .index-page-intro-container {
     align-self: end;
     width: 100%;
     place-content: left;
+    gap: calc(var(--gap) / 1.5);
 }
 
 .page-index .index-page-content-button a.btn-danger {
