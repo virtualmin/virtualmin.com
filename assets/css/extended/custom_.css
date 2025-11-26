@@ -5,7 +5,7 @@
     --main-max-width: 1152px;
     --nav-width: 1268px;
 
-    --card-text: #ffffffee;
+    --card-text: #ffffffef;
     --card-text-bright: #ffffff;
 
     --block-bg: #0000000a;
@@ -13,7 +13,7 @@
 
 .dark {
     --header: #0c0c0cec;
-    --card-text: #fffffff0;
+    --card-text: #ffffffe6;
     --card-text-bright: #fffffffa;
 
     --block-bg: #0006;
@@ -1267,23 +1267,23 @@ html:not(.page-index) .index-page-intro-container {
 	/* Standard colors */
 	background: linear-gradient(
         to bottom,
-        #00081c 0%,
-        #010e3b 20%,
-        #020f50 40%,
-        #022799 48%,
-        #030788 75%,
+        #000719 0%,
+        #021040 20%,
+        #041259 40%,
+        #031361 48%,
+        #020678 75%,
         #03008c 100%
     );
 
 	/* Richer color in supporting browsers */
 	background: linear-gradient(
         to bottom in oklch,
-        oklch(14% 0.047 257) 0%,
-        oklch(19% 0.089 262.775) 20%,
-        oklch(22% 0.119 264.644) 40%,
-        oklch(35% 0.186 263.787) 48%,
-        oklch(29% 0.192 264.924) 75%,
-        oklch(29% 0.200 264.849) 100%
+        oklch(13.162% 0.04483 255.943) 0%,
+        oklch(20.227% 0.09363 263.99) 20%,
+        oklch(23.813% 0.12628 265.602) 40%,
+        oklch(24.954% 0.13625 265.044) 48%,
+        oklch(26.547% 0.17486 264.857) 75%,
+        oklch(27.962% 0.18207 265.341) 100%
     );
 }
 
@@ -1292,23 +1292,23 @@ html:not(.page-index) .index-page-intro-container {
 	/* Standard colors */
 	background: linear-gradient(
 		to bottom,
-		#00021a 0%,
-		#040a26 20%,
-		#04042c 40%,
-		#02086c 48%,
-		#030744 85%,
-		#010533 100%
+		#00081c 0%,
+		#010d31 20%,
+		#030c39 40%,
+		#020c3f 48%,
+		#010459 75%,
+		#030664 100%
 	);
 
 	/* Richer color in supporting browsers */
 	background: linear-gradient(
         to bottom in oklch,
-        oklch(11.05% 0.06016 263.66) 0%,
-        oklch(16.45% 0.05852 268.50) 20%,
-        oklch(15.24% 0.08116 271.42) 40%,
-        oklch(25.25% 0.15581 265.78) 48%,
-        oklch(19.49% 0.1098 267.54) 85%,
-        oklch(16.48% 0.09455 265.47) 100%
+        oklch(13.843% 0.04824 256.545) 0%,
+        oklch(17.694% 0.07496 262.284) 20%,
+        oklch(18.587% 0.08789 265.999) 40%,
+        oklch(19.268% 0.09748 265.149) 48%,
+        oklch(21.62% 0.14093 264.825) 75%,
+        oklch(23.642% 0.15148 265.634) 100%
     );
 }
 
@@ -1345,14 +1345,14 @@ html:not(.page-index) .index-page-intro-container {
 /* Wavy lanes */
 .page-index .index-page-intro-container-inner-content-lanes {
 	position: absolute;
-	inset: 37vh 0 0;
+	inset: 30vh 0 0;
 	pointer-events: none;
 	left: -5px;
 	z-index: 3 !important;
 
 	opacity: 1;
 
-	--fade-band: 18vh;
+	--fade-band: 30vh;
 	--lane-strength: 0.65;
 
 	-webkit-mask-image: linear-gradient(
@@ -1386,20 +1386,20 @@ html:not(.page-index) .index-page-intro-container {
 
 /* Wavy lanes in dark mode */
 .page-index .dark .index-page-intro-container-inner-content-lanes {
-    --lane-strength: .45;
+    --lane-strength: .55;
 }
 
 /* Firefox-only in dark mode */
 @supports (-moz-appearance: none) {
 	.page-index .dark .index-page-intro-container-inner-content-lanes {
-		--lane-strength: 0.65;
+		--lane-strength: 0.75;
 	}
 }
 
 /* Safari-only in dark mode (macOS + iOS, all WebKit browsers) */
 @supports (font: -apple-system-body) {
 	.page-index .dark .index-page-intro-container-inner-content-lanes {
-		--lane-strength: 0.65;
+		--lane-strength: 0.75;
 	}
 }
 
@@ -1467,7 +1467,7 @@ html:not(.page-index) .index-page-intro-container {
 	display: block;
 	margin-top: 0.25em;
 	font-size: calc(1em * var(--slogan-sub-scale));
-	line-height: 1.211;
+	line-height: 1.333;
 	opacity: 0.9;
     letter-spacing: 0;
     transform: scaleY(1.05);
@@ -1505,6 +1505,7 @@ html:not(.page-index) .index-page-intro-container {
         transform: scale(0.86);
     }
 }
+
 /* Main call-to-action button */
 .page-index .index-page-content-button {
     margin-top: calc(var(--gap) * 2);
@@ -1630,6 +1631,7 @@ html:not(.page-index) .index-page-intro-container {
     backdrop-filter: blur(12px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     position: relative;
+    box-shadow: 5px 5px 15px 3px #ffffff04;
 }
 
 .page-index .feature-bubble:hover .bubble-circle {
@@ -1648,7 +1650,7 @@ html:not(.page-index) .index-page-intro-container {
     bottom: calc(100% + 12px);
     left: -6px;
     transform: translateX(-50%);
-    background: #00000005;
+    background: #00000033;
     backdrop-filter: blur(15px);
     color: var(--card-text);
     padding: 8px 10px;
