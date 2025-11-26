@@ -1157,11 +1157,11 @@ html:not(.page-index) .index-page-intro-container {
 
     background: url('/header-elements-satellite.svg') left top / contain no-repeat;
 
-    filter: brightness(0.75) contrast(3) opacity(0.75) invert(0.1);
+    filter: brightness(0.75) contrast(15) opacity(0.8) invert(0.1);
 }
 
 .page-index .dark .index-page-intro-container-inner-content-satellite {
-    filter: brightness(0.75) contrast(3) opacity(0.65) invert(0.1);
+    filter: brightness(0.75) contrast(15) opacity(0.75) invert(0.1);
 }
 
 /* Version label on the satellite */
@@ -1172,9 +1172,9 @@ html:not(.page-index) .index-page-intro-container {
     left: calc(var(--satellite-left) - 62px);
     top: calc(var(--satellite-top) - 9px);
 
-    transform: translate(-50%, -50%) rotate(125deg);
+    transform: translate(-50%, -50%) rotate(124.5deg);
 
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1;
     color: #000000;
