@@ -88,19 +88,113 @@ params:
   keywords: [webmin, usermin, virtualmin, cloudmin, linux, system administration]
   author: Jamie Cameron, Joe Cooper, Ilia Ross
 
-  slogan: "Advanced web hosting control panel"
-  subSlogan: "Run WordPress at scale with full control of web, mail, DNS, backups, and more on your own infrastructure"
+  index:
+    slogan: "Advanced web hosting control panel"
+    subSlogan: "Run WordPress at scale with full control of web, mail, DNS, backups, and more on your own infrastructure"
 
-  indexButtons:
-    - url: "/download/"
-      text: "Try Virtualmin"
-      icon: "download"
-      class: "danger"
-    - url: "/docs/plugins/wp-workbench/"
-      text: "What is WP Workbench?"
-      icon: "workbench"
-      class: "light"
-    
+    buttons:
+      - url: "/download/"
+        text: "Try Virtualmin"
+        icon: "download"
+        class: "danger"
+      - url: "/docs/plugins/wp-workbench/"
+        text: "What is WP Workbench?"
+        icon: "workbench"
+        class: "light"
+
+    stats:
+      - value: "20Y+"
+        label: "Of trusted service"
+      - value: "10M+"
+        label: "Installations"
+      - value: "250K+"
+        label: "Active users"
+  
+    bubbles:
+      easing: 0.08
+      intensity: 100
+      threshold: 0.01
+      bubbles:
+        - label: "DNS"
+          type: "dns"
+          tooltip: "Local DNS and cloud DNS (Route 53, Cloudflare, Google, Namecheap, Bunny) with reachability checks"
+          position:
+            top: 29
+            left: 52
+          parallax: 0.15
+
+        - label: "SSL"
+          type: "ssl"
+          tooltip: "Auto-renewed SSL from Let's Encrypt, ZeroSSL, Google Trust and others for all services"
+          position:
+            top: 31
+            left: 73
+          parallax: 0.25
+
+        - label: "Web"
+          type: "web"
+          tooltip: "Apache or Nginx with HTTP/2, multiple PHP versions, jails, resource usage graphs, directory password protection and proxy path management"
+          position:
+            top: 41
+            left: 62
+          parallax: 0.35
+
+        - label: "WP"
+          type: "wp"
+          tooltip: "Manage WordPress core, plugins, themes, backups and cloning from one place with WP Workbench, including bulk updates, remote site management and fast one-click admin access"
+          position:
+            top: 42
+            left: 83
+          parallax: 0.20
+
+        - label: "DB"
+          type: "db"
+          tooltip: "MySQL and PostgreSQL with extra database users, granular permissions and per-server limits"
+          position:
+            top: 47
+            left: 48
+          parallax: 0.30
+
+        - label: "Storage"
+          type: "storage"
+          tooltip: "Remote backup storage using Amazon S3, Azure Blob Storage, Backblaze B2, Dropbox, Google Cloud Storage, Google Drive and Rackspace Cloud Files, with encrypted transfer and retention policies"
+          position:
+            top: 51
+            left: 72
+          parallax: 0.18
+
+        - label: "Mail"
+          type: "mail"
+          tooltip: "Local Postfix and Dovecot mail server with spam and virus filtering, SES and other relay providers, secondary MX, mailbox cleanup, log search and announcement emails to domain owners"
+          position:
+            top: 57
+            left: 55
+          parallax: 0.28
+
+        - label: "Backup"
+          type: "backup"
+          tooltip: "Automated local and cloud backups with flexible schedules, GPG encryption keys and quota monitoring"
+          position:
+            top: 62
+            left: 80
+          parallax: 0.22
+
+        - label: "Tools"
+          type: "tools"
+          tooltip: "CLI and remote HTTP API for automation, batch server creation, bulk WordPress operations and integration with your own systems and scripts"
+          position:
+            top: 69
+            left: 47
+          parallax: 0.32
+
+        - label: "Users"
+          type: "users"
+          tooltip: "Reseller accounts, advanced user management, SSH keys, extra database and web users, resource limits and account-level tools"
+          position:
+            top: 68
+            left: 66
+          parallax: 0.26
+      
   messages:
     thats-an-error: "THAT’S AN ERROR"
     page-not-found: "PAGE NOT FOUND"

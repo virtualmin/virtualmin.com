@@ -14,10 +14,10 @@
             <div class="index-page-intro-container-inner-content-wrapper">
                 <span class="index-page-content-slogan">
                     <span class="index-page-content-slogan-main">
-                        {{ .Site.Params.slogan }}
+                        {{ .Site.Params.index.slogan }}
                     </span>
                     <span class="index-page-content-slogan-sub">
-                        {{ .Site.Params.subSlogan }}
+                        {{ .Site.Params.index.subSlogan }}
                     </span>
                 </span>
                 <script>
@@ -28,31 +28,29 @@
                             wrap.style.setProperty('--slogan-main-chars', main.textContent.replace(/\s+/g, ' ').trim().length);
                     })();
                 </script>
+                {{- with .Site.Params.index.buttons }}
                 <span class="index-page-content-button">
-                  {{- with .Site.Params.indexButtons }}
-                    {{- range . }}
-                      <a href="{{ .url }}" class="btn btn-{{ .class }} btn-rounded btn-md">
-                        <i class="wm wm-fw wm-{{ .icon }}"></i>&nbsp;
-                        {{- .text -}}
-                      </a>
-                    {{- end }}
-                  {{- end }}
+                {{- range . }}
+                    <a href="{{ .url }}" class="btn btn-{{ .class }} btn-rounded btn-md">
+                    <i class="wm wm-fw wm-{{ .icon }}"></i>&nbsp;
+                    {{- .text -}}
+                    </a>
+                {{- end }}
                 </span>
+                {{- end }}
+                {{ with .Site.Params.index.stats }}
                 <div class="stats-container">
+                  {{ range . }}
                     <div class="stat-item">
-                        <div class="stat-value">20Y+</div>
-                        <div class="stat-label">Of trusted service</div>
+                      <div class="stat-value">{{ .value }}</div>
+                      <div class="stat-label">{{ .label }}</div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value">10M+</div>
-                        <div class="stat-label">Installations</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">250K+</div>
-                        <div class="stat-label">Active users</div>
-                    </div>
+                  {{ end }}
                 </div>
+                {{ end }}
+                {{- with .Site.Params.index.bubbles }}
                 <div class="bubbles-container" id="bubblesContainer"></div>
+                {{- end }}
                 <br>
             </div>
         </div>
