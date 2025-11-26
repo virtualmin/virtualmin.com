@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 2400 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="glow6">
+            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        
+        <!-- Curves for pattern display -->
+        <path id="patternCurve1" d="M 0 125 Q 100 75, 200 125 T 400 125 T 600 125 T 800 125 T 1000 125 T 1200 125 T 1400 125 T 1600 125 T 1800 125 T 2000 125 T 2200 125 T 2400 125" fill="none"/>
+        <path id="patternCurve2" d="M 0 100 Q 100 150, 200 100 T 400 100 T 600 100 T 800 100 T 1000 100 T 1200 100 T 1400 100 T 1600 100 T 1800 100 T 2000 100 T 2200 100 T 2400 100" fill="none"/>
+        <path id="patternCurve3" d="M 0 175 Q 100 125, 200 175 T 400 175 T 600 175 T 800 175 T 1000 175 T 1200 175 T 1400 175 T 1600 175 T 1800 175 T 2000 175 T 2200 175 T 2400 175" fill="none"/>
+        <path id="patternCurve4" d="M 0 150 Q 100 100, 200 150 T 400 150 T 600 150 T 800 150 T 1000 150 T 1200 150 T 1400 150 T 1600 150 T 1800 150 T 2000 150 T 2200 150 T 2400 150" fill="none"/>
+        <path id="patternCurve5" d="M 0 75 Q 100 125, 200 75 T 400 75 T 600 75 T 800 75 T 1000 75 T 1200 75 T 1400 75 T 1600 75 T 1800 75 T 2000 75 T 2200 75 T 2400 75" fill="none"/>
+        
+        <!-- Extended curves for animation -->
+        <path id="animCurve1" d="M -400 125 Q -300 75, -200 125 T 0 125 T 200 125 T 400 125 T 600 125 T 800 125 T 1000 125 T 1200 125 T 1400 125 T 1600 125 T 1800 125 T 2000 125 T 2200 125 T 2400 125 T 2600 125 T 2800 125 T 3000 125 T 3200 125 T 3400 125" fill="none"/>
+        <path id="animCurve2" d="M -400 100 Q -300 150, -200 100 T 0 100 T 200 100 T 400 100 T 600 100 T 800 100 T 1000 100 T 1200 100 T 1400 100 T 1600 100 T 1800 100 T 2000 100 T 2200 100 T 2400 100 T 2600 100 T 2800 100 T 3000 100 T 3200 100 T 3400 100" fill="none"/>
+        <path id="animCurve3" d="M -400 175 Q -300 125, -200 175 T 0 175 T 200 175 T 400 175 T 600 175 T 800 175 T 1000 175 T 1200 175 T 1400 175 T 1600 175 T 1800 175 T 2000 175 T 2200 175 T 2400 175 T 2600 175 T 2800 175 T 3000 175 T 3200 175 T 3400 175" fill="none"/>
+        <path id="animCurve4" d="M -400 150 Q -300 100, -200 150 T 0 150 T 200 150 T 400 150 T 600 150 T 800 150 T 1000 150 T 1200 150 T 1400 150 T 1600 150 T 1800 150 T 2000 150 T 2200 150 T 2400 150 T 2600 150 T 2800 150 T 3000 150 T 3200 150 T 3400 150" fill="none"/>
+        <path id="animCurve5" d="M -400 75 Q -300 125, -200 75 T 0 75 T 200 75 T 400 75 T 600 75 T 800 75 T 1000 75 T 1200 75 T 1400 75 T 1600 75 T 1800 75 T 2000 75 T 2200 75 T 2400 75 T 2600 75 T 2800 75 T 3000 75 T 3200 75 T 3400 75" fill="none"/>
+        
+        <pattern id="curveNetwork" width="2400" height="200" patternUnits="userSpaceOnUse">
+            <!-- Render curves -->
+            <use xlink:href="#patternCurve1" stroke="white" stroke-width="0.6" opacity="0.25"/>
+            <use xlink:href="#patternCurve2" stroke="white" stroke-width="0.5" opacity="0.22"/>
+            <use xlink:href="#patternCurve3" stroke="white" stroke-width="0.5" opacity="0.18"/>
+            <use xlink:href="#patternCurve4" stroke="white" stroke-width="0.4" opacity="0.18"/>
+            <use xlink:href="#patternCurve5" stroke="white" stroke-width="0.5" opacity="0.22"/>
+        </pattern>
+    </defs>
+    
+    <!-- Pattern background -->
+    <rect width="100%" height="100%" fill="url(#curveNetwork)"/>
+    
+    <!-- Block 1 (y=0) - 4 dots -->
+    <g transform="translate(0, 0)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="27.3s" repeatCount="indefinite" begin="0s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="23.7s" repeatCount="indefinite" begin="5.2s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="30.1s" repeatCount="indefinite" begin="8.4s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="25.6s" repeatCount="indefinite" begin="2.7s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 2 (y=200) - 5 dots -->
+    <g transform="translate(0, 200)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="31.8s" repeatCount="indefinite" begin="1.3s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="39.4s" repeatCount="indefinite" begin="6.9s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="34.2s" repeatCount="indefinite" begin="3.5s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="42.7s" repeatCount="indefinite" begin="9.8s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="36.5s" repeatCount="indefinite" begin="0.8s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 3 (y=400) - 3 dots -->
+    <g transform="translate(0, 400)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="18.9s" repeatCount="indefinite" begin="4.1s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="12.3s" repeatCount="indefinite" begin="7.6s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="21.2s" repeatCount="indefinite" begin="1.9s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 4 (y=600) - 6 dots -->
+    <g transform="translate(0, 600)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="15.1s" repeatCount="indefinite" begin="2.4s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="23.6s" repeatCount="indefinite" begin="8.7s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="13.4s" repeatCount="indefinite" begin="5.3s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="17.8s" repeatCount="indefinite" begin="0.6s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="20.5s" repeatCount="indefinite" begin="9.2s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="11.9s" repeatCount="indefinite" begin="3.8s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 5 (y=800) - 4 dots -->
+    <g transform="translate(0, 800)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="16.7s" repeatCount="indefinite" begin="6.5s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="19.8s" repeatCount="indefinite" begin="1.7s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="14.6s" repeatCount="indefinite" begin="8.9s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="22.3s" repeatCount="indefinite" begin="4.2s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 6 (y=1000) - Reuses Block 1 pattern -->
+    <g transform="translate(0, 1000)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="17.3s" repeatCount="indefinite" begin="0s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="13.7s" repeatCount="indefinite" begin="5.2s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="20.1s" repeatCount="indefinite" begin="8.4s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="15.6s" repeatCount="indefinite" begin="2.7s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 7 (y=1200) - Reuses Block 2 pattern -->
+    <g transform="translate(0, 1200)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="11.8s" repeatCount="indefinite" begin="1.3s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="19.4s" repeatCount="indefinite" begin="6.9s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="14.2s" repeatCount="indefinite" begin="3.5s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="22.7s" repeatCount="indefinite" begin="9.8s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="16.5s" repeatCount="indefinite" begin="0.8s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 8 (y=1400) - Reuses Block 3 pattern -->
+    <g transform="translate(0, 1400)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="18.9s" repeatCount="indefinite" begin="4.1s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="12.3s" repeatCount="indefinite" begin="7.6s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="21.2s" repeatCount="indefinite" begin="1.9s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 9 (y=1600) - Reuses Block 4 pattern -->
+    <g transform="translate(0, 1600)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="15.1s" repeatCount="indefinite" begin="2.4s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="23.6s" repeatCount="indefinite" begin="8.7s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="13.4s" repeatCount="indefinite" begin="5.3s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="17.8s" repeatCount="indefinite" begin="0.6s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="20.5s" repeatCount="indefinite" begin="9.2s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="11.9s" repeatCount="indefinite" begin="3.8s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 10 (y=1800) - Reuses Block 5 pattern -->
+    <g transform="translate(0, 1800)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="16.7s" repeatCount="indefinite" begin="6.5s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="19.8s" repeatCount="indefinite" begin="1.7s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="14.6s" repeatCount="indefinite" begin="8.9s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="22.3s" repeatCount="indefinite" begin="4.2s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 11 (y=2000) - Reuses Block 1 pattern -->
+    <g transform="translate(0, 2000)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="17.3s" repeatCount="indefinite" begin="0s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="13.7s" repeatCount="indefinite" begin="5.2s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="20.1s" repeatCount="indefinite" begin="8.4s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="15.6s" repeatCount="indefinite" begin="2.7s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 12 (y=2200) - Reuses Block 2 pattern -->
+    <g transform="translate(0, 2200)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="11.8s" repeatCount="indefinite" begin="1.3s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="19.4s" repeatCount="indefinite" begin="6.9s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="14.2s" repeatCount="indefinite" begin="3.5s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="22.7s" repeatCount="indefinite" begin="9.8s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="16.5s" repeatCount="indefinite" begin="0.8s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 13 (y=2400) - Reuses Block 3 pattern -->
+    <g transform="translate(0, 2400)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="18.9s" repeatCount="indefinite" begin="4.1s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="12.3s" repeatCount="indefinite" begin="7.6s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="21.2s" repeatCount="indefinite" begin="1.9s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 14 (y=2600) - Reuses Block 4 pattern -->
+    <g transform="translate(0, 2600)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="15.1s" repeatCount="indefinite" begin="2.4s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="23.6s" repeatCount="indefinite" begin="8.7s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="13.4s" repeatCount="indefinite" begin="5.3s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="17.8s" repeatCount="indefinite" begin="0.6s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="20.5s" repeatCount="indefinite" begin="9.2s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="11.9s" repeatCount="indefinite" begin="3.8s">
+                <mpath xlink:href="#animCurve1"/>
+            </animateMotion>
+        </circle>
+    </g>
+    
+    <!-- Block 15 (y=2800) - Reuses Block 5 pattern -->
+    <g transform="translate(0, 2800)">
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="16.7s" repeatCount="indefinite" begin="6.5s">
+                <mpath xlink:href="#animCurve3"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="19.8s" repeatCount="indefinite" begin="1.7s">
+                <mpath xlink:href="#animCurve5"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="14.6s" repeatCount="indefinite" begin="8.9s">
+                <mpath xlink:href="#animCurve2"/>
+            </animateMotion>
+        </circle>
+        <circle r="1" fill="white" filter="url(#glow6)" opacity="0.99">
+            <animateMotion dur="22.3s" repeatCount="indefinite" begin="4.2s">
+                <mpath xlink:href="#animCurve4"/>
+            </animateMotion>
+        </circle>
+    </g>
+</svg>

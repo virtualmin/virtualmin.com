@@ -179,9 +179,455 @@
 
         // Trigger scroll event on initial load
         window.dispatchEvent(new Event("scroll"));
+
+        /**
+         * Feature bubbles generation and parallax effect
+         */
+        (function () {
+            'use strict';
+        
+            // Configuration
+            const configuration = {
+                bubbles: [
+                {
+                    label: 'DNS',
+                    type: 'dns',
+                    tooltip: 'Local DNS and cloud DNS (Route 53, Cloudflare, Google, Namecheap, Bunny) with reachability checks',
+                    position: { top: 29, left: 52 },
+                    parallax: 0.15
+                },
+                {
+                    label: 'SSL',
+                    type: 'ssl',
+                    tooltip: 'Auto-renewed SSL from Let\'s Encrypt, ZeroSSL, Google Trust and others for all services',
+                    position: { top: 31, left: 73 },
+                    parallax: 0.25
+                },
+                {
+                    label: 'Web',
+                    type: 'web',
+                    tooltip: 'Apache or Nginx with HTTP/2, multiple PHP versions, jails, resource usage graphs, directory password protection and proxy path management',
+                    position: { top: 41, left: 62 },
+                    parallax: 0.35
+                },
+                {
+                    label: 'WP',
+                    type: 'wp',
+                    tooltip: 'Manage WordPress core, plugins, themes, backups and cloning from one place with WP Workbench, including bulk updates, remote site management and fast one-click admin access',
+                    position: { top: 42, left: 83 },
+                    parallax: 0.20
+                },
+                {
+                    label: 'DB',
+                    type: 'db',
+                    tooltip: 'MySQL and PostgreSQL with extra database users, granular permissions and per-server limits',
+                    position: { top: 47, left: 48 },
+                    parallax: 0.30
+                },
+                {
+                    label: 'Storage',
+                    type: 'storage',
+                    tooltip: 'Remote backup storage using Amazon S3, Azure Blob Storage, Backblaze B2, Dropbox, Google Cloud Storage, Google Drive and Rackspace Cloud Files, with encrypted transfer and retention policies',
+                    position: { top: 51, left: 72 },
+                    parallax: 0.18
+                },
+                {
+                    label: 'Mail',
+                    type: 'mail',
+                    tooltip: 'Local Postfix and Dovecot mail server with spam and virus filtering, SES and other relay providers, secondary MX, mailbox cleanup, log search and announcement emails to domain owners',
+                    position: { top: 57, left: 55 },
+                    parallax: 0.28
+                },
+                {
+                    label: 'Backup',
+                    type: 'backup',
+                    tooltip: 'Automated local and cloud backups with flexible schedules, GPG encryption keys and quota monitoring',
+                    position: { top: 62, left: 80 },
+                    parallax: 0.22
+                },
+                {
+                    label: 'Tools',
+                    type: 'tools',
+                    tooltip: 'CLI and remote HTTP API for automation, batch server creation, bulk WordPress operations and integration with your own systems and scripts',
+                    position: { top: 69, left: 47 },
+                    parallax: 0.32
+                },
+                {
+                    label: 'Users',
+                    type: 'users',
+                    tooltip: 'Reseller accounts, advanced user management, SSH keys, extra database and web users, resource limits and account-level tools',
+                    position: { top: 68, left: 66 },
+                    parallax: 0.26
+                }
+            ],
+                easing: 0.08,
+                intensity: 100,
+                threshold: 0.01
+            };
+        
+            // State
+            const state = {
+                container: null,
+                containerRect: null,
+                bubbles: [],
+                current: { x: 0, y: 0 },
+                target: { x: 0, y: 0 },
+                isVisible: true,
+                isInitialized: false,
+                parallaxEnabled: false,
+                rafId: null,
+                resizeTimeout: null
+            };
+        
+            // Create bubble element
+            function createBubbleElement(config) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'bubble-wrapper';
+                wrapper.style.cssText = `
+                    top: ${config.position.top}%;
+                    left: ${config.position.left}%;
+                `;
+                wrapper.dataset.parallax = String(config.parallax);
+            
+                wrapper.innerHTML = `
+                    <div class="bubble-float">
+                        <div class="feature-bubble">
+                            <div class="bubble-circle bubble-${config.type}">${config.label}</div>
+                            <div class="status-dot"></div>
+                            <div class="bubble-tooltip">${config.tooltip}</div>
+                        </div>
+                    </div>
+                `;
+            
+                return wrapper;
+            }
+        
+            // Generate all bubbles
+            function generateBubbles() {
+                state.container = document.getElementById('bubblesContainer');
+                if (!state.container) return false;
+        
+                const fragment = document.createDocumentFragment();
+        
+                configuration.bubbles.forEach(config => {
+                    const element = createBubbleElement(config);
+                    fragment.appendChild(element);
+                    
+                    state.bubbles.push({
+                        element,
+                        speed: config.parallax,
+                        transform: { x: 0, y: 0 }
+                    });
+                });
+        
+                state.container.appendChild(fragment);
+                updateContainerRect();
+                return true;
+            }
+        
+            // Update container boundaries
+            function updateContainerRect() {
+                if (state.container) {
+                    state.containerRect = state.container.getBoundingClientRect();
+                }
+            }
+        
+            // Debounced resize handler
+            function handleResize() {
+                clearTimeout(state.resizeTimeout);
+                state.resizeTimeout = setTimeout(() => {
+                    updateContainerRect();
+                }, 150);
+            }
+        
+            // Calculate normalized mouse position
+            function getNormalizedPosition(clientX, clientY) {
+                if (!state.containerRect) return { x: 0, y: 0 };
+        
+                const x = (clientX - state.containerRect.left) / state.containerRect.width - 0.5;
+                const y = (clientY - state.containerRect.top) / state.containerRect.height - 0.5;
+        
+                return {
+                    x: Math.max(-1.0, Math.min(1.0, x)),
+                    y: Math.max(-1.0, Math.min(1.0, y))
+                };
+            }
+        
+            // Handle mouse/pointer movement
+            function handlePointerMove(e) {
+                // Don't do anything until parallax is enabled
+                if (!state.parallaxEnabled || !state.isVisible || !state.containerRect) return;
+        
+                const clientX = e.clientX ?? e.touches?.[0]?.clientX ?? 0;
+                const clientY = e.clientY ?? e.touches?.[0]?.clientY ?? 0;
+        
+                const normalized = getNormalizedPosition(clientX, clientY);
+                
+                // On very first mouse movement after parallax enabled
+                if (!state.isInitialized) {
+                    state.current.x = normalized.x;
+                    state.current.y = normalized.y;
+                    state.target.x = normalized.x;
+                    state.target.y = normalized.y;
+                    state.isInitialized = true;
+                    
+                    // Immediately update bubbles to initial position
+                    updateBubblesImmediate();
+                } else {
+                    // Normal updates - just update target
+                    state.target.x = normalized.x;
+                    state.target.y = normalized.y;
+                }
+            }
+        
+            // Smooth easing function
+            function lerp(start, end, factor) {
+                return start + (end - start) * factor;
+            }
+        
+            // Immediately update bubble positions with no animation
+            function updateBubblesImmediate() {
+                state.bubbles.forEach(bubble => {
+                    const x = state.current.x * bubble.speed * configuration.intensity;
+                    const y = state.current.y * bubble.speed * configuration.intensity;
+                    
+                    bubble.transform.x = x;
+                    bubble.transform.y = y;
+                    bubble.element.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                });
+            }
+        
+            // Update bubble transforms (with threshold check)
+            function updateBubbles() {
+                // Don't update if parallax isn't enabled yet
+                if (!state.parallaxEnabled) return;
+        
+                state.bubbles.forEach(bubble => {
+                    const x = state.current.x * bubble.speed * configuration.intensity;
+                    const y = state.current.y * bubble.speed * configuration.intensity;
+                    
+                    // Only update if position actually changed (performance optimization)
+                    if (Math.abs(x - bubble.transform.x) > configuration.threshold || 
+                        Math.abs(y - bubble.transform.y) > configuration.threshold) {
+                        bubble.transform.x = x;
+                        bubble.transform.y = y;
+                        bubble.element.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                    }
+                });
+            }
+        
+            // Main animation loop
+            function animate() {
+                if (!state.isVisible) {
+                    state.rafId = requestAnimationFrame(animate);
+                    return;
+                }
+        
+                // Only animate parallax after it's enabled
+                if (state.parallaxEnabled) {
+                    // Smooth interpolation
+                    state.current.x = lerp(state.current.x, state.target.x, configuration.easing);
+                    state.current.y = lerp(state.current.y, state.target.y, configuration.easing);
+        
+                    // Update bubble positions
+                    updateBubbles();
+                }
+        
+                // Continue animation loop
+                state.rafId = requestAnimationFrame(animate);
+            }
+        
+            // Start animation loop
+            function startAnimation() {
+                if (!state.rafId) {
+                    state.rafId = requestAnimationFrame(animate);
+                }
+            }
+        
+            // Stop animation loop
+            function stopAnimation() {
+                if (state.rafId) {
+                    cancelAnimationFrame(state.rafId);
+                    state.rafId = null;
+                }
+            }
+        
+            // Handle visibility changes
+            function handleVisibilityChange() {
+                state.isVisible = document.visibilityState === 'visible';
+                
+                if (state.isVisible && !state.rafId) {
+                    startAnimation();
+                }
+            }
+        
+            // Handle window blur/focus
+            function handleBlur() {
+                state.isVisible = false;
+            }
+        
+            function handleFocus() {
+                state.isVisible = document.visibilityState === 'visible';
+                if (state.isVisible && !state.rafId) {
+                    startAnimation();
+                }
+            }
+        
+            // Initialize event listeners
+            function initEventListeners() {
+                // Check for reduced motion preference
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) return;
+        
+                // Mouse/touch movement
+                document.addEventListener('pointermove', handlePointerMove, { passive: true });
+                
+                // Window resize
+                window.addEventListener('resize', handleResize, { passive: true });
+                
+                // Visibility handling
+                document.addEventListener('visibilitychange', handleVisibilityChange);
+                window.addEventListener('blur', handleBlur);
+                window.addEventListener('focus', handleFocus);
+            }
+        
+            // Initialize the bubble system
+            function init() {
+                const success = generateBubbles();
+                if (!success) return;
+        
+                initEventListeners();
+                startAnimation();
+                
+                // Enable parallax after initial setup
+                state.parallaxEnabled = true;
+                state.bubbles.forEach(bubble => {
+                    bubble.element.style.willChange = 'transform';
+                });
+            }
+        
+            // Bootstrap on DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        
+            // Cleanup on page unload
+            window.addEventListener('beforeunload', () => {
+                stopAnimation();
+                clearTimeout(state.resizeTimeout);
+            });
+        
+        })();
+        
+        /**
+         * Shooting star animation
+         */
+        (function () {
+            const hero = document.querySelector('.page-index .index-page-intro-container');
+            if (!hero) return;
+            
+            // Create the sky layer once
+            const layer = document.createElement('div');
+            layer.className = 'shooting-sky';
+            hero.appendChild(layer);
+            
+            // Utility functions and constants
+            const px = v => `${v}px`,
+                  speed = function() { 
+                    const speed = 0.6 + Math.random() * 0.6;
+                    return speed;
+                  },
+                  clamp = (v, a, b) => Math.max(a, Math.min(b, v)),
+                  rand  = (a, b) => a + Math.random() * (b - a),
+                  top_band = 0.45,
+                  edge_offset = 80,
+                  exit_overflow = 220;
+            
+            
+            // Weighted travel
+            function pickDistance(w) {
+                const r = Math.random();
+                if (r < 0.20) return w * rand(0.12, 0.28); // short
+                if (r < 0.70) return w * rand(0.30, 0.58); // medium
+                return w * rand(0.60, 0.95);               // long but not full
+            }
+            
+            // Spawn a shooting star
+            function spawnStar() {
+                const w = layer.clientWidth,
+                      h = layer.clientHeight;
+                if (!w || !h) return;
+            
+                const el = document.createElement('i');
+                el.className = 'shooting-star';
+            
+                const fromRight = Math.random() < 0.5,
+                      slopeUp   = Math.random() < 0.5,
+                      yMin = h * 0.03,
+                      yMax = h * top_band,
+                      y0   = rand(yMin, yMax),
+                      x0   = fromRight ? (w + edge_offset) : (-edge_offset),
+                      doFullCross = Math.random() < 0.30;
+            
+                let x1, y1, baseDeg;
+            
+                if (doFullCross) {
+                    x1 = fromRight ? -exit_overflow : (w + exit_overflow);
+                    baseDeg = rand(12, 55);
+                    const rad = baseDeg * Math.PI / 180,
+                          dx  = (x1 - x0),
+                          dy  = (slopeUp ? -1 : 1) * Math.tan(rad) * Math.abs(dx);
+                    y1 = clamp(y0 + dy, 0, h);
+                } else {
+                    baseDeg = rand(18, 72);
+                    const dist = pickDistance(w),
+                          rad  = baseDeg * Math.PI / 180,
+                          dx   = (fromRight ? -1 : 1) * Math.cos(rad) * dist,
+                          dy   = (slopeUp ? -1 : 1)   * Math.sin(rad) * dist;
+                    x1 = x0 + dx;
+                    y1 = clamp(y0 + dy, 0, h);
+                
+                    // 20% chance to still exit off the same side for extra variety
+                    if (Math.random() < 0.20) {
+                        x1 += fromRight ? rand(-150, 50) : rand(-50, 150);
+                    }
+                }
+            
+                const angle = Math.atan2(y1 - y0, x1 - x0) * 180 / Math.PI,
+                      path  = Math.hypot(x1 - x0, y1 - y0),
+                      dur   = (380 + (1150 - 380) * Math.min(1, path / (w * 1.2))) * speed();
+            
+                el.style.setProperty('--x0', px(x0));
+                el.style.setProperty('--y0', px(y0));
+                el.style.setProperty('--x1', px(x1));
+                el.style.setProperty('--y1', px(y1));
+                el.style.setProperty('--angle', `${angle}deg`);
+                el.style.setProperty('--dur', `${dur | 0}ms`);
+            
+                layer.appendChild(el);
+                el.addEventListener('animationend', () => el.remove());
+            }
+            
+            // First burst (2s, 5s, 8s)
+            [2000, 5000, 8000].forEach(t => setTimeout(spawnStar, t));
+            
+            // Then repeat with 5–15s intervals, sometimes 2–3 in a mini-burst
+            (function loop() {
+                const wait = rand(5000, 15000);
+                setTimeout(() => {
+                const roll = Math.random(),
+                      count = roll < 0.65 ? 1 : roll < 0.90 ? 2 : 3;
+                for (let i = 0; i < count; i++) {
+                    setTimeout(spawnStar, rand(0, 800));
+                }
+                loop();
+                }, wait);
+            })();
+        })();
     })();
-</script>
-<script>
+
     // On page load finished for index page only
     window.addEventListener("load", function () {
         // On resize event
