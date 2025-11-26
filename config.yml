@@ -81,6 +81,8 @@ enableRobotsTXT: true
 params:
   env: production
 
+  version: "8.0.0"
+
   title: Virtualmin
   description: "Powerful and flexible web hosting control panel for Linux and BSD systems"
   keywords: [webmin, usermin, virtualmin, cloudmin, linux, system administration]
