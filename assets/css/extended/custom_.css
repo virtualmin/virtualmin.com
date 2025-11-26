@@ -1342,25 +1342,65 @@ html:not(.page-index) .index-page-intro-container {
 	}
 }
 
-/* Wavy lanes with animation */
+/* Wavy lanes */
 .page-index .index-page-intro-container-inner-content-lanes {
 	position: absolute;
-	inset: 0 0 0;
 	inset: 37vh 0 0;
-	opacity: .5;
 	pointer-events: none;
 	left: -5px;
 	z-index: 3 !important;
 
+	opacity: 1;
+
 	--fade-band: 18vh;
-	-webkit-mask-image: linear-gradient(to bottom,
-										transparent 0,
-										#000 var(--fade-band),
-										#000 100%);
-	mask-image: linear-gradient(to bottom,
-								transparent 0,
-								#000 var(--fade-band),
-								#000 100%);
+	--lane-strength: 0.65;
+
+	-webkit-mask-image: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0) 0,
+		rgba(255, 255, 255, var(--lane-strength)) var(--fade-band),
+		rgba(255, 255, 255, var(--lane-strength)) 100%
+	);
+	mask-image: linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0) 0,
+		rgba(255, 255, 255, var(--lane-strength)) var(--fade-band),
+		rgba(255, 255, 255, var(--lane-strength)) 100%
+	);
+	mask-mode: alpha;
+}
+
+/* Firefox-only */
+@supports (-moz-appearance: none) {
+	.page-index .index-page-intro-container-inner-content-lanes {
+		--lane-strength: 0.85;
+	}
+}
+
+/* Safari-only (macOS + iOS, all WebKit browsers) */
+@supports (font: -apple-system-body) {
+	.page-index .index-page-intro-container-inner-content-lanes {
+		--lane-strength: 0.85;
+	}
+}
+
+/* Wavy lanes in dark mode */
+.page-index .dark .index-page-intro-container-inner-content-lanes {
+    --lane-strength: .45;
+}
+
+/* Firefox-only in dark mode */
+@supports (-moz-appearance: none) {
+	.page-index .dark .index-page-intro-container-inner-content-lanes {
+		--lane-strength: 0.65;
+	}
+}
+
+/* Safari-only in dark mode (macOS + iOS, all WebKit browsers) */
+@supports (font: -apple-system-body) {
+	.page-index .dark .index-page-intro-container-inner-content-lanes {
+		--lane-strength: 0.65;
+	}
 }
 
 .page-index .index-page-intro-container-inner-content-lanes > img {
@@ -1368,10 +1408,6 @@ html:not(.page-index) .index-page-intro-container {
 	height: 100%;
 	display: block;
 	/* object-fit: cover; */
-}
-
-.page-index .dark .index-page-intro-container-inner-content-lanes {
-    opacity: .45;
 }
 
 /* Alien */
@@ -1637,6 +1673,10 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .bubble-db { background-color: #00000015; }
 .page-index .bubble-backup { background-color: #00000015; }
 .page-index .bubble-api { background-color: #00000015; }
+
+.page-index .bubble-float {
+	will-change: transform;
+}
 
 .page-index .bubble-wrapper:nth-child(1) .bubble-float { animation: bubbleFloat 6s ease-in-out infinite; animation-delay: 0s; }
 .page-index .bubble-wrapper:nth-child(2) .bubble-float { animation: bubbleFloat 7s ease-in-out infinite; animation-delay: 0.5s; }
