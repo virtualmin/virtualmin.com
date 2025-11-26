@@ -13,16 +13,30 @@
             <span class="index-page-intro-container-inner-content-alien"></span>
             <div class="index-page-intro-container-inner-content-wrapper">
                 <span class="index-page-content-slogan">
-                    Advanced web hosting control panel with<br>enterprise WordPress management
+                    <span class="index-page-content-slogan-main">
+                        {{ .Site.Params.slogan }}
+                    </span>
+                    <span class="index-page-content-slogan-sub">
+                        {{ .Site.Params.subSlogan }}
+                    </span>
                 </span>
+                <script>
+                    // Set slogan max char width to make wrapping of sub-slogan better
+                    (function () {
+                        const main  = document.querySelector('.index-page-content-slogan-main'),
+                              wrap  = document.querySelector('.index-page-content-slogan');
+                            wrap.style.setProperty('--slogan-main-chars', main.textContent.replace(/\s+/g, ' ').trim().length);
+                    })();
+                </script>
                 <span class="index-page-content-button">
-                    <a href="/download/" class="btn btn-danger btn-rounded btn-md">
-                        <i class="wm wm-fw wm-download"></i>&nbsp;
-                        Try Virtualmin
-                    </a>&nbsp;&nbsp;<a href="/docs/plugins/wp-workbench/" class="btn btn-light btn-rounded btn-md">
-                        <i class="wm wm-fw wm-workbench"></i>&nbsp;
-                        What is WP Workbench?
-                    </a>
+                  {{- with .Site.Params.indexButtons }}
+                    {{- range . }}
+                      <a href="{{ .url }}" class="btn btn-{{ .class }} btn-rounded btn-md">
+                        <i class="wm wm-fw wm-{{ .icon }}"></i>&nbsp;
+                        {{- .text -}}
+                      </a>
+                    {{- end }}
+                  {{- end }}
                 </span>
                 <div class="stats-container">
                     <div class="stat-item">

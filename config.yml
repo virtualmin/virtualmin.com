@@ -88,6 +88,19 @@ params:
   keywords: [webmin, usermin, virtualmin, cloudmin, linux, system administration]
   author: Jamie Cameron, Joe Cooper, Ilia Ross
 
+  slogan: "Advanced web hosting control panel"
+  subSlogan: "Run WordPress at scale with full control of web, mail, DNS, backups, and more on your own infrastructure"
+
+  indexButtons:
+    - url: "/download/"
+      text: "Try Virtualmin"
+      icon: "download"
+      class: "danger"
+    - url: "/docs/plugins/wp-workbench/"
+      text: "What is WP Workbench?"
+      icon: "workbench"
+      class: "light"
+
   # hide default footer
   hideFooter: true
 

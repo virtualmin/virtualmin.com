@@ -1434,19 +1434,43 @@ html:not(.page-index) .index-page-intro-container {
     z-index: 2;
 }
 
-/* Main slogan */
+/* Main slogan container */
 .page-index .index-page-content-slogan {
-    anchor-name: --slogan-line;
-    font-size: 2.111rem;
-    color: var(--card-text);
-    display: flex;
-    line-height: 1.211;
-    text-align: left;
-    font-weight: 300;
-    transform: scaleY(1.15);
-    text-shadow: 1px 0 #000;
-    margin-top: calc(var(--gap) * -1);
-    letter-spacing: 0.5px;
+    --slogan-main-chars-offset: 4.5;
+	
+    --slogan-main-font-size: 2.222rem;
+	--slogan-sub-scale: 0.64;
+
+    font-size: var(--slogan-main-font-size);
+
+	max-width: calc((var(--slogan-main-chars) - var(--slogan-main-chars-offset)) * 1ch);
+	display: block;
+	color: var(--card-text);
+	text-align: left;
+	font-weight: 300;
+	margin-top: calc(var(--gap) * -1);
+	letter-spacing: 0.5px;
+}
+
+/* Main slogan */
+.page-index .index-page-content-slogan-main {
+	anchor-name: --slogan-line;
+	display: inline-block;
+	font-size: 1em;
+	line-height: 1;
+	transform: scaleY(1.15);
+	text-shadow: 1px 0 #000;
+}
+
+/* Sub slogan */
+.page-index .index-page-content-slogan-sub {
+	display: block;
+	margin-top: 0.25em;
+	font-size: calc(1em * var(--slogan-sub-scale));
+	line-height: 1.211;
+	opacity: 0.9;
+    letter-spacing: 0;
+    transform: scaleY(1.05);
 }
 
 @media screen and (max-width: 600px) {
