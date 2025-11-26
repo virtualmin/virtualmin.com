@@ -100,6 +100,10 @@ params:
       text: "What is WP Workbench?"
       icon: "workbench"
       class: "light"
+    
+  messages:
+    thats-an-error: "THAT’S AN ERROR"
+    page-not-found: "PAGE NOT FOUND"
 
   # hide default footer
   hideFooter: true

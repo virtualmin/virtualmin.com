@@ -2046,14 +2046,14 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 }
 
 .not-found:before {
-    content: "THAT’S AN ERROR";
+    content: var(--message-thats-an-error);
     font-size: 18px;
     margin-top: -100px;
     position: absolute;
 }
 
 .not-found:after {
-    content: "PAGE NOT FOUND";
+    content: var(--message-page-not-found);
     font-size: 18px;
     margin-top: 100px;
     position: absolute;

@@ -75,6 +75,13 @@
                 }
             }
         }
+
+        // Store messages from site config to be used in CSS
+        window.siteConfig = window.siteConfig || {};
+        window.siteConfig.messages = JSON.parse('{{ .Site.Params.messages | jsonify }}');
+        Object.entries(window.siteConfig.messages).forEach(([key, value]) => {
+            document.documentElement.style.setProperty('--message-' + key, `"${value}"`);
+        });
     })();
 </script>
 {{ if eq .RelPermalink "/" }}
