@@ -1192,19 +1192,19 @@ html:not(.page-index) .index-page-intro-container {
     position: absolute;
     top: 20px;
     right: 260px;
-    z-index: 14;
+    z-index: 1;
     pointer-events: none;
 
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
 
     background: url('/header-elements-planet.svg') left top / contain no-repeat;
 
-    filter: brightness(0.55) contrast(18) opacity(0.31);
+    filter: brightness(0.6) contrast(10) opacity(0.85);
 }
 
 .page-index .dark .index-page-intro-container-inner-content-planet {
-    filter: brightness(0.55) contrast(16) opacity(0.45);
+    filter: brightness(0.6) contrast(10) opacity(0.90);
 }
 
 /* Shooting stars */
