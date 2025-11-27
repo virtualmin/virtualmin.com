@@ -1473,6 +1473,12 @@ html:not(.page-index) .index-page-intro-container {
     transform: scaleY(1.05);
 }
 
+@media screen and (max-width: 920px) {
+    .page-index .index-page-bubbles-container {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     .page-index .index-page-content-slogan {
@@ -1580,7 +1586,7 @@ html:not(.page-index) .index-page-intro-container {
 }
 
 /* Main bubbles container */
-.page-index .bubbles-container {
+.page-index .index-page-bubbles-container {
     position: absolute;
     right: 45px;
     top: 0;

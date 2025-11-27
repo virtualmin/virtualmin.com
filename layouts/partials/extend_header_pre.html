@@ -52,11 +52,11 @@
                   {{ end }}
                 </div>
                 {{ end }}
-                {{- with .Site.Params.index.bubbles }}
-                <div class="bubbles-container" id="bubblesContainer"></div>
-                {{- end }}
                 <br>
             </div>
+            {{- with .Site.Params.index.bubbles }}
+            <div class="index-page-bubbles-container"></div>
+            {{- end }}
         </div>
     </div>
 </section>
