@@ -1149,7 +1149,6 @@ html:not(.page-index) .index-page-intro-container {
     top: var(--satellite-top);
     right: var(--satellite-left);
     z-index: 0;
-    pointer-events: none;
     transform: rotate(-90deg);
 
     width: 80px;
@@ -1175,11 +1174,12 @@ html:not(.page-index) .index-page-intro-container {
     transform: translate(-50%, -50%) rotate(124.5deg);
 
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1;
     color: #000000;
     pointer-events: none;
     white-space: nowrap;
+    letter-spacing: -0.5px;
 }
 
 .page-index .dark .index-page-intro-container-inner-content-satellite::after {

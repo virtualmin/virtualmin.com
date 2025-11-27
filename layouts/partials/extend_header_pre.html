@@ -4,7 +4,11 @@
     <span class="shooting-star"></span>
     <div class="index-page-intro-container-inner">
         <div class="index-page-intro-container-inner-content">
-            <span class="index-page-intro-container-inner-content-satellite" data-version="{{ .Site.Params.version }}"></span>
+            <!-- Get latest changelog version -->
+            {{ $changelogPages := where site.RegularPages "Section" "changelog" }}
+            {{ $latest := index (sort $changelogPages "Date" "desc") 0 }}
+            {{ $ver := replaceRE ".*?([0-9]+\\.[0-9]+\\.[0-9]+).*" "$1" $latest.File.BaseFileName }}
+            <a href="{{ $latest.RelPermalink }}" class="index-page-intro-container-inner-content-satellite" data-version="{{ $ver }}"></a>
             <span class="index-page-intro-container-inner-content-planet"></span>
             <span class="index-page-intro-container-stars"></span>
             <span class="index-page-intro-container-inner-content-lanes">
