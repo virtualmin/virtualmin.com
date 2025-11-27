@@ -1473,52 +1473,12 @@ html:not(.page-index) .index-page-intro-container {
     transform: scaleY(1.05);
 }
 
-@media screen and (max-width: 920px) {
-    .page-index .index-page-bubbles-container {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 600px) {
-
-    .page-index .index-page-content-slogan {
-        font-size: 1.633rem;
-    }
-
-    .index-page-content-button {
-        transform: scale(0.91);
-    }
-}
-
-@media screen and (max-width: 460px) {
-
-    .page-index .index-page-content-slogan {
-        font-size: 1.433rem;
-    }
-
-    .index-page-content-button {
-        transform: scale(0.88);
-    }
-}
-
-@media screen and (max-width: 400px) {
-
-    .page-index .index-page-content-slogan {
-        font-size: 1.333rem;
-    }
-
-    .index-page-content-button {
-        transform: scale(0.86);
-    }
-}
-
 /* Main call-to-action button */
 .page-index .index-page-content-button {
     margin-top: calc(var(--gap) * 2);
     display: flex;
     align-self: end;
     width: 100%;
-    place-content: left;
     gap: calc(var(--gap) / 1.5);
 }
 
@@ -1576,6 +1536,7 @@ html:not(.page-index) .index-page-intro-container {
     margin-bottom: 8px;
     text-shadow: 1px 0 #000;
     letter-spacing: -0.5px;
+    white-space: nowrap;
 }
 .page-index .stat-label {
     font-size: 14px;
@@ -1725,6 +1686,113 @@ html:not(.page-index) .index-page-intro-container {
 @keyframes bubbleFloat {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-12px); }
+}
+
+/* General mobile view properties */
+@media screen and (max-width: 1000px),
+       screen and (max-height: 768px) {
+    .page-index .index-page-intro-container-inner-content-wrapper,
+    .page-index .index-page-content-button {
+        transform-origin: left top;
+        transform: scale(0.96);
+    }
+}
+
+@media screen and (max-width: 960px),
+       screen and (max-height: 720px) {
+    .page-index .index-page-intro-container-inner-content-wrapper,
+    .page-index .index-page-content-button {
+        transform-origin: left top;
+        transform: scale(0.92);
+    }
+}
+
+@media screen and (max-width: 920px), 
+       screen and (max-height: 704px) {
+    .page-index .index-page-intro-container-inner-content-wrapper,
+    .page-index .index-page-content-button {
+        transform-origin: left top;
+        transform: scale(0.88);
+    }
+
+    .page-index .index-page-intro-container-inner-content-alien {
+        width: 120px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 873px), 
+       screen and (max-height: 702px) {
+    .page-index .index-page-intro-container-inner-content-wrapper,
+    .page-index .index-page-content-button {
+        transform-origin: left top;
+        transform: scale(0.84);
+    }
+}
+
+@media screen and (max-width: 788px), 
+       screen and (max-height: 675px) {
+    .page-index .index-page-intro-container-inner-content-wrapper,
+    .page-index .index-page-content-button {
+        transform-origin: left top;
+        transform: scale(0.78);
+    }
+}
+
+/* Specific mobile view properties */
+@media screen and (max-width: 720px), 
+       screen and (max-height: 640px) {
+    .page-index .index-page-intro-container-inner-content-wrapper,
+    .page-index .index-page-content-button {
+        transform-origin: left top;
+        transform: scale(1);
+    }
+
+    .page-index .index-page-intro-container-inner-content-alien {
+        left: calc(100% - 150px);
+    }
+
+    .page-index .index-page-content-slogan {
+        --slogan-main-chars-offset: 3;
+        --slogan-main-font-size: calc(2.222rem * 0.85);
+    }
+    
+    
+    .page-index .index-page-content-button {
+        flex-wrap: wrap;
+        gap: calc(var(--gap) * 1.25);
+        margin-top: calc(var(--gap) * 1.5);
+    }
+
+    .page-index .index-page-content-button .btn {
+        white-space: nowrap;
+    }
+
+    .page-index .stats-container {
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        margin-top: calc(var(--gap) * 1.333);
+    }
+
+    .page-index .stat-value {
+        font-size: 1.733rem;
+        margin-bottom: 8px;
+    }
+    .page-index .stat-label {
+        font-size: 14px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .page-index .stat-item:nth-child(2) .stat-label {
+        white-space: nowrap;
+    }
+    
+
+    .page-index .index-page-bubbles-container {
+        display: none;
+    }
 }
 
 /* Go up button */
