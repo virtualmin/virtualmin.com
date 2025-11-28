@@ -1502,7 +1502,7 @@ html:not(.page-index) .index-page-intro-container {
     border-width: 0.5px;
 }
 .page-index .index-page-content-button a.btn-light:hover {
-    background-color: #f8f9fa75;
+    background-color: #f8f9fabb;
     color: #000;
 }
 
