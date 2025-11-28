@@ -246,7 +246,9 @@
             wrapper.innerHTML = `
                 <div class="bubble-float">
                     <div class="feature-bubble">
-                        <div class="bubble-circle bubble-${config.type}">${config.label}</div>
+                        <div class="bubble-circle bubble-${config.type}">
+                            <span>${config.label}</span>
+                        </div>
                         <div class="status-dot"></div>
                         <div class="bubble-tooltip">${config.tooltip}</div>
                     </div>

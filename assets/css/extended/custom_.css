@@ -1549,18 +1549,14 @@ html:not(.page-index) .index-page-intro-container {
 /* Main bubbles container */
 .page-index .index-page-bubbles-container {
     position: absolute;
-    right: 45px;
+    right: 66px;
     top: 0;
     width: 50%;
     height: 100%;
     pointer-events: none;
-    z-index: 3;
-}
-
-@media screen and (max-width: 1024px) {
-    .page-index .bubbles-container {
-        display: none;
-    }
+    z-index: 2;
+    transform-origin: center center;
+    transform: scale(min(1, 100vw / 1920, 100vh / 1080));
 }
 
 .page-index .bubble-wrapper {
@@ -1571,8 +1567,8 @@ html:not(.page-index) .index-page-intro-container {
 
 /* Main bubble element */
 .page-index .feature-bubble {
-    width: 77px;
-    height: 77px;
+    width: clamp(52px, 9vmin, 87px);
+    height: clamp(52px, 9vmin, 87px);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 2);
     position: relative;
@@ -1583,6 +1579,15 @@ html:not(.page-index) .index-page-intro-container {
     z-index: 100;
 }
 
+.page-index .feature-bubble .bubble-circle span {
+    transform: scaleY(1.12);
+    letter-spacing: -0.36px;
+}
+
+.page-index .feature-bubble:hover .bubble-circle span {
+    font-size: 110%;
+}
+
 /* Main bubble circle inner text */
 .page-index .bubble-circle {
     width: 100%;
@@ -1591,7 +1596,7 @@ html:not(.page-index) .index-page-intro-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
+    font-size: clamp(14px, 1.7vmin, 16px);
     font-weight: 600;
     color: var(--card-text);
     border: 1px solid rgba(255, 255, 255, 0.4);
@@ -1620,25 +1625,21 @@ html:not(.page-index) .index-page-intro-container {
     background: #00000033;
     backdrop-filter: blur(15px);
     color: var(--card-text);
-    padding: 8px 10px;
+    padding: clamp(6px, 1vmin, 8px) clamp(8px, 1.2vmin, 10px);
     border-radius: 8px;
-    font-size: 13px;
+    font-size: clamp(12px, 1.2vmin, 14px);
     font-weight: 300;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
+    min-inline-size: 25ch;
+    line-height: 1.5;
+    text-align: center;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     border: 1px solid #ffffff25;
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
     z-index: 1000;
-
-
-    white-space: normal;              /* was nowrap */
-    word-break: break-word;
-    /* max-inline-size: 75ch; */
-    min-inline-size: 25ch;
-    line-height: 1.5;
-    text-align: center;
 }
 
 .page-index .bubble-tooltip::after {
@@ -1669,7 +1670,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .bubble-api { background-color: #00000015; }
 
 .page-index .bubble-float {
-	will-change: transform;
+    will-change: transform;
 }
 
 .page-index .bubble-wrapper:nth-child(1) .bubble-float { animation: bubbleFloat 6s ease-in-out infinite; animation-delay: 0s; }
