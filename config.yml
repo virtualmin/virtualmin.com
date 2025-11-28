@@ -133,7 +133,7 @@ params:
 
         - label: "Web"
           type: "web"
-          tooltip: "Apache or Nginx with HTTP/2, multiple PHP versions, jails, resource usage graphs, directory password protection and proxy path management"
+          tooltip: "Apache or Nginx with HTTP/2, multiple PHP versions, jails, resource usage, directory password protection and proxy path management"
           position:
             top: 41
             left: 62
