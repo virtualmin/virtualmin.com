@@ -1,5 +1,5 @@
 :root {
-    --header: #0131abf6;
+    --header: #022a8ff4;
 
     --main-width: 1152px;
     --main-max-width: 1152px;
@@ -1822,7 +1822,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-wrapper .chocolat-right {
 }
 
 html:not(.chocolat-fullscreen).page-index .chocolat-img {
-    filter: saturate(1.3)hue-rotate(6deg);
+    filter: saturate(1.1)hue-rotate(9deg);
 }
 
 .page-index .chocolat-wrapper .screen-full-container {
