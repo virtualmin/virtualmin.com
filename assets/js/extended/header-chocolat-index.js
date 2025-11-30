@@ -70,7 +70,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/15-install-script-wordpress.png",
-                    title: "Virtualmin ⇾ Install Scripts",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Install WordPress",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/15-installed-script-wordpress.png",
