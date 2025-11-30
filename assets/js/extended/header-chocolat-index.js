@@ -74,7 +74,39 @@ window.addEventListener("DOMContentLoaded", () => {
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/15-installed-script-wordpress.png",
-                    title: "Virtualmin ⇾ Install Scripts ⇾ Installed WordPress",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Installed WordPress",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-dashboard.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Dashboard",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-system.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ System",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-settings.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Settings",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-plugins.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Plugins",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-themes.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Themes",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-backup-and-restore.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Backup and Restore",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-clone.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Clone",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/15-manage-script-wordpress-development.png",
+                    title: "Virtualmin ⇾ Manage Web Apps ⇾ Manage WordPress ⇾ Development",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/16-file-manager.png",
@@ -89,12 +121,8 @@ window.addEventListener("DOMContentLoaded", () => {
                     title: "Virtualmin ⇾ Terminal",
                 },
                 {
-                    src: "/images/screenshots/" + screenshotType + "/17-terminal-edit-file-using-nano.png",
-                    title: "Virtualmin ⇾ Terminal ⇾ Edit File",
-                },
-                {
-                    src: "/images/screenshots/" + screenshotType + "/17-terminal-dropdown.png",
-                    title: "Virtualmin ⇾ Dropdown Terminal",
+                    src: "/images/screenshots/" + screenshotType + "/17-terminal-edit-file-using-vim.png",
+                    title: "Virtualmin ⇾ Terminal ⇾ Edit File using Vim",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/18-change-ip-address.png",
@@ -113,7 +141,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     title: "Virtualmin ⇾ Manage Virtual Server ⇾ SSL Certificate",
                 },
                 {
-                    src: "/images/screenshots/" + screenshotType + "/21-ssl-certificate-le.png",
+                    src: "/images/screenshots/" + screenshotType + "/21-ssl-certificate-ssl-providers.png",
                     title: "Virtualmin ⇾ Manage Virtual Server ⇾ SSL Certificate ⇾ Let's Encrypt",
                 },
                 {
@@ -143,6 +171,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 {
                     src: "/images/screenshots/" + screenshotType + "/25-protected-web-directories.png",
                     title: "Virtualmin ⇾ Web Configuration ⇾ Protected Directories",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/25-proxy-paths.png",
+                    title: "Virtualmin ⇾ Web Configuration ⇾ Proxy Paths",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/26-website-options.png",
@@ -177,8 +209,8 @@ window.addEventListener("DOMContentLoaded", () => {
                     title: "Virtualmin ⇾ System Settings ⇾ Database Servers",
                 },
                 {
-                    src: "/images/screenshots/" + screenshotType + "/33-edit-server-template-virtual-ip-address.png",
-                    title: "Virtualmin ⇾ System Settings ⇾ Server Templates ⇾ Virtual IP Address",
+                    src: "/images/screenshots/" + screenshotType + "/33-edit-server-template-website-for-domain.png",
+                    title: "Virtualmin ⇾ System Settings ⇾ Server Templates ⇾ Website for Domain",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/34-change-ip-addresses.png",
@@ -201,12 +233,24 @@ window.addEventListener("DOMContentLoaded", () => {
                     title: "Virtualmin ⇾ Email Settings ⇾ DomainKeys Identified Mail",
                 },
                 {
+                    src: "/images/screenshots/" + screenshotType + "/38-mail-client-configuration.png",
+                    title: "Virtualmin ⇾ Email Settings ⇾ Mail Client Configuration",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/38-mailbox-cleanup.png",
+                    title: "Virtualmin ⇾ Email Settings ⇾ Mailbox Cleanup",
+                },
+                {
                     src: "/images/screenshots/" + screenshotType + "/39-spam-and-virus-scanning.png",
                     title: "Virtualmin ⇾ Email Settings ⇾ Spam and Virus Scanning",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/40-disk-quota-monitoring.png",
                     title: "Virtualmin ⇾ Limits and Validation ⇾ Disk Quota Monitoring",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/40-validate-virtual-servers.png",
+                    title: "Virtualmin ⇾ Limits and Validation ⇾ Validate Virtual Servers",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/41-import-virtual-server.png",
@@ -221,8 +265,28 @@ window.addEventListener("DOMContentLoaded", () => {
                     title: "Virtualmin ⇾ Backup and Restore ⇾ Backup Virtual Servers",
                 },
                 {
+                    src: "/images/screenshots/" + screenshotType + "/43-cloud-storage-providers.png",
+                    title: "Virtualmin ⇾ Backup and Restore ⇾ Cloud Storage Providers",
+                },
+                {
                     src: "/images/screenshots/" + screenshotType + "/44-virtualmin-virtual-servers.png",
                     title: "Virtualmin ⇾ List Virtual Servers",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/44-wp-workbench-instances.png",
+                    title: "Virtualmin ⇾ WP Workbench Manager ⇾ Instances",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/44-wp-workbench-plugins.png",
+                    title: "Virtualmin ⇾ WP Workbench Manager ⇾ Plugins",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/44-wp-workbench-themes.png",
+                    title: "Virtualmin ⇾ WP Workbench Manager ⇾ Themes",
+                },
+                {
+                    src: "/images/screenshots/" + screenshotType + "/44-wp-workbench-backups.png",
+                    title: "Virtualmin ⇾ WP Workbench Manager ⇾ Backups",
                 },
                 {
                     src: "/images/screenshots/" + screenshotType + "/45-system-statistics.png",
