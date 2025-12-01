@@ -1419,7 +1419,6 @@ html:not(.page-index) .index-page-intro-container {
     width: 140px;
     height:  120px;
     background: url('/footer-elements-alien.svg') center / contain no-repeat;
-    pointer-events:none;
     filter: brightness(0.75) contrast(2.5) saturate(1.25) opacity(0.65);
     z-index: 3;
 }

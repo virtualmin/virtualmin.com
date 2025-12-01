@@ -189,6 +189,34 @@
 
     })();
 
+    /*
+     * Alien link to intro section handling without changing URL hash
+     */
+    (function () {
+        const alien = document.querySelector('.index-page-intro-container-inner-content-alien');
+        if (!alien) return;
+        alien.addEventListener('click', (e) => {
+            const hash = alien.hash || alien.getAttribute('href');
+            if (!hash || !hash.startsWith('#')) {
+                return;
+            }
+            
+            const id = hash.slice(1),
+                  target = document.getElementById(id);
+            if (!target) return;
+    
+            // Stop the browser from changing location hash
+            e.preventDefault();
+            e.stopImmediatePropagation();
+    
+            // Jump to target element
+            target.scrollIntoView({
+                behavior: 'auto',
+                block: 'start'
+            });
+        });
+    })();
+
     /**
      * Feature bubbles generation and parallax effect
      */
