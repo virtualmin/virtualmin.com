@@ -116,6 +116,8 @@ params:
       threshold: 0.01
       bubbles:
         - label: "DNS"
+          url: "#virtualmin-features"
+          newTab: false
           type: "dns"
           tooltip: "Local DNS and cloud DNS (Route 53, Cloudflare, Google, Namecheap, Bunny) with reachability checks"
           position:
@@ -124,6 +126,8 @@ params:
           parallax: 0.15
 
         - label: "SSL"
+          url: "#virtualmin-features"
+          newTab: false
           type: "ssl"
           tooltip: "Auto-renewed SSL from Let's Encrypt, ZeroSSL, Google Trust and others for all services"
           position:
@@ -132,6 +136,8 @@ params:
           parallax: 0.25
 
         - label: "Web"
+          url: "#virtualmin-features"
+          newTab: false
           type: "web"
           tooltip: "Apache or Nginx with HTTP/2, multiple PHP versions, jails, resource usage, directory password protection and proxy path management"
           position:
@@ -140,6 +146,8 @@ params:
           parallax: 0.35
 
         - label: "WP"
+          url: "#virtualmin-features"
+          newTab: false
           type: "wp"
           tooltip: "Manage WordPress core, plugins, themes, backups and cloning from one place with WP Workbench, including bulk updates, remote site management and fast one-click admin access"
           position:
@@ -148,6 +156,8 @@ params:
           parallax: 0.20
 
         - label: "DB"
+          url: "#virtualmin-features"
+          newTab: false
           type: "db"
           tooltip: "MySQL and PostgreSQL with extra database users, granular permissions and per-server limits"
           position:
@@ -156,6 +166,8 @@ params:
           parallax: 0.30
 
         - label: "Storage"
+          url: "#virtualmin-features"
+          newTab: false
           type: "storage"
           tooltip: "Remote backup storage using Amazon S3, Azure Blob Storage, Backblaze B2, Dropbox, Google Cloud Storage, Google Drive and Rackspace Cloud Files, with encrypted transfer and retention policies"
           position:
@@ -164,6 +176,8 @@ params:
           parallax: 0.18
 
         - label: "Mail"
+          url: "#virtualmin-features"
+          newTab: false
           type: "mail"
           tooltip: "Local Postfix and Dovecot mail server with spam and virus filtering, SES and other relay providers, secondary MX, mailbox cleanup, log search and announcement emails to domain owners"
           position:
@@ -172,6 +186,8 @@ params:
           parallax: 0.28
 
         - label: "Backup"
+          url: "#virtualmin-features"
+          newTab: false
           type: "backup"
           tooltip: "Automated local and cloud backups with flexible schedules, GPG encryption keys and quota monitoring"
           position:
@@ -180,6 +196,8 @@ params:
           parallax: 0.22
 
         - label: "Tools"
+          url: "#virtualmin-features"
+          newTab: false
           type: "tools"
           tooltip: "CLI and remote HTTP API for automation, batch server creation, bulk WordPress operations and integration with your own systems and scripts"
           position:
@@ -188,6 +206,8 @@ params:
           parallax: 0.32
 
         - label: "Users"
+          url: "#virtualmin-features"
+          newTab: false
           type: "users"
           tooltip: "Reseller accounts, advanced user management, SSH keys, extra database and web users, resource limits and account-level tools"
           position:

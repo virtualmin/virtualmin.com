@@ -242,16 +242,19 @@
                 left: ${config.position.left}%;
             `;
             wrapper.dataset.parallax = String(config.parallax);
-        
+
+            const tag       = config.url ? 'a' : 'div',
+                  hrefAttr  = config.url ? ` href="${config.url}"` : '',
+                  targetAttr = config.newTab ? ' target="_blank" rel="noreferrer noopener"' : '';
             wrapper.innerHTML = `
                 <div class="bubble-float">
-                    <div class="feature-bubble">
+                    <${tag} class="feature-bubble"${hrefAttr}${targetAttr}>
                         <div class="bubble-circle bubble-${config.type}">
                             <span>${config.label}</span>
                         </div>
                         <div class="status-dot"></div>
                         <div class="bubble-tooltip">${config.tooltip}</div>
-                    </div>
+                    </${tag}>
                 </div>
             `;
         
