@@ -146,7 +146,7 @@ params:
           parallax: 0.35
 
         - label: "WP"
-          url: "#virtualmin-features"
+          url: "#virtualmin-intro"
           newTab: false
           type: "wp"
           tooltip: "Manage WordPress core, plugins, themes, backups and cloning from one place with WP Workbench, including bulk updates, remote site management and fast one-click admin access"

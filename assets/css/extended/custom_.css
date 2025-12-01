@@ -1702,6 +1702,10 @@ html:not(.page-index) .index-page-intro-container {
     50% { transform: translateY(-12px); }
 }
 
+.page-index .index-page-intro-block-testimony-text .wm-virtualmin-tick {
+    vertical-align: middle;
+}
+
 /* General mobile view properties */
 @media screen and (max-width: 1000px),
        screen and (max-height: 768px) {
@@ -1818,7 +1822,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .chocolat-drop {
     background-color: transparent;
     aspect-ratio: 16 / 9;
-    margin: -1em 0 3.666em 0;
+    margin: -1em 0 1.333em 0;
     overflow: initial;
 }
 
