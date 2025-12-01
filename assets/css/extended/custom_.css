@@ -1580,6 +1580,19 @@ html:not(.page-index) .index-page-intro-container {
     z-index: 100;
 }
 
+.page-index .feature-bubble:focus {
+    /* Remove default rectangular outline only on the bubbles */
+	outline: none;
+}
+
+.page-index .feature-bubble:focus-visible .bubble-circle {
+    /* Keyboard focus style: nice circular ring */
+	box-shadow:
+		0 0 0 2px rgba(255, 255, 255, 0.5),
+		0 0 0 14px rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
 .page-index .feature-bubble .bubble-circle span {
     transform: scaleY(1.12);
     letter-spacing: -0.36px;
