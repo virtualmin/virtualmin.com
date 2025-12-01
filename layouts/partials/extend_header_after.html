@@ -277,6 +277,26 @@
                     speed: config.parallax,
                     transform: { x: 0, y: 0 }
                 });
+
+                // If the URL is a same-page anchor, do not change the URL hash
+                if (config.url && config.url.startsWith('#')) {
+                    const link = element.querySelector('.feature-bubble');
+                    if (link) {
+                        link.addEventListener('click', (e) => {
+                            const target = document.querySelector(config.url);
+                            if (!target) return;
+
+                            // Stop the browser from changing location hash
+                            e.preventDefault();
+
+                            // Jump to target element
+                            target.scrollIntoView({
+                                behavior: 'auto',
+                                block: 'start'
+                            });
+                        });
+                    }
+                }
             });
     
             state.container.appendChild(fragment);
