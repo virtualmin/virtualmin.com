@@ -1803,11 +1803,6 @@ html:not(.page-index) .index-page-intro-container {
         word-break: break-word;
     }
 
-    .page-index .stat-item:nth-child(2) .stat-label {
-        white-space: nowrap;
-    }
-    
-
     .page-index .index-page-bubbles-container {
         display: none;
     }
