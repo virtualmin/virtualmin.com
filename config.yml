@@ -105,9 +105,9 @@ params:
     stats:
       - value: "20Y+"
         label: "Of trusted service"
-      - value: "10M+"
-        label: "Installations"
-      - value: "250K+"
+      - value: "500K+"
+        label: "Lines of tested code"
+      - value: "200K+"
         label: "Active users"
   
     bubbles:
