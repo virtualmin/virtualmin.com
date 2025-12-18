@@ -1,9 +1,9 @@
 ---
-title: "Creating Install Scripts"
+title: "Creating Web App Installer"
 weight: 4010030
 ---
 
-A Virtualmin script installer is a small program that contains the information needed to install a web application into a virtual server's home directory, and configure it to run with that server's permissions and using its database. Most script installers are for PHP programs like WordPress or phpMyAdmin, but it is possible to write an installer for Node.js, Perl or Python.
+A Virtualmin web app installer, also called a script installer, is a small program that contains the information needed to install a web application into a virtual server's home directory and set it up to run with that server's permissions and database. Most script installers are for PHP apps like WordPress or phpMyAdmin, but you can also create installers for Node.js, Perl, or Python apps.
 
 Virtualmin Pro ships with a large number of [built-in installers](/docs/professional-features/#install-scripts), which domain owners can add to their websites using the **Install Scripts** link on the left menu. However, there are many applications that are not covered yet, simply because we don't have time to implement installers for them or they are used too rarely or too specific. For this reason, Virtualmin provides an API for adding your own script installers.
 
