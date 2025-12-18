@@ -22,6 +22,9 @@ RewriteCond %{THE_REQUEST} /archives/?[\s?]
 RewriteRule ^archives/?$ /changelog/ [R=301,L]
 RewriteRule ^changelog/$ /archives/ [L]
 
+# Latest changes to doc titles and pages
+RewriteRule ^docs/development/domain-management-api /docs/development/pre-and-post-domain-modification-scripts [R=301,L]
+
 # Historic redirects that were handled by the Redirection plugin in WordPress
 RewriteRule ^node/(.+) https://archive.virtualmin.com/node/$1 [R=301,L]
 RewriteRule ^comment/(.+) https://archive.virtualmin.com/comment/$1 [R=301,L]
