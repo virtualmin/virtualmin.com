@@ -105,8 +105,8 @@ params:
     stats:
       - value: "20Y+"
         label: "Of trusted service"
-      - value: "500K+"
-        label: "Lines of tested code"
+      - value: "1M+"
+        label: "Managed domains"
       - value: "200K+"
         label: "Active users"
   
