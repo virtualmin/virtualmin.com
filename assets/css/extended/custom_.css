@@ -617,14 +617,14 @@ body>footer.footer::after {
     width: 100%;
     top: -120px;
     right: 0;
-    background-image: url('/footer-elements-alien.svg');
+    background-image: url('/images/page/footer-elements-alien.svg');
     background-repeat: no-repeat;
     background-position: calc(100% - 208px) 100%;
     background-size: contain;
 }
 
 body.dark>footer.footer::after {
-    background-image: url('/footer-elements-alien-dark.svg');
+    background-image: url('/images/page/footer-elements-alien-dark.svg');
 }
 
 
@@ -1154,7 +1154,7 @@ html:not(.page-index) .index-page-intro-container {
     width: 80px;
     height: 80px;
 
-    background: url('/header-elements-satellite.svg') left top / contain no-repeat;
+    background: url('/images/page/header-elements-satellite.svg') left top / contain no-repeat;
 
     filter: brightness(0.75) contrast(15) opacity(0.8) invert(0.1);
 }
@@ -1198,7 +1198,7 @@ html:not(.page-index) .index-page-intro-container {
     width: 12px;
     height: 12px;
 
-    background: url('/header-elements-planet.svg') left top / contain no-repeat;
+    background: url('/images/page/header-elements-planet.svg') left top / contain no-repeat;
 
     filter: brightness(0.6) contrast(10) opacity(0.8);
 }
@@ -1327,7 +1327,7 @@ html:not(.page-index) .index-page-intro-container {
 	overflow: hidden;
 
 	pointer-events: none;
-	background: url("/header-elements-stars.svg") center top repeat-x;
+	background: url("/images/page/header-elements-stars.svg") center top repeat-x;
 	opacity: 1;
 	mix-blend-mode: screen;
 	z-index: 13;
@@ -1418,12 +1418,12 @@ html:not(.page-index) .index-page-intro-container {
     bottom: 64px;
     width: 140px;
     height:  120px;
-    background: url('/footer-elements-alien.svg') center / contain no-repeat;
+    background: url('/images/page/footer-elements-alien.svg') center / contain no-repeat;
     filter: brightness(0.75) contrast(2.5) saturate(1.25) opacity(0.65);
     z-index: 3;
 }
 .page-index .dark .index-page-intro-container-inner-content-alien {
-    background: url('/footer-elements-alien-dark.svg') center / contain no-repeat;
+    background: url('/images/page/footer-elements-alien-dark.svg') center / contain no-repeat;
     filter: brightness(0.95) contrast(1.1) saturate(1.5) invert(5%);
 
 }
@@ -1898,7 +1898,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 .page-index .dark .index-page-intro-block-testimony::after {
     opacity: 0.75;
     filter: none;
-    background-image: url('/header-elements-stars.svg');
+    background-image: url('/images/page/header-elements-stars.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: top;
@@ -2086,7 +2086,7 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     margin-left: -1.25rem;
     margin-top: -.75rem;
     position: absolute;
-    background-image: url('/content-satellite.svg');
+    background-image: url('/images/page/content-satellite.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 75% 50%;
