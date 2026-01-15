@@ -17,4 +17,4 @@ As open source developers, we\'ve been working on solving real systems managemen
 
 ### Us
 
-In short, **Virtualmin** is four guys (**Eric Andreychek** joined us in 2008 and **Ilia Rоstovtsev (a.k.a Ilia Ross)** joined us in 2014) trying to tackle really big problems in hosting and cloud computing management.
+In short, **Virtualmin** is four guys (**Eric Andreychek** joined us in 2008 and **Ilia Rostovtsev (a.k.a Ilia Ross)** joined us in 2014) trying to tackle really big problems in hosting and cloud computing management.
