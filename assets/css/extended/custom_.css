@@ -2155,5 +2155,6 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
 
 html[class*="page-changelog"] .post-tags,
 html[class*="page-archives"] .post-tags {
+    display: inline;
     display: none;
 }
