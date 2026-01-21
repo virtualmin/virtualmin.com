@@ -1,42 +1,53 @@
 ---
 title: "OS Support"
-date: 2025-10-17
+date: 2026-01-21
+author: "Ilia Ross"
 draft: false
 weight: 900000
 ---
 
-Virtualmin runs on top of Webmin. Webmin is compatible with nearly every UNIX-based OS on the planet, and so Virtualmin can, with a little work, run on just about all of those same systems. However, we offer an automated [installation script](https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh), as well as a well-maintained software updates system, for a few very popular operating systems.
+Virtualmin runs on top of Webmin. Webmin works on almost every UNIX-like OS, so with some manual setup Virtualmin can run on many of them, too. However, we only provide an [automated](/docs/installation/automated/) installation script and managed software updates for a smaller set of popular systems.
 
-If you're just starting out with Virtualmin, and want to have an easy installation process and smoothly running system, we strongly recommend you choose from the following Grade A supported systems. If in doubt about which of these systems to choose, we recommend the most recent supported version of the one you are most familiar with.
+If you're new to Virtualmin and want a smooth install and easy maintenance, pick one of our Grade A supported systems. If you're unsure which one, use the latest supported version of the OS you know best.
 
 ### Grade A supported systems
 
-Grade A systems have an automated installation script, a well-maintained software repository for updates, and are expected to work out of the box if you run the install script on a freshly installed system running one of these OS. We strongly recommend the current stable release of one of these systems for most users. We never support beta or pre-release versions of any OS.
+Grade A systems have an automated installation script and a maintained software repository for updates, and are expected to work out of the box when you run the installer on a freshly installed system. We strongly recommend the current stable release of one of these systems for most users. We don't support beta or pre-release versions of any OS.
 
-- Debian 11 and 12 on i386 and amd64
-- Ubuntu 22.04 LTS and 24.04 LTS on i386 and amd64
-- Rocky, Alma, and RHEL 8 and 9 on x86_64
+#### Enterprise Linux and derivatives
+- Red Hat Enterprise Linux 8, 9, and 10 on x86_64 and aarch64
+- AlmaLinux and Rocky Linux 8, 9, and 10 on x86_64 and aarch64
+
+#### Debian Linux and derivatives
+- Debian 12 and 13 on i386, amd64, and arm64
+- Ubuntu 22.04 LTS and 24.04 LTS on i386, amd64, and arm64
 
 ### Grade B supported systems
 
-The following operating systems are _not_ recommended for new or intermediate users. You will need to have experience with your OS and with Virtualmin to successfully use any of these operating systems. Don't bother asking for help installing on any of these systems in the forum, you should only be attempting it if you already know what you're doing. Otherwise choose a grade A supported OS.
+These operating systems are **not** recommended for new or intermediate users. You should only use them if you're already comfortable with both your OS and Virtualmin. If you're unsure, choose a Grade A supported OS instead.
 
-Most Grade B systems do not fully support automatic installation but are expected to work well, if you are capable of performing all of the necessary configuration and installation steps to get the other necessary components working together. There have been Virtualmin installations on all of these systems, but they are only recommended for experts. We will try to support Virtualmin and Webmin on these platforms within the bounds of our knowledge, but they have received little-to-no direct testing by us.
+Most Grade B systems don't fully support automatic installation, but they can work well if you know how to configure and integrate the required services yourself. Virtualmin has been run on all of these, but they're only recommended for experienced admins. We'll try to help with Virtualmin issues on these platforms, but they get little or no direct testing.
 
 #### Grade B systems with automatic installation support
 
-For enabling automatic installation support, use the `--unstable` param when running the `virtualmin-install.sh` script.
+To enable automatic installation on these systems, run the installer with:
 
-##### Debian derivatives
-- Ubuntu interim (non-LTS) on i386 and amd64
-- Kali Linux Rolling 2023 and above on i386 and amd64
-##### EL derivatives
-- CentOS Stream 8 and 9 on x86_64
-- Fedora Server 40 and above on x86_64
-- Amazon Linux 2023 and above on x86_64
-- Oracle Linux 8 and 9 on x86_64
-- CloudLinux Linux 8 and 9 on x86_64
-- openEuler 24.03 and above on x86_64
+```text
+sudo sh virtualmin-install.sh --os-grade B
+```
+
+##### Enterprise Linux and derivatives
+- Fedora Server 43 and later on x86_64 and aarch64
+- CentOS Stream 8, 9, and 10 on x86_64 and aarch64
+- Amazon Linux 2023 on x86_64 and aarch64
+- Oracle Linux 8, 9, and 10 on x86_64 and aarch64
+- openEuler 24.03 and later on x86_64 and aarch64
+- CloudLinux 8 and 9 on x86_64  
+
+##### Debian Linux and derivatives
+- Ubuntu 26.04 developer preview on i386, amd64, and arm64
+- Kali Linux Rolling on amd64 and arm64
+- Ubuntu interim (non-LTS) releases on i386, amd64, and arm64
 
 #### Grade B systems without automatic installation support
 - Raspbian Linux
@@ -47,6 +58,4 @@ For enabling automatic installation support, use the `--unstable` param when run
 
 ### Others
 
-If it's not on the lists above, and it's a UNIX-based OS, Virtualmin can probably still work for you. Try installing Webmin first. If it works, then you're about halfway to confirming that Virtualmin will also work, but it will not be easy or quick to set it up. The installation process to make all of the services work together in a friendly way is wildly complicated, and should only be undertaken if you are an expert with both your OS and all of the services you'll be using with Virtualmin.
-
-While Webmin provides limited support for Windows, Virtualmin does not work at all on Windows-based OS at this time, and it is not in our near-term plans to add support for Windows-based systems.
+If your UNIX-like OS isn't listed above, Virtualmin may still work. Start by installing Webmin; if Webmin works, you're partway to confirming that Virtualmin can, too. But getting all services working nicely together will be a manual, expert-level job.

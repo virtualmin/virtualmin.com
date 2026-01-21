@@ -51,20 +51,14 @@ Download and install Webmin and Usermin, from [Webmin](https://www.webmin.com/do
 Once Webmin is operational you can download and install the Virtualmin modules in either `rpm` format (for RPM-based Linux distributions), `deb` format (for Debian-based Linux distributions), or `wbm` format (for any other UNIX or Linux system), and install them using the Webmin Modules module found in **Webmin ⇾ Webmin Configuration** page.
 
 ### Virtualmin Professional
-The modules can be found in the following locations:
 
-  - https://software.virtualmin.com/vm/7/wbm - Webmin format modules
-  - https://software.virtualmin.com/vm/7/pro/rpm - RPM format modules
-  - https://software.virtualmin.com/vm/7/pro/apt - Debian and Ubuntu module packages
-  
-You will need to make a note of your serial number and license key, found on your [My Account](/account/) page at Virtualmin.com, so that you can login using the serial number as the username and the license key as the password.
+All Virtualmin Pro modules and packages are now served from a single stable repository at [download.virtualmin.com](https://download.virtualmin.com). This repository includes all stable builds of Virtualmin, its plugins, and related packages, including Webmin and Usermin.
+
+A password is only required for commercial modules such as [Virtualmin Pro](/docs/professional-features/), [Virtualmin WP Workbench](/docs/plugins/wp-workbench/), and some others. To download these, use your serial number and license key from the [My Account](/account/) page, with the serial number as the username and the license key as the password.
 
 ### Virtualmin GPL
-The modules can be found in the following locations:
 
- - https://software.virtualmin.com/vm/7/gpl/wbm - Webmin format modules
- - https://software.virtualmin.com/vm/7/gpl/rpm - RPM format modules
- - https://software.virtualmin.com/vm/7/gpl/apt - Debian and Ubuntu module packages
+Virtualmin GPL uses the same stable repository at [download.virtualmin.com](https://download.virtualmin.com) for all modules and packages.
 
 ### Service configuration
 

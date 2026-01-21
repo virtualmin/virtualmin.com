@@ -106,11 +106,11 @@ Once you have a serial number and a license key, you would need to undergo GPL t
 
 > ##### How to upgrade Virtualmin license?
 
-Upgrading your Virtualmin Professional license is straightforward and does not require a reinstallation of Virtualmin! Once you've purchased your new license, just run the `virtualmin change-license` command. This action will update your system with the new serial number and license key. All existing licenses details can be found in the [My Account → Software Licenses](/account/) page on the Virtualmin website.
+Upgrading your Virtualmin Professional license is straightforward and does not require a reinstallation of Virtualmin! Once you've purchased your new license, just run the `virtualmin change-license` command. This action will update your system with the new serial number and license key. All existing licenses details can be found in the [My Account → Dashboard](/account/) page on the Virtualmin website.
 
 > ##### How do I renew an expired license?
 
-To re-activate a system with an expired license, simply buy a new license in our shop, and use the `change-license` command to apply it to your server. Your server will instantly be activated on the new license.
+To re-activate a system with an expired license, simply buy a new license in [our shop](/shop/), and use the `change-license` command to apply it to your server. Your server will instantly be activated on the new license.
 
 The `change-license` command can be used for Virtualmin, like this:
 
@@ -118,24 +118,16 @@ The `change-license` command can be used for Virtualmin, like this:
 virtualmin change-license --serial NEWSERIAL --key NEWKEY
 ```
 
-To change license using latest `virtualmin-install.sh` script you can use the following command:
-
-```text
-sh -c "$(curl -fsSL https://software.virtualmin.com/cgi-bin/install.cgi?serial=1234567\&key=AAbbCCddEE)" -- --setup
-```
-{{< note "`1234567` and `AAbbCCddEE` should be replaced with your actual serial and key." "Note:" "notification" >}}
-
 > ##### How do I cancel a recurring license?
 
-Licenses can be canceled in your Virtualmin account. Click on **My Account**, and then **Software Licenses**, and then find the license you want to cancel. Click the related subscription number in the licenses table. From there you can **Cancel** or make other changes. If your license does not have a related subscription it will automatically end when the license term is complete.
+Licenses can be canceled in your Virtualmin account. Click on **My Account**, and then find the license you want to cancel. Click the related subscription number in the licenses table. From there you can **Cancel** or make other changes. If your license does not have a related subscription it will automatically end when the license term is complete.
 
 > ##### How do I upgrade or downgrade a license?
 
-As with cancellations, you can make changes to your licenses in the **My Account** page under **Software Licenses**. Find the license you want to modify, click the related subscription, and choose to upgrade or downgrade. Confirm the order to make the change. If your license does not have a related subscription, that means it was purchased before 2021 and is not known to the new commerce system. To make changes, you'll need to purchase a new license and switch to it using the `virtualmin change-license` command as described above.
-
+As with cancellations, you can make changes to your licenses in the **My Account** page. Find the license you want to modify, click the related subscription, and choose to upgrade or downgrade. Confirm the order to make the change. If your license does not have a related subscription, that means it was purchased before 2021 and is not known to the new commerce system. To make changes, you'll need to purchase a new license and switch to it using the `virtualmin change-license` command as described above.
 > ##### Where are my expired licenses?
 
-Expired licenses don't have any intrinsic value and are removed from the **Software Licenses** page one month after their expiration date.
+Expired licenses don't retain any value and are removed from your account dashboard after some time.
 
 > ##### Why do I see a license error message?
 
@@ -149,7 +141,7 @@ You may see a license error message if you're using the same Pro license on mult
   - Virtualmin will temporarily disable features that allow changes to be made through either the UI or CLI on all affected servers.
   - Your websites, databases, and other system services will continue running normally.
 
-* For expired licenses, there’s a 7-day grace period to renew before the same restrictions are applied.
+* For expired licenses, there's a 7-day grace period to renew before the same restrictions are applied.
 
 To resolve license errors, you can either:
   - Complete your server migration within the grace period.
@@ -184,7 +176,7 @@ Additionally, Webmin and Virtualmin offer specific settings for certain files an
 
 > ##### When I use **Manage Virtual Server ⇾ Switch To Server's Admin**, is there a way to return without logging out?
 
-When you use that option, you become that user. For security reasons, there’s no way to switch back. Allowing it could let users trick the system into becoming the *root* user, which would be a big security risk.
+When you use that option, you become that user. For security reasons, there's no way to switch back. Allowing it could let users trick the system into becoming the *root* user, which would be a big security risk.
 
 ### Packages and web apps upgrades
 
@@ -193,7 +185,7 @@ When you use that option, you become that user. For security reasons, there’s 
 This problem typically arises from outdated repositories. To resolve the issue, simply re-setup the Virtualmin repositories by executing the command below. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
 
 ```
-sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
+curl -fsSL https://download.virtualmin.com/repository | sudo sh -s -- -s -B stable
 ```
 
 > ##### How to update Virtualmin and all related packages?
@@ -242,7 +234,7 @@ Remember, it's always a good idea to backup your data before attempting any majo
 
 > ##### What is the difference between migrating and transferring a virtual server?
 
-The “Migrate Virtual Server” option is for importing a backup file from another panel into Virtualmin. The “Transfer Virtual Server” option is the opposite—it’s for pushing a virtual server from one Virtualmin system to another. Some people use it to move domains from an old server to a new one. If you’re importing a backup from another panel, “Migrate Virtual Server” is the way to go.
+The “Migrate Virtual Server” option is for importing a backup file from another panel into Virtualmin. The “Transfer Virtual Server” option is the opposite—it's for pushing a virtual server from one Virtualmin system to another. Some people use it to move domains from an old server to a new one. If you're importing a backup from another panel, “Migrate Virtual Server” is the way to go.
 
 ### User interface
 

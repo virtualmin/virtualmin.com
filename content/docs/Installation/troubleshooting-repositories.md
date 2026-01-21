@@ -1,25 +1,26 @@
 ---
 title: "Troubleshooting Repositories"
-date: 2023-11-24
+date: 2026-01-21
+author: "Ilia Ross"
 weight: 2021000
 ---
-It is important to have Virtualmin repositories configured correctly to make sure the latest packages are installed.
+Having your Virtualmin repositories configured correctly is essential to receive the latest updates and security fixes. If you are not getting updates for Virtualmin, Webmin, or Usermin, your repositories are likely outdated or misconfigured.
 
-If you cannot receive Virtualmin or Webmin and Usermin upgrades on time, it means your Virtualmin repositories are either outdated or configured incorrectly.
 
-### How to re-setup Virtualmin repositories?
-To resolve the issue, simply update the Virtualmin repositories. Execute the command below in the terminal via SSH. This command is designed to function across all Grade A and some Grade B supported [operating systems](/docs/os-support/) and is compatible with both Virtualmin GPL and Pro versions:
+### Reconfiguring Virtualmin repositories
 
+To reset and correct the Virtualmin repositories, run the command below in a terminal over SSH. It works on all Grade A and some Grade B supported [operating systems](/docs/os-support/), and is compatible with both Virtualmin GPL and Pro:
 
 ```bash
-sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --setup
+curl -fsSL https://download.virtualmin.com/repository | sudo sh -s -- -s -B stable
 ```
 
-{{< note "Script will automatically setup correct repositories depending on your installation type and version. Virtualmin Professional users do not need to take any extra steps." "Note:" "notification" >}}
+### Fixing repositories using the Virtualmin CLI
 
-### How to fix Virtualmin repositories using Virtualmin CLI?
-Virtualmin versions 7.5 and above have a new CLI command to fix repositories. It is called `setup-repos` and can be used as follows:
+Virtualmin also provides a `setup-repos` CLI command to repair repository configuration:
 
 ```bash
 sudo virtualmin setup-repos
 ```
+
+By default, this uses the currently configured branch, or `stable` if none is set. You can change branches with `--branch stable`, `--branch prerelease`, or `--branch unstable`, but `prerelease` and `unstable` should only be used for testing, **not for normal production systems**.
