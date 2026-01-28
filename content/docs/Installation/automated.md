@@ -20,6 +20,9 @@ If you haven't already, read the [Download](/download/) page first, as it covers
 {{< html span "" "" "mysql-vs-mariadb" >}}
 {{< alert primary exclamation "" "On Debian and its derivatives, the Virtualmin installer treats MariaDB and MySQL as drop-in replacements, so if MySQL is already installed it will use it. To use Oracle MySQL instead of MariaDB, install `mysql-server`, `mysql-common`, and `libdbd-mysql-perl` with your package manager before running the installer. This is not available on EL-based systems, where only MariaDB is supported." >}}
 
+{{< html span "" "" "postgresql" >}}
+{{< alert primary exclamation "" "PostgreSQL and the Webmin PostgreSQL module are no longer installed by default. If you want PostgreSQL as part of the initial install, add `--include PostgreSQL` to your `virtualmin-install.sh` command, and also add `--extra webmin-postgresql,postgresql,postgresql-client` on EL systems or `--extra webmin-postgresql,postgresql,postgresql-server` on Debian and derivatives. You can also skip MariaDB setup with `--exclude MariaDB`. If Virtualmin is already installed, install the PostgreSQL packages and the Webmin PostgreSQL module for your OS, and then run `virtualmin-config-system --include PostgreSQL`." >}}
+
 ### Automated installation
 
 In most cases, installing Virtualmin is as simple as installing a supported OS and then running the `virtualmin-install.sh` script. Supported systems are listed on the [OS Support](/docs/os-support/) page.
