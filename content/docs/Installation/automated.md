@@ -47,32 +47,29 @@ Usage: virtualmin-install.sh [options]
 
   --bundle|-b <LAMP|LEMP>          bundle to install (default: LAMP)
   --type|-t <full|mini>            install type (default: full)
-
-  --branch|-B <stable|prerelease|unstable>
-                                   install branch (default: stable)
   --os-grade|-g <A|B>              operating system support grade (default: A)
+  --branch|-B <stable|rc|devel>    install branch (default: stable)
 
   --extra|-E <name[,name..]>       install extra packages before stack install
   --exclude|-e <name[,name..]>     exclude plugin from configuration phase
-
+  --include|-i <name[,name..]>     include plugin in configuration phase
   --module|-o                      load custom module in post-install phase
 
   --hostname|-n                    force hostname during install
   --no-package-updates|-x          skip package updates during install
   --no-hostname-ssl|-nhs           skip SSL certificate request for hostname
 
+  --uninstall|-u                   remove all packages and dependencies
   --setup|-s                       reconfigure repos without installing
   --connect|-C <ipv4|ipv6>         test connectivity without installing
-
-  --insecure-downloads|-i          skip SSL certificate check for downloads
-
-  --uninstall|-u                   remove all packages and dependencies
+  --insecure-downloads|-I          skip SSL certificate check for downloads
 
   --force|-f|--yes|-y              assume "yes" to all prompts
   --force-reinstall|-fr            force complete reinstall (not recommended)
   --no-banner|-nb                  suppress installation messages and warnings
-  --verbose|-v                     enable verbose mode
-  --version|-V                     show installer version
+  --verbose|-V                     enable verbose mode
+
+  --version|-v                     show installer version
   --help|-h                        show this help
 ```
 
