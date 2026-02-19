@@ -25,7 +25,7 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
 
 #### Manual webserver switch
 
-{{< alert warning exclamation "Warning!" "Manual switching involves advanced configuration and is generally not advisable for average users due to its technical nature." >}}
+{{< alert warning exclamation "Warning!" "Manual switching requires advanced configuration and is typically not recommended for most users because of its technical complexity." >}}
 
 ##### Manual switch from Apache to Nginx
 
@@ -38,23 +38,39 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
       ```text
       systemctl disable --now httpd
       ```
-2. **Disable Apache as Virtualmin feature**
+2. **Disable Apache website feature for all existing virtual servers**
+      ```text
+      virtualmin disable-feature --all-domains --web --ssl --status --virtualmin-awstats
+      ```
+      {{< note "Dependent features such as `status` and `virtualmin-awstats` must also be disabled, as they rely on the webserver feature. Depending on your setup, there may be others. Adjust the command flags as needed." "Note:" "notification" >}}
+3. **Disable Apache and dependent Virtualmin global features**
    ```text
-   virtualmin set-global-feature --disable-feature web --disable-feature ssl
+   virtualmin set-global-feature --disable-feature web --disable-feature ssl --disable-feature virtualmin-htpasswd
    ```
-3. **Install Nginx and dependencies**: Install Nginx and Nginx Virtualmin modules from your repository.
+   {{< note "Dependent features such as `virtualmin-htpasswd` must also be disabled, as they rely on the webserver feature." "Note:" "notification" >}}
+4. **Install Nginx and dependencies**: Install Nginx and Nginx Virtualmin modules from your repository.
    - Debian and derivatives
       ```text
       apt-get install nginx-full webmin-virtualmin-nginx webmin-virtualmin-nginx-ssl
       ```
    - EL systems
       ```text
-      dnf install nginx wbm-virtualmin-nginx wbm-virtualmin-nginx-ssl
+      dnf install nginx webmin-virtualmin-nginx webmin-virtualmin-nginx-ssl
       ```
-4. **Configure Virtualmin for Nginx**
+5. **Configure Virtualmin for Nginx**
       ```text
-      virtualmin-config-system -i Nginx
+      virtualmin-config-system --include Nginx
       ```
+6. **Enable Nginx as Virtualmin global feature**
+   ```text
+   virtualmin set-global-feature --enable-feature virtualmin-nginx --enable-feature virtualmin-nginx-ssl
+   ```
+   {{< note "Dependent features such as `virtualmin-htpasswd` should also be re-enabled if they were previously enabled and needed." "Note:" "notification" >}}
+7. **Enable Nginx website feature for all existing virtual servers**
+      ```text
+      virtualmin enable-feature --all-domains --virtualmin-nginx --virtualmin-nginx-ssl
+      ```
+      {{< note "You may also need to re-enable other features that were disabled in step 2, depending on your configuration." "Note:" "notification" >}}
 
 ##### Switching from Nginx to Apache
 
@@ -63,11 +79,17 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
       ```text
       systemctl disable --now nginx
       ```
-2. **Disable Nginx as Virtualmin feature**
+2. **Disable Nginx website feature for all existing virtual servers**
+      ```text
+      virtualmin disable-feature --all-domains --virtualmin-nginx --virtualmin-nginx-ssl --status --virtualmin-awstats
+      ```
+      {{< note "Dependent features such as `status` and `virtualmin-awstats` must also be disabled, as they rely on the webserver feature. Depending on your setup, there may be others. Adjust the command flags as needed." "Note:" "notification" >}}
+3. **Disable Nginx and dependent Virtualmin global features**
    ```text
-   virtualmin set-global-feature --disable-feature virtualmin-nginx --disable-feature virtualmin-nginx-ssl
+   virtualmin set-global-feature --disable-feature virtualmin-nginx --disable-feature virtualmin-nginx-ssl --disable-feature virtualmin-htpasswd
    ```
-3. **Install Apache**: Install the Apache package along with necessary modules.
+   {{< note "Dependent features such as `virtualmin-htpasswd` must also be disabled, as they rely on the webserver feature." "Note:" "notification" >}}
+4. **Install Apache**: Install the Apache package along with necessary modules.
    - Debian and derivatives
       ```text
       apt-get install apache2 libapache2-mod-fcgid apache2-suexec-custom
@@ -76,11 +98,17 @@ Once Nginx support is configured, you can manage virtual servers similar to Apac
       ```text
       dnf install httpd mod_fcgid mod_ssl mod_http2
       ```
-4. **Configure Virtualmin for Apache**
+5. **Configure Virtualmin for Apache**
       ```text
-      virtualmin-config-system -i Apache
+      virtualmin-config-system --include Apache
       ```
-5. **Enable Apache as Virtualmin feature**
+6. **Enable Apache as Virtualmin global feature**
    ```text
    virtualmin set-global-feature --enable-feature web --enable-feature ssl
    ```
+   {{< note "Dependent features such as `virtualmin-htpasswd` should also be re-enabled if they were previously enabled and needed." "Note:" "notification" >}}
+7. **Enable Apache website feature for all existing virtual servers**
+      ```text
+      virtualmin enable-feature --all-domains --web --ssl
+      ```
+      {{< note "You may also need to re-enable other features that were disabled in step 2, depending on your configuration." "Note:" "notification" >}}
