@@ -2,6 +2,7 @@
 title: "list-backup-keys"
 date: 2024-01-23
 weight: 4012035
+edition: "pro"
 ---
 
 ### Lists all available backup encryption keys

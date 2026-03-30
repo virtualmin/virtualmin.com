@@ -2,6 +2,7 @@
 title: "check-connectivity"
 date: 2024-01-23
 weight: 4012850
+edition: "pro"
 ---
 
 ### Checks the external accessibility of virtual servers

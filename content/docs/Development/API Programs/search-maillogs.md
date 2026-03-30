@@ -2,6 +2,7 @@
 title: "search-maillogs"
 date: 2024-01-23
 weight: 4012855
+edition: "pro"
 ---
 
 ### Searches mail server and procmail logs

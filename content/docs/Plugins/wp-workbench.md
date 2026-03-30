@@ -3,6 +3,7 @@ title: "WP Workbench"
 author: "Ilia Ross"
 date: "2025-09-04"
 weight: 2511100
+edition: "pro"
 ---
 
 WP Workbench is a specially crafted Virtualmin plugin that simplifies WordPress

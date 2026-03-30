@@ -1,3 +1,7 @@
+{{- $edition := lower (printf "%v" (.Param "edition")) }}
+{{- if eq $edition "pro" }}
+<span class="hidden page-edition-marker" data-edition="pro" aria-hidden="true" hidden></span>
+{{- end }}
 <script>
     (function () {
         // Define authentication state

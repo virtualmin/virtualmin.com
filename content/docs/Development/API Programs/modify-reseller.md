@@ -2,6 +2,7 @@
 title: "modify-reseller"
 date: 2024-01-23
 weight: 4012325
+edition: "pro"
 ---
 
 ### Modify attributes for an existing reseller

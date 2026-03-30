@@ -2,6 +2,7 @@
 title: "modify-resources"
 date: 2024-01-23
 weight: 4012250
+edition: "pro"
 ---
 
 ### Changes resource limits for some virtual servers

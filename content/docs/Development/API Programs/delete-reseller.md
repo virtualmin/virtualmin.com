@@ -2,6 +2,7 @@
 title: "delete-reseller"
 date: 2024-01-23
 weight: 4012320
+edition: "pro"
 ---
 
 ### Delete one reseller

@@ -2,6 +2,7 @@
 title: "list-resellers"
 date: 2024-01-23
 weight: 4012330
+edition: "pro"
 ---
 
 ### List existing resellers

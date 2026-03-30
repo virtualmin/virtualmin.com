@@ -3,6 +3,7 @@ title: "create-reseller"
 subSection: "Reseller Accounts"
 date: 2024-01-23
 weight: 4012315
+edition: "pro"
 ---
 
 ### Create one reseller account
