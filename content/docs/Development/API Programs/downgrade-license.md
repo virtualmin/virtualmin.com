@@ -6,10 +6,22 @@ weight: 4012535
 
 ### Downgrade Virtualmin Pro system to GPL version
 
-This program downgrades Virtualmin Pro system to GPL by performing various actions like, swapping Pro package with GPL variant, locking resellers accounts, automatically switching repositories and reverting the license to GPL. The only required parameter to perform downgrade is `--perform`. Be careful, this program will not ask for confirmation before performing downgrade.
+If you want to keep using Virtualmin on the same server but no longer need Virtualmin Pro features, use this command to downgrade to Virtualmin GPL instead of uninstalling Virtualmin.
+
+This is not a full uninstall. Your existing virtual servers and other GPL-supported services remain in place. The downgrade switches the system to GPL licensing and repositories, replaces the Pro package with the GPL package, removes Pro-only plugins, and locks reseller accounts.
 
 ### Command line help
 
 ```text
-virtualmin downgrade-license --perform
+virtualmin downgrade-license
 ```
+
+The command asks for confirmation before making changes.
+
+### What changes during downgrade
+
+- The Virtualmin license is changed to GPL
+- Virtualmin repositories are switched to the GPL repositories
+- The Virtualmin Pro package is replaced with the GPL package
+- Pro-only plugins such as Virtualmin Support, Virtualmin WP Workbench and Virtualmin Podman are removed
+- Reseller accounts are locked, because reseller management is a Pro-only feature

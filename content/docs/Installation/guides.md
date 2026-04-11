@@ -27,6 +27,6 @@ Troubleshooting common problems encountered during installation.
 
 ### Uninstalling Virtualmin
 
-Uninstallation, downgrading from Virtualmin Professional to Virtualmin GPL, and selective removal of packages.
+Remove Virtualmin from a test or disposable system. This is destructive and should not be used on production servers.
 
 {{< link "danger|outline|small" "chevron-right" "/docs/installation/uninstall" "" >}}
