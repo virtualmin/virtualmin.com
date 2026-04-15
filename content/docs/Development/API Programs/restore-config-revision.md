@@ -9,15 +9,17 @@ weight: 4012560
 
 This command restores configuration files from the Git repository under
 `/etc/.git`. The required `--target` flag controls where files are written. If
-the target is a normal directory, Virtualmin creates date-stamped
-subdirectories so you can inspect or compare multiple revisions without
-overwriting live configuration files.
+the target is `/etc`, restore will happen directly into the live working tree.
+That is often the most useful mode when `/etc` is clean and committed, because
+you can move to an older revision, test or inspect it, and then restore the
+newer revision again while keeping the benefits of revision control.
 
 {{< alert warning exclamation "" "This command was previously named `restore-config-backups`. If you see the older name in changelog entries or examples, use `restore-config-revision` instead." >}}
 
-If the target is `/etc`, the selected files are restored directly to the live
-system. This is useful for rolling a module or file back to an earlier state,
-but it should be used carefully because it overwrites the current files.
+If the target is any other directory, files are written into date-stamped
+subdirectories instead. This is mainly useful when you want exported copies
+outside the live tree, or when you need to inspect revisions on a system where
+`/etc` is not clean.
 
 Use `--module` to limit the restore to a single Webmin module. When a module is
 selected, each `--file` value is treated as relative to that module directory.
