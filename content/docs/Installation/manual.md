@@ -45,10 +45,12 @@ Install the following applications, using whatever method is appropriate for you
 Standard versions of these applications are usually sufficient, as long as they are reasonably modern and have all security patches applied. Additionally, if your system supports disk quotas, and you will be using them with Virtualmin, you need the management tools for disk quotas. Webmin also provides support for firewall management on most UNIX and Linux platforms, assuming the appropriate command line tools are available.
 
 ### Webmin and Usermin
-Download and install Webmin and Usermin, from [Webmin](https://www.webmin.com/download) website. There are multiple package types of available, so choose the most appropriate one for your OS. Installation instructions can be found on the Webmin site.
+Use [download.virtualmin.com](https://download.virtualmin.com) as the production repository for manual Virtualmin installs. It provides stable builds of Webmin, Usermin, Virtualmin, plugins, and related packages. On supported Debian and EL systems, use the native repositories. For unsupported systems or installs outside the package repositories, download the appropriate archive, such as the `tar.gz` package, from the same repository.
 
 ### Virtualmin modules
 Once Webmin is operational you can download and install the Virtualmin modules in either `rpm` format (for RPM-based Linux distributions), `deb` format (for Debian-based Linux distributions), or `wbm` format (for any other UNIX or Linux system), and install them using the Webmin Modules module found in **Webmin ⇾ Webmin Configuration** page.
+
+For systems using the Virtualmin repositories, optional Webmin modules are shipped as separate `webmin-*` packages. Install the package that matches the module you need, such as `webmin-squid` or `webmin-postgresql`, using your OS package manager. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for more about the repository layout.
 
 ### Virtualmin Professional
 
