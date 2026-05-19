@@ -117,7 +117,7 @@ This feature is used to configure Virtualmin to use cloud DNS services (Cloudfla
 
 {{< html span "" "" "smtpclouds" >}}
 #### Cloud mail delivery providers
-This feature provides support for systems with dynamic IPs reliably send email by using outgoing SMTP providers, like Amazon SES.
+This feature provides support for systems with dynamic IPs to reliably send email by using outgoing SMTP providers, like Amazon SES. See [How to Configure Amazon SES for Outgoing Email](/docs/server-components/how-to-configure-amazon-ses/) for setup details.
 
 [![](/images/docs/screenshots/professional-features/light/cloud-mail-delivery-providers.png "Cloud Mail Delivery Providers Screenshot")](/images/docs/screenshots/professional-features/light/cloud-mail-delivery-providers.png)
 
