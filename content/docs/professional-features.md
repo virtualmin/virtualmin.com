@@ -11,7 +11,7 @@ Virtualmin GPL is already an extremely powerful and flexible virtual hosting con
 Before going into specifics, we wanted to explain our philosophy on determining which features are included in both GPL and Professional, and which features are reserved for our paying customers. A feature is "professional", if any of the following are true:
 
   - It is really only useful in a commercial environment. We figure if you're using Virtualmin to make money, we'd like to make a little bit, too, so we can keep working on it, making it better, and releasing new versions. So, if it's obviously about making money, it's a candidate for only being in Virtualmin Professional. This doesn't mean all fiscally motivated features are excluded from GPL, but it is a starting point. **Reseller Accounts** are an example of this type of feature.
-  - It costs us a lot of time and effort to keep it working. **Install Scripts** are the best example of this characteristic. Because there are so many, and because there are new versions that have to be deployed and tested every few days, we simply have to have revenue to support it.
+  - It costs us a lot of time and effort to keep it working. **Web Apps** are the best example of this characteristic. Because there are so many, and because there are new versions that have to be deployed and tested every few days, we simply have to have revenue to support it.
   - It was an extremely large, and extremely expensive, feature to develop in the first place. This is a special case, and features that fit this description might end up in GPL eventually. A large number of the features you find in GPL today came about through this process. Mail processing is one example, as is PHP with **suexec** and **mod_fcgid** management.
 
 {{< html span "" "" "newresels" >}}
@@ -56,12 +56,12 @@ This feature allows you to create and manage additional webserver users for a vi
 [![](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png "Manage Extra Webserver Users Screenshot")](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png)
 
 #### Manage web apps
-<!-- Run this code in browser's console of Virtualmin Pro to get update table of scripts: $("td.ui_radio_radio").remove(),$('[name="fast"]').remove(),$("table thead th").first().remove(),$(".ui_select.heighter-28").each((function(){$(this).replaceWith($(this).val())})),$("tbody td label, tbody td a").each((function(){$(this).replaceWith($(this).text())})),$("table, table *").each((function(){for($(this).removeClass();this.attributes.length>0;)this.removeAttribute(this.attributes[0].name);$(this).is("input")&&$(this).remove()})); -->
+<!-- Run this code in browser's console of Virtualmin Pro to get update table of web apps: $("td.ui_radio_radio").remove(),$('[name="fast"]').remove(),$("table thead th").first().remove(),$(".ui_select.heighter-28").each((function(){$(this).replaceWith($(this).val())})),$("tbody td label, tbody td a").each((function(){$(this).replaceWith($(this).text())})),$("table, table *").each((function(){for($(this).removeClass();this.attributes.length>0;)this.removeAttribute(this.attributes[0].name);$(this).is("input")&&$(this).remove()})); -->
 
 Virtualmin Professional provides automated installation of dozens of installable web applications, including blogs, wikis, content management systems, ad servers, ecommerce systems, and more.
 
 {{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable web apps" >}}
-{{% include file="/data/docs/list-of-installable-scripts.md" %}}
+{{% include file="/data/docs/list-of-installable-web-apps.md" %}}
 {{< details-end >}}
 
 This feature is popular with pretty much everyone, because it's just so convenient. Even *we* use this feature heavily, because even though we aren't intimidated by most install procedures for applications, we also like to save time and hassle.

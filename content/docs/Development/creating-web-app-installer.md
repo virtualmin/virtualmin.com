@@ -3,13 +3,13 @@ title: "Creating Web App Installer"
 weight: 4010030
 ---
 
-A Virtualmin web app installer, also called a script installer, is a small program that contains the information needed to install a web application into a virtual server's home directory and set it up to run with that server's permissions and database. Most script installers are for PHP apps like WordPress or phpMyAdmin, but you can also create installers for Node.js, Perl, or Python apps.
+A Virtualmin web app installer is a small program that contains the information needed to install a web application into a virtual server's home directory and set it up to run with that server's permissions and database. Most web app installers are for PHP apps like WordPress or phpMyAdmin, but you can also create installers for Node.js, Perl, or Python apps.
 
-Virtualmin Pro ships with a large number of [built-in installers](/docs/professional-features/#install-scripts), which domain owners can add to their websites using the **Install Scripts** link on the left menu. However, there are many applications that are not covered yet, simply because we don't have time to implement installers for them or they are used too rarely or too specific. For this reason, Virtualmin provides an API for adding your own script installers.
+Virtualmin Pro ships with a large number of [built-in installers](/docs/professional-features/#manage-web-apps), which domain owners can add to their websites using the **Manage Web Apps** link on the left menu. However, there are many applications that are not covered yet, simply because we don't have time to implement installers for them or they are used too rarely or too specific. For this reason, Virtualmin provides an API for adding your own web app installers.
 
-### Script installer files and directories 
+### Web app installer files and directories 
 
-Each script installer is a single file containing a set of Perl functions. Those that ship with Virtualmin Pro can be found in the `virtual-server/pro/scripts` directory under the Webmin root, which is usually `/usr/libexec/webmin` or `/usr/share/webmin`. If you open up one of those files (such as `phpbb.pl`) in a text editor, you will see a series of functions like:
+Each web app installer is a single file containing a set of Perl functions. Those that ship with Virtualmin Pro can be found in the `virtual-server/pro/scripts` directory under the Webmin root, which is usually `/usr/libexec/webmin` or `/usr/share/webmin`. If you open up one of those files (such as `phpbb.pl`) in a text editor, you will see a series of functions like:
 
 ```perl
 sub script_phpbb_desc
@@ -30,41 +30,41 @@ return "A high powered, fully scalable, and highly customizable Open Source bull
 }
 ```
 
-Your own script installers will be in files if a similar format - the major difference will be the script ID, which appears in each function name after the word `script_`, like `phpbb` in the example above.
+Your own web app installers will be in files of a similar format - the major difference will be the app ID, which appears in each function name after the word `script_`, like `phpbb` in the example above.
 
-Script installers that are local to your Virtualmin installation are stored in the `/etc/webmin/virtual-server/scripts` directory. In most cases, each script is just a single `.pl` file, but it is possible for other source or support files to be part of the script too. In general though, most script installers download the files they need from the website of the application that they are installing.
+Web app installers that are local to your Virtualmin installation are stored in the `/etc/webmin/virtual-server/scripts` directory. In most cases, each installer is just a single `.pl` file, but it is possible for other source or support files to be part of the installer too. In general though, most web app installers download the files they need from the website of the application that they are installing.
 
-### Script installer IDs 
+### Web app installer IDs 
 
-Every script installer has a unique ID, which must consist of only letters, numbers and the underscore character. The ID determines both the installer filename (i.e. `phpbb.pl`), and the names of functions within the script (which must be like `script_phpbb_desc` as in the example above).
+Every web app installer has a unique ID, which must consist of only letters, numbers and the underscore character. The ID determines both the installer filename (i.e. `phpbb.pl`), and the names of functions within the installer (which must be like `script_phpbb_desc` as in the example above).
 
 The same ID cannot be used by two different installers on the same system, even if one is built-in to Virtualmin and one is custom. For this reason, when writing an installer you should select an ID that is unlikely to clash with any that might be included in Virtualmin in the future.
 
-### The lifetime of a script 
+### The lifetime of a web app 
 
-Virtualmin allows multiple instances of a single script to be installed, either on different domains or in different directories of the same domain. The installer defines the steps that must be taken to setup a script in some directory, in object-oriented coding parlance, it is like a **class**, while installed scripts are **objects**.
+Virtualmin allows multiple instances of a single web app to be installed, either on different domains or in different directories of the same domain. The installer defines the steps that must be taken to setup an app in some directory, in object-oriented coding parlance, it is like a **class**, while installed web apps are **objects**.
 
-When a script is installed via the web interface, Virtualmin performs the following steps :
+When a web app is installed via the web interface, Virtualmin performs the following steps :
 
 1. Checks if all required dependencies are satisfied, such as required commands, a database and a website.
 2. If the script uses PHP, checks that the versions it supports are available on the system.
 3. Displays a form asking for installation options, such as the destination directory and database.
 4. Parses inputs from the form.
-5. Checks if the same script is already installed in the selected directory.
+5. Checks if the same web app is already installed in the selected directory.
 6. Configures the domain's website to use the correct PHP version.
-7. Downloads files needed by the script, such as its source code.
+7. Downloads files needed by the web app, such as its source code.
 8. Installs any needed PHP, Node.js, Perl or Python modules.
-9. Calls the script's install function. This typically does the following:  
-        - Records the fact that the script has been installed.  
-        - Configures PHP for the domain, to set any options that the script has requested.  
+9. Calls the installer's install function. This typically does the following:  
+        - Records the fact that the web app has been installed.  
+        - Configures PHP for the domain, to set any options that the web app has requested.  
         - Restarts Apache.
 
-### Script installer implementation 
+### Web app installer implementation 
 
-In this section, the functions that each script installer must implement will be covered. Not all functions are mandatory, as some deal with PHP dependencies that make no sense if your script does not use PHP or if it has no non-core modules. The example code for each function is taken from the Wordpress blog installer, in `wordpress.pl`. This is a PHP application whose installation process is relatively simple, yet common to many other PHP programs.
+In this section, the functions that each web app installer must implement will be covered. Not all functions are mandatory, as some deal with PHP dependencies that make no sense if your app does not use PHP or if it has no non-core modules. The example code for each function is taken from the WordPress blog installer, in `wordpress.pl`. This is a PHP application whose installation process is relatively simple, yet common to many other PHP programs.
 
-In your own script, you would of course replace `scriptname` with the script ID you have selected.
-Also, just like a Perl module, make sure your install script file ends with the line: 
+In your own installer, you would of course replace `scriptname` with the app ID you have selected.
+Also, just like a Perl module, make sure your installer file ends with the line: 
 
 ```text
 1;
@@ -125,7 +125,7 @@ return 1;
 
 #### script_scriptname_release
 
-May return a release number that indicates that a newer version of this script installer is available, even if the script version itself has not changed.
+May return a release number that indicates that a newer version of this web app installer is available, even if the app version itself has not changed.
 ```perl
 sub script_wordpress_release
 {
@@ -173,7 +173,7 @@ return ( 8 );
 ```
 #### script_scriptname_php_fullver
 
-If the script being installed is written in PHP, this function must return the version this script installer supports depending on the version of the script being installed. This is used to determine if the correct PHP version is configured for the virtual server, and if not to prevent the script from being installed. For example, the following code fragment from the WordPress installer returns 8.1.27 for versions 6.4.2 and above, and 7.4.33 for older versions.
+If the web app being installed is written in PHP, this function must return the version this web app installer supports depending on the version of the app being installed. This is used to determine if the correct PHP version is configured for the virtual server, and if not to prevent the app from being installed. For example, the following code fragment from the WordPress installer returns 8.1.27 for versions 6.4.2 and above, and 7.4.33 for older versions.
 
 ```perl
 sub script_wordpress_php_fullver
@@ -299,7 +299,7 @@ return ( "mysql" );
 
 This function is responsible for generating the installation form inputs, such as the destination directory and target database. When upgrading (indicated by the `upgrade` hash being non-null) these are fixed and should just be displayed to the user. Otherwise, it must return inputs for selecting them. The functions return value must be HTML for form fields, generated using the `ui_table_row` and other `ui_` functions.
 
-The example below from Wordpress is a good source to copy from, as most PHP scripts that you would want to install will need a target directory and a database. The `ui_database_select` function can be used to generate a menu of databases in the domain, with an option to have a new one created automatically just for this script.
+The example below from WordPress is a good source to copy from, as most PHP web apps that you would want to install will need a target directory and a database. The `ui_database_select` function can be used to generate a menu of databases in the domain, with an option to have a new one created automatically just for this app.
 
 ```perl
 sub script_wordpress_params
@@ -380,7 +380,7 @@ return undef;
 ```
 #### script_scriptname_files(&domain, version, &opts, &upgrade) 
 
-This is the function where the script installer indicates to Virtualmin what files need to be downloaded for the installation to go ahead. Most scripts need only one, which contains the source code but it is possible to request any number, even zero.
+This is the function where the web app installer indicates to Virtualmin what files need to be downloaded for the installation to go ahead. Most apps need only one, which contains the source code but it is possible to request any number, even zero.
 
 The function must return a list of hash references, each of which should contain the following keys:
 
@@ -407,7 +407,7 @@ return @files;
 ```
 #### script_scriptname_commands 
 
-If your script installer requires any commands to do its job that may not be available on a typical Unix system, this function should return a list of them. In most cases, it just returns the programs needed to un-compress the `tar.gz` or `zip` file containing the source.
+If your web app installer requires any commands to do its job that may not be available on a typical Unix system, this function should return a list of them. In most cases, it just returns the programs needed to un-compress the `tar.gz` or `zip` file containing the source.
 
 ```perl
 sub script_wordpress_commands
@@ -418,7 +418,7 @@ return ( "unzip" );
 
 #### script_scriptname_install(&domain, version, &opts, &files, &upgrade, username, password) 
 
-This function is where the real work of installing a script actually happens. It is responsible for setting up the database, un-compressing the downloaded source, copying it to the correct directory, modifying configuration files to match the domain and database, and returning a URL that can be used to login. If anything goes wrong, it must return an array whose first element is zero, and the second is an error message.
+This function is where the real work of installing a web app actually happens. It is responsible for setting up the database, un-compressing the downloaded source, copying it to the correct directory, modifying configuration files to match the domain and database, and returning a URL that can be used to login. If anything goes wrong, it must return an array whose first element is zero, and the second is an error message.
 
 Upon success, it must return an an array containing the following elements:
 
@@ -481,7 +481,7 @@ my $cfile = "$opts->{'dir'}/wp-config.php";
 -r $cfileorig || return ( 0, "Failed to copy source : <tt>$out</tt>." );
 ```
 
-Most scripts or applications have a configuration file of some kind that defines where to access the database, what domain they are running under, the URL path, and possibly an initial login and password. The script installers is responsible for creating or modifying this file to use the database connection details supplied by the `opts` parameter, as shown in the code snippet below.
+Most web apps have a configuration file of some kind that defines where to access the database, what domain they are running under, the URL path, and possibly an initial login and password. The web app installer is responsible for creating or modifying this file to use the database connection details supplied by the `opts` parameter, as shown in the code snippet below.
 
 Be careful when upgrading, as in general the existing configuration file will be valid for the new version. This means that it doesn't need to be re-created, and should be preserved during the upgrade process if necessary.
 
@@ -604,7 +604,7 @@ Most scripts that setup an initial login and password use those from the virtual
 | `3`    | Script only needs a username               |
 
 
-The custom login and password entered by the user will be passed to the `script_scriptname_install` function. If your script installer doesn't setup an initial login at all, you can either omit this function or have it return `0`. 
+The custom login and password entered by the user will be passed to the `script_scriptname_install` function. If your web app installer doesn't setup an initial login at all, you can either omit this function or have it return `0`. 
 
 Additionally, this function can return an array containing a numeric code, minimum password length and regular expression that the password must match. For example, the following code fragment from the WordPress installer requires a password that is at least 8 characters long, and contains at least one upper-case letter, one lower-case letter and one digit.
 
@@ -660,7 +660,7 @@ The style of installation code above will work for most scripts that you want to
 
 Many PHP applications come with a script that asks the user a series of questions, like the database login and name, domain name, and initial administration username and password. The script then uses this information to create a config file and perhaps populated the database.
 
-Ideally, Virtualmin script installers should create any needed config files directly, but in some cases this is too difficult due to their complexity. Similarly, it may not be possible to create and populate all the needed database tables if no SQL file is provided for doing this. In cases like this, it is simpler for a script installer to invoke the application's install code directly, by making an HTTP request to the correct URL.
+Ideally, Virtualmin web app installers should create any needed config files directly, but in some cases this is too difficult due to their complexity. Similarly, it may not be possible to create and populate all the needed database tables if no SQL file is provided for doing this. In cases like this, it is simpler for a web app installer to invoke the application's install code directly, by making an HTTP request to the correct URL.
 
 To figure out the installation URL and parameters it needs, you will need to install the application manually and run through its install process in a browser. The browser developer tools can be used to see what HTTP requests are made, and what parameters are passed to them.
 
@@ -758,9 +758,9 @@ return ( 1, "Node.js uninstallation complete." );
 }
 ```
 
-When Virtualmin deletes a domain, it does not call the `uninstall` functions for any installed scripts, as this would generally be a waste of time, as their directories and databases are going to be removed anyway. In the case of service applications, this is not true, as their service scripts must be cleaned up.
+When Virtualmin deletes a domain, it does not call the `uninstall` functions for any installed web apps, as this would generally be a waste of time, as their directories and databases are going to be removed anyway. In the case of service applications, this is not true, as their service scripts must be cleaned up.
 
-To ensure that this happens, your script installer must implement the `script_scriptname_stop` function, which only has to shut down server process and remove service script. This function is only called at virtual server deletion time, and is optional for installers that don't require it.
+To ensure that this happens, your web app installer must implement the `script_scriptname_stop` function, which only has to shut down server process and remove service script. This function is only called at virtual server deletion time, and is optional for installers that don't require it.
 
 ```perl
 # Deletes service file upon domain deletion

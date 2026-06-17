@@ -168,13 +168,13 @@ ProFTPd should be installed. PAM or shadow authentication should be used.
 
 #### MySQL
 
-If you plan to use MySQL, or any of the **Install Scripts** in Virtualmin Professional that rely on MySQL, it should be installed, and accessible to `localhost`. The _root_ account should have a password set. Once Webmin is installed, you will need to configure the MySQL module to know the _root_ MySQL password.
+If you plan to use MySQL, or any of the **Web Apps** in Virtualmin Professional that rely on MySQL, it should be installed, and accessible to `localhost`. The _root_ account should have a password set. Once Webmin is installed, you will need to configure the MySQL module to know the _root_ MySQL password.
 
 {{< alert warning exclamation-triangle "" "Virtualmin does not require MySQL, and no Virtualmin-related user data is stored in MySQL. If you've read setup guides on the web for virtual mail hosting that require MySQL, we strongly recommend you ignore them. This is a very common source of confusion for new users, and there's simply no reason to introduce the complexity of this kind of deployment." >}}
 
 #### PostgreSQL
 
-If you plan to use PostgreSQL or any of the Install Scripts in Virtualmin Professional that rely on PostgreSQL, it should be installed, and accessible to `localhost`.
+If you plan to use PostgreSQL or any of the Web Apps in Virtualmin Professional that rely on PostgreSQL, it should be installed, and accessible to `localhost`.
 
 #### SASL
 

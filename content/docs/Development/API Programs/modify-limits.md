@@ -24,7 +24,7 @@ To grant the domain owner access to Virtualmin user interface capabilities such 
 
 `dbs` - Manage databases
 
-`scripts` - List and install scripts
+`scripts` - List and install web apps
 
 `ip` - Change the IP address of virtual servers
 
@@ -72,7 +72,7 @@ To grant the domain owner access to Virtualmin user interface capabilities such 
 
 Access to capabilities can also be taken away with the `--cannot-edit` flag.
 
-To restrict the virtual server owner to only installing certain scripts, you can use the `--scripts` flag followed by a quoted list of script codes. To grant access to all script installers, use the `--all-scripts` flag instead.
+To restrict the virtual server owner to only installing certain web apps, you can use the `--scripts` flag followed by a quoted list of app codes. To grant access to all web app installers, use the `--all-scripts` flag instead.
 
 ### Command line help
 

@@ -144,7 +144,7 @@ It is also possible to include global Virtualmin settings in your backups of vir
 
 The various global Virtualmin configuration settings can be restored in exactly the same way as you would restore domains. Just select the `virtualmin.tar.gz` file as the source to restore from, and in the **Virtualmin settings to restore** section check the types of global settings to include.
 
-This can even be used to migrate templates, custom fields, script installers, content styles, resellers and email messages to a new system.
+This can even be used to migrate templates, custom fields, web app installers, content styles, resellers and email messages to a new system.
 
 ### Command line backup tools
 

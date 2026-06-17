@@ -8,7 +8,7 @@ weight: 2332000
 ### Configure Roundcube as default webmail
 To use Roundcube instead of Usermin:
 
-1. **Install Roundcube**: Choose a virtual server to host Roundcube. Install it using **Install Script** feature.
+1. **Install Roundcube**: Choose a virtual server to host Roundcube. Install it using the **Manage Web Apps** feature.
 2. **Setup webmail redirects**:
    - In Virtualmin, navigate to **System Settings ⇾ Server Templates ⇾ Default Settings ⇾ Website for domain**.
    - Find **URL for webmail redirect** and set it to your Roundcube URL (e.g., `https://company.com/roundcube`).

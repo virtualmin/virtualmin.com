@@ -220,7 +220,7 @@ apt-get install perl webmin webmin-virtual-server usermin -y
 
 > ##### How can I make sure my web applications are up-to-date without having to wait for the next Virtualmin release?
 
-In Virtualmin, go to **System Settings ⇾ Script Installers / Installer Updates**, and ensure **Download script updates** is set to **Yes** to automatically receive the latest install script updates.
+In Virtualmin, go to **System Settings ⇾ Web App Installers ⇾ Installer Updates**, and ensure **Download web app updates** is set to **Yes** to automatically receive the latest web app installer updates.
 
 ### System upgrade
 
