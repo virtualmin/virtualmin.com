@@ -6,13 +6,18 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Redirect to www. prefix, preserving the path and query string
-RewriteCond %{HTTP_HOST} !^www\.
+# Redirect only the bare domain to www, skip ACME
 RewriteCond %{REQUEST_URI} !^/.well-known/
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^virtualmin\.com$ [NC]
+RewriteRule ^ https://www.virtualmin.com%{REQUEST_URI} [R=301,L]
 
 # Redirect direct call to index.html to /
 RewriteRule ^index\.html$ / [R=301,L]
+
+# License API
+RewriteRule ^api/license/repository$ license-admin/repo-auth-check.php [L,QSA]
+RewriteRule ^api/license/client$ license-admin/client-auth-check.php [L,QSA]
+RewriteRule ^api/install$ install-admin/virtualmin-install.php [L,QSA]
 
 # Redirect old data-operations to backup-and-migration
 RewriteRule ^docs/data-operations/(.*)$ /docs/backup-and-migration/$1 [R=301,L]
@@ -25,6 +30,9 @@ RewriteRule ^changelog/$ /archives/ [L]
 # Latest changes to doc titles and pages
 RewriteRule ^docs/development/domain-management-api /docs/development/pre-and-post-domain-modification-scripts [R=301,L]
 RewriteRule ^docs/development/creating-install-scripts /docs/development/creating-web-app-installer [R=301,L]
+
+# Renamed
+RewriteRule ^docs/getting-started/how-to-install-scripts/?$ /docs/getting-started/how-to-install-web-apps/ [R=301,L]
 
 # Historic redirects that were handled by the Redirection plugin in WordPress
 RewriteRule ^node/(.+) https://archive.virtualmin.com/node/$1 [R=301,L]
@@ -54,6 +62,10 @@ RewriteRule ^about-html/?$ /about/ [R=301,L,NC]
 RewriteRule ^databases-2/?$ /databases [R=301,L,NC]
 RewriteRule ^create_domain-2/?$ /create_domain [R=301,L,NC]
 RewriteRule ^(/documentation/system/os)/(.*) /documentation/system/ [R=301,L,NC]
+
+# Block empty/malformed wc-ajax requests
+RewriteCond %{QUERY_STRING} (^|&)wc-ajax=(&|$)
+RewriteRule ^ - [R=400,L]
 
 # Check if the requested URI matches a Hugo file/directory under /public but disallow
 # direct access to public/ redirecting any requested to sub-directory of public/
@@ -87,7 +99,7 @@ RewriteRule ^documentation/installation/troubleshooting                         
 RewriteRule ^documentation/repositories                                                     /docs/installation/troubleshooting-repositories [R=301,L]
 RewriteRule ^documentation/installation/uninstalling                                        /docs/installation/uninstall [R=301,L]
 RewriteRule ^documentation/installation$                                                    /docs/installation/guides [R=301,L]
-RewriteRule ^documentation/install-scripts                                                  /docs/professional-features/#install-scripts [R=301,L,NE]
+RewriteRule ^documentation/install-scripts                                                  /docs/professional-features/#manage-web-apps [R=301,L,NE]
 RewriteRule ^documentation/upgrading                                                        /docs/faq/#how-to-update-virtualmin-and-all-related-packages [R=301,L,NE]
 RewriteRule ^documentation/installation/faq                                                 /docs/installation/guides/#installation-faq [R=301,L,NE]
 RewriteRule ^documentation/installation/ldap                                                /docs/advanced-tutorials/how-to-configure-ldap [R=301,L]
@@ -101,7 +113,7 @@ RewriteRule ^documentation/tutorial/how-to-change-a-mailbox-users-password      
 RewriteRule ^documentation/tutorial/how-to-change-a-virtual-server-owners-password          /docs/getting-started/how-to-change-virtual-server-owner-password [R=301,L]
 RewriteRule ^documentation/tutorial/how-to-backup-a-virtual-server                          /docs/data-operations/how-to-backup-virtual-servers [R=301,L]
 RewriteRule ^documentation/tutorial/how-to-backup-all-virtual-servers                       /docs/data-operations/how-to-backup-virtual-servers [R=301,L]
-RewriteRule ^documentation/tutorial/how-to-install-scripts                                  /docs/getting-started/how-to-install-scripts [R=301,L]
+RewriteRule ^documentation/tutorial/how-to-install-scripts                                  /docs/getting-started/how-to-install-web-apps/ [R=301,L]
 RewriteRule ^documentation/tutorial/using-system-stats                                      /docs/getting-started/how-to-use-system-statistics [R=301,L]
 RewriteRule ^documentation/tutorial/how-to-setup-a-cron-job                                 /docs/getting-started/how-to-setup-cron-jobs/#how-to-create-a-cron-job [R=301,L]
 RewriteRule ^documentation/tutorial/how-to-use-the-file-manager                             /docs/getting-started/how-to-use-file-manager [R=301,L]
@@ -347,7 +359,7 @@ RewriteRule ^documentation/developer/prepost                                    
 RewriteRule ^documentation/system/template_variables                                        /docs/development/template-variables [R=301,L]
 RewriteRule ^documentation/system/templates                                                 /docs/development/template-variables [R=301,L]
 RewriteRule ^documentation/developer/plugins                                                /docs/development/creating-plugins [R=301,L]
-RewriteRule ^documentation/developer/scripts                                                /docs/development/creating-install-scripts [R=301,L]
+RewriteRule ^documentation/developer/scripts                                                /docs/development/creating-web-app-installer [R=301,L]
 
 # All Cloudmin documentation can still be found on the old website
 RewriteCond %{REQUEST_URI} documentation
