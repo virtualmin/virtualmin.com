@@ -16,7 +16,7 @@ Virtualmin gives you one place to manage websites, mail, databases, DNS, backups
 
 {{< index-1 >}}
 
-## Why Virtualmin?
+## Built for control, speed, and flexibility
 
 Virtualmin has plenty of competition, both open source and commercial, but it sets out to be the most powerful and flexible web hosting control panel you can run on Linux while staying lean and fast. You get the freedom of real Linux with a clean web interface that makes everyday work quick and effortless.
 

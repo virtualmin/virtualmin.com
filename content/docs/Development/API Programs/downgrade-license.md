@@ -18,7 +18,7 @@ virtualmin downgrade-license
 
 The command asks for confirmation before making changes.
 
-### What changes during downgrade
+### Downgrade changes
 
 - The Virtualmin license is changed to GPL
 - Virtualmin repositories are switched to the GPL repositories
