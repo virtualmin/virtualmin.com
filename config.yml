@@ -98,7 +98,7 @@ params:
         icon: "download"
         class: "danger"
       - url: "/docs/plugins/wp-workbench/"
-        text: "What is WP Workbench?"
+        text: "Try WP Workbench"
         icon: "workbench"
         class: "light"
 
