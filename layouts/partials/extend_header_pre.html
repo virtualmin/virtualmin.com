@@ -1,62 +1,47 @@
 {{ if eq .RelPermalink "/" }}
 <section class="index-page-intro-container">
-    <span class="shooting-sky"></span>
-    <span class="shooting-star"></span>
     <div class="index-page-intro-container-inner">
         <div class="index-page-intro-container-inner-content">
-            <!-- Get latest changelog version -->
-            {{ $changelogPages := where site.RegularPages "Section" "changelog" }}
-            {{ $latest := index (sort $changelogPages "Date" "desc") 0 }}
-            {{ $ver := replaceRE ".*?([0-9]+\\.[0-9]+\\.[0-9]+).*" "$1" $latest.File.BaseFileName }}
-            <a href="{{ $latest.RelPermalink }}" class="index-page-intro-container-inner-content-satellite" data-version="{{ $ver }}"></a>
-            <span class="index-page-intro-container-inner-content-planet"></span>
-            <span class="index-page-intro-container-stars"></span>
-            <span class="index-page-intro-container-inner-content-lanes">
-                <img src="/images/page/header-elements-lanes.svg" aria-hidden="true">
-            </span>
-            <a class="index-page-intro-container-inner-content-alien" href="#virtualmin-intro"></a>
-            <div class="index-page-intro-container-inner-content-wrapper">
+            <div class="index-page-hero-grid" aria-hidden="true"></div>
+            <a class="index-page-intro-container-inner-content-alien" href="#virtualmin-intro" aria-label="Learn more about Virtualmin"></a>
+            <div class="index-page-hero">
+                <!-- Get latest changelog version -->
+                {{ $changelogPages := where site.RegularPages "Section" "changelog" }}
+                {{ $latest := index (sort $changelogPages "Date" "desc") 0 }}
+                {{ $ver := replaceRE ".*?([0-9]+\\.[0-9]+\\.[0-9]+).*" "$1" $latest.File.BaseFileName }}
+                <a href="{{ $latest.RelPermalink }}" class="index-page-release-pill">
+                    <i class="wm wm-virtualmin-tick" aria-hidden="true"></i>Release {{ $ver }}
+                </a>
                 <span class="index-page-content-slogan">
                     <span class="index-page-content-slogan-main">
-                        {{ .Site.Params.index.slogan }}
+                        {{ .Site.Params.index.slogan | replaceRE "^(\\S+\\s+\\S+\\s+\\S+)\\s+" "$1<br class=\"index-page-slogan-break\">" | safeHTML }}
                     </span>
                     <span class="index-page-content-slogan-sub">
                         {{ .Site.Params.index.subSlogan }}
                     </span>
                 </span>
-                <script>
-                    // Set slogan max char width to make wrapping of sub-slogan better
-                    (function () {
-                        const main  = document.querySelector('.index-page-content-slogan-main'),
-                              wrap  = document.querySelector('.index-page-content-slogan');
-                            wrap.style.setProperty('--slogan-main-chars', main.textContent.replace(/\s+/g, ' ').trim().length);
-                    })();
-                </script>
                 {{- with .Site.Params.index.buttons }}
                 <span class="index-page-content-button">
                 {{- range . }}
-                    <a href="{{ .url }}" class="btn btn-{{ .class }} btn-rounded btn-md">
-                    <i class="wm wm-fw wm-{{ .icon }}"></i>&nbsp;
+                    <a href="{{ .url }}" class="btn btn-{{ .class }} btn-rounded btn-lg">
                     {{- .text -}}
+                    {{- with .badge }}<em class="index-page-badge-new">{{ . }}</em>{{ end -}}
+                    {{- if .arrow }}&nbsp;<span class="index-page-btn-arrow" aria-hidden="true">&#8594;</span>{{ end -}}
                     </a>
                 {{- end }}
                 </span>
                 {{- end }}
                 {{ with .Site.Params.index.stats }}
                 <div class="stats-container">
-                  {{ range . }}
+                {{ range . }}
                     <div class="stat-item">
-                      <div class="stat-value">{{ .value }}</div>
-                      <div class="stat-label">{{ .label }}</div>
+                        <span class="stat-value">{{ .value }}</span>
+                        <span class="stat-label">{{ .label }}</span>
                     </div>
-                  {{ end }}
+                {{ end }}
                 </div>
                 {{ end }}
-                <br>
             </div>
-            {{- with .Site.Params.index.bubbles }}
-            <div class="index-page-bubbles-container"></div>
-            {{- end }}
         </div>
     </div>
 </section>
