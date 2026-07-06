@@ -1423,7 +1423,7 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-intro-container-inner-content-alien {
         width: 116px;
         height: 100px;
-        bottom: 72px;
+        bottom: 64px;
     }
 }
 
@@ -1437,7 +1437,7 @@ html:not(.page-index) .index-page-intro-container {
     .page-index .index-page-intro-container-inner-content-alien {
         left: auto;
         right: clamp(16px, 4vw, 44px);
-        bottom: 65px;
+        bottom: 64px;
         width: 116px;
         height: 100px;
         transform: none;
@@ -1547,7 +1547,7 @@ html:not(.page-index) .index-page-intro-container {
         display: block;
         left: auto;
         right: clamp(6px, 1.5vw, 16px);
-        bottom: 70px;
+        bottom: 64px;
         width: 112px;
         height: 97px;
         transform: none;
