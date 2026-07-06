@@ -14,7 +14,7 @@
                 </a>
                 <span class="index-page-content-slogan">
                     <span class="index-page-content-slogan-main">
-                        {{ .Site.Params.index.slogan | replaceRE "^(\\S+\\s+\\S+\\s+\\S+)\\s+" "$1<br class=\"index-page-slogan-break\">" | safeHTML }}
+                        {{ .Site.Params.index.slogan | replaceRE "^(\\S+\\s+\\S+\\s+\\S+)\\s+(.+)$" "<span class=\"index-page-slogan-part\">$1</span> <span class=\"index-page-slogan-part\">$2</span>" | safeHTML }}
                     </span>
                     <span class="index-page-content-slogan-sub">
                         {{ .Site.Params.index.subSlogan }}
