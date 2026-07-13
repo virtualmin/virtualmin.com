@@ -89,8 +89,8 @@ params:
   author: Jamie Cameron, Joe Cooper, Ilia Ross
 
   index:
-    slogan: "Advanced web hosting control panel"
-    subSlogan: "Manage websites, WordPress, containers, mail, DNS, databases, SSL, backups, and user accounts across your own servers."
+    slogan: "Advanced web hosting with privacy built in"
+    subSlogan: "Manage websites, WordPress, containers, mail, DNS, databases, SSL, backups, and user accounts on infrastructure you control."
 
     buttons:
       - url: "/download/"
