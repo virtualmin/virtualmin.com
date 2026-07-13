@@ -1296,7 +1296,7 @@ html:not(.page-index) .index-page-intro-container {
 .page-index .index-page-content-slogan-main {
     display: block;
     margin: 0;
-    font-size: clamp(1.9rem, 1.15rem + 2.85vw, 3.75rem);
+    font-size: clamp(2.25rem, 1.5rem + 2.85vw, 3.75rem);
     font-weight: 700;
     line-height: 1.02;
     letter-spacing: -0.03em;
@@ -1521,7 +1521,7 @@ html:not(.page-index) .index-page-intro-container {
     }
 
     .page-index .index-page-content-slogan-main {
-        font-size: clamp(1.5rem, 1.05rem + 2vw, 2.2rem);
+        font-size: clamp(1.75rem, 1.05rem + 2vw, 2.2rem);
     }
 
     /* One line — the full privacy-focused headline fits across landscape widths */
