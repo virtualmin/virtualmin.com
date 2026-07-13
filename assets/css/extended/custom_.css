@@ -1287,14 +1287,15 @@ html:not(.page-index) .index-page-intro-container {
     display: block;
     color: var(--card-text);
     text-align: left;
-    /* Wide enough that "Advanced web hosting" fits on line 1, so text-wrap:balance
-       breaks it "Advanced web hosting / control panel" rather than after "web" */
+    /* Wide enough that "Advanced web hosting" fits on line 1, so the explicit
+       split reads "Advanced web hosting / with privacy built in" */
     max-width: min(1160px, 100%);
 }
 
 /* Main slogan — balanced so the two lines stay even at any width (no orphan word) */
 .page-index .index-page-content-slogan-main {
     display: block;
+    margin: 0;
     font-size: clamp(1.9rem, 1.15rem + 2.85vw, 3.75rem);
     font-weight: 700;
     line-height: 1.02;
@@ -1523,7 +1524,7 @@ html:not(.page-index) .index-page-intro-container {
         font-size: clamp(1.5rem, 1.05rem + 2vw, 2.2rem);
     }
 
-    /* One line — "Advanced web hosting control panel" fits across landscape widths */
+    /* One line — the full privacy-focused headline fits across landscape widths */
     .page-index .index-page-content-slogan-main .index-page-slogan-part {
         display: inline;
     }
