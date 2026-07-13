@@ -7,7 +7,13 @@ loadGalleryIndex: true
 ---
 
 {{< html span "" "" virtualmin-intro >}}
-Virtualmin is a powerful and flexible web hosting control panel for Linux, built for web developers, IT professionals, agencies, and hosting providers. It can run on almost any Linux distribution, with a hassle-free automated installer available for Debian and Ubuntu, AlmaLinux and Rocky Linux, and Red Hat Enterprise Linux. It is available as a community-supported open-source GPL edition and a feature-packed Pro version. It brings together DNS, SSL, web, mail, and backups in one place, with local and cloud DNS, automatic SSL, Apache or Nginx with multiple PHP versions, a full mail stack with spam and virus protection, and scheduled backups to popular cloud storage services. WP Workbench adds one central place to manage WordPress core, plugins, themes, backups, cloning, and quick admin access, while the built-in CLI and remote HTTP API make it easy to automate server setup, everyday tasks, and bulk changes across all your sites and services.
+Virtualmin is a powerful, privacy-focused web hosting control panel for Linux. Built for developers, IT teams, agencies, and hosting providers, it runs on your own infrastructure—keeping your hosting environment and data under your control.
+
+From one interface, manage websites, WordPress, containers, mail, databases, DNS, SSL certificates, users, and backups. The automated installer supports Debian and Ubuntu, AlmaLinux and Rocky Linux, and Red Hat Enterprise Linux. Choose the free, open-source GPL edition or feature-rich Virtualmin Pro.
+
+Run Apache or Nginx, manage multiple PHP versions, use local or cloud DNS, automate SSL, operate a full mail stack with spam and virus protection, and schedule cloud backups.
+
+Virtualmin Pro adds powerful container and WordPress tooling. The new Podman plugin deploys Docker-compatible images as per-domain containers and pods, with integrated networking, reverse proxying, logs, and browser terminal access. WP Workbench centralizes WordPress updates, plugins, themes, backups, cloning, and admin access. The CLI and remote HTTP API automate server setup, routine operations, and bulk changes.
 
 {{< html div chocolat-drop >}}
 
