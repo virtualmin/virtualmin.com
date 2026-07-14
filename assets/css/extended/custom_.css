@@ -1204,6 +1204,10 @@ html:not(.page-index) .index-page-intro-container {
     background-position: bottom center, top center;
     background-size: 100% 50%, 100% 50%;
 }
+/* 3D perspective floor grid in dark mode. */
+.page-index .dark .index-page-hero-grid {
+    opacity: 0.24;
+}
 
 /* Alien mascot: stands in the empty right region, above the stats shelf */
 .page-index .index-page-intro-container-inner-content-alien {
