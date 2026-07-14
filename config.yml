@@ -89,8 +89,8 @@ params:
   author: Jamie Cameron, Joe Cooper, Ilia Ross
 
   index:
-    slogan: "Advanced web hosting with privacy built in"
-    subSlogan: "Manage websites, WordPress, containers, mail, DNS, databases, SSL, backups, and user accounts on infrastructure you control."
+    slogan: "Advanced web hosting under your control"
+    subSlogan: "Manage websites, WordPress, Podman containers and pods, mail, DNS, databases, SSL, and backups across your own servers."
 
     buttons:
       - url: "/download/"

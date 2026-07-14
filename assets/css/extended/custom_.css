@@ -1288,7 +1288,7 @@ html:not(.page-index) .index-page-intro-container {
     color: var(--card-text);
     text-align: left;
     /* Wide enough that "Advanced web hosting" fits on line 1, so the explicit
-       split reads "Advanced web hosting / with privacy built in" */
+       split reads "Advanced web hosting / under your control" */
     max-width: min(1160px, 100%);
 }
 
