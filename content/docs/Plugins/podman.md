@@ -16,8 +16,6 @@ a pod, publish an application below a virtual server's URL, inspect runtime
 state, or automate the same operations with the `virtualmin` command and
 authenticated remote API.
 
-{{< alert warning exclamation-triangle "Developer Preview" "Currently this plugin is available only to Virtualmin Pro users through the development download channel at [download.virtualmin.dev](https://download.virtualmin.dev), not the standard production repositories yet. For current availability and install details, see the [announcement thread](https://forum.virtualmin.com/t/welcome-the-new-virtualmin-podman-plugin/136878)." >}}
-
 ## What the plugin manages
 
 The plugin adds domain-aware management for:
@@ -41,30 +39,21 @@ health, uptime, networks, and resource usage.
 
 ## Installation
 
-During the developer preview, download the plugin directly from Virtualmin's
-development channel using the serial number and license key for your
-Virtualmin Pro system.
+The plugin is distributed through the standard Virtualmin Pro repositories.
+Repository access is configured automatically on licensed Virtualmin Pro
+systems.
 
 ### Debian and derivatives
 
 ```text
-curl --fail --show-error --location \
-  --user 'SERIAL:KEY' \
-  https://download.virtualmin.dev/webmin-virtualmin-podman-latest.deb \
-  --output /tmp/webmin-virtualmin-podman-latest.deb
-
-apt install /tmp/webmin-virtualmin-podman-latest.deb podman skopeo
+apt update
+apt install webmin-virtualmin-podman podman skopeo
 ```
 
 ### Enterprise Linux systems
 
 ```text
-curl --fail --show-error --location \
-  --user 'SERIAL:KEY' \
-  https://download.virtualmin.dev/webmin-virtualmin-podman-latest.rpm \
-  --output /tmp/webmin-virtualmin-podman-latest.rpm
-
-dnf install /tmp/webmin-virtualmin-podman-latest.rpm podman skopeo
+dnf install webmin-virtualmin-podman podman skopeo
 ```
 
 `podman` is required. `skopeo` is strongly recommended because the plugin uses
