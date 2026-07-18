@@ -55,6 +55,16 @@ This feature allows you to create and manage additional webserver users for a vi
 
 [![](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png "Manage Extra Webserver Users Screenshot")](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png)
 
+#### Manage containers
+
+The Virtualmin Podman plugin provides a broad catalog of curated application recipes for deploying complete containerized applications. A recipe can create the application together with its database, cache, persistent storage, generated secrets, published port, and domain reverse proxy. Recipes can be installed and managed from the Virtualmin interface or through the command-line and remote APIs.
+
+{{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable application recipes" open >}}
+{{% include file="/data/docs/list-of-installable-podman-recipes.md" %}}
+{{< details-end >}}
+
+See the [Virtualmin Podman documentation](/docs/plugins/podman/#application-recipes) for installation, lifecycle, storage, customization, and API details.
+
 #### Manage web apps
 <!-- Run this code in browser's console of Virtualmin Pro to get update table of web apps: $("td.ui_radio_radio").remove(),$('[name="fast"]').remove(),$("table thead th").first().remove(),$(".ui_select.heighter-28").each((function(){$(this).replaceWith($(this).val())})),$("tbody td label, tbody td a").each((function(){$(this).replaceWith($(this).text())})),$("table, table *").each((function(){for($(this).removeClass();this.attributes.length>0;)this.removeAttribute(this.attributes[0].name);$(this).is("input")&&$(this).remove()})); -->
 

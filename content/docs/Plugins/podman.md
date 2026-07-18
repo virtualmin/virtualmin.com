@@ -1,25 +1,28 @@
 ---
 title: "Podman"
 author: "Ilia Ross"
-date: "2026-07-15"
+date: "2026-07-18"
 weight: 2511100
 edition: "pro"
 ---
 
-Podman is a Virtualmin plugin for deploying and managing application
-containers and pods per virtual server. It combines Podman's daemonless
-container runtime with Virtualmin's domain ownership, permissions, reverse
-proxy configuration, audit logging, and command-line API.
+Podman is a Virtualmin plugin for deploying and managing containerized
+applications, containers, and pods per virtual server. It combines Podman's
+daemonless container runtime with Virtualmin's domain ownership, permissions,
+reverse proxy configuration, audit logging, and command-line API.
 
-Use it to run a standalone application container, group related containers in
-a pod, publish an application below a virtual server's URL, inspect runtime
-state, or automate the same operations with the `virtualmin` command and
-authenticated remote API.
+Use an **Application Recipe** to deploy a complete supported application with
+minimal configuration, or create standalone containers and multi-container
+pods manually. The same operations are available through the `virtualmin`
+command and authenticated remote API.
 
 ## What the plugin manages
 
 The plugin adds domain-aware management for:
 
+- **Application Recipes** — deploy one of many curated applications with its
+  containers, private database or cache services, persistent storage,
+  generated secrets, published port, and domain-root reverse proxy
 - **Containers** — create, edit, reinstall, start, stop, restart, delete,
   inspect, view logs, and open an interactive terminal
 - **Pods** — create, clone, start, stop, delete, inspect, view logs, and add
@@ -34,8 +37,9 @@ The plugin adds domain-aware management for:
   subset through `remote.cgi`
 
 Virtualmin stores the configuration of module-managed containers and pods.
-Runtime discovery is used to enrich those records with current state, IDs,
-health, uptime, networks, and resource usage.
+Runtime discovery enriches those records with current state, IDs, health,
+uptime, networks, and resource usage. Recipe deployments use the same editable
+container and pod records as manually created resources.
 
 ## Installation
 
@@ -83,8 +87,8 @@ After installation and global enablement:
   cross-domain administration.
 - **Manage Containers** appears inside each virtual server where the feature
   is enabled.
-- The per-domain page contains separate **Containers** and **Pods** views when
-  pod access is enabled.
+- The per-domain page opens on **Recipes**, with adjacent **Containers** and
+  **Pods** tabs. The Pods tab appears only when pod access is enabled.
 - **Manage Downloaded Images** is available to the master administrator from
   the global area.
 
@@ -140,22 +144,28 @@ does not fall back to running the requested rootless operation as root.
 
 ## Getting started
 
-For a first deployment:
+For a supported application, the simplest deployment path is:
 
 1. Confirm that the virtual server has the **Podman containers** feature.
 2. Open **Manage Containers** for that virtual server.
-3. Choose **Add Container** for a standalone application, or create a pod
-   first when several containers should share networking and lifecycle.
-4. Search for an image or enter a full image reference.
-5. Review the suggested ports, mounts, variables, health check, and proxy
-   settings.
-6. Select the runtime mode if the administrator exposes that setting.
-7. Create the container or pod and verify its status and logs.
-8. If the application should be available through the domain, enable the
-   reverse proxy and test its URL.
+3. Select an application on the **Recipes** tab.
+4. Review its deployment name, database choice, initial login, and application
+   details.
+5. Deploy the recipe and open the application URL shown on completion.
 
-### Container or pod?
+The recipe selects a known-compatible runtime mode and creates the necessary
+Podman and reverse proxy configuration automatically.
 
+For an application that is not in the catalog, open **Containers** and choose
+**Install New Container**, or create a pod first when several containers need
+shared networking and lifecycle. Review the suggested ports, mounts,
+environment, health check, runtime mode, and proxy settings before creating
+the resource.
+
+### Recipe, container, or pod?
+
+- Use an **Application Recipe** when the application is in the catalog and
+  should be published at the root of a dedicated virtual server or subdomain.
 - Use a **standalone container** when one image can operate independently with
   its own ports, mounts, restart policy, and proxy path.
 - Use a **pod** when multiple containers should share a network namespace,
@@ -164,6 +174,118 @@ For a first deployment:
 Published ports and proxy settings belong to the pod when a container is a pod
 member. Member containers retain their own image, command, environment, and
 container-specific mounts.
+
+## Application Recipes
+
+Application recipes are curated, tested definitions for deploying complete
+self-hosted applications. A recipe can create a standalone container or a pod
+containing the application, database, and cache services it needs. Virtualmin
+also creates persistent storage, generates internal secrets, publishes an
+available host port, and configures the virtual server's reverse proxy.
+
+Recipes always reserve `/` as the virtual server's reverse proxy path. The
+completion URL can include an application-specific landing path such as
+`/login`, but the proxy owns the complete domain root. Create a dedicated
+virtual server or subdomain for each recipe. A recipe cannot be deployed while
+`/` is already used by another reverse proxy, so a domain normally has one
+installed recipe.
+
+{{< alert primary note "Recipe databases" "Recipe database choices use either application-managed storage or a database container; they do not depend on MariaDB or PostgreSQL being installed on the Virtualmin host. The phpMyAdmin recipe is the exception: it connects to a separately managed MySQL or MariaDB server and defaults to <tt>host.containers.internal</tt>." >}}
+
+### Installing a recipe
+
+1. Create or select the virtual server that will host the application.
+2. Open **Manage Containers ⇾ Recipes**.
+3. Select an application from **Available Recipes** and choose **Configure
+   Selected Application**.
+4. Review the deployment name. This name identifies its pod or containers and
+   storage directory.
+5. Select a database variant when the application supports more than one.
+6. Set the initial username and password when the upstream image supports
+   unattended account creation. A secure password is generated by default;
+   some applications require a fixed username.
+7. Expand **Application details** to review container images, persistent
+   storage, and the automatically selected runtime mode.
+8. Deploy the application and wait for all readiness checks to complete.
+
+Before changing runtime state, the plugin checks the domain, website and pod
+requirements, runtime compatibility, root proxy path, deployment-name and
+storage collisions, and any disk, quota, or memory minimum declared by the
+recipe. It then creates dependencies in order, waits for database and cache
+services, starts the application, checks its public port and HTTP response,
+and applies the reverse proxy.
+
+The completion page displays the application URL, initial credentials when
+available, runtime resource names, and persistent-data path. Save generated
+credentials immediately. When File Manager is installed and authorized, the
+storage path links directly to that directory.
+
+If deployment fails, Virtualmin reports the failing step and rolls back the
+new containers, pod, proxy configuration, and newly created storage.
+Downloaded images remain cached for later use. Any incomplete rollback is
+reported explicitly instead of being presented as a clean deployment.
+
+### Included applications
+
+The current catalog includes the recipes listed below. The recipe ID is the
+stable value accepted by `--recipe` in the command-line and remote APIs.
+
+{{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable application recipes" open >}}
+{{% include file="/data/docs/list-of-installable-podman-recipes.md" %}}
+{{< details-end >}}
+
+### Managing an installed recipe
+
+The **Installed Recipe** tab shows the live application URL and status,
+deployment name, selected database variant, initial username when recoverable,
+persistent storage, runtime mode, pod and containers, creation time, and an
+application version when the image exposes a reliable version label.
+
+Use its controls to:
+
+- **Start** a stopped deployment
+- **Stop** a running deployment without removing configuration or data
+- **Restart** a running deployment
+- **Delete Installed Recipe** to permanently remove its pod or containers,
+  reverse proxy, and persistent application data
+
+Downloaded images are retained after deletion because the runtime cache can be
+shared with other deployments. Use **Manage Downloaded Images** separately if
+an unused image should also be removed.
+
+Recipe-created pods and containers remain visible on the normal **Pods** and
+**Containers** tabs. They can be inspected, edited, reinstalled, cloned, and
+troubleshot like manually created resources. Use **Delete Installed Recipe**
+for complete application removal. Deleting resources manually can intentionally
+leave persistent data behind; deleting a recipe pod offers a separate
+application-data checkbox, selected by default.
+
+Retained data reserves its deployment name. When redeploying that name,
+Virtualmin requires explicit confirmation before permanently deleting the old
+data and creating a clean application. It does not silently attach a new set
+of generated secrets to an old data directory.
+
+### Local recipes and overrides
+
+Packaged definitions are individual JSON files in the module's `recipes/`
+directory. A system administrator can add new recipes or replace a packaged
+definition by placing a file in:
+
+```text
+/etc/webmin/virtualmin-podman/recipes/
+```
+
+The filename must match the recipe ID, such as `my-application.json`. A local
+file with an existing ID replaces the packaged definition; a new ID appends a
+catalog entry.
+
+Recipe definitions are trusted administrative configuration and can declare
+container commands, environment, images, ports, mounts, initialization steps,
+and generated secrets. The plugin therefore accepts only real JSON files in a
+real directory owned by the Webmin process user, rejects symbolic links and
+group- or world-writable paths, limits each file to 1 MiB, and validates the
+supported schema before loading it. Invalid entries are ignored and reported
+in the Webmin error log without preventing valid recipes from loading.
 
 ## Managing containers
 
@@ -309,7 +431,8 @@ selected domain. `reinstall-container` also supports repeated selectors and
 `--all`.
 
 Deletion removes the runtime container, saved module record, and associated
-reverse proxy mapping.
+reverse proxy mapping. Downloaded images and data in mounted host directories
+are kept.
 
 ## Managing pods
 
@@ -366,13 +489,16 @@ match. The member container uses the pod's networking, published ports, and
 proxy configuration, while retaining container-specific image, environment,
 command, and mounts.
 
-The pod details page links each member container to its logs and terminal when
-available.
+The pod details page lists each member container and its current status. Open
+the linked container or use the **Containers** tab for its logs and terminal.
 
 ### Lifecycle and cloning
 
 Pods can be started, stopped, and deleted individually or in bulk. Deleting a
-pod also removes its runtime member containers and reverse proxy mapping.
+pod also removes its runtime member containers and reverse proxy mapping. When
+a pod belongs to an application recipe, the confirmation page also offers to
+delete its persistent application data. This option is selected by default;
+clear it only when retaining the data for manual recovery.
 
 Podman does not update an existing pod definition in place, so the plugin does
 not provide an edit-in-place workflow. **Clone Pod** creates a new pre-filled
@@ -518,10 +644,10 @@ not silently rewritten when a module default changes.
 
 ## Command-line API
 
-The plugin exposes container, pod, image, and network operations through
-commands discovered by Virtualmin's `virtualmin` wrapper. Local `virtualmin`
-subcommands run as `root`; domain owners and resellers use the authenticated
-remote API instead of local shell access.
+The plugin exposes application recipe, container, pod, image, and network
+operations through commands discovered by Virtualmin's `virtualmin` wrapper.
+Local `virtualmin` subcommands run as `root`; domain owners and resellers use
+the authenticated remote API instead of local shell access.
 
 Display a command's detailed help with:
 
@@ -556,6 +682,30 @@ Successful commands exit with status 0. Validation, authorization, runtime,
 and required post-action failures return a non-zero status. Mutating commands
 run deferred Virtualmin post-actions before reporting success, so a failed web
 server or service reload also makes the command fail.
+
+### Application Recipe commands
+
+| Command | Purpose | Owner/reseller remote API |
+|---|---|---|
+| `list-application-recipes` | List available or installed recipes and live deployment details | Yes |
+| `deploy-application-recipe` | Deploy a recipe at the domain root | Yes |
+| `delete-application-recipe` | Delete an installed recipe and its persistent data | Yes |
+
+`list-application-recipes` supports `--installed`, `--available`, and
+`--recipe id` filters. Its detailed and structured output includes catalog
+availability, variants, images, runtime mode, and installed resource details.
+
+`deploy-application-recipe` requires `--recipe id`. It also accepts an
+optional deployment `--name`, `--variant`, supported initial-login overrides,
+and the MySQL host and port for recipes such as phpMyAdmin. Omitted supported
+passwords are generated securely and included in the deployment result.
+Use `--delete-existing-storage` only to permanently clear retained data for
+the requested deployment name before installation.
+
+`delete-application-recipe` accepts `--recipe`, `--name`, or both. When one
+selector could match more than one deployment, use both to identify the exact
+installation. Deletion removes persistent application data but retains
+downloaded images.
 
 ### Container commands
 
@@ -602,12 +752,56 @@ containers. `create-container` downloads its configured image by default, and
 container. The master-only commands above inspect or change Podman images and
 networks directly, without creating or reinstalling a managed container.
 
-### WordPress application example
+### Application recipe example
 
-This example deploys WordPress and MariaDB as two containers in one pod for a
-dedicated HTTPS-enabled `blog.example.com` virtual server. The pod publishes
-WordPress and proxies the domain root to it; MariaDB remains reachable only
-through the pod's shared network namespace.
+List recipe IDs that are currently available for a domain:
+
+```text
+virtualmin list-application-recipes \
+  --domain blog.example.com \
+  --available \
+  --name-only
+```
+
+Deploy WordPress with MariaDB. This example lets Virtualmin generate the
+password rather than placing it in shell history:
+
+```text
+virtualmin deploy-application-recipe \
+  --domain blog.example.com \
+  --recipe wordpress \
+  --login-username admin
+```
+
+The result includes the application URL, generated password, storage path,
+pod, and container names. Save the password, then inspect the installed
+deployment in JSON:
+
+```text
+virtualmin list-application-recipes \
+  --domain blog.example.com \
+  --recipe wordpress \
+  --installed \
+  --json
+```
+
+To remove the complete deployment and its persistent data while keeping its
+downloaded images:
+
+```text
+virtualmin delete-application-recipe \
+  --domain blog.example.com \
+  --recipe wordpress
+```
+
+### Manual WordPress application example
+
+The recipe above is the recommended WordPress workflow. The following manual
+example shows how the same architecture can be assembled with lower-level pod
+and container commands. It deploys WordPress and MariaDB as two containers in
+one pod for a dedicated HTTPS-enabled `blog.example.com` virtual server. The
+pod publishes WordPress and proxies the domain root to it; MariaDB remains
+reachable only through the pod's shared network namespace.
 
 Run these commands as `root` and replace both example passwords with strong,
 independently generated values. The host paths assume the virtual server's
@@ -773,9 +967,24 @@ curl --silent --show-error \
   --data-urlencode 'json=1'
 ```
 
+Deploy an application recipe through the same endpoint. Omitting the initial
+password lets Virtualmin generate it and return it in the command result:
+
+```text
+curl --silent --show-error \
+  --user 'domain-owner:password' \
+  --get 'https://host.example:10000/virtual-server/remote.cgi' \
+  --data-urlencode 'program=deploy-application-recipe' \
+  --data-urlencode 'domain=blog.example.com' \
+  --data-urlencode 'recipe=wordpress' \
+  --data-urlencode 'login-username=admin' \
+  --data-urlencode 'json=1'
+```
+
 Use HTTPS and provide credentials through the caller's secret-management
-facility rather than embedding passwords in scripts. Repeat a request
-parameter when the corresponding CLI option can be repeated.
+facility rather than embedding passwords in scripts. Treat the response as
+sensitive when it contains generated credentials. Repeat a request parameter
+when the corresponding CLI option can be repeated.
 
 ### Remote authorization
 
@@ -784,7 +993,7 @@ Authenticated domain owners and resellers can call only the commands marked
 **Yes** in the tables above, and only when all of these checks pass:
 
 - Owner or reseller module access is enabled
-- Pod access is enabled when a pod command is requested
+- Pod access is enabled when a pod command or pod-backed recipe is requested
 - The caller can edit the selected Virtualmin domain
 - The domain is within the module's allowed-domain ACL
 - The command's own object and runtime checks pass
@@ -802,9 +1011,9 @@ name exists elsewhere.
 ### Audit logging
 
 Mutating CLI and remote operations, plus `exec-container` attempts, are written
-to Virtualmin's command audit log. Environment values and command-like
-arguments—including exec commands, entrypoints, health commands, and extra
-runtime flags—are redacted before logging.
+to Virtualmin's command audit log. Environment values, initial-login
+passwords, and command-like arguments—including exec commands, entrypoints,
+health commands, and extra runtime flags—are redacted before logging.
 
 Rootless exec and streaming operations switch to and verify the complete Unix
 identity, including supplementary groups, before starting Podman. A failed
@@ -825,6 +1034,11 @@ object, and runtime-context layers.
 - Privileged mode, host namespaces, extra capabilities, command overrides, and
   raw runtime flags are master-only controls.
 - Reverse proxy paths are normalized and checked for collisions.
+- Recipe storage and deletion paths are constrained below the selected
+  virtual server's home directory.
+- Local recipe definitions are treated as trusted configuration and loaded
+  only from process-owned, non-writable, non-symlinked paths after schema
+  validation.
 - Failed runtime queries are reported as errors rather than presented as empty
   lists.
 - Required Virtualmin post-actions must complete before a mutation is reported
@@ -868,6 +1082,36 @@ delegated to the virtual server owner's user service. Select another supported
 limit, configure user-slice delegation, or use the rootful domain-user mode
 when appropriate.
 
+### An application recipe is unavailable
+
+Read the reason shown below the recipe. Common causes include missing website
+support, disabled pod access, an incompatible runtime policy, insufficient
+free quota, disk space, memory or swap, and an existing reverse proxy at `/`.
+
+Recipes use the domain root and cannot share it with another recipe or proxy.
+Create a dedicated virtual server or subdomain instead of attempting to assign
+the recipe a subdirectory.
+
+### A recipe deployment failed
+
+Read the final deployment output. It identifies the failed container,
+readiness command, public port, HTTP check, or initialization step and states
+whether rollback completed. Downloaded images are intentionally retained and
+do not indicate that an application is still installed.
+
+If rollback was incomplete, inspect the remaining pod or containers from the
+normal tabs and review their logs before deleting them. Do not assume that an
+empty recipe list means the runtime query succeeded when the page or command
+also reports a Podman error.
+
+### A recipe deployment name is still in use
+
+Persistent data can remain after manually deleting a recipe's pod or
+containers. Select that deployment name on the recipe form and explicitly
+choose to delete its retained data before installing a clean application, or
+use another name. Use **Delete Installed Recipe** for complete removal when
+the deployment is still listed.
+
 ### A proxy cannot be enabled
 
 Confirm that the virtual server has website support, the container or pod has
@@ -895,6 +1139,7 @@ validation, and runtime success.
 - `skopeo` recommended for remote metadata and architecture discovery
 - Webmin's `xterm` module for browser terminal access
 - Website support for virtual servers using reverse proxy paths
+- Enough disk, quota, memory, and swap for the selected application recipe
 - Host support for the selected rootless, networking, namespace, and cgroup
   features
 
