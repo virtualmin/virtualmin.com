@@ -5,8 +5,8 @@
 | BookStack | A structured documentation and knowledge platform backed by a private MySQL database. | Documentation, Knowledge Base | `bookstack` |
 | Caddy Static Site | A compact static website server with an editable web root and Caddyfile; Virtualmin remains the public TLS endpoint. | Web Server, Development | `caddy-static` |
 | Calibre-Web | A browser interface for an ebook library with persistent books and a generated administrator password. | Media, Books | `calibre-web` |
-| changedetection.io | A website-change monitor with persistent watch history and notification settings. | Monitoring, Automation | `changedetection` |
-| code-server | Visual Studio Code in the browser with password protection and a persistent workspace and settings. | Development, IDE | `code-server` |
+| ChangeDetection.io | A website-change monitor with persistent watch history and notification settings. | Monitoring, Automation | `changedetection` |
+| Code Server | Visual Studio Code in the browser with password protection and a persistent workspace and settings. | Development, IDE | `code-server` |
 | Directus | A data platform and headless CMS with built-in SQLite, persistent uploads and an initial administrator login. | CMS, Database, Development | `directus` |
 | Discourse | A community discussion platform with PostgreSQL and Redis. Its standalone container image is currently marked experimental by Discourse. | Community, Forum | `discourse` |
 | Docmost | A collaborative documentation and wiki platform with PostgreSQL, Redis and persistent uploads. | Documentation, Collaboration | `docmost` |
@@ -63,5 +63,5 @@
 | Vikunja | A task and project management application with persistent SQLite data and file attachments. | Project Management, Productivity | `vikunja` |
 | Wallos | A personal subscription and recurring-expense tracker with persistent SQLite data and service logos. | Finance, Subscriptions | `wallos` |
 | Wiki.js | A modern wiki and knowledge platform backed by PostgreSQL. | Wiki, Knowledge Base | `wikijs` |
-| WordPress with MariaDB | A popular publishing platform with a private MariaDB database and persistent website files. | CMS, Blog | `wordpress` |
+| WordPress | A popular publishing platform with a private MariaDB or MySQL database and persistent website files. | CMS, Blog | `wordpress` |
 | YOURLS | A private URL shortener with MySQL and a selectable initial administrator login. | URL Shortener | `yourls` |

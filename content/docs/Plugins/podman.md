@@ -1,7 +1,7 @@
 ---
 title: "Podman"
 author: "Ilia Ross"
-date: "2026-07-18"
+date: "2026-07-21"
 weight: 2511100
 edition: "pro"
 ---
@@ -83,12 +83,13 @@ plugin has been enabled globally.
 
 After installation and global enablement:
 
-- **List Managed Containers** appears in the main Virtualmin navigation for
+- **Container Apps Manager** appears in the main Virtualmin navigation for
   cross-domain administration.
-- **Manage Containers** appears inside each virtual server where the feature
+- **Manage Container Apps** appears inside each virtual server where the feature
   is enabled.
-- The per-domain page opens on **Recipes**, with adjacent **Containers** and
-  **Pods** tabs. The Pods tab appears only when pod access is enabled.
+- The per-domain page shows **Available Recipes** when no recipe is installed,
+  or **Installed Recipe** when one is deployed, alongside **Containers** and
+  **Pods**. The Pods tab appears only when pod access is enabled.
 - **Manage Downloaded Images** is available to the master administrator from
   the global area.
 
@@ -147,8 +148,8 @@ does not fall back to running the requested rootless operation as root.
 For a supported application, the simplest deployment path is:
 
 1. Confirm that the virtual server has the **Podman containers** feature.
-2. Open **Manage Containers** for that virtual server.
-3. Select an application on the **Recipes** tab.
+2. Open **Manage Container Apps** for that virtual server.
+3. Select an application on the **Available Recipes** tab.
 4. Review its deployment name, database choice, initial login, and application
    details.
 5. Deploy the recipe and open the application URL shown on completion.
@@ -195,7 +196,7 @@ installed recipe.
 ### Installing a recipe
 
 1. Create or select the virtual server that will host the application.
-2. Open **Manage Containers ⇾ Recipes**.
+2. Open **Manage Container Apps ⇾ Available Recipes**.
 3. Select an application from **Available Recipes** and choose **Configure
    Selected Application**.
 4. Review the deployment name. This name identifies its pod or containers and
@@ -211,9 +212,10 @@ installed recipe.
 Before changing runtime state, the plugin checks the domain, website and pod
 requirements, runtime compatibility, root proxy path, deployment-name and
 storage collisions, and any disk, quota, or memory minimum declared by the
-recipe. It then creates dependencies in order, waits for database and cache
-services, starts the application, checks its public port and HTTP response,
-and applies the reverse proxy.
+recipe. By default, it also prevents a recipe from replacing a Virtualmin web
+app already installed at the website root. It then creates dependencies in
+order, waits for database and cache services, starts the application, checks
+its public port and HTTP response, and applies the reverse proxy.
 
 The completion page displays the application URL, initial credentials when
 available, runtime resource names, and persistent-data path. Save generated
@@ -245,7 +247,6 @@ Use its controls to:
 
 - **Start** a stopped deployment
 - **Stop** a running deployment without removing configuration or data
-- **Restart** a running deployment
 - **Delete Installed Recipe** to permanently remove its pod or containers,
   reverse proxy, and persistent application data
 
@@ -574,20 +575,25 @@ the remote API because a store can be shared by multiple domains.
 
 ## Global views
 
-**List Managed Containers** provides a cross-domain view for the master
-administrator. It helps identify ownership, current state, runtime mode,
-published ports, proxy paths, and the virtual server associated with each
-object.
-
-When pods are enabled, the global page also contains a pods view. Bulk actions
+**Container Apps Manager** provides cross-domain **Recipes**, **Containers**,
+and, when enabled, **Pods** views for the master administrator. It helps
+identify application and resource ownership, last-known state, runtime mode,
+published ports, proxy paths, and the associated virtual server. Bulk actions
 are available without opening each virtual server separately.
 
-Container and pod list columns are configurable. CPU and memory columns add a
-runtime statistics query, so enable them only when that extra detail is useful.
+The page renders from saved metadata and runtime snapshots, so opening it does
+not wait for every rootful and rootless Podman context. **Refresh Runtime
+Status** queries each distinct runtime context once, stores current container,
+pod, health, CPU, and memory information, and reports when the displayed
+snapshot was last refreshed.
+
+Container and pod list columns are configurable. CPU and memory columns show
+the most recently refreshed values rather than triggering runtime queries on
+page load.
 
 ## Module configuration
 
-The configuration page is divided into five groups.
+The configuration page is divided into six groups.
 
 ### General settings
 
@@ -618,6 +624,14 @@ validation or grant delegated access to master-only options.
 Docker Hub provides the richest search and metadata integration. Other
 registries work best with explicit full image references when they do not
 provide an equivalent search API.
+
+### Recipe defaults
+
+- Check for a Virtualmin web app installed at the website root before recipe
+  deployment
+
+This safety check is enabled by default. Disable it only when intentionally
+replacing the root website route with a container application.
 
 ### Container defaults
 
@@ -1091,6 +1105,12 @@ free quota, disk space, memory or swap, and an existing reverse proxy at `/`.
 Recipes use the domain root and cannot share it with another recipe or proxy.
 Create a dedicated virtual server or subdomain instead of attempting to assign
 the recipe a subdirectory.
+
+By default, deployment also stops when a Virtualmin web app is already
+installed at the website root. Uninstall that web app or create a dedicated
+virtual server. The master administrator can disable this check under
+**Recipe defaults**, but the container application's root proxy will then take
+precedence over the existing root website.
 
 ### A recipe deployment failed
 

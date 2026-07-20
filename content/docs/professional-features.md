@@ -55,9 +55,9 @@ This feature allows you to create and manage additional webserver users for a vi
 
 [![](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png "Manage Extra Webserver Users Screenshot")](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png)
 
-#### Manage containers
+#### Manage container apps
 
-The Virtualmin Podman plugin provides a broad catalog of curated application recipes for deploying complete containerized applications. A recipe can create the application together with its database, cache, persistent storage, generated secrets, published port, and domain reverse proxy. Recipes can be installed and managed from the Virtualmin interface or through the command-line and remote APIs.
+The Virtualmin Podman plugin provides a broad catalog of curated application recipes for deploying complete containerized applications. A recipe can create the application together with its database, cache, persistent storage, generated secrets, published port, and domain reverse proxy. Use **Manage Container Apps** within a virtual server or **Container Apps Manager** for cross-domain administration. Recipes can also be installed and managed through the command-line and remote APIs.
 
 {{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable application recipes" open >}}
 {{% include file="/data/docs/list-of-installable-podman-recipes.md" %}}
