@@ -89,14 +89,17 @@ After installation and global enablement:
   is enabled.
 - The per-domain page shows **Available Recipes** when no recipe is installed,
   or **Installed Recipe** when one is deployed, alongside **Containers** and
-  **Pods**. The Pods tab appears only when pod access is enabled.
+  **Pods**. The Containers and Pods tabs appear only when their respective
+  direct-access policies permit them. Recipes remain available independently
+  and can create their required containers and pods without exposing those
+  lower-level management interfaces.
 - **Manage Downloaded Images** is available to the master administrator from
   the global area.
 
 Domain owners and resellers see the plugin only when access is enabled in
-module configuration and their Virtualmin ACL permits the target domain. Pod
-access has a separate policy and can be master-only, available to permitted
-users, or disabled.
+module configuration and their Virtualmin ACL permits the target domain.
+Direct container and pod management have separate policies; each can be
+master-only, available to all permitted users, or disabled.
 
 ## Runtime modes
 
@@ -180,9 +183,10 @@ container-specific mounts.
 
 Application recipes are curated, tested definitions for deploying complete
 self-hosted applications. A recipe can create a standalone container or a pod
-containing the application, database, and cache services it needs. Virtualmin
-also creates persistent storage, generates internal secrets, publishes an
-available host port, and configures the virtual server's reverse proxy.
+containing the application, database, cache, worker, and scheduler services it
+needs. Virtualmin also creates persistent storage, generates internal secrets,
+publishes an available host port, and configures the virtual server's reverse
+proxy.
 
 Recipes always reserve `/` as the virtual server's reverse proxy path. The
 completion URL can include an application-specific landing path such as
@@ -215,7 +219,9 @@ storage collisions, and any disk, quota, or memory minimum declared by the
 recipe. By default, it also prevents a recipe from replacing a Virtualmin web
 app already installed at the website root. It then creates dependencies in
 order, waits for database and cache services, starts the application, checks
-its public port and HTTP response, and applies the reverse proxy.
+its public port and HTTP response, completes any one-time initialization, and
+starts deferred worker or scheduler services before applying the reverse
+proxy.
 
 The completion page displays the application URL, initial credentials when
 available, runtime resource names, and persistent-data path. Save generated
@@ -635,6 +641,7 @@ replacing the root website route with a container application.
 
 ### Container defaults
 
+- Container access policy
 - Restart policy
 - Base port for automatic host-port allocation
 - User-slice cgroup-parent policy
@@ -1007,7 +1014,8 @@ Authenticated domain owners and resellers can call only the commands marked
 **Yes** in the tables above, and only when all of these checks pass:
 
 - Owner or reseller module access is enabled
-- Pod access is enabled when a pod command or pod-backed recipe is requested
+- Container access is enabled for direct container, image, and network commands
+- Pod access is enabled for direct pod commands
 - The caller can edit the selected Virtualmin domain
 - The domain is within the module's allowed-domain ACL
 - The command's own object and runtime checks pass
@@ -1099,8 +1107,8 @@ when appropriate.
 ### An application recipe is unavailable
 
 Read the reason shown below the recipe. Common causes include missing website
-support, disabled pod access, an incompatible runtime policy, insufficient
-free quota, disk space, memory or swap, and an existing reverse proxy at `/`.
+support, an incompatible runtime policy, insufficient free quota, disk space,
+memory or swap, and an existing reverse proxy at `/`.
 
 Recipes use the domain root and cannot share it with another recipe or proxy.
 Create a dedicated virtual server or subdomain instead of attempting to assign
