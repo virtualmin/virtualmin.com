@@ -90,7 +90,7 @@ params:
 
   index:
     slogan: "Advanced web hosting under your control"
-    subSlogan: "Manage websites, WordPress, Podman containers and pods, mail, DNS, databases, SSL, and backups across your own servers."
+    subSlogan: "Manage websites, WordPress, Podman containers and pods, mail, DNS, databases, SSL, and backups across servers you control using UI, CLI, or AI agents."
 
     buttons:
       - url: "/download/"

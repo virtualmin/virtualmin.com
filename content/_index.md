@@ -7,13 +7,13 @@ loadGalleryIndex: true
 ---
 
 {{< html span "" "" virtualmin-intro >}}
-Virtualmin is a powerful, privacy-focused web hosting control panel for Linux. Built for developers, IT teams, agencies, and hosting providers, it runs on your own infrastructure—keeping your hosting environment and data under your control.
+Virtualmin is a powerful and flexible web hosting control panel for Linux. Built for developers, IT teams, agencies, and hosting providers, it runs on your own infrastructure, keeping your hosting environment and data under your control.
 
 From one interface, manage websites, WordPress, containers, mail, databases, DNS, SSL certificates, users, and backups. The automated installer supports Debian and Ubuntu, AlmaLinux and Rocky Linux, and Red Hat Enterprise Linux. Choose the free, open-source GPL edition or feature-rich Virtualmin Pro.
 
 Run Apache or Nginx, manage multiple PHP versions, use local or cloud DNS, automate SSL, operate a full mail stack with spam and virus protection, and schedule cloud backups.
 
-Virtualmin Pro adds powerful container and WordPress tooling. The new Podman plugin deploys Docker-compatible images as per-domain containers and pods, with integrated networking, reverse proxying, logs, and browser terminal access. WP Workbench centralizes WordPress updates, plugins, themes, backups, cloning, and admin access. The CLI and remote HTTP API automate server setup, routine operations, and bulk changes.
+Virtualmin Pro adds powerful container and WordPress tooling. The new Podman plugin deploys Docker-compatible images as per-domain containers and pods, with integrated networking, reverse proxying, logs, and browser terminal access. WP Workbench centralizes WordPress updates, plugins, themes, backups, cloning, and admin access. The CLI and authenticated remote HTTP API let authorized automation tools and AI agents automate server setup, routine operations, and bulk changes.
 
 {{< html div chocolat-drop >}}
 

@@ -1322,8 +1322,7 @@ html:not(.page-index) .index-page-intro-container {
     font-weight: 300;
     line-height: 1.4;
     opacity: 0.9;
-    max-width: 62ch;
-    text-wrap: balance;
+    max-width: 66ch;
 }
 
 /* Main call-to-action button */
@@ -1783,6 +1782,10 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
     .page-index .index-page-intro-block-testimony .index-page-intro-block-testimony-text p {
         line-height: 1.277;
         margin-top: -0.111em;
+    }
+
+    .page-index .index-page-content-slogan-sub {
+        text-wrap: balance;
     }
 }
 
