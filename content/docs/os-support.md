@@ -20,7 +20,7 @@ Grade A systems have an automated installation script and a maintained software 
 
 #### Debian Linux and derivatives
 - Debian 12 and 13 on i386, amd64, and arm64
-- Ubuntu 22.04 LTS and 24.04 LTS on i386, amd64, and arm64
+- Ubuntu 22.04 LTS, 24.04 LTS and 26.04 LTS on i386, amd64, and arm64
 
 ### Grade B supported systems
 
@@ -45,7 +45,6 @@ sudo sh virtualmin-install.sh --os-grade B
 - CloudLinux 8 and 9 on x86_64  
 
 ##### Debian Linux and derivatives
-- Ubuntu 26.04 developer preview on i386, amd64, and arm64
 - Kali Linux Rolling on amd64 and arm64
 - Ubuntu interim (non-LTS) releases on i386, amd64, and arm64
 
