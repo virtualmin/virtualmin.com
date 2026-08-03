@@ -20,7 +20,7 @@ Grade A systems have an automated installation script and a maintained software 
 
 #### Debian Linux and derivatives
 - Debian 12 and 13 on i386, amd64, and arm64
-- Ubuntu 22.04 LTS, 24.04 LTS and 26.04 LTS on i386, amd64, and arm64
+- Ubuntu 24.04 LTS and 26.04 LTS on i386, amd64, and arm64
 
 ### Grade B supported systems
 
