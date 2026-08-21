@@ -41,6 +41,16 @@ New installs from the Virtualmin repositories install the Webmin core set instea
 
 Modules outside that core set are still available. They are just separate packages now, so they do not have to be present on every server. The module name is the Webmin module directory name, such as `postgresql`, `samba`, `squid`, `ldap-server`, or `webalizer`. The package name is normally `webmin-` plus the module name, for example `webmin-postgresql`.
 
+Package wildcards can be used to install a related group of modules. For example, to install all cluster modules, run the command for your operating system:
+
+```bash
+# Debian and derivatives
+sudo apt install 'webmin-cluster-*'
+
+# EL systems
+sudo dnf install 'webmin-cluster-*'
+```
+
 Keeping optional modules separate means new installs are cleaner, with few, if any, unused modules in the Webmin menu. Servers install fewer files and fewer service-specific dependencies, updates can be smaller and more focused, and administrators can add only the modules that match the services they actually run.
 
 {{< alert warning exclamation-triangle "" "If you intentionally want the older full Webmin package with all standard modules bundled together, the standard Webmin repository at [download.webmin.com](https://download.webmin.com) and the legacy Virtualmin repository at [software.virtualmin.com](https://software.virtualmin.com) still provide full Webmin builds. The production repository at [download.virtualmin.com](https://download.virtualmin.com) provides the modular core Webmin package instead." >}}

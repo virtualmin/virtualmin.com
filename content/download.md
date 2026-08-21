@@ -26,6 +26,8 @@ The quickest way to initiate the installation of Virtualmin GPL on your server i
 sudo sh -c "$(curl -fsSL https://download.virtualmin.com/virtualmin-install)" -- --bundle LAMP
 ```
 
+The installer includes the core Webmin modules needed by most systems. Extra Webmin modules are available as separate packages and can be installed later. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for examples.
+
 For **Virtualmin Professional**, use the download link provided on the [My Account → Dashboard](/account/) page.
 
 {{< alert primary exclamation "" "To use Nginx as the webserver use `--bundle LEMP`, while `--type mini` installs a mini web-only setup without mail, local DNS, FTP, or Jailkit pre-installed." >}}
