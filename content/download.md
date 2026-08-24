@@ -22,9 +22,7 @@ If you have already purchased a [Virtualmin Professional](/docs/professional-fea
 
 The quickest way to initiate the installation of Virtualmin GPL on your server is to log in via SSH using a terminal, and execute the following pre-prepared command:
 
-```
-sudo sh -c "$(curl -fsSL https://download.virtualmin.com/virtualmin-install)" -- --bundle LAMP
-```
+{{< install-command >}}
 
 The installer includes the core Webmin modules needed by most systems. Extra Webmin modules are available as separate packages and can be installed later. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for examples.
 
