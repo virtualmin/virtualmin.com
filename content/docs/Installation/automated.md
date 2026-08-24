@@ -76,15 +76,75 @@ Usage: virtualmin-install.sh [options]
   --help|-h                        show this help
 ```
 
-### LAMP (Apache) vs. LEMP (Nginx)
+#### Install script flags
+
+The installation command on the [Download](/download/#download-and-run-install-script) page and, for Virtualmin Pro, the one on the [My Account → Dashboard](/account/) page—lets you select the most common options with a click and adds the matching flags to the command for you.
+
+##### LAMP (Apache) vs. LEMP (Nginx)
 
 The install script can set up either Apache or Nginx. Apache (LAMP) is the default and most common choice, but Nginx (LEMP) is also fully supported and can be installed using `--bundle LEMP` if you prefer Nginx.
 
-### Full install vs. minimal install
+The bundle cannot be switched after installation without significant manual work, so choose deliberately.
+
+##### Full install vs. minimal install
 
 The full LAMP or LEMP stack with mail, spam filtering, and virus scanning is heavy and needs at least about 4 GiB of RAM to run well (more is better). On low-memory systems, running the full mail stack alongside LAMP or LEMP is not recommended.
 
-Use `--type mini` flag for a lighter setup that skips local mail handling, spam and virus filtering, local DNS, FTP, and Jailkit, but still provides a full web stack and works well with Cloud DNS. Minimal installs usually work well with around 1 GiB of RAM.
+Use `--type mini` flag for a lighter setup that skips local mail handling, spam and virus filtering, local DNS, FTP, and Jailkit, but still provides a full web stack and works well with Cloud DNS. Minimal installs usually work well with around 1 GiB of RAM. Features skipped by the minimal install can be enabled later on the **System Settings ⇾ Features and Plugins** page once the needed packages are installed.
+
+##### Operating system support grade
+
+By default, the installer only runs on [Grade A supported systems](/docs/os-support/), which are fully tested and receive managed updates. Passing `--os-grade B` allows installation on Grade B systems, which get little or no direct testing and are only recommended for experienced admins. See the [OS Support](/docs/os-support/) page for the full list of systems in each grade.
+
+##### Install branch
+
+The `--branch` flag selects which repository branch to install from. The default stable branch is what production systems should use. The pre-release branch carries upcoming tested versions, and the unstable branch carries the latest development builds. Only use pre-release or unstable on disposable test systems, never in production.
+
+##### Hostname and SSL
+
+During installation, a TLS certificate is automatically requested for the system's hostname, so you can log in to Virtualmin without SSL warnings. Use `--no-hostname-ssl` to skip that certificate request, for example when the hostname doesn't resolve publicly yet. Use `--hostname` to force a specific fully qualified domain name during install instead of being asked interactively.
+
+##### Including and excluding features
+
+The `--include`, `--exclude`, and `--extra` flags fine-tune the configuration phase. `--include` enables extra configuration plugins, `--exclude` skips ones that would run by default, and `--extra` installs additional packages before the stack install. For example, to add PostgreSQL support as part of the initial install, see the [PostgreSQL note](#postgresql) above.
+
+##### Maintenance and recovery
+
+`--uninstall` removes all Virtualmin packages and dependencies. `--setup` reconfigures the software repositories without installing anything, which is useful for repairing a broken repository setup. `--connect` only tests connectivity to the repositories over IPv4 or IPv6 and then exits. `--force-reinstall` forces a complete reinstall over an existing system and is not recommended.
+
+##### Behavior and output
+
+`--force` assumes "yes" to all prompts, which is handy for unattended installs. `--no-package-updates` skips OS package updates during install. `--insecure-downloads` skips SSL certificate checks for downloads and should be avoided unless you know exactly why you need it. `--no-banner` suppresses informational messages, `--verbose` enables detailed output for troubleshooting, and `--version` and `--help` print the installer version and the full usage text.
+
+##### License via environment variables
+
+For Virtualmin Pro, the serial number and license key can be passed to the installer through the `SERIAL` and `KEY` environment variables:
+
+```text
+sudo env SERIAL=00000 KEY=AAAAAAAAAA sh virtualmin-install.sh
+```
+
+The personalized install script from the [My Account → Dashboard](/account/) page already handles this for you, so you normally don't need to set these by hand. Without them, the installer sets up Virtualmin GPL.
+
+##### Examples
+
+Install a minimal Nginx stack for a low-memory web server:
+
+```text
+sudo sh virtualmin-install.sh --bundle LEMP --type mini
+```
+
+Install on a Grade B system without requesting a hostname certificate:
+
+```text
+sudo sh virtualmin-install.sh --os-grade B --no-hostname-ssl
+```
+
+Unattended install with a preset hostname:
+
+```text
+sudo sh virtualmin-install.sh --hostname host.example.com --yes
+```
 
 ### Questions install script might ask you
 
