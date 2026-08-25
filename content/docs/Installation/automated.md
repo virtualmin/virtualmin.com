@@ -27,7 +27,7 @@ We recommend using a minimal server version instance of your preferable operatin
 
 The OS-neutral `virtualmin-install.sh` script sets up the license key in `/etc/virtualmin-license`, configures your package manager for the Virtualmin repository, and then installs the `virtualmin-config` package, which completes the install for your OS and version.
 
-Download the `virtualmin-install.sh` script directly from [download.virtualmin.com/install-script](https://download.virtualmin.com/install-script). The same script works for Virtualmin Pro too—either download a personalized copy from the [My Account → Dashboard](/account/) page, or pass your license through the [`SERIAL` and `KEY` environment variables](#license-via-environment-variables), which the **Pro** switch below builds for you.
+Download the `virtualmin-install.sh` script directly from [download.virtualmin.com/install-script](https://download.virtualmin.com/install-script). The same script works for Virtualmin Pro too—either download a personalized copy from the [My Account → Dashboard](/account/) page, or pass your license through the `SERIAL` and `KEY` [environment variables](#license-via-environment-variables), which the **Pro** switch below builds for you.
 
 Once the script is on your server, run it as root, using the toggles to add the flags matching your setup:
 
