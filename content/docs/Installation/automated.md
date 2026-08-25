@@ -27,7 +27,7 @@ We recommend using a minimal server version instance of your preferable operatin
 
 The OS-neutral `virtualmin-install.sh` script sets up the license key in `/etc/virtualmin-license`, configures your package manager for the Virtualmin repository, and then installs the `virtualmin-config` package, which completes the install for your OS and version.
 
-Download the `virtualmin-install.sh` script directly from [download.virtualmin.com/install-script](https://download.virtualmin.com/install-script). The same script works for Virtualmin Pro too—either download a personalized copy from the [My Account → Dashboard](/account/) page, or pass your license through the `SERIAL` and `KEY` [environment variables](#license-via-environment-variables), which the **Pro** switch below builds for you.
+Download the `virtualmin-install.sh` script directly from {{< install-script-link >}} to your server. The same script works for Virtualmin Pro too—either download a personalized copy from the [My Account → Dashboard](/account/) page, or pass your license through the `SERIAL` and `KEY` [environment variables](#license-via-environment-variables), which the **Pro** switch below builds for you.
 
 Once the script is on your server, run it as root, using the toggles to add the flags matching your setup:
 
@@ -143,6 +143,8 @@ sudo sh virtualmin-install.sh --hostname host.example.com --yes
 ##### MySQL vs. MariaDB
 
 On Debian and its derivatives, the Virtualmin installer treats MariaDB and MySQL as drop-in replacements, so if MySQL is already installed it will use it. The easiest way to choose MySQL is the **MySQL** toggle under the install command on the [Download](/download/#download-and-run-install-script) page, which adds `--extra mysql-server,mysql-common,libdbd-mysql-perl` so the packages are installed before the stack. Doing it by hand, install those packages with your package manager before running the installer.
+
+The MySQL packages ship with Ubuntu but not with Debian, which only offers MariaDB. On Debian, first add the official [MySQL APT repository](https://dev.mysql.com/downloads/repo/apt/), and the same toggle or packages then work.
 
 Choosing MySQL at install time is not available on EL systems, where only MariaDB is supported. On an EL system, MySQL can only be set up after the installation is done by adding the official [MySQL repository](https://dev.mysql.com/downloads/repo/yum/), removing the MariaDB packages together with the `/var/lib/mysql` data directory, installing the MySQL server packages, and re-running the database configuration with `virtualmin-config-system --include MySQL`. Removing the data directory deletes all existing databases, so do this on a freshly installed system or back them up first.
 

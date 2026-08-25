@@ -23,7 +23,7 @@
         <div class="install-command__group">
             <div class="install-command__pair" role="group" aria-label="Database server">
                 <button type="button" class="install-command__option" data-group="db" data-value="mariadb" aria-pressed="true" title="Install the default MariaDB database server">MariaDB</button>
-                <button type="button" class="install-command__option" data-group="db" data-value="mysql" aria-pressed="false" title="Install Oracle MySQL instead of MariaDB, available on Debian and Ubuntu systems">MySQL</button>
+                <button type="button" class="install-command__option" data-group="db" data-value="mysql" aria-pressed="false" title="Install Oracle MySQL instead of MariaDB, available on Ubuntu, or on Debian after adding the MySQL APT repository">MySQL</button>
             </div>
             <button type="button" class="install-command__option" data-group="postgres" data-value="1" aria-pressed="false" title="Additionally install the PostgreSQL database server and enable its support">PostgreSQL</button>
             {{- if not $local }}
