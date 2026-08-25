@@ -26,6 +26,9 @@
                 <button type="button" class="install-command__option" data-group="db" data-value="mysql" aria-pressed="false" title="Install Oracle MySQL instead of MariaDB, available on Debian and Ubuntu systems">MySQL</button>
             </div>
             <button type="button" class="install-command__option" data-group="postgres" data-value="1" aria-pressed="false" title="Additionally install the PostgreSQL database server and enable its support">PostgreSQL</button>
+            {{- if not $local }}
+            <a class="install-command__docs" href="/docs/installation/automated/#install-script-flags" title="Learn about installation script flags" aria-label="Installation script flags documentation"><i class="wm wm-fw wm-question"></i></a>
+            {{- end }}
         </div>
         {{- if $local }}
         <button type="button" class="install-command__option" data-group="ssl" data-value="1" aria-pressed="true" title="Request an SSL certificate for the hostname during installation">Host SSL</button>
@@ -37,8 +40,6 @@
             <button type="button" class="install-command__option" data-group="branch" data-value="stable" aria-pressed="true" title="Install from the stable branch">Stable</button>
             <button type="button" class="install-command__option install-command__option--unstable" data-group="branch" data-value="unstable" aria-pressed="false" title="Install from the unstable development branch">Unstable</button>
         </div>
-        {{- else }}
-        <a class="install-command__docs" href="/docs/installation/automated/#install-script-flags" title="Learn about installation script flags" aria-label="Installation script flags documentation"><i class="wm wm-fw wm-question"></i></a>
         {{- end }}
         <div class="install-command__group install-command__edition-group">
             <div class="install-command__pair install-command__edition" role="group" aria-label="Installer edition">
