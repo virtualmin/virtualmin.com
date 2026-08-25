@@ -1,8 +1,13 @@
-<div class="install-command" data-bundle="LAMP" data-os="rpm" data-db="mariadb" data-postgres="0" data-minimal="0" data-tool="curl">
+{{- $local := eq (.Get 0) "local" -}}
+<div class="install-command"{{ if $local }} data-install-cmd="local" data-grade="A" data-branch="stable" data-ssl="1"{{ end }} data-bundle="LAMP" data-os="rpm" data-db="mariadb" data-postgres="0" data-minimal="0" data-tool="curl">
     <div class="install-command__box">
         <button type="button" class="install-command__copy" aria-label="Copy install command" title="Copy install command" data-copy-label="copy" data-copied-label="copied!">copy</button>
         <div class="install-command__scroll">
+            {{- if $local }}
+            <pre class="install-command__command">sudo sh virtualmin-install.sh --bundle LAMP</pre>
+            {{- else }}
             <pre class="install-command__command">sudo sh -c "$(curl -fsSL https://download.virtualmin.com/virtualmin-install)" -- --bundle LAMP</pre>
+            {{- end }}
         </div>
     </div>
     <div class="install-command__options" role="group" aria-label="Installation options">
@@ -15,12 +20,26 @@
             <button type="button" class="install-command__option" data-group="bundle" data-value="LEMP" aria-pressed="false" title="Install the LEMP bundle with Nginx web server">LEMP <span class="install-command__option-note">Nginx</span></button>
         </div>
         <button type="button" class="install-command__option" data-group="minimal" data-value="1" aria-pressed="false" title="Install a minimal set of packages for the selected bundle">Minimal</button>
-        <div class="install-command__pair" role="group" aria-label="Database server">
-            <button type="button" class="install-command__option" data-group="db" data-value="mariadb" aria-pressed="true" title="Install the default MariaDB database server">MariaDB</button>
-            <button type="button" class="install-command__option" data-group="db" data-value="mysql" aria-pressed="false" title="Install Oracle MySQL instead of MariaDB, available on Debian and Ubuntu systems">MySQL</button>
+        <div class="install-command__group">
+            <div class="install-command__pair" role="group" aria-label="Database server">
+                <button type="button" class="install-command__option" data-group="db" data-value="mariadb" aria-pressed="true" title="Install the default MariaDB database server">MariaDB</button>
+                <button type="button" class="install-command__option" data-group="db" data-value="mysql" aria-pressed="false" title="Install Oracle MySQL instead of MariaDB, available on Debian and Ubuntu systems">MySQL</button>
+            </div>
+            <button type="button" class="install-command__option" data-group="postgres" data-value="1" aria-pressed="false" title="Additionally install the PostgreSQL database server and enable its support">PostgreSQL</button>
         </div>
-        <button type="button" class="install-command__option" data-group="postgres" data-value="1" aria-pressed="false" title="Additionally install the PostgreSQL database server and enable its support">PostgreSQL</button>
+        {{- if $local }}
+        <button type="button" class="install-command__option" data-group="ssl" data-value="1" aria-pressed="true" title="Request an SSL certificate for the hostname during installation">Host SSL</button>
+        <div class="install-command__pair" role="group" aria-label="Operating system support grade">
+            <button type="button" class="install-command__option" data-group="grade" data-value="A" aria-pressed="true" title="Install only on grade A supported operating systems">Grade A</button>
+            <button type="button" class="install-command__option" data-group="grade" data-value="B" aria-pressed="false" title="Allow installation on grade B supported operating systems">Grade B</button>
+        </div>
+        <div class="install-command__pair" role="group" aria-label="Install branch">
+            <button type="button" class="install-command__option" data-group="branch" data-value="stable" aria-pressed="true" title="Install from the stable branch">Stable</button>
+            <button type="button" class="install-command__option install-command__option--unstable" data-group="branch" data-value="unstable" aria-pressed="false" title="Install from the unstable development branch">Unstable</button>
+        </div>
+        {{- else }}
         <a class="install-command__docs" href="/docs/installation/automated/#install-script-flags" title="Learn about installation script flags" aria-label="Installation script flags documentation"><i class="wm wm-fw wm-question"></i></a>
+        {{- end }}
         <div class="install-command__group install-command__edition-group">
             <div class="install-command__pair install-command__edition" role="group" aria-label="Installer edition">
                 <button type="button" class="install-command__option" data-group="edition" data-value="pro" aria-pressed="false" title="Build a personalized command for Virtualmin Pro using one of your licenses">Pro</button>

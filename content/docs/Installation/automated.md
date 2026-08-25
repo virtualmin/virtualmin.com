@@ -27,13 +27,11 @@ We recommend using a minimal server version instance of your preferable operatin
 
 The OS-neutral `virtualmin-install.sh` script sets up the license key in `/etc/virtualmin-license`, configures your package manager for the Virtualmin repository, and then installs the `virtualmin-config` package, which completes the install for your OS and version.
 
-If you're using Virtualmin Pro, download `virtualmin-install.sh` from [My Account → Dashboard](/account/) page. If you're using Virtualmin GPL, download it from the [Download](/download/) page.
+Download the `virtualmin-install.sh` script directly from [download.virtualmin.com/install-script](https://download.virtualmin.com/install-script). The same script works for Virtualmin Pro too—either download a personalized copy from the [My Account → Dashboard](/account/) page, or pass your license through the [`SERIAL` and `KEY` environment variables](#license-via-environment-variables), which the **Pro** switch below builds for you.
 
-Once the `virtualmin-install.sh` script is on your server, run it as root:
+Once the script is on your server, run it as root, using the toggles to add the flags matching your setup:
 
-```text
-sudo sh virtualmin-install.sh
-```
+{{< install-command local >}}
 
 The installer supports several options for different install types. Run it with `--help` to see the available choices.
 
@@ -72,7 +70,7 @@ Usage: virtualmin-install.sh [options]
 
 #### Install script flags
 
-The installation command on the [Download](/download/#download-and-run-install-script) page and, for Virtualmin Pro, the one on the [My Account → Dashboard](/account/) page—lets you select the most common options with a click and adds the matching flags to the command for you.
+The installation command above, as well as the ones on the [Download](/download/#download-and-run-install-script) and [My Account → Dashboard](/account/) pages, lets you select the most common options with a click and adds the matching flags to the command for you.
 
 ##### LAMP (Apache) vs. LEMP (Nginx)
 
