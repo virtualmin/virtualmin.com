@@ -1,4 +1,8 @@
 <div class="install-command" data-bundle="LAMP" data-minimal="0" data-grade="A" data-ssl="1" data-tool="curl">
+    <div class="install-command__scroll">
+        <button type="button" class="install-command__copy" aria-label="Copy install command" title="Copy install command" data-copy-label="copy" data-copied-label="copied!">copy</button>
+        <pre class="install-command__command">sudo sh -c "$(curl -fsSL https://download.virtualmin.com/virtualmin-install)" -- --bundle LAMP</pre>
+    </div>
     <div class="install-command__options" role="group" aria-label="Installation options">
         <div class="install-command__pair" role="group" aria-label="Web server bundle">
             <button type="button" class="install-command__option" data-group="bundle" data-value="LAMP" aria-pressed="true" title="Install the LAMP bundle with Apache web server">LAMP <span class="install-command__option-note">Apache</span></button>
@@ -13,9 +17,5 @@
             </div>
             <a class="install-command__docs" href="/docs/installation/automated/#install-script-flags" title="Learn about installation script flags" aria-label="Installation script flags documentation"><i class="wm wm-fw wm-question"></i></a>
         </div>
-    </div>
-    <div class="install-command__scroll">
-        <button type="button" class="install-command__copy" aria-label="Copy install command" title="Copy install command" data-copy-label="copy" data-copied-label="copied!">copy</button>
-        <pre class="install-command__command">sudo sh -c "$(curl -fsSL https://download.virtualmin.com/virtualmin-install)" -- --bundle LAMP</pre>
     </div>
 </div>
