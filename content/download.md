@@ -20,15 +20,15 @@ If you have already purchased a [Virtualmin Professional](/docs/professional-fea
 
 {{< link "success|medium|outline|rounded" heart "/shop/" "Try Virtualmin Professional" >}}&nbsp;&nbsp;or&nbsp;&nbsp;{{< link "dark|medium|outline|rounded" download "https://download.virtualmin.com/virtualmin-install.sh" "Download Virtualmin GPL" >}}
 
-The quickest way to initiate the installation of Virtualmin GPL on your server is to log in via SSH using a terminal, and execute the following pre-prepared command:
+The quickest way to initiate the installation of Virtualmin on your server is to log in via SSH using a terminal, and execute the following pre-prepared command:
 
 {{< install-command >}}
 
 The installer includes the core Webmin modules needed by most systems. Extra Webmin modules are available as separate packages and can be installed later. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for examples.
 
-For **Virtualmin Professional**, use the download link provided on the [My Account → Dashboard](/account/) page.
+For **Virtualmin Professional**, switch the command above to **Pro** and pick one of your licenses, or use the download link provided on the [My Account → Dashboard](/account/) page.
 
-{{< alert primary exclamation "" "To use Nginx as the webserver use `--bundle LEMP`, while `--type mini` installs a mini web-only setup without mail, local DNS, FTP, or Jailkit pre-installed." >}}
+{{< alert primary exclamation "" "Use the toggles under the command to choose the Nginx (LEMP) webserver, a minimal web-only install type, the operating system support grade, and more. See the [install script flags](/docs/installation/automated/#install-script-flags) documentation for all available options." >}}
 
 
 ### Install script options
