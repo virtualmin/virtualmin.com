@@ -50,7 +50,7 @@ Use [download.virtualmin.com](https://download.virtualmin.com) as the production
 ### Virtualmin modules
 Once Webmin is operational you can download and install the Virtualmin modules in either `rpm` format (for RPM-based Linux distributions), `deb` format (for Debian-based Linux distributions), or `wbm` format (for any other UNIX or Linux system), and install them using the Webmin Modules module found in **Webmin ⇾ Webmin Configuration** page.
 
-For systems using the Virtualmin repositories, optional Webmin modules are shipped as separate `webmin-*` packages. Install the package that matches the module you need, such as `webmin-squid` or `webmin-postgresql`, using your OS package manager. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for more about the repository layout.
+For systems using the Virtualmin repositories, optional Webmin modules are shipped as separate `webmin-*` packages. Install the package that matches the module you need, such as `webmin-squid` or `webmin-samba`, using your OS package manager. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for more about the repository layout.
 
 ### Virtualmin Professional
 

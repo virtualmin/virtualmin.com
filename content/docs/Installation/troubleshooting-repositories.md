@@ -39,7 +39,7 @@ Older Webmin packages usually installed every standard Webmin module in one larg
 
 New installs from the Virtualmin repositories install the Webmin core set instead. This includes the modules most Virtualmin systems need for normal hosting and server administration, such as users, groups, packages, cron, logs, filesystems, firewalls, SSH, Apache, Nginx, BIND, Postfix, Dovecot, ProFTPd, MySQL/MariaDB, quotas, Usermin, and the Webmin configuration modules.
 
-Modules outside that core set are still available. They are just separate packages now, so they do not have to be present on every server. The module name is the Webmin module directory name, such as `postgresql`, `samba`, `squid`, `ldap-server`, or `webalizer`. The package name is normally `webmin-` plus the module name, for example `webmin-postgresql`.
+Modules outside that core set are still available. They are just separate packages now, so they do not have to be present on every server. The module name is the Webmin module directory name, such as `samba`, `squid`, `ldap-server`, or `webalizer`. The package name is normally `webmin-` plus the module name, for example `webmin-squid`.
 
 Package wildcards can be used to install a related group of modules. For example, to install all cluster modules, run the command for your operating system:
 
