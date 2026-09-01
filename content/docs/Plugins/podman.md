@@ -41,27 +41,6 @@ Runtime discovery enriches those records with current state, IDs, health,
 uptime, networks, and resource usage. Recipe deployments use the same editable
 container and pod records as manually created resources.
 
-## What the plugin manages
-
-The plugin adds domain-aware management for:
-
-- **Containers** — create, edit, reinstall, start, stop, restart, delete,
-  inspect, view logs, and open an interactive terminal
-- **Pods** — create, clone, start, stop, delete, inspect, view logs, and add
-  member containers
-- **Images** — search registries, inspect image metadata, pull images, list
-  downloaded images, and remove images from a selected runtime store
-- **Networks** — list, create, and remove Podman networks in a selected runtime
-  context
-- **Reverse proxies** — publish a container or pod below a virtual server's
-  website without configuring the web server manually
-- **Automation** — use the `virtualmin` CLI locally or the authorized command
-  subset through `remote.cgi`
-
-Virtualmin stores the configuration of module-managed containers and pods.
-Runtime discovery is used to enrich those records with current state, IDs,
-health, uptime, networks, and resource usage.
-
 ## Installation
 
 The plugin is distributed through the standard Virtualmin Pro repositories.
@@ -104,12 +83,16 @@ plugin has been enabled globally.
 
 After installation and global enablement:
 
-- **List Managed Containers** appears in the main Virtualmin navigation for
+- **Container Apps Manager** appears in the main Virtualmin navigation for
   cross-domain administration.
-- **Manage Containers** appears inside each virtual server where the feature
+- **Manage Container Apps** appears inside each virtual server where the feature
   is enabled.
-- The per-domain page contains separate **Containers** and **Pods** views when
-  pod access is enabled.
+- The per-domain page shows **Available Recipes** when no recipe is installed,
+  or **Installed Recipe** when one is deployed, alongside **Containers** and
+  **Pods**. The Containers and Pods tabs appear only when their respective
+  direct-access policies permit them. Recipes remain available independently
+  and can create their required containers and pods without exposing those
+  lower-level management interfaces.
 - **Manage Downloaded Images** is available to the master administrator from
   the global area.
 
@@ -638,8 +621,7 @@ The configuration page is divided into six groups.
 Hiding a panel removes it from normal forms but does not weaken backend
 validation or grant delegated access to master-only options.
 
-Hiding a panel removes it from normal forms but does not weaken backend
-validation or grant delegated access to master-only options.
+### Registry and discovery
 
 - Default image registry or custom registry prefix
 - Maximum search result count
