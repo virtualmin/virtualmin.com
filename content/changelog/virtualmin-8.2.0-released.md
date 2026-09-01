@@ -1,5 +1,5 @@
 ---
-title: "Virtualmin 8.1.0 released"
+title: "Virtualmin 8.2.0 released"
 date: 2026-09-01
 tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
