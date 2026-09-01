@@ -13,22 +13,22 @@ Usually, getting started with Virtualmin can be done with a few simple steps, us
 ### Install your operating system
 Start with a fresh [Grade A](/docs/os-support/) supported OS on your server or VPS—Rocky Linux, Debian, and Ubuntu Server LTS are safe choices. For full installs that include mail, set a proper [fully qualified domain name](/docs/installation/automated#fully-qualified-domain-name). Minimal installs don't require this, because they don't run mail. In all cases, don't name the system the same as any domain you'll host in Virtualmin.
 
-{{< alert warning exclamation-triangle "" "Don't pre-install or tweak extra packages; the installer expects a clean supported OS, and changes may cause conflicts. The only exceptions are if you prefer MySQL over MariaDB—[install MySQL first](/docs/installation/automated/#mysql-vs-mariadb)—or if you plan to use PostgreSQL—[see PostgreSQL special instructions](/docs/installation/automated/#postgresql). Add any third-party repositories only after installing Virtualmin, and use them with caution." >}}
+{{< alert warning exclamation-triangle "" "Don't pre-install or tweak extra packages; the installer expects a clean supported OS, and changes may cause conflicts. If you prefer [MySQL over MariaDB](/docs/installation/automated/#mysql-vs-mariadb) or want [PostgreSQL](/docs/installation/automated/#postgresql) from the start, use the database toggles under the install command below. Add any third-party repositories only after installing Virtualmin, and use them with caution." >}}
 
 ### Download and run install script
 If you have already purchased a [Virtualmin Professional](/docs/professional-features/) license, you can find it in [My Account → Dashboard](/account/). If not, you can purchase a license or download Virtualmin GPL.
 
 {{< link "success|medium|outline|rounded" heart "/shop/" "Try Virtualmin Professional" >}}&nbsp;&nbsp;or&nbsp;&nbsp;{{< link "dark|medium|outline|rounded" download "https://download.virtualmin.com/virtualmin-install.sh" "Download Virtualmin GPL" >}}
 
-The quickest way to initiate the installation of Virtualmin GPL on your server is to log in via SSH using a terminal, and execute the following pre-prepared command:
+The quickest way to initiate the installation of Virtualmin on your server is to log in via SSH using a terminal, and execute the following pre-prepared command:
 
-```
-sudo sh -c "$(curl -fsSL https://download.virtualmin.com/virtualmin-install)" -- --bundle LAMP
-```
+{{< install-command >}}
 
-For **Virtualmin Professional**, use the download link provided on the [My Account → Dashboard](/account/) page.
+The installer includes the core Webmin modules needed by most systems. Extra Webmin modules are available as separate packages and can be installed later. See [Webmin module packages](/docs/installation/troubleshooting-repositories/#webmin-module-packages) for examples.
 
-{{< alert primary exclamation "" "To use Nginx as the webserver use `--bundle LEMP`, while `--type mini` installs a mini web-only setup without mail, local DNS, FTP, or Jailkit pre-installed." >}}
+For **Virtualmin Professional**, switch the command above to **Pro** and pick one of your licenses, or use the download link provided on the [My Account → Dashboard](/account/) page.
+
+{{< alert primary exclamation "" "Use the toggles under the command to choose the Nginx (LEMP) webserver, your operating system family and databases, or a minimal web-only install type. See the [install script flags](/docs/installation/automated/#install-script-flags) documentation for all available options." >}}
 
 
 ### Install script options

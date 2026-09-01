@@ -88,6 +88,7 @@ RewriteRule ^product-category(.*)$ /shop [R=302,L]
 
 # Redirect old WordPress pages to the new HTML versions
 RewriteRule ^os-support                                                                     /docs/os-support/ [R=301,L]
+RewriteRule ^webmin-modules                                                                 /docs/installation/troubleshooting-repositories/#webmin-module-packages [R=301,L,NE]
 RewriteRule ^installation-variations                                                        /docs/installation/automated/#installation-variations [R=301,L,NE]
 RewriteRule ^professional                                                                   /docs/professional-features/ [R=301,L]
 RewriteRule ^license-faq                                                                    /docs/faq/#license [R=301,L,NE]
