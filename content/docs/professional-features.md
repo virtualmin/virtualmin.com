@@ -55,22 +55,44 @@ This feature allows you to create and manage additional webserver users for a vi
 
 [![](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png "Manage Extra Webserver Users Screenshot")](/images/docs/screenshots/professional-features/light/create-extra-webserver-user.png)
 
-#### Manage container apps
+### Premium plugins
 
-The Virtualmin Podman plugin provides a broad catalog of curated application recipes for deploying complete containerized applications. A recipe can create the application together with its database, cache, persistent storage, generated secrets, published port, and domain reverse proxy. Use **Manage Container Apps** within a virtual server or **Container Apps Manager** for cross-domain administration. Recipes can also be installed and managed through the command-line and remote APIs.
+#### Podman containers and apps
+
+The [Virtualmin Podman plugin](/docs/plugins/podman/) provides per-domain
+management for containers, multi-container pods, images, networks, storage,
+and reverse proxies. Create containers and pods manually for full control over
+images, ports, environment, runtime mode, resource limits, and other settings.
+For faster deployment, a broad catalog of curated application recipes can
+create a complete application together with its database, cache, persistent
+storage, generated secrets, published port, and domain reverse proxy.
+
+Use **Manage Container Apps** within a virtual server or **Container Apps
+Manager** for cross-domain administration. Containers, pods, and recipes can
+also be managed through the command-line and remote APIs.
 
 {{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable application recipes" open >}}
 {{% include file="/data/docs/list-of-installable-podman-recipes.md" %}}
 {{< details-end >}}
 
-See the [Virtualmin Podman documentation](/docs/plugins/podman/#application-recipes) for installation, lifecycle, storage, customization, and API details.
+#### WP Workbench
+
+The [WP Workbench](/docs/plugins/wp-workbench/) plugin centralizes WordPress
+management across sites on local and remote Virtualmin systems. From one
+interface, administrators can update WordPress core, plugins, and themes in
+bulk; schedule, create, and restore local or cloud backups; clone sites; search
+and replace database content; manage security and development settings; and open
+the WordPress admin dashboard without entering its password. The same tools are
+available for individual sites and through the command-line interface.
+
+### Other professional features
 
 #### Manage web apps
 <!-- Run this code in browser's console of Virtualmin Pro to get update table of web apps: $("td.ui_radio_radio").remove(),$('[name="fast"]').remove(),$("table thead th").first().remove(),$(".ui_select.heighter-28").each((function(){$(this).replaceWith($(this).val())})),$("tbody td label, tbody td a").each((function(){$(this).replaceWith($(this).text())})),$("table, table *").each((function(){for($(this).removeClass();this.attributes.length>0;)this.removeAttribute(this.attributes[0].name);$(this).is("input")&&$(this).remove()})); -->
 
 Virtualmin Professional provides automated installation of dozens of installable web applications, including blogs, wikis, content management systems, ad servers, ecommerce systems, and more.
 
-{{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable web apps" >}}
+{{< details-start "post-indent-details details-no-marker details-margin-bottom details-small-inner" "<i class='wm wm-script'></i>&nbsp;&nbsp;List of installable web apps" open >}}
 {{% include file="/data/docs/list-of-installable-web-apps.md" %}}
 {{< details-end >}}
 
