@@ -1,7 +1,7 @@
 ---
 title: "Podman"
 author: "Ilia Ross"
-date: "2026-07-21"
+date: "2026-08-31"
 weight: 2511100
 edition: "pro"
 ---
