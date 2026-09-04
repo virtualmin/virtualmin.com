@@ -65,7 +65,8 @@ and reverse proxies. Create containers and pods manually for full control over
 images, ports, environment, runtime mode, resource limits, and other settings.
 For faster deployment, a broad catalog of curated application recipes can
 create a complete application together with its database, cache, persistent
-storage, generated secrets, published port, and domain reverse proxy.
+storage, generated secrets, and predefined public web, local-host, or direct
+service connectivity.
 
 Use **Manage Container Apps** within a virtual server or **Container Apps
 Manager** for cross-domain administration. Containers, pods, and recipes can

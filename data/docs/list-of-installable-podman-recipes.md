@@ -10,12 +10,14 @@
 | Calibre-Web | A browser interface for an ebook library with persistent books and a generated administrator password. | Media, Books | `calibre-web` |
 | ChangeDetection.io | A website-change monitor with persistent watch history and notification settings. | Monitoring, Automation | `changedetection` |
 | Chatwoot | A customer support inbox for live chat, email and messaging channels, with private PostgreSQL and Redis services plus a dedicated job worker. | Helpdesk, Chat, Business | `chatwoot` |
+| ClassicPress | A community-led content management system based on the classic WordPress experience, with persistent files and a private MySQL database. | CMS, Blog | `classicpress` |
 | Code Server | Visual Studio Code in the browser with password protection and a persistent workspace and settings. | Development, IDE | `code-server` |
 | Collabora Online | A Collabora Online Development Edition document server for connecting Nextcloud and other WOPI-compatible applications. | Office, Collaboration, Documents | `collabora` |
 | Directus | A data platform and headless CMS with built-in SQLite, persistent uploads and an initial administrator login. | CMS, Database, Development | `directus` |
 | Discourse | A community discussion platform with PostgreSQL, Redis and a ready-to-use administrator account. Its standalone container image is currently marked experimental by Discourse. | Community, Forum | `discourse` |
 | Django | An editable Django LTS application starter with PostgreSQL or SQLite, Gunicorn, static-file serving and an initial administrator. | Development, Web Server | `django` |
 | Docmost | A collaborative documentation and wiki platform with PostgreSQL, Redis and persistent uploads. | Documentation, Collaboration | `docmost` |
+| DokuWiki | A file-backed wiki with unattended setup, access controls and persistent pages, media, plugins and configuration. | Wiki, Documentation, Collaboration | `dokuwiki` |
 | Dolibarr | An ERP and CRM suite for contacts, quotes, invoices, orders, inventory and accounting, backed by a private MariaDB database. | ERP, CRM, Business | `dolibarr` |
 | Draw.io | A self-hosted browser editor for diagrams, flowcharts, network maps and technical drawings. | Design, Productivity | `drawio` |
 | ejabberd | A federated XMPP messaging server with proxied web administration and direct client and server federation listeners. | Chat, XMPP, Federation | `ejabberd` |
@@ -28,6 +30,7 @@
 | FrankenPHP | A modern PHP application server with an editable web root and Caddyfile, served behind Virtualmin TLS. | Web Server, Development | `frankenphp` |
 | FreeScout | A lightweight shared-inbox and helpdesk application with unattended setup, scheduled mail processing and a private MariaDB database. | Helpdesk, Email, Business | `freescout` |
 | FreshRSS | A fast self-hosted RSS reader with automatic feed refresh and persistent extensions. | RSS, News | `freshrss` |
+| Friendica | A decentralized social network with unattended setup, a private MariaDB database and a dedicated background-task service. | Social, Community, Federation | `friendica` |
 | Ghost | A modern publishing platform for newsletters, blogs and independent media, backed by MySQL. | CMS, Blog, Publishing | `ghost` |
 | Gitea | A lightweight Git hosting service with persistent repositories and MariaDB or PostgreSQL. | Development, Git | `gitea` |
 | GLPI | An IT asset inventory and service desk platform with ticketing, software inventory and a private MySQL database. | Helpdesk, Inventory, Business | `glpi` |
@@ -35,6 +38,7 @@
 | Gotify | A lightweight real-time notification server with SQLite and an initial administrator login. | Notifications | `gotify` |
 | Grafana | An observability platform with persistent data sources, users and interactive dashboards. | Monitoring, Analytics | `grafana` |
 | Grafana OpenTelemetry LGTM | A development and testing stack combining Grafana, Loki, Mimir, Tempo, Pyroscope and an OpenTelemetry Collector. | Monitoring, Development, Analytics | `grafana-otel-lgtm` |
+| Grav | A fast flat-file content management system with its administration plugin, unattended account creation and persistent site data. | CMS, Website | `grav` |
 | Grocy | A household inventory, grocery, meal-planning and chores manager with persistent local data. | Home, Inventory, Productivity | `grocy` |
 | HedgeDoc | A collaborative Markdown editor with PostgreSQL, persistent uploads and account registration enabled. | Markdown, Collaboration | `hedgedoc` |
 | Homebox | A household inventory and organization application with SQLite; the first registered account owns the instance. | Home, Inventory | `homebox` |
@@ -44,6 +48,7 @@
 | Invoice Ninja | An invoicing, payments and client portal platform with private MySQL and Redis services plus dedicated queue and scheduler processes. | Invoicing, Finance, Business | `invoice-ninja` |
 | IT-Tools | A collection of browser-based developer, encoding, conversion and networking tools. | Development, Utilities | `it-tools` |
 | Jellyfin | A personal media server with persistent configuration, cache and an empty library ready for uploads. | Media, Streaming | `jellyfin` |
+| Joomla | A content management system with unattended setup, persistent website files and a private MariaDB or PostgreSQL database. | CMS, Website | `joomla` |
 | Joplin Server | A private synchronization server for Joplin notes, notebooks and attachments, backed by PostgreSQL. | Notes, Sync, Productivity | `joplin-server` |
 | Kanboard | A focused Kanban project manager with tasks, swimlanes, automation and a private PostgreSQL database. | Projects, Productivity, Business | `kanboard` |
 | Karakeep | A bookmark and web-archive manager with full-text search, automated page capture, a private Meilisearch index and persistent content. | Bookmarks, Archive, Productivity | `karakeep` |
@@ -51,6 +56,7 @@
 | Keycloak | An identity and access management server with PostgreSQL and selectable bootstrap administrator credentials. | Identity, Security | `keycloak` |
 | Kimai | Professional time tracking, reporting and invoicing for freelancers, teams and agencies, backed by a private MySQL database. | Time Tracking, Business | `kimai` |
 | Leantime | A project management and strategic planning workspace for teams, backed by a private MySQL database. | Projects, Productivity, Business | `leantime` |
+| LimeSurvey | A survey and questionnaire platform with unattended administrator and database setup, persistent uploads and retained encryption configuration. | Survey, Forms, Research | `limesurvey` |
 | linkding | A fast private bookmark manager with persistent SQLite data and an initial administrator login. | Bookmarks | `linkding` |
 | Listmonk | A high-performance newsletter and mailing-list manager with subscriber lists, campaigns, templates and a private PostgreSQL database. | Email Marketing, Publishing | `listmonk` |
 | Mailpit | A development SMTP server with a searchable web inbox, API and persistent message storage. | Development, Email | `mailpit` |
@@ -62,6 +68,7 @@
 | Metabase | A business intelligence and data visualization platform with a production PostgreSQL application database. | Analytics, Business Intelligence | `metabase` |
 | Miniflux | A focused feed reader with a private PostgreSQL database and an initial administrator login. | RSS, News | `miniflux` |
 | MongoDB with mongo-express | MongoDB with a private database and a password-protected browser administration interface. | Database, Administration | `mongo-express` |
+| Moodle | A learning management system for courses, assignments and online education, with automated setup, scheduled tasks and persistent content. | Education, Learning, Collaboration | `moodle` |
 | n8n | A visual workflow automation platform with built-in SQLite or PostgreSQL storage. | Automation | `n8n` |
 | Navidrome | A lightweight music server with browser and Subsonic-compatible playback and an empty persistent library. | Media, Music | `navidrome` |
 | Nextcloud | Private file sharing, synchronization and collaboration backed by MariaDB or PostgreSQL. | File Sharing, Collaboration, Productivity | `nextcloud` |
@@ -79,6 +86,7 @@
 | pgAdmin | A PostgreSQL administration interface with persistent connections, preferences and an initial login. | Database, Administration | `pgadmin` |
 | PhotoPrism | A private photo and video library with search, albums, automatic organization and persistent originals. | Photos, Media, Gallery | `photoprism` |
 | phpMyAdmin | A browser-based administration interface for a local or remote MySQL or MariaDB server. | Database, Administration | `phpmyadmin` |
+| Piwigo | A photo gallery for organizing, publishing and sharing image collections, with unattended setup and persistent media. | Photos, Gallery, Media | `piwigo` |
 | PLANKA | A Trello-style project board with PostgreSQL, persistent attachments and an initial administrator account. | Project Management | `planka` |
 | Pocket ID | A compact OpenID Connect identity provider that authenticates users with passkeys and keeps its configuration in persistent storage. | Identity, Security | `pocket-id` |
 | PrestaShop | An ecommerce platform for building and managing an online store, backed by a private MySQL database. | Commerce, E-commerce, Business | `prestashop` |
@@ -87,6 +95,7 @@
 | RabbitMQ | A message broker with persistent queues, an authenticated management interface and a direct AMQP listener. | Development, Messaging, Infrastructure | `rabbitmq` |
 | Redmine | A mature project management and issue-tracking platform with projects, wikis, forums, time tracking and Gantt charts. | Project Management, Issue Tracking, Collaboration | `redmine` |
 | Ruby | An editable Ruby web application starter with selectable Rack, Sinatra, Roda or Grape stacks, persistent gems and a Puma server. | Development, Web Server | `ruby` |
+| RustDesk Server | A self-hosted RustDesk ID and relay server for remote desktop connections, with a persistent server identity and database. | Remote Access, Networking, Infrastructure | `rustdesk` |
 | SearXNG | A privacy-respecting metasearch engine that searches multiple providers without profiling its users. | Search, Privacy | `searxng` |
 | SFTPGo | A managed file-transfer server with SFTP, WebDAV, a web client and web administration. | File Sharing, Administration | `sftpgo` |
 | Snipe-IT | An IT asset and license management platform with MariaDB and persistent uploaded files. | IT Management, Assets | `snipe-it` |
