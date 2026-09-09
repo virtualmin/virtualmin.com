@@ -54,6 +54,10 @@ Usage: virtualmin-install.sh [options]
   --no-package-updates|-x          skip package updates during install
   --no-hostname-ssl|-nhs           skip SSL certificate request for hostname
 
+  --swap|-S <size>                 managed swap: MiB or K/M/G[B]; 0 to remove
+  --swap-only                      configure swap without installing
+  --no-swap|-ns                    leave system swap unchanged
+
   --uninstall|-u                   remove all packages and dependencies
   --setup|-s                       reconfigure repos without installing
   --connect|-C <ipv4|ipv6>         test connectivity without installing
@@ -100,9 +104,75 @@ During installation, a TLS certificate is automatically requested for the system
 
 The `--include`, `--exclude`, and `--extra` flags fine-tune the configuration phase. `--include` enables extra configuration plugins, `--exclude` skips ones that would run by default, and `--extra` installs additional packages before the stack install. For example, to add PostgreSQL support as part of the initial install, see the [PostgreSQL](#postgresql) caveat below.
 
+##### Swap
+
+The installer can create, resize, reuse or remove its own swapfile. Swap configured by your OS or hosting provider stays untouched, including `/swap.img`, partitions, encrypted swap and zram. Active swap counts toward automatic sizing.
+
+###### Options
+
+Run the [current installer](#running-the-install-script) as root with:
+
+| Options | Result |
+| --- | --- |
+| No swap flags | Install with automatic swap sizing. Leave an existing installer-managed swapfile unchanged. |
+| `--swap 2G` | Install and set the installer-managed swapfile to 2 GiB. Other swap is additional. |
+| `--swap-only --swap 2G` | Configure that swapfile without installing packages or changing repositories. Works after installation. |
+| `--swap-only --swap 0` | Remove that swapfile and its boot configuration. |
+| `--swap-only` | Apply automatic sizing without installing. |
+| `--no-swap` | Skip swap checks and changes. |
+| `--setup` | Configure repositories without touching swap, even with `--swap`. |
+
+Bare sizes mean MiB. Suffixes `K`, `M` and `G`, with an optional `B`, use binary units and ignore case. Positive sizes round up to whole MiB and must be below 1 TiB. The short options are `-S` for `--swap` and `-ns` for `--no-swap`.
+
+`--yes` skips confirmation. `--swap` cannot be combined with `--no-swap`; `--swap-only` cannot be combined with `--setup`, `--uninstall` or `--connect`.
+
+###### Change swap after installation
+
+Download the current installer, then create or resize its swapfile to 2 GiB:
+
+```text
+sudo sh virtualmin-install.sh --swap-only --swap 2G
+```
+
+To remove only the swapfile managed by the installer:
+
+```text
+sudo sh virtualmin-install.sh --swap-only --swap 0
+```
+
+###### Automatic sizing
+
+Swap needs depend on workload. These are Virtualmin installation defaults, not a universal Linux sizing rule or a hibernation allowance.
+
+If no installer-managed swapfile exists:
+
+1. Calculate the gap to **8 GiB** of combined detected RAM and active swap. Add nothing if that target is met.
+2. Round the gap and **twice RAM** up to whole GiB, then use the smaller value.
+3. Reserve **3 GiB** for full installation, **2 GiB** for mini, or **1 GiB** for `--swap-only`. Each includes 1 GiB of disk headroom; the rest is for installation packages. Apply the disk cap below.
+
+| Free space after reserve | Below 5 GiB | 5–<10 GiB | 10–<20 GiB | 20–<40 GiB | 40+ GiB |
+| --- | --- | --- | --- | --- | --- |
+| Maximum added swap | None | 1 GiB | 2 GiB | 3 GiB | 6 GiB |
+
+For example, 4 GiB detected RAM, no active swap and 15 GiB free disk gives **2 GiB** of added swap during full installation: 3 GiB is reserved, leaving 12 GiB for the disk-cap calculation.
+
+An explicit `--swap` size bypasses these caps but still needs room for the new file and the reserve. Resizing also keeps the original file until the replacement succeeds.
+
+###### Filesystems and safety
+
+The managed file is `/swap.vm` on ext2/3/4 and XFS. On Btrfs, it is `/swap.virtualmin/swapfile` in a dedicated subvolume, using `btrfs-progs` 6.1 or newer. The installer configures activation at boot, including Btrfs ordering. Legacy `/swap.vm` files on Btrfs can be reused or removed, but not resized.
+
+Swap setup checks disk space, file ownership, boot configuration and available RAM before deactivating swap. Unsafe or ambiguous configurations require manual review; failed changes attempt to restore the original swap. See the [Btrfs swapfile requirements](https://btrfs.readthedocs.io/en/latest/Swapfile.html) for restrictions on snapshots, balance and scrub.
+
+###### Logs and errors
+
+Planned changes appear before confirmation. `--swap-only` prints its log path and reports success or failure. If swap setup fails, the installer stops. To skip swap setup, re-run with `--no-swap`, removing `--swap` if supplied.
+
+The installer downloads its utility library automatically. If you keep a local `slib.sh` alongside the script, update it to version **1.5.0** or newer for the new swap support.
+
 ##### Maintenance and recovery
 
-`--uninstall` removes all Virtualmin packages and dependencies. `--setup` reconfigures the software repositories without installing anything, which is useful for repairing a broken repository setup. `--connect` only tests connectivity to the repositories over IPv4 or IPv6 and then exits. `--force-reinstall` forces a complete reinstall over an existing system and is not recommended.
+`--uninstall` removes all Virtualmin packages and dependencies. `--setup` reconfigures the software repositories without installing Virtualmin or touching swap, which is useful for repairing a broken repository setup. `--connect` only tests connectivity to the repositories over IPv4 or IPv6 and then exits. `--force-reinstall` forces a complete reinstall over an existing system and is not recommended.
 
 ##### Behavior and output
 

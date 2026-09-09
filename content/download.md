@@ -8,7 +8,7 @@ hideMeta: true
 
 Usually, getting started with Virtualmin can be done with a few simple steps, using our automated [install script](https://download.virtualmin.com/virtualmin-install.sh). The install script will set up your package manager (`dnf` or `apt`), and then download our packages as well as all of the necessary dependencies for running Virtualmin.
 
-{{< alert primary question "" "Never run the `virtualmin-install.sh` script to upgrade or renew or to try to repair an existing Virtualmin system! The `virtualmin change-license` command is used for license changes and renewals. [Check the license FAQ](/docs/faq/#license) for details." >}}
+{{< alert primary question "" "Use normal installation only on a fresh supported OS. On an existing Virtualmin system, use `--setup` to repair repositories or [`--swap-only`](/docs/installation/automated/#swap) to configure swap. Use your package manager for updates and `virtualmin change-license` for license changes and renewals. [Check the license FAQ](/docs/faq/#license) for details." >}}
 
 ### Install your operating system
 Start with a fresh [Grade A](/docs/os-support/) supported OS on your server or VPS—Rocky Linux, Debian, and Ubuntu Server LTS are safe choices. For full installs that include mail, set a proper [fully qualified domain name](/docs/installation/automated#fully-qualified-domain-name). Minimal installs don't require this, because they don't run mail. In all cases, don't name the system the same as any domain you'll host in Virtualmin.
@@ -38,7 +38,7 @@ You can customize the install with various options. Run the script with `--help`
 During installation, the script may ask a few questions:
 
 - If your system doesn't have a fully qualified hostname, full installs that include mail will ask you to set one. For minimal installs, it isn't required. Don't use a name you'll host in Virtualmin—for example, if you'll host the `virtualmin.com` domain, you can name the system `host.virtualmin.com`, but not `virtualmin.com`.  
-- If your system doesn't have enough memory for the chosen install type, the installer will offer to create a swap file.
+- The installer shows planned swap changes before confirmation. It can add swap automatically, including on Btrfs, while preserving preconfigured swap. Use `--swap 2G` for a specific size or `--no-swap` to skip swap management. See [swap options and defaults](/docs/installation/automated/#swap).
 
 After a few minutes, your system will be ready. Log in to Virtualmin by going to `https://your-hostname:10000` or `https://your-ip:10000` in your browser.
 

@@ -12,7 +12,7 @@ The partitions on your Virtualmin server should be allocated in one of the the f
 #### One partition
 In this partition layout, you will only have one system partition plus a swap partition and `/boot` partition. The system partition contains `/home` for users, `/var` for logs and databases, as well as all of the normal system executable files, documentation and libraries. It is often simpler to deploy. Traditionally, "one big partition" was considered problematic from an administration standpoint, but most such issues have been resolved by modern filesystems, backup utilities, and improved hardware reliability.
   
-  - **swap**: The `swap` partition should be at least twice the size of RAM on the system.
+  - **swap**: Size swap for your workload using your OS vendor's guidance. For installer defaults and swapfile support, see [swap management](/docs/installation/automated/#swap).
   - **/boot**: The `/boot` partition should be large enough to accommodate a few system kernels and initrd images. Your OS vendor probably knows best what size this should be.
   - **/**: The remainder of the disk(s) should be devoted to `/`. This is where all system and user data will go.
     
@@ -23,7 +23,7 @@ This layout spreads files across a few partitions, in order to facilitate usage 
 
  - **/**: This partition is used for all of the operating system files, executables, and configuration files. This partition should be at least 4GB for most operating systems.
  - **/boot**: The `/boot` partition should be large enough to accommodate a few system kernels and initrd images. Your OS vendor probably knows best what size this should be.
- - **swap**: The `swap` partition should be at least twice the size of RAM on the system.
+ - **swap**: Size swap for your workload using your OS vendor's guidance. For installer defaults and swapfile support, see [swap management](/docs/installation/automated/#swap).
  - **/var**: The `/var` partition is where system logs, various changing data, and MySQL and PostgreSQL databases are stored. Depending on whether you will allow your domain users to use the database features, this partition may be between 2 and 10 or more GB. If users are expected to be heavy database users, you may opt to divide the remaining disk space between `/var` and `/home`.
  - **/home**: The `/home` partition is where all of your domain users data, email, CGI scripts, logs etc. will be stored. Pretty much anything that belongs to your users, except for MySQL and PostgreSQL databases, will reside on `/home`. Devote the remainder of your disk to `/home`, as usage will likely grow rapidly if you have many users.
 

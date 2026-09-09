@@ -190,77 +190,23 @@ To disable preloading of Webmin libraries in Virtualmin, do the following:
 
 ### Enable swap
 
-To optimize memory usage, it is important to have a configured swap file or partition, especially on systems with limited RAM. If you don't have a swap partition or swap file, you can create one as follows:
+Swap can help with memory pressure, but it is slower than RAM. Use the installer's standalone swap mode to configure it on an existing system without installing packages or changing repositories.
 
 #### Creating swap
-1. **Create a swap file**  
-   Use the `fallocate` command to create a swap file. For example, to create a 4 GB swap file:
-     ```text
-     fallocate -l 4G /swapfile
-     ```
 
-2. **Set correct permissions**
-     ```text
-     chmod 600 /swapfile
-     ```
-    {{< note "Only the _root_ user should have read and write permissions to the swap file for security reasons." "Note:" "notification" >}}
+Download the [current installer](/docs/installation/automated/#running-the-install-script), then create a 2 GiB swapfile:
 
-3. **Make the file a swap file**  
-   Convert the file into a swap space:
-     ```text
-     mkswap /swapfile
-     ```
-
-4. **Enable the swap file**  
-   Activate the swap file:
-     ```text
-     swapon /swapfile
-     ```
-
-5. **Make the swap file permanent**  
-   Edit `/etc/fstab` to add the swap file:
-     ```text
-     echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
-     ```
+```text
+sudo sh virtualmin-install.sh --swap-only --swap 2G
+```
 
 #### Enlarging swap
 
-If you already have a swap file and need to enlarge it:
+Run the same command with a larger size to resize the installer-managed swapfile. To choose a size automatically, omit `--swap 2G`; automatic sizing leaves an existing managed swapfile unchanged.
 
-1. **Turn off existing swap**  
-   Disable the current swap file:
-     ```text
-     swapoff -v /swapfile
-     ```
-     {{< note "Actual swap file name may vary. To find the swap file name, run `cat /proc/swaps` command." "Note:" "notification" >}}
+The installer manages `/swap.vm`, or `/swap.virtualmin/swapfile` on Btrfs, and configures activation at boot. Other swapfiles, partitions, encrypted swap and zram stay untouched. A requested size applies only to the managed file, so any other swap is additional.
 
-2. **Resize the swap file**  
-   If you want to increase the swap size to 8 GB, for example:
-     ```text
-     fallocate -l 8G /swapfile
-     ```
-
-3. **Make the file a swap file**
-   ```text
-   mkswap /swapfile
-   ```
-
-4. **Turn on swap**
-   ```text
-   swapon /swapfile
-   ```
-
-5. **Update `/etc/fstab` if needed**  
-   If the swap file path or name changes, update `/etc/fstab` accordingly.
-
-#### Considerations
-
-- Ensure your system has enough free space to accommodate the swap file.
-- The performance of swap space on a disk drive is typically much slower than physical RAM.
-- For resizing a swap partition, it's more complex and may involve resizing disk partitions, which is riskier and should be done with caution and backups.
-- Disable unused services to free up memory before trying to increase swap space. This can be accomplished in Virtualmin under **System Settings ⇾ Features and Plugins**, and in Webmin through **System ⇾ Bootup and Shutdown**. Services such as the Postgres database or Mailman should be disabled if they are not in use. If SSH/SFTP is available, it's recommended to disable ProFTPd. Furthermore, if your DNS is hosted externally, consider disabling the BIND DNS server.
-
-Always back up important data before performing such operations, as mistakes can lead to data loss. Additionally, consider the impact on your system's performance and storage when adjusting swap space. For a better performance, it's recommended to add more RAM instead of increasing swap space.
+See [swap management](/docs/installation/automated/#swap) for automatic sizing, removal, Btrfs requirements and failure handling. If memory pressure continues, reduce unused services or add RAM.
 
 ### Understanding memory usage with the OOM Killer
 The Out-Of-Memory (OOM) Killer in Linux-based systems is a mechanism that is invoked when the system is critically low on memory. The process that the OOM Killer terminates first depends on several factors, primarily the calculated OOM score of the processes running on the system.
