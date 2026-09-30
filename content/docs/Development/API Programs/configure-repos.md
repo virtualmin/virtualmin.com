@@ -1,12 +1,14 @@
 ---
-title: "setup-repos"
+title: "configure-repos"
+aliases:
+  - /docs/development/api-programs/setup-repos/
 subSection: "Repository"
 date: 2026-01-21
 author: "Ilia Ross"
 weight: 4012550
 ---
 
-### Setup Virtualmin repositories
+### Configure Virtualmin repositories
 
 This command sets up or repairs Virtualmin software repositories.
 
@@ -19,6 +21,6 @@ If `--serial` and `--key` are given and the license is not valid, the command wi
 ### Command line help
 
 ```text
-virtualmin setup-repos [--branch <stable|prerelease|unstable>]
-                       [--serial number] [--key id] [--no-check]
+virtualmin configure-repos [--branch <stable|prerelease|unstable>]
+                           [--serial number] [--key id] [--no-check]
 ```

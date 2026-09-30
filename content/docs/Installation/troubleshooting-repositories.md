@@ -14,8 +14,10 @@ To reset and correct the Virtualmin repositories, run one of the commands below 
 If Virtualmin is already installed, use the CLI command:
 
 ```bash
-sudo virtualmin setup-repos
+sudo virtualmin configure-repos
 ```
+
+If `configure-repos` is unavailable, use `setup-repos` on older versions.
 
 The CLI command uses the currently configured branch, or `stable` if none is set. You can change branches with `--branch stable`, `--branch prerelease`, or `--branch unstable`, but `prerelease` and `unstable` should only be used for testing, **not for normal production systems**.
 
@@ -33,7 +35,7 @@ Starting with Virtualmin 8, Webmin packages from the Virtualmin repositories are
 
 {{< alert primary exclamation "" "For new manual and automated installs, treat [download.virtualmin.com](https://download.virtualmin.com) as the production repository. The development repository at [download.webmin.dev](https://download.webmin.dev) uses the same modular Webmin layout, but is for testing new builds before they reach production." >}}
 
-If an older Virtualmin system is still using the [software.virtualmin.com](https://software.virtualmin.com) repository, running the repository setup command above, or `virtualmin setup-repos`, automatically switches it to [download.virtualmin.com](https://download.virtualmin.com). During that switch, Virtualmin keeps the Webmin modules the system was already using by installing the matching modular `webmin-*` packages for modules from the previous full Webmin install.
+If an older Virtualmin system is still using the [software.virtualmin.com](https://software.virtualmin.com) repository, running the repository setup command above, or `virtualmin configure-repos`, automatically switches it to [download.virtualmin.com](https://download.virtualmin.com). During that switch, Virtualmin keeps the Webmin modules the system was already using by installing the matching modular `webmin-*` packages for modules from the previous full Webmin install.
 
 Older Webmin packages usually installed every standard Webmin module in one large package. That meant a Virtualmin server could have modules for services it would never run, such as Samba, Squid, LDAP, clustering tools, NFS, iSCSI, or other system-specific services.
 

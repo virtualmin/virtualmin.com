@@ -128,17 +128,19 @@ Bare sizes mean MiB. Suffixes `K`, `M` and `G`, with an optional `B`, use binary
 
 ###### Change swap after installation
 
-Download the current installer, then create or resize its swapfile to 2 GiB:
+Create or resize the installer-managed swapfile to 2 GiB:
 
 ```text
-sudo sh virtualmin-install.sh --swap-only --swap 2G
+sudo virtualmin configure-swap --size 2G
 ```
 
 To remove only the swapfile managed by the installer:
 
 ```text
-sudo sh virtualmin-install.sh --swap-only --swap 0
+sudo virtualmin configure-swap --size 0
 ```
+
+[`configure-swap`](/docs/development/api-programs/configure-swap/) downloads the current installer and runs only swap setup. Changes are applied without prompting. Omit `--size` for automatic sizing. On older versions without this command, download the current installer and run `sudo sh virtualmin-install.sh --swap-only --swap 2G` instead.
 
 ###### Automatic sizing
 
