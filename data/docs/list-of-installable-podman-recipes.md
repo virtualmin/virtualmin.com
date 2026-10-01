@@ -4,6 +4,7 @@
 | Adminer | A lightweight database administration interface for MySQL, PostgreSQL, SQLite, SimpleDB and Elasticsearch. | Database, Administration | `adminer` |
 | Apache Tomcat | An Apache Tomcat 11 server for deploying Java web applications with Java 21. | Development, Web Server | `tomcat` |
 | Audiobookshelf | A personal audiobook and podcast server with persistent libraries, metadata and settings. | Media, Audiobooks | `audiobookshelf` |
+| Baserow | A self-hosted platform for teams to build no-code databases, apps and automations, with private PostgreSQL and Redis services and persistent file uploads. | Database, No-code, Productivity | `baserow` |
 | BookOrbit | A self-hosted library for ebooks, audiobooks, comics and PDFs, with built-in readers, device synchronization and a private PostgreSQL database. | Books, Media, Audiobooks | `bookorbit` |
 | BookStack | A structured documentation and knowledge platform backed by a private MySQL database. | Documentation, Knowledge Base | `bookstack` |
 | Caddy Static Site | A compact static website server with an editable web root and Caddyfile; Virtualmin remains the public TLS endpoint. | Web Server, Development | `caddy-static` |
