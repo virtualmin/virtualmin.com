@@ -100,7 +100,7 @@ servers with comprehensive details:
   - Development
     - Set debug mode (disabled/display errors/log errors)
     - Enable/disable maintenance mode
-    - Enable/disable cron job scheduler
+    - Choose the built-in, self-managed, or managed scheduler
 - Check integrity
 - Check for updates
 - Upgrade selected instances
@@ -382,9 +382,11 @@ Control technical settings for troubleshooting and optimization:
   
   Can be customized with a custom `maintenance.php` file in `wp-content` directory.
 
-- **Cron job scheduler**: Enable/disable WordPress task scheduler
-  
-  Useful during migrations or when using external cron jobs.
+- **Disable built-in cron job scheduler**: Choose how scheduled tasks run
+
+  - **No**: Keep WordPress's built-in scheduler, triggered by site visits.
+  - **Yes**: Disable the built-in scheduler. You must arrange your own cron job.
+  - **Yes, use the managed scheduler**: Let WP Workbench run scheduled tasks without site visits or HTTP requests back to the site. See [Scheduled tasks behind NAT](#scheduled-tasks-behind-nat).
 
 - **Scripts concatenation**: Combine JavaScript files
   
@@ -400,6 +402,38 @@ Control technical settings for troubleshooting and optimization:
   - Support for serialized data
 
 [![](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-development.png "Development — WP Workbench")](/images/docs/screenshots/plugins/wp-workbench/light/wp-workbench-development.png)
+
+### Scheduled tasks behind NAT
+
+WP Workbench 2.2.0 can run WordPress and ClassicPress tasks without site visits
+or HTTP requests back to the site. This helps when NAT blocks the server from
+reaching its own public address, or the site gets few visits. Updating WP
+Workbench does not enable this automatically.
+
+In the site's **Development** tab, set **Disable built-in cron job scheduler**
+to **Yes, use the managed scheduler** and click **Apply**.
+
+For several sites, open **WP Workbench Manager → Instances** and select the
+sites. In the **Bulk actions** menu, under **Development → Disable built-in cron job scheduler**,
+choose **Yes, use the managed scheduler** and click **Apply**.
+
+WP Workbench replaces the built-in scheduler with a cron job that runs due
+tasks every five minutes by default. It uses WP-CLI, the site's owner account,
+and its configured PHP version. Tasks run on each site's hosting server, so
+update WP Workbench there too. Remove any custom cron job for these tasks to
+avoid duplicate runs. Automatic-update settings and manual updates stay the same.
+
+To restore scheduling through site visits, select **No** and click **Apply**.
+Choose **Yes** only if you manage your own scheduler. WP Workbench removes its
+cron job when no sites use it.
+
+Before uninstalling WP Workbench, switch managed sites to **No** or arrange
+another scheduler. Uninstalling does not re-enable the built-in scheduler.
+
+WP Workbench restores keep the scheduler choice. If you restore a Virtualmin
+domain backup without the WP Workbench component, apply **Yes, use the managed
+scheduler** again on a restored site, even if already selected. This recreates
+the cron job if needed.
 
 ## Command line interface
 
@@ -523,6 +557,10 @@ virtualmin configure-all-scripts --app wordpress \
 # Disable cron jobs for troubleshooting
 virtualmin configure-all-scripts --app wordpress \
   --domain domain.tld --action disable-cron-jobs
+
+# Use the managed scheduler, including for sites behind NAT
+virtualmin configure-all-scripts --app wordpress \
+  --domain domain.tld --action external-cron-jobs
 ```
 
 For more details, just use the `virtualmin configure-all-scripts --app
@@ -532,6 +570,20 @@ wordpress` command.
 
 Use the `virtualmin configure-script` to manage individual WordPress
 instances on the local system from the command line.
+
+#### Scheduled tasks
+
+Enable the managed scheduler for a site:
+
+```bash
+virtualmin configure-script --app wordpress --domain domain.tld \
+  --apply 'disable_wp_cron external'
+```
+
+Use `disable_wp_cron false` to return to the built-in scheduler, or
+`disable_wp_cron true` only when arranging your own cron job. If the domain
+has several installations, add `--app-path /home/USER/public_html/wordpress`
+to select one.
 
 #### System settings
 ```
