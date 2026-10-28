@@ -84,8 +84,10 @@
 | PairDrop | A private browser-based local and Internet file transfer service inspired by AirDrop. | File Sharing | `pairdrop` |
 | Paperless-ngx | A searchable document archive with PostgreSQL, Redis, OCR storage and an initial administrator login. | Documents, OCR | `paperless-ngx` |
 | Penpot | A collaborative interface-design and prototyping platform with private PostgreSQL and Valkey services and a dedicated export service. | Design, Collaboration, Development | `penpot` |
+| Percona Monitoring and Management | Database monitoring, query analytics and dashboards over HTTPS on port 8443. Requires PMM Client on monitored servers. | Monitoring, Database | `pmm` |
 | pgAdmin | A PostgreSQL administration interface with persistent connections, preferences and an initial login. | Database, Administration | `pgadmin` |
 | PhotoPrism | A private photo and video library with search, albums, automatic organization and persistent originals. | Photos, Media, Gallery | `photoprism` |
+| phpIPAM | IP address and subnet management with a private MariaDB database and scheduled network discovery. | IT Management, Inventory | `phpipam` |
 | phpMyAdmin | A browser-based administration interface for a local or remote MySQL or MariaDB server. | Database, Administration | `phpmyadmin` |
 | Piwigo | A photo gallery for organizing, publishing and sharing image collections, with unattended setup and persistent media. | Photos, Gallery, Media | `piwigo` |
 | PLANKA | A Trello-style project board with PostgreSQL, persistent attachments and an initial administrator account. | Project Management | `planka` |
