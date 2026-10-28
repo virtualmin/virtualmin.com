@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.49 released"
 date: 2007-11-07
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

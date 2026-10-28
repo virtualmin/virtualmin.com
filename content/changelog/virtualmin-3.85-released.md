@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.85 released"
 date: 2011-05-04
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

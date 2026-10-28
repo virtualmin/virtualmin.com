@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.83 released"
 date: 2011-01-11
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.86 released"
 date: 2011-06-02
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.70 released, with security fixes"
 date: 2009-06-23
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

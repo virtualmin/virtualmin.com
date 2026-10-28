@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 6.00 released"
 date: 2017-08-10
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

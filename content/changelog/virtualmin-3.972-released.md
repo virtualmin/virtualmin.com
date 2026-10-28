@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.972 released"
 date: 2012-12-16
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 7.9 released"
 date: 2023-12-16
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

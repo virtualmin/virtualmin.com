@@ -27,6 +27,8 @@
   {{- end }}
 </header>
 
+{{- partial "changelog-filters.html" . }}
+
 {{- $pages := where .Site.RegularPages "Type" "changelog" }}
 
 {{- range $pages.GroupByPublishDate "2006" }}

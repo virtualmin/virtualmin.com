@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.51 released"
 date: 2008-01-04
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

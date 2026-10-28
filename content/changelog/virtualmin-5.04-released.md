@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 5.04 released"
 date: 2016-08-03
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

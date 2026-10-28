@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 6.10 released"
 date: 2020-07-13
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

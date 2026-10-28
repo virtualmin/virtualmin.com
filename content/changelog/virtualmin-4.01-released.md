@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 4.01 released"
 date: 2013-06-13
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.80 released"
 date: 2010-08-11
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

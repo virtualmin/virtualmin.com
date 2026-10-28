@@ -1884,9 +1884,18 @@ html:not(.chocolat-fullscreen).page-index .chocolat-top {
  * 404 ERROR PAGE. End. 
  */
 
-html[class*="page-changelog"] .post-tags,
-html[class*="page-archives"] .post-tags {
-    display: none;
+/* Keep release filters consistent with the tags on individual releases. */
+.post-content .changelog-filters {
+    padding: 0;
+}
+
+.changelog-filters a {
+    box-shadow: none;
+}
+
+.changelog-filters a[aria-current="page"] {
+    color: var(--primary);
+    border-color: var(--primary);
 }
 
 /*

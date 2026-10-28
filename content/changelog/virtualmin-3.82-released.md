@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.82 released"
 date: 2010-11-02
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

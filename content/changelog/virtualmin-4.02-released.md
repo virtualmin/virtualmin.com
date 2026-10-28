@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 4.02 released"
 date: 2013-08-10
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

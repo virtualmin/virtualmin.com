@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 7.6 released"
 date: 2023-03-30
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

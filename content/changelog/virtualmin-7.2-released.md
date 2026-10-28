@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 7.2 released"
 date: 2022-09-22
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

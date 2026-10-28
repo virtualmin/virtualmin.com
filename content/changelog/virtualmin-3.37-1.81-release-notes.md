@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.37-1.81 release notes"
 date: 2007-01-24
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 showtoc: true
 ---

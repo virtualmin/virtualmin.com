@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 6.17 released"
 date: 2021-09-09
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

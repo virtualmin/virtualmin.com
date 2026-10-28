@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 6.04 released"
 date: 2018-10-10
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

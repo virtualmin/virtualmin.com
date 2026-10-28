@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 5.02 released"
 date: 2016-04-26
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 7.10 released"
 date: 2024-03-24
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

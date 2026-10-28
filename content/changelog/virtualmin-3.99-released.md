@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.99 released"
 date: 2013-03-14
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

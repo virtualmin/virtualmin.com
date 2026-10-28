@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 3.572 released"
 date: 2008-05-13
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

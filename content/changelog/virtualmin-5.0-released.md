@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 5.0 released"
 date: 2016-01-08
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

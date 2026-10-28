@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 6.07 released"
 date: 2019-07-15
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 

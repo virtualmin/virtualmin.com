@@ -1,7 +1,7 @@
 ---
 title: "Virtualmin 4.15 released"
 date: 2015-03-03
-tags: ["changelog"]
+tags: ["changelog", "virtualmin-changelog"]
 author: "Ilia Ross"
 ---
 
