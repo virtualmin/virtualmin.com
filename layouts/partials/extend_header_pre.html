@@ -5,9 +5,10 @@
             <div class="index-page-hero-grid" aria-hidden="true"></div>
             <a class="index-page-intro-container-inner-content-alien" href="#virtualmin-intro" aria-label="Learn more about Virtualmin"></a>
             <div class="index-page-hero">
-                <!-- Get latest changelog version -->
+                <!-- Show the latest Virtualmin core release, excluding plugin releases. -->
                 {{ $changelogPages := where site.RegularPages "Section" "changelog" }}
-                {{ $latest := index (sort $changelogPages "Date" "desc") 0 }}
+                {{ $coreReleases := where $changelogPages "Params.tags" "intersect" (slice "virtualmin-changelog") }}
+                {{ $latest := index (sort $coreReleases "Date" "desc") 0 }}
                 {{ $ver := replaceRE ".*?([0-9]+\\.[0-9]+\\.[0-9]+).*" "$1" $latest.File.BaseFileName }}
                 <a href="{{ $latest.RelPermalink }}" class="index-page-release-pill">
                     <i class="wm wm-virtualmin-tick" aria-hidden="true"></i>Release {{ $ver }}
