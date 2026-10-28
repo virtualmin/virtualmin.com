@@ -1,6 +1,6 @@
 ---
 title: "Creating Web App Installer"
-weight: 4010030
+weight: 4010032
 ---
 
 A Virtualmin web app installer is a small program that contains the information needed to install a web application into a virtual server's home directory and set it up to run with that server's permissions and database. Most web app installers are for PHP apps like WordPress or phpMyAdmin, but you can also create installers for Node.js, Perl, or Python apps.

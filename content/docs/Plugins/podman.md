@@ -288,6 +288,10 @@ of generated secrets to an old data directory.
 
 ### Local recipes and overrides
 
+See [Creating Application Recipes](/docs/development/creating-application-recipes/)
+for a small example, an option reference, and steps to install, test, and remove
+your own recipe.
+
 Packaged definitions are individual JSON files in the module's `recipes/`
 directory. A system administrator can add new recipes or replace a packaged
 definition by placing a file in:
